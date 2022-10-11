@@ -1,6 +1,6 @@
 # Inicijalne upute za prijavu projekta iz Razvoja programskih proizvoda
 
-Poštovane kolegice i kolege, 
+Poštovane kolegice i kolege, aa 
 
 čestitamo vam jer ste uspješno prijavili svoj projektni tim na kolegiju Razvoj programskih proizvoda, te je za vas automatski kreiran repozitorij koji ćete koristiti za verzioniranje vašega koda, ali i za pisanje dokumentacije.
 
