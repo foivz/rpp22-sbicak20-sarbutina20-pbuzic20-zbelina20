@@ -12,7 +12,7 @@ Patrik Bužić | pbuzic20@student.foi.hr | 0016146757 | puzic20
 ## Opis domene
 
 ZMG je privatni obrt koji se bavi zaštitom metalne galanterije, od kud i naziv obrta.
-ZMG radi tako da klijent donese zahrđali metal koji se zatim, važe. Temeljem kilaže robe izračunava se ukupna cijena. Metal se obrađuje cinčanjem, a cinčanje je nanošenje sloja cinka na površinu metala zbog zaštite od korodiranja.
+ZMG radi tako da klijent donese zahrđali metal koji se zatim, važe. Temeljem kilaže robe izračunava se ukupna cijena. Metal se obrađuje cinčanjem, a cinčanje je nanošenje sloja cinka na površinu metala zbog zaštite od korozije.
 
 Problem s kojim se poslodavac suočava je ručno izvođenje izdavanja računa pomoću Microsoft Excela, velika papirologija za praćenje transakcija. Ujedno, je i otežan pregled klijenata.
 
