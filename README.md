@@ -36,5 +36,5 @@ F011 | Izračun isplativosti | Aplikacija će imati mogućnost da privatni obrt 
 F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti da dokumente za pregled računa, obračuna, klijenata  spremi i ispiše u PDF formatu. | ...
 
 ## Tehnologije i oprema
-U našem projektu koristit ćemo .NET Framework. .NET Framework služi za izradu različitih aplikacija kao što su web stranice, desktop aplikacije i dr. Razvojno okruženje koje ćemo koristiti je Visual Studio 2022 od tvrtke Microsoft. 
+U našem projektu koristit ćemo .NET Framework. .NET Framework služi za izradu različitih aplikacija kao što su web stranice, desktop aplikacije i dr. Razvojno okruženje koje ćemo koristiti je Visual Studio 2022 od tvrtke Microsoft. Koristiti ćemo i MySQL bazu podataka.
 
