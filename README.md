@@ -22,7 +22,7 @@ ZMG Desktop će biti buduće rješenje za navedene probleme privatnog obrta. Apl
 
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
-F01 | Login | Korisnik će se morati prijaviti kako bi pristupio aplikaciji. | ...
+F01 | Login | Korisnik će se morati prijaviti kako bi pristupio aplikaciji. | Sebastian Arbutina
 F02 | Izdavanje računa | Aplikacija će omogućiti poslodavcu izdavanje računa za određenog klijenta npr. tamo gdje će se zahtijevati adresa, telefon i drugi podaci, automatski će se popuniti. | ...
 F03 | Pregled računa | Aplikacija će omogućiti pregled svih računa  te pregled pojedinog računa. | Zvonimir Belina
 F04 | Pregled klijenata | Aplikacija će omogućiti prikaz svih klijenata npr. ime i prezime klijenta, adresa, broj telefona itd. | Patrik Bužić
