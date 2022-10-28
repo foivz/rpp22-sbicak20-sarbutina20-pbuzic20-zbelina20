@@ -26,12 +26,12 @@ F01 | Login | Korisnik će se morati prijaviti kako bi pristupio aplikaciji. | S
 F02 | Izdavanje računa | Aplikacija će omogućiti poslodavcu izdavanje računa. Izdani račun će u stavkama računa sadržavati potrošeni materijal i usluge koje su provedene. Skeniranjem QR koda s radnog naloga, stavke će se automatski popuniti u računu i korisnik će imati mogućnost ručnog unosa stavki. | Sebastijan Bičak
 F03 | Pregled računa | Aplikacija će omogućiti pregled svih računa i pregled detalja pojedinog računa. U pregledu će se moći pretraživati i sortirati račune. | Sebastijan Bičak
 F04 | Pregled klijenata | Aplikacija će omogućiti prikaz svih klijenata npr. ime i prezime klijenta, adresa, broj telefona itd. | Patrik Bužić
-F05 | Pregled obračuna | Aplikacija će omogućiti pregled obračuna za sve mjesece u godini. Računat će se stanje troška/zarade poslodavca. | Zvonimir Belina
+F05 | Izrada radnog naloga | Aplikacija će omogućiti izradu radnog naloga za odrađivanje usluga zaštite metalne galanterije, na kojem se može evidentirati i potrošnja materijala pomoću skeniranja barkoda ili QR koda. | Zvonimir Belina
 F06 | Unos klijenta u bazu podataka| Aplikacija će omogućiti ručni unos klijenta u bazu podataka.  | Patrik Bužić
 F07 | Brisanje klijenta iz baze podataka  | Aplikacija će omogućiti ručno brisanje klijenata iz baze podataka. | Sebastian Arbutina
-F08 | Informiranje klijenata preko emaila | Aplikacija će, kada je roba gotova, poslati poruku klijentu preko emaila kako bi pokupljač za klijenta mogao preuzeti robu | Zvonimir Belina
+F08 | Promjena statusa i informiranje klijenata | Aplikacija će omogućiti informiranje klijenata preko e-maila o promjeni statusa radnog naloga (kreiran, u izradi, završeno, ...) te samu promjenu i evidenciju statusa radnog naloga. | Zvonimir Belina
 F09 | Stanje materijala za cinčanje | Aplikacija će poslodavcu omogućiti provjeru stanja materijala kako bi bio znao koliko ima iskoristivog materijala za cinčanje. | Sebastian Arbutina
-F010 | Automatsko naručivanje materijala | Aplikacija omogućava automatsko naručivanje materijala ukoliko stanje materijala dođe do određene razine, automatski će se poslati mail privatnom dobavljaču o potrebnim resursima. | Zvonimir Belina
+F010 | Izrada izvještaja | Aplikacija će omogućiti izradu izvještaja, koji će po statusima prikazivati radne naloge preko tablica i grafova. | Zvonimir Belina
 F011 | Izračun isplativosti | Aplikacija će imati mogućnost da privatni obrt izračuna isplativost, tj. kolika je potrošnja materijala na mjesec te razlika između zarade i troška. | Patrik Bužić
 F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti automatsko generiranje računa u PDF-u koji će se poslati klijentu na određeni email. | Sebastijan Bičak
 
