@@ -33,7 +33,7 @@ F08 | Informiranje klijenata preko emaila | Aplikacija će, kada je roba gotova,
 F09 | Stanje materijala za cinčanje | Aplikacija će poslodavcu omogućiti provjeru stanja materijala kako bi bio znao koliko ima iskoristivog materijala za cinčanje. | Sebastian Arbutina
 F010 | Automatsko naručivanje materijala | Aplikacija omogućava automatsko naručivanje materijala ukoliko stanje materijala dođe do određene razine, automatski će se poslati mail privatnom dobavljaču o potrebnim resursima. | Zvonimir Belina
 F011 | Izračun isplativosti | Aplikacija će imati mogućnost da privatni obrt izračuna isplativost, tj. kolika je potrošnja materijala na mjesec te razlika između zarade i troška. | Patrik Bužić
-F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti automatsko generiranje računa u PDF-u koji će se poslati klijentu na određni njegov email. | Sebastijan Bičak
+F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti automatsko generiranje računa u PDF-u koji će se poslati klijentu na određeni email. | Sebastijan Bičak
 
 ## Tehnologije i oprema
 U našem projektu koristit ćemo .NET Framework. .NET Framework služi za izradu različitih aplikacija kao što su web stranice, desktop aplikacije i dr. Razvojno okruženje koje ćemo koristiti je Visual Studio 2022 od tvrtke Microsoft. Koristiti ćemo i MySQL bazu podataka.
