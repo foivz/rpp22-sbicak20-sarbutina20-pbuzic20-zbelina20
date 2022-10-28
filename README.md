@@ -23,17 +23,17 @@ ZMG Desktop će biti buduće rješenje za navedene probleme privatnog obrta. Apl
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Login | Korisnik će se morati prijaviti kako bi pristupio aplikaciji. | Sebastian Arbutina
-F02 | Izdavanje računa | Aplikacija će omogućiti poslodavcu izdavanje računa za određenog klijenta npr. tamo gdje će se zahtijevati adresa, telefon i drugi podaci, automatski će se popuniti. | Sebastijan Bičak
-F03 | Pregled računa | Aplikacija će omogućiti pregled svih računa  te pregled pojedinog računa. | Zvonimir Belina
+F02 | Izdavanje računa | Aplikacija će omogućiti poslodavcu izdavanje računa. Izdani račun će u stavkama računa sadržavati potrošeni materijal i usluge koje su provedene. Skeniranjem QR koda s radnog naloga, stavke će se automatski pupuniti u računu i korisnik će imati mogućnost ručnog unosa stavki. | Sebastijan Bičak
+F03 | Pregled računa | Aplikacija će omogućiti pregled svih računa i pregled detalja pojedinog računa. U pregledu će se moći pretraživati i sortirati račune. | Sebastijan Bičak
 F04 | Pregled klijenata | Aplikacija će omogućiti prikaz svih klijenata npr. ime i prezime klijenta, adresa, broj telefona itd. | Patrik Bužić
-F05 | Pregled obračuna | Aplikacija će omogućiti pregled obračuna za sve mjesece u godini. Računat će se stanje troška/zarade poslodavca. | Sebastijan Bičak
+F05 | Pregled obračuna | Aplikacija će omogućiti pregled obračuna za sve mjesece u godini. Računat će se stanje troška/zarade poslodavca. | Zvonimir Belina
 F06 | Unos klijenta u bazu podataka| Aplikacija će omogućiti ručni unos klijenta u bazu podataka.  | Patrik Bužić
 F07 | Brisanje klijenta iz baze podataka  | Aplikacija će omogućiti ručno brisanje klijenata iz baze podataka. | Sebastian Arbutina
 F08 | Informiranje klijenata preko emaila | Aplikacija će, kada je roba gotova, poslati poruku klijentu preko emaila kako bi pokupljač za klijenta mogao preuzeti robu | Zvonimir Belina
 F09 | Stanje materijala za cinčanje | Aplikacija će poslodavcu omogućiti provjeru stanja materijala kako bi bio znao koliko ima iskoristivog materijala za cinčanje. | Sebastian Arbutina
 F010 | Automatsko naručivanje materijala | Aplikacija omogućava automatsko naručivanje materijala ukoliko stanje materijala dođe do određene razine, automatski će se poslati mail privatnom dobavljaču o potrebnim resursima. | Zvonimir Belina
 F011 | Izračun isplativosti | Aplikacija će imati mogućnost da privatni obrt izračuna isplativost, tj. kolika je potrošnja materijala na mjesec te razlika između zarade i troška. | Patrik Bužić
-F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti da dokumente za pregled računa, obračuna, klijenata  spremi i ispiše u PDF formatu. | Sebastijan Bičak
+F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti automatsko generiranje računa u PDF-u koji će se poslati klijentu na određni njegov email. | Sebastijan Bičak
 
 ## Tehnologije i oprema
 U našem projektu koristit ćemo .NET Framework. .NET Framework služi za izradu različitih aplikacija kao što su web stranice, desktop aplikacije i dr. Razvojno okruženje koje ćemo koristiti je Visual Studio 2022 od tvrtke Microsoft. Koristiti ćemo i MySQL bazu podataka.
