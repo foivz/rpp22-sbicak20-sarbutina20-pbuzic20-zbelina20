@@ -28,9 +28,9 @@ F03 | Pregled računa | Aplikacija će omogućiti pregled svih računa i pregled
 F04 | Pregled klijenata | Aplikacija će omogućiti prikaz svih klijenata npr. ime i prezime klijenta, adresa, broj telefona itd. Prilikom pregledavanja detalja o pojedinom klijentu prikazivat će se popis radnih naloga i izdanih računa za klijenta | Patrik Bužić
 F05 | Izrada radnog naloga | Aplikacija će omogućiti izradu radnog naloga za odrađivanje usluga zaštite metalne galanterije, na kojem se može evidentirati i potrošnja materijala pomoću skeniranja barkoda ili QR koda. | Zvonimir Belina
 F06 | Unos klijenta u bazu podataka| Aplikacija će omogućiti ručni unos klijenta u bazu i uvoz klijenta iz XML datoteke.  | Patrik Bužić
-F07 | Brisanje klijenta iz baze podataka  | Aplikacija će omogućiti ručno brisanje klijenata iz baze podataka. | Sebastian Arbutina
+F07 | Upravljanje katalogom usluga i materijala  | Aplikacija će omogućiti prikaz, dodavanje i brisanje te će za svaku uslugu i materijal generirati QR kod  koji će se moći skenirati kasnije za identificiranje usluge i materijala. | Sebastian Arbutina
 F08 | Promjena statusa i informiranje klijenata | Aplikacija će omogućiti informiranje klijenata preko e-maila o promjeni statusa radnog naloga (kreiran, u izradi, završeno, ...) te samu promjenu i evidenciju statusa radnog naloga. | Zvonimir Belina
-F09 | Stanje materijala za cinčanje | Aplikacija će poslodavcu omogućiti provjeru stanja materijala kako bi bio znao koliko ima iskoristivog materijala za cinčanje. | Sebastian Arbutina
+F09 | Zaprimanje materijala | Aplikacija će omogućiti skeniranje QR koda za zaprimanje materijala i generirat će dokument primka | Sebastian Arbutina
 F010 | Izrada izvještaja | Aplikacija će omogućiti izradu izvještaja, koji će po statusima prikazivati radne naloge preko tablica i grafova. | Zvonimir Belina
 F011 | Izračun isplativosti | Aplikacija će imati mogućnost da kreira izvještaj koji će prikazati popis 10 najvećih klijenata. (Tablični prikaz i graf pita)  | Patrik Bužić
 F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti automatsko generiranje računa u PDF-u koji će se poslati klijentu na određeni email. | Sebastijan Bičak
