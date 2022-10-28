@@ -23,7 +23,7 @@ ZMG Desktop će biti buduće rješenje za navedene probleme privatnog obrta. Apl
 Oznaka | Naziv | Kratki opis | Odgovorni član tima
 ------ | ----- | ----------- | -------------------
 F01 | Login | Korisnik će se morati prijaviti kako bi pristupio aplikaciji. | Sebastian Arbutina
-F02 | Izdavanje računa | Aplikacija će omogućiti poslodavcu izdavanje računa. Izdani račun će u stavkama računa sadržavati potrošeni materijal i usluge koje su provedene. Skeniranjem QR koda s radnog naloga, stavke će se automatski pupuniti u računu i korisnik će imati mogućnost ručnog unosa stavki. | Sebastijan Bičak
+F02 | Izdavanje računa | Aplikacija će omogućiti poslodavcu izdavanje računa. Izdani račun će u stavkama računa sadržavati potrošeni materijal i usluge koje su provedene. Skeniranjem QR koda s radnog naloga, stavke će se automatski popuniti u računu i korisnik će imati mogućnost ručnog unosa stavki. | Sebastijan Bičak
 F03 | Pregled računa | Aplikacija će omogućiti pregled svih računa i pregled detalja pojedinog računa. U pregledu će se moći pretraživati i sortirati račune. | Sebastijan Bičak
 F04 | Pregled klijenata | Aplikacija će omogućiti prikaz svih klijenata npr. ime i prezime klijenta, adresa, broj telefona itd. | Patrik Bužić
 F05 | Pregled obračuna | Aplikacija će omogućiti pregled obračuna za sve mjesece u godini. Računat će se stanje troška/zarade poslodavca. | Zvonimir Belina
