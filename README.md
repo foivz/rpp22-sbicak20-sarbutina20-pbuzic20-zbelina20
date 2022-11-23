@@ -31,9 +31,9 @@ F06 | Unos klijenta u bazu podataka| Aplikacija će omogućiti ručni unos klije
 F07 | Upravljanje katalogom usluga i materijala  | Aplikacija će omogućiti prikaz, dodavanje i brisanje te će za svaku uslugu i materijal generirati QR kod  koji će se moći skenirati kasnije za identificiranje usluge i materijala. | Sebastian Arbutina
 F08 | Promjena statusa i informiranje klijenata | Aplikacija će omogućiti informiranje klijenata preko e-maila o promjeni statusa radnog naloga (kreiran, u izradi, završeno, ...) te samu promjenu i evidenciju statusa radnog naloga. | Zvonimir Belina
 F09 | Zaprimanje materijala | Aplikacija će omogućiti skeniranje QR koda za zaprimanje materijala i generirat će dokument primka | Sebastian Arbutina
-F010 | Izrada izvještaja | Aplikacija će omogućiti izradu izvještaja, koji će po statusima prikazivati radne naloge preko tablica i grafova. | Zvonimir Belina
-F011 | Izračun isplativosti | Aplikacija će imati mogućnost da kreira izvještaj koji će prikazati popis 10 najvećih klijenata. (Tablični prikaz i graf pita)  | Patrik Bužić
-F012 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti automatsko generiranje računa u PDF-u koji će se poslati klijentu na određeni email. | Sebastijan Bičak
+F10 | Izrada izvještaja | Aplikacija će omogućiti izradu izvještaja, koji će po statusima prikazivati radne naloge preko tablica i grafova. | Zvonimir Belina
+F11 | Izračun isplativosti | Aplikacija će imati mogućnost da kreira izvještaj koji će prikazati popis 10 najvećih klijenata. (Tablični prikaz i graf pita)  | Patrik Bužić
+F12 | Stvaranje PDF dokumentacije | Aplikacija će poslodavcu omogućiti automatsko generiranje računa u PDF-u koji će se poslati klijentu na određeni email. | Sebastijan Bičak
 
 ## Tehnologije i oprema
 U našem projektu koristit ćemo .NET Framework. .NET Framework služi za izradu različitih aplikacija kao što su web stranice, desktop aplikacije i dr. Razvojno okruženje koje ćemo koristiti je Visual Studio 2022 od tvrtke Microsoft. Koristiti ćemo i MySQL bazu podataka.
