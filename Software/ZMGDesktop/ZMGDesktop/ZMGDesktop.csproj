@@ -58,6 +58,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDetaljiIzvjestajaRadnihNaloga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetaljiIzvjestajaRadnihNaloga.Designer.cs">
+      <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetaljiRadnogNaloga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetaljiRadnogNaloga.Designer.cs">
+      <DependentUpon>FrmDetaljiRadnogNaloga.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDetaljniPrikazKlijenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +88,29 @@
     <Compile Include="FrmIzvjestajKlijenata.Designer.cs">
       <DependentUpon>FrmIzvjestajKlijenata.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmKreirajIzvjestajRadnihNaloga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKreirajIzvjestajRadnihNaloga.Designer.cs">
+      <DependentUpon>FrmKreirajIzvjestajRadnihNaloga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNoviRadniNalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNoviRadniNalog.Designer.cs">
+      <DependentUpon>FrmNoviRadniNalog.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPopisIzvjestaja.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmPopisIzvjestaja.Designer.cs">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPopisRadnihNaloga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopisRadnihNaloga.Designer.cs">
+      <DependentUpon>FrmPopisRadnihNaloga.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPregledKlijenata.cs">
       <SubType>Form</SubType>
@@ -90,6 +120,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDetaljiIzvjestajaRadnihNaloga.resx">
+      <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetaljiRadnogNaloga.resx">
+      <DependentUpon>FrmDetaljiRadnogNaloga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDetaljniPrikazKlijenta.resx">
       <DependentUpon>FrmDetaljniPrikazKlijenta.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,8 +135,17 @@
     <EmbeddedResource Include="FrmIzvjestajKlijenata.resx">
       <DependentUpon>FrmIzvjestajKlijenata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmKreirajIzvjestajRadnihNaloga.resx">
+      <DependentUpon>FrmKreirajIzvjestajRadnihNaloga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNoviRadniNalog.resx">
+      <DependentUpon>FrmNoviRadniNalog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPopisRadnihNaloga.resx">
+      <DependentUpon>FrmPopisRadnihNaloga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPregledKlijenata.resx">
       <DependentUpon>FrmPregledKlijenata.cs</DependentUpon>
