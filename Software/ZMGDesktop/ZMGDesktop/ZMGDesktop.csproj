@@ -58,6 +58,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmIzdajNoviRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIzdajNoviRacun.Designer.cs">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRacuni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmIzdajNoviRacun.resx">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRacuni.resx">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
