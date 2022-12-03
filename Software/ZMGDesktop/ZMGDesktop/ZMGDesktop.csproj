@@ -58,6 +58,12 @@
     <Compile Include="FrmDodajKlijenta.Designer.cs">
       <DependentUpon>FrmDodajKlijenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPopisIzvjestaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPopisIzvjestaja.Designer.cs">
+      <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPregledKlijenata.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajKlijenta.resx">
       <DependentUpon>FrmDodajKlijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
+      <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPregledKlijenata.resx">
       <DependentUpon>FrmPregledKlijenata.cs</DependentUpon>
