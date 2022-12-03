@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZMGDesktop
 {
-    public partial class Form1 : Form
+    public partial class FrmPregledKlijenata : Form
     {
-        public Form1()
+        public FrmPregledKlijenata()
         {
             InitializeComponent();
         }
