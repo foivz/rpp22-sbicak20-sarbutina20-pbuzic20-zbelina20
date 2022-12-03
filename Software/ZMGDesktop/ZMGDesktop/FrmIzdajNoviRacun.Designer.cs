@@ -1,6 +1,6 @@
 ﻿namespace ZMGDesktop
 {
-    partial class FrmIzdajNoviRacun
+    partial class FrmDetaljniPregledRacuna
     {
         /// <summary>
         /// Required designer variable.

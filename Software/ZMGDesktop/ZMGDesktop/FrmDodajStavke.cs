@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ZMGDesktop
 {
-    public partial class FrmDetaljniPregledRacuna : Form
+    public partial class FrmDodajStavke : Form
     {
-        public FrmDetaljniPregledRacuna()
+        public FrmDodajStavke()
         {
             InitializeComponent();
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

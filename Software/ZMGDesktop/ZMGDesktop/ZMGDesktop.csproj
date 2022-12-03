@@ -58,6 +58,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDodajStavke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajStavke.Designer.cs">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIzdajNoviRacun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDodajStavke.resx">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIzdajNoviRacun.resx">
       <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
     </EmbeddedResource>
