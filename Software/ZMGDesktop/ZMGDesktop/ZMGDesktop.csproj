@@ -58,6 +58,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodaj.Designer.cs">
+      <DependentUpon>FrmDodaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmKatalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmKatalog.Designer.cs">
+      <DependentUpon>FrmKatalog.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRacuni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,14 +136,20 @@
     <Compile Include="FrmPregledKlijenata.Designer.cs">
       <DependentUpon>FrmPregledKlijenata.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDodaj.resx">
+      <DependentUpon>FrmDodaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmKatalog.resx">
+      <DependentUpon>FrmKatalog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRacuni.resx">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,8 +183,8 @@
     <EmbeddedResource Include="FrmPregledKlijenata.resx">
       <DependentUpon>FrmPregledKlijenata.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

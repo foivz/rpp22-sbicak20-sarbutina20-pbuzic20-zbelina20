@@ -10,7 +10,11 @@ using System.Windows.Forms;
 
 namespace ZMGDesktop
 {
-    public partial class Login : Form
+    public partial class FrmDodaj : Form
     {
+        public FrmDodaj()
+        {
+            InitializeComponent();
+        }
     }
 }

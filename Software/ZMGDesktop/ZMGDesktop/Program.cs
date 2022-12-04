@@ -16,7 +16,7 @@ namespace ZMGDesktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPregledKlijenata());
+            Application.Run(new FrmLogin());
         }
     }
 }
