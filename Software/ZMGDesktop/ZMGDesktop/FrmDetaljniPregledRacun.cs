@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ZMGDesktop
 {
-    public partial class FrmIzdajNoviRacun : Form
+    public partial class FrmDetaljniPregledRacun : Form
     {
-        public FrmIzdajNoviRacun()
+        public FrmDetaljniPregledRacun()
         {
             InitializeComponent();
         }

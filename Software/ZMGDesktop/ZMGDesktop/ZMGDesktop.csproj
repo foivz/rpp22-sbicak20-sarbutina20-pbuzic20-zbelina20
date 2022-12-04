@@ -144,6 +144,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FrmDetaljniPregledRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetaljniPregledRacun.Designer.cs">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmDodajStavke.resx">
       <DependentUpon>FrmDodajStavke.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +201,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmDetaljniPregledRacun.resx">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

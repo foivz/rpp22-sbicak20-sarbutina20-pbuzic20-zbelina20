@@ -38,11 +38,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbUsluge = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtRoba = new System.Windows.Forms.TextBox();
+            this.txtDatumIzrade = new System.Windows.Forms.TextBox();
+            this.txtKolicina = new System.Windows.Forms.TextBox();
+            this.txtJedinicnaCijena = new System.Windows.Forms.TextBox();
+            this.txtUkupnaCijena = new System.Windows.Forms.TextBox();
             this.btnNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +50,9 @@
             // dgvStavke
             // 
             this.dgvStavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStavke.Location = new System.Drawing.Point(384, 39);
+            this.dgvStavke.Location = new System.Drawing.Point(363, 39);
             this.dgvStavke.Name = "dgvStavke";
-            this.dgvStavke.Size = new System.Drawing.Size(915, 263);
+            this.dgvStavke.Size = new System.Drawing.Size(936, 263);
             this.dgvStavke.TabIndex = 0;
             // 
             // btnDodaj
@@ -135,40 +135,40 @@
             this.cmbUsluge.Size = new System.Drawing.Size(241, 21);
             this.cmbUsluge.TabIndex = 9;
             // 
-            // textBox1
+            // txtRoba
             // 
-            this.textBox1.Location = new System.Drawing.Point(103, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtRoba.Location = new System.Drawing.Point(103, 124);
+            this.txtRoba.Name = "txtRoba";
+            this.txtRoba.Size = new System.Drawing.Size(241, 20);
+            this.txtRoba.TabIndex = 10;
             // 
-            // textBox2
+            // txtDatumIzrade
             // 
-            this.textBox2.Location = new System.Drawing.Point(103, 150);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtDatumIzrade.Location = new System.Drawing.Point(103, 150);
+            this.txtDatumIzrade.Name = "txtDatumIzrade";
+            this.txtDatumIzrade.Size = new System.Drawing.Size(241, 20);
+            this.txtDatumIzrade.TabIndex = 11;
             // 
-            // textBox3
+            // txtKolicina
             // 
-            this.textBox3.Location = new System.Drawing.Point(103, 176);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtKolicina.Location = new System.Drawing.Point(103, 176);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(241, 20);
+            this.txtKolicina.TabIndex = 12;
             // 
-            // textBox4
+            // txtJedinicnaCijena
             // 
-            this.textBox4.Location = new System.Drawing.Point(103, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(240, 20);
-            this.textBox4.TabIndex = 13;
+            this.txtJedinicnaCijena.Location = new System.Drawing.Point(103, 199);
+            this.txtJedinicnaCijena.Name = "txtJedinicnaCijena";
+            this.txtJedinicnaCijena.Size = new System.Drawing.Size(240, 20);
+            this.txtJedinicnaCijena.TabIndex = 13;
             // 
-            // textBox5
+            // txtUkupnaCijena
             // 
-            this.textBox5.Location = new System.Drawing.Point(102, 225);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(241, 20);
-            this.textBox5.TabIndex = 14;
+            this.txtUkupnaCijena.Location = new System.Drawing.Point(102, 225);
+            this.txtUkupnaCijena.Name = "txtUkupnaCijena";
+            this.txtUkupnaCijena.Size = new System.Drawing.Size(241, 20);
+            this.txtUkupnaCijena.TabIndex = 14;
             // 
             // btnNatrag
             // 
@@ -185,11 +185,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 483);
             this.Controls.Add(this.btnNatrag);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUkupnaCijena);
+            this.Controls.Add(this.txtJedinicnaCijena);
+            this.Controls.Add(this.txtKolicina);
+            this.Controls.Add(this.txtDatumIzrade);
+            this.Controls.Add(this.txtRoba);
             this.Controls.Add(this.cmbUsluge);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -201,7 +201,7 @@
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.dgvStavke);
             this.Name = "FrmDodajStavke";
-            this.Text = "FrmDodajStavke";
+            this.Text = "Dodavanje stavki na račun";
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -220,11 +220,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbUsluge;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtRoba;
+        private System.Windows.Forms.TextBox txtDatumIzrade;
+        private System.Windows.Forms.TextBox txtKolicina;
+        private System.Windows.Forms.TextBox txtJedinicnaCijena;
+        private System.Windows.Forms.TextBox txtUkupnaCijena;
         private System.Windows.Forms.Button btnNatrag;
     }
 }
