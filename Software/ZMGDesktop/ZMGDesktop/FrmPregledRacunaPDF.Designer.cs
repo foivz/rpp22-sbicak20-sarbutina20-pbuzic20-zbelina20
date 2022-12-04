@@ -31,6 +31,7 @@
             this.wbPregledPDF = new System.Windows.Forms.WebBrowser();
             this.btnNatrag = new System.Windows.Forms.Button();
             this.chkAutoEmail = new System.Windows.Forms.CheckBox();
+            this.chkSpremiNaDisk = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // wbPregledPDF
@@ -53,18 +54,29 @@
             // chkAutoEmail
             // 
             this.chkAutoEmail.AutoSize = true;
-            this.chkAutoEmail.Location = new System.Drawing.Point(1115, 574);
+            this.chkAutoEmail.Location = new System.Drawing.Point(939, 592);
             this.chkAutoEmail.Name = "chkAutoEmail";
             this.chkAutoEmail.Size = new System.Drawing.Size(226, 17);
             this.chkAutoEmail.TabIndex = 2;
             this.chkAutoEmail.Text = "Automatsko slanje računa na email klijentu";
             this.chkAutoEmail.UseVisualStyleBackColor = true;
             // 
+            // chkSpremiNaDisk
+            // 
+            this.chkSpremiNaDisk.AutoSize = true;
+            this.chkSpremiNaDisk.Location = new System.Drawing.Point(939, 615);
+            this.chkSpremiNaDisk.Name = "chkSpremiNaDisk";
+            this.chkSpremiNaDisk.Size = new System.Drawing.Size(95, 17);
+            this.chkSpremiNaDisk.TabIndex = 3;
+            this.chkSpremiNaDisk.Text = "Spremi na disk";
+            this.chkSpremiNaDisk.UseVisualStyleBackColor = true;
+            // 
             // FrmPregledRacunaPDF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1353, 670);
+            this.ClientSize = new System.Drawing.Size(1353, 653);
+            this.Controls.Add(this.chkSpremiNaDisk);
             this.Controls.Add(this.chkAutoEmail);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.wbPregledPDF);
@@ -81,5 +93,6 @@
         private System.Windows.Forms.WebBrowser wbPregledPDF;
         private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.CheckBox chkAutoEmail;
+        private System.Windows.Forms.CheckBox chkSpremiNaDisk;
     }
 }

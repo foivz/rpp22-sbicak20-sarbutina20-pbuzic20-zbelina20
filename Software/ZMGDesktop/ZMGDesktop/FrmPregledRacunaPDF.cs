@@ -21,5 +21,10 @@ namespace ZMGDesktop
         {
 
         }
+
+        private void folderBrowserDialog1_HelpRequest(object sender, EventArgs e)
+        {
+
+        }
     }
 }
