@@ -67,10 +67,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtP_IBAN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtP_TELFAX = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.txtP_BrojMobitela = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtP_TELFAX = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -247,7 +247,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 57);
+            this.label8.Location = new System.Drawing.Point(11, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 19;
@@ -256,7 +256,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(19, 84);
+            this.label9.Location = new System.Drawing.Point(26, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(28, 13);
             this.label9.TabIndex = 20;
@@ -264,21 +264,21 @@
             // 
             // txtK_Ime
             // 
-            this.txtK_Ime.Location = new System.Drawing.Point(53, 28);
+            this.txtK_Ime.Location = new System.Drawing.Point(60, 28);
             this.txtK_Ime.Name = "txtK_Ime";
             this.txtK_Ime.Size = new System.Drawing.Size(179, 20);
             this.txtK_Ime.TabIndex = 23;
             // 
             // txtK_Adresa
             // 
-            this.txtK_Adresa.Location = new System.Drawing.Point(53, 54);
+            this.txtK_Adresa.Location = new System.Drawing.Point(60, 54);
             this.txtK_Adresa.Name = "txtK_Adresa";
             this.txtK_Adresa.Size = new System.Drawing.Size(179, 20);
             this.txtK_Adresa.TabIndex = 24;
             // 
             // txtK_OIB
             // 
-            this.txtK_OIB.Location = new System.Drawing.Point(53, 80);
+            this.txtK_OIB.Location = new System.Drawing.Point(60, 79);
             this.txtK_OIB.Name = "txtK_OIB";
             this.txtK_OIB.Size = new System.Drawing.Size(179, 20);
             this.txtK_OIB.TabIndex = 25;
@@ -423,21 +423,12 @@
             this.groupBox1.Text = "Poslodavac";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label17
+            // txtP_BrojMobitela
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(68, 293);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(55, 13);
-            this.label17.TabIndex = 42;
-            this.label17.Text = "TEL/FAX:";
-            // 
-            // txtP_TELFAX
-            // 
-            this.txtP_TELFAX.Location = new System.Drawing.Point(129, 290);
-            this.txtP_TELFAX.Name = "txtP_TELFAX";
-            this.txtP_TELFAX.Size = new System.Drawing.Size(260, 20);
-            this.txtP_TELFAX.TabIndex = 43;
+            this.txtP_BrojMobitela.Location = new System.Drawing.Point(129, 318);
+            this.txtP_BrojMobitela.Name = "txtP_BrojMobitela";
+            this.txtP_BrojMobitela.Size = new System.Drawing.Size(260, 20);
+            this.txtP_BrojMobitela.TabIndex = 45;
             // 
             // label18
             // 
@@ -448,12 +439,21 @@
             this.label18.TabIndex = 44;
             this.label18.Text = "Broj mobitela:";
             // 
-            // txtP_BrojMobitela
+            // txtP_TELFAX
             // 
-            this.txtP_BrojMobitela.Location = new System.Drawing.Point(129, 318);
-            this.txtP_BrojMobitela.Name = "txtP_BrojMobitela";
-            this.txtP_BrojMobitela.Size = new System.Drawing.Size(260, 20);
-            this.txtP_BrojMobitela.TabIndex = 45;
+            this.txtP_TELFAX.Location = new System.Drawing.Point(129, 290);
+            this.txtP_TELFAX.Name = "txtP_TELFAX";
+            this.txtP_TELFAX.Size = new System.Drawing.Size(260, 20);
+            this.txtP_TELFAX.TabIndex = 43;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(68, 293);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 13);
+            this.label17.TabIndex = 42;
+            this.label17.Text = "TEL/FAX:";
             // 
             // groupBox2
             // 
@@ -526,7 +526,7 @@
             this.lblBrojRacuna.TabIndex = 49;
             this.lblBrojRacuna.Text = "xxx";
             // 
-            // FrmIzdajNoviRacun
+            // FrmDetaljniPregledRacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -553,7 +553,7 @@
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnPDFPregled);
             this.Controls.Add(this.btnIzdajRačun);
-            this.Name = "FrmIzdajNoviRacun";
+            this.Name = "FrmDetaljniPregledRacuna";
             this.Text = "Izdavanje novog računa";
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
             this.groupBox1.ResumeLayout(false);
