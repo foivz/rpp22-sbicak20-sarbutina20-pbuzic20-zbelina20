@@ -31,7 +31,7 @@
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.txtCijena = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbMjernaJedinica = new System.Windows.Forms.ComboBox();
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.txtOpasno = new System.Windows.Forms.TextBox();
             this.lblNaziv = new System.Windows.Forms.Label();
@@ -71,14 +71,14 @@
             this.txtCijena.Size = new System.Drawing.Size(169, 26);
             this.txtCijena.TabIndex = 2;
             // 
-            // comboBox1
+            // cmbMjernaJedinica
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(247, 134);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 3;
+            this.cmbMjernaJedinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMjernaJedinica.FormattingEnabled = true;
+            this.cmbMjernaJedinica.Location = new System.Drawing.Point(247, 134);
+            this.cmbMjernaJedinica.Name = "cmbMjernaJedinica";
+            this.cmbMjernaJedinica.Size = new System.Drawing.Size(121, 28);
+            this.cmbMjernaJedinica.TabIndex = 3;
             // 
             // txtOpis
             // 
@@ -225,7 +225,7 @@
             this.Controls.Add(this.lblNaziv);
             this.Controls.Add(this.txtOpasno);
             this.Controls.Add(this.txtOpis);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbMjernaJedinica);
             this.Controls.Add(this.txtCijena);
             this.Controls.Add(this.txtKolicina);
             this.Controls.Add(this.txtNaziv);
@@ -242,7 +242,7 @@
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.TextBox txtCijena;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbMjernaJedinica;
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.TextBox txtOpasno;
         private System.Windows.Forms.Label lblNaziv;
