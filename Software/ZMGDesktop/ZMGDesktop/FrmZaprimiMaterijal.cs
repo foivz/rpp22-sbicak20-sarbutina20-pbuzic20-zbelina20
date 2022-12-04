@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace ZMGDesktop
 {
-    public partial class FrmDodaj : Form
+    public partial class FrmZaprimiMaterijal : Form
     {
-        public FrmDodaj()
+        public FrmZaprimiMaterijal()
         {
             InitializeComponent();
+        }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

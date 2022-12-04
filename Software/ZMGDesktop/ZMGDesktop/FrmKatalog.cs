@@ -19,7 +19,7 @@ namespace ZMGDesktop
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
-            FrmDodaj dodaj = new FrmDodaj();
+            FrmDodajMaterijal dodaj = new FrmDodajMaterijal();
             dodaj.Show();
         }
 
@@ -30,7 +30,8 @@ namespace ZMGDesktop
 
         private void btnZaprimi_Click(object sender, EventArgs e)
         {
-
+            FrmZaprimiMaterijal zaprimi = new FrmZaprimiMaterijal();
+            zaprimi.ShowDialog();
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)

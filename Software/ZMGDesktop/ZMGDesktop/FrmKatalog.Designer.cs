@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvMaterijali = new System.Windows.Forms.DataGridView();
+            this.dgvUsluge = new System.Windows.Forms.DataGridView();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.btnZaprimi = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterijali)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsluge)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvMaterijali
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(559, 232);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvMaterijali.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterijali.Location = new System.Drawing.Point(34, 25);
+            this.dgvMaterijali.Name = "dgvMaterijali";
+            this.dgvMaterijali.RowHeadersWidth = 51;
+            this.dgvMaterijali.RowTemplate.Height = 24;
+            this.dgvMaterijali.Size = new System.Drawing.Size(559, 232);
+            this.dgvMaterijali.TabIndex = 0;
             // 
-            // dataGridView2
+            // dgvUsluge
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(34, 276);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(559, 150);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvUsluge.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsluge.Location = new System.Drawing.Point(34, 276);
+            this.dgvUsluge.Name = "dgvUsluge";
+            this.dgvUsluge.RowHeadersWidth = 51;
+            this.dgvUsluge.RowTemplate.Height = 24;
+            this.dgvUsluge.Size = new System.Drawing.Size(559, 150);
+            this.dgvUsluge.TabIndex = 1;
             // 
             // btnDodaj
             // 
@@ -119,20 +119,20 @@
             this.Controls.Add(this.btnZaprimi);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvUsluge);
+            this.Controls.Add(this.dgvMaterijali);
             this.Name = "FrmKatalog";
             this.Text = "FrmKatalog";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterijali)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsluge)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvMaterijali;
+        private System.Windows.Forms.DataGridView dgvUsluge;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnZaprimi;
