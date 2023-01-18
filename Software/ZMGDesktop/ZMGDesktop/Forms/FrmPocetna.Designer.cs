@@ -49,6 +49,7 @@
             this.btnKlijenti.TabIndex = 13;
             this.btnKlijenti.Text = "Klijenti";
             this.btnKlijenti.UseVisualStyleBackColor = true;
+            this.btnKlijenti.Click += new System.EventHandler(this.btnKlijenti_Click);
             // 
             // btnRacuni
             // 

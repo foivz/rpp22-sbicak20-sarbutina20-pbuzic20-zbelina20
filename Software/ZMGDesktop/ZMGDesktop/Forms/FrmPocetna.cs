@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace ZMGDesktop
 {
-    public partial class FrmDetaljniPrikazKlijenta : Form
+    public partial class FrmPocetna : Form
     {
-        public FrmDetaljniPrikazKlijenta()
+        public FrmPocetna()
         {
             InitializeComponent();
+        }
+
+        private void btnKlijenti_Click(object sender, EventArgs e)
+        {
+            FrmPregledKlijenata forma = new FrmPregledKlijenata();
+            forma.ShowDialog();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +35,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
       <HintPath>..\packages\BitMiracle.LibTiff.NET.2.4.649\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
@@ -57,6 +70,7 @@
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
@@ -89,160 +103,169 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmDodajMaterijal.cs">
+    <Compile Include="Forms\FrmDodajMaterijal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodajMaterijal.Designer.cs">
+    <Compile Include="Forms\FrmDodajMaterijal.Designer.cs">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmKatalog.cs">
+    <Compile Include="Forms\FrmKatalog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmKatalog.Designer.cs">
+    <Compile Include="Forms\FrmKatalog.Designer.cs">
       <DependentUpon>FrmKatalog.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPocetna.cs">
+    <Compile Include="Forms\FrmPocetna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPocetna.Designer.cs">
+    <Compile Include="Forms\FrmPocetna.Designer.cs">
       <DependentUpon>FrmPocetna.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrimka.cs">
+    <Compile Include="Forms\FrmPrimka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrimka.Designer.cs">
+    <Compile Include="Forms\FrmPrimka.Designer.cs">
       <DependentUpon>FrmPrimka.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRacuni.cs">
+    <Compile Include="Forms\FrmRacuni.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRacuni.Designer.cs">
+    <Compile Include="Forms\FrmRacuni.Designer.cs">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDetaljiIzvjestajaRadnihNaloga.cs">
+    <Compile Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDetaljiIzvjestajaRadnihNaloga.Designer.cs">
+    <Compile Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.Designer.cs">
       <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDetaljiRadnogNaloga.cs">
+    <Compile Include="Forms\FrmDetaljiRadnogNaloga.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDetaljiRadnogNaloga.Designer.cs">
+    <Compile Include="Forms\FrmDetaljiRadnogNaloga.Designer.cs">
       <DependentUpon>FrmDetaljiRadnogNaloga.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDetaljniPrikazKlijenta.cs">
+    <Compile Include="Forms\FrmDetaljniPrikazKlijenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDetaljniPrikazKlijenta.Designer.cs">
+    <Compile Include="Forms\FrmDetaljniPrikazKlijenta.Designer.cs">
       <DependentUpon>FrmDetaljniPrikazKlijenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDodajKlijenta.cs">
+    <Compile Include="Forms\FrmDodajKlijenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodajKlijenta.Designer.cs">
+    <Compile Include="Forms\FrmDodajKlijenta.Designer.cs">
       <DependentUpon>FrmDodajKlijenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmIzvjestajKlijenata.cs">
+    <Compile Include="Forms\FrmIzvjestajKlijenata.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIzvjestajKlijenata.Designer.cs">
+    <Compile Include="Forms\FrmIzvjestajKlijenata.Designer.cs">
       <DependentUpon>FrmIzvjestajKlijenata.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmKreirajIzvjestajRadnihNaloga.cs">
+    <Compile Include="Forms\FrmKreirajIzvjestajRadnihNaloga.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmKreirajIzvjestajRadnihNaloga.Designer.cs">
+    <Compile Include="Forms\FrmKreirajIzvjestajRadnihNaloga.Designer.cs">
       <DependentUpon>FrmKreirajIzvjestajRadnihNaloga.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNoviRadniNalog.cs">
+    <Compile Include="Forms\FrmNoviRadniNalog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNoviRadniNalog.Designer.cs">
+    <Compile Include="Forms\FrmNoviRadniNalog.Designer.cs">
       <DependentUpon>FrmNoviRadniNalog.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPopisIzvjestaja.cs">
+    <Compile Include="Forms\FrmPopisIzvjestaja.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPopisIzvjestaja.Designer.cs">
+    <Compile Include="Forms\FrmPopisIzvjestaja.Designer.cs">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPopisRadnihNaloga.cs">
+    <Compile Include="Forms\FrmPopisRadnihNaloga.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPopisRadnihNaloga.Designer.cs">
+    <Compile Include="Forms\FrmPopisRadnihNaloga.Designer.cs">
       <DependentUpon>FrmPopisRadnihNaloga.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPregledKlijenata.cs">
+    <Compile Include="Forms\FrmPregledKlijenata.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPregledKlijenata.Designer.cs">
+    <Compile Include="Forms\FrmPregledKlijenata.Designer.cs">
       <DependentUpon>FrmPregledKlijenata.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLogin.cs">
+    <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLogin.Designer.cs">
+    <Compile Include="Forms\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmZaprimiMaterijal.cs">
+    <Compile Include="Forms\FrmZaprimiMaterijal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmZaprimiMaterijal.Designer.cs">
+    <Compile Include="Forms\FrmZaprimiMaterijal.Designer.cs">
       <DependentUpon>FrmZaprimiMaterijal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXML.Designer.cs">
+      <DependentUpon>FrmXML.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmDodajMaterijal.resx">
+    <EmbeddedResource Include="Forms\FrmDodajMaterijal.resx">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmKatalog.resx">
+    <EmbeddedResource Include="Forms\FrmKatalog.resx">
       <DependentUpon>FrmKatalog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPocetna.resx">
+    <EmbeddedResource Include="Forms\FrmPocetna.resx">
       <DependentUpon>FrmPocetna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPrimka.resx">
+    <EmbeddedResource Include="Forms\FrmPrimka.resx">
       <DependentUpon>FrmPrimka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRacuni.resx">
+    <EmbeddedResource Include="Forms\FrmRacuni.resx">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDetaljiIzvjestajaRadnihNaloga.resx">
+    <EmbeddedResource Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.resx">
       <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDetaljiRadnogNaloga.resx">
+    <EmbeddedResource Include="Forms\FrmDetaljiRadnogNaloga.resx">
       <DependentUpon>FrmDetaljiRadnogNaloga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDetaljniPrikazKlijenta.resx">
+    <EmbeddedResource Include="Forms\FrmDetaljniPrikazKlijenta.resx">
       <DependentUpon>FrmDetaljniPrikazKlijenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDodajKlijenta.resx">
+    <EmbeddedResource Include="Forms\FrmDodajKlijenta.resx">
       <DependentUpon>FrmDodajKlijenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIzvjestajKlijenata.resx">
+    <EmbeddedResource Include="Forms\FrmIzvjestajKlijenata.resx">
       <DependentUpon>FrmIzvjestajKlijenata.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmKreirajIzvjestajRadnihNaloga.resx">
+    <EmbeddedResource Include="Forms\FrmKreirajIzvjestajRadnihNaloga.resx">
       <DependentUpon>FrmKreirajIzvjestajRadnihNaloga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNoviRadniNalog.resx">
+    <EmbeddedResource Include="Forms\FrmNoviRadniNalog.resx">
       <DependentUpon>FrmNoviRadniNalog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPopisIzvjestaja.resx">
+    <EmbeddedResource Include="Forms\FrmPopisIzvjestaja.resx">
       <DependentUpon>FrmPopisIzvjestaja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPopisRadnihNaloga.resx">
+    <EmbeddedResource Include="Forms\FrmPopisRadnihNaloga.resx">
       <DependentUpon>FrmPopisRadnihNaloga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPregledKlijenata.resx">
+    <EmbeddedResource Include="Forms\FrmPregledKlijenata.resx">
       <DependentUpon>FrmPregledKlijenata.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLogin.resx">
+    <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmZaprimiMaterijal.resx">
+    <EmbeddedResource Include="Forms\FrmZaprimiMaterijal.resx">
       <DependentUpon>FrmZaprimiMaterijal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXML.resx">
+      <DependentUpon>FrmXML.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,5 +294,28 @@
   <ItemGroup>
     <None Include="Resources\ZMG.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{9493449f-748d-401d-bc03-898405ce2019}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{DF1307F3-7420-45A3-9C7D-50FE8172602B}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
+      <Project>{969baf40-7473-43b9-b39d-c0371c085d3f}</Project>
+      <Name>EntitiesLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

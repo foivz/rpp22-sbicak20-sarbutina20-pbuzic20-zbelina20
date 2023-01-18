@@ -177,6 +177,7 @@
             this.btnSpremi.TabIndex = 15;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // btnNatrag
             // 
@@ -186,6 +187,7 @@
             this.btnNatrag.TabIndex = 16;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // FrmDodajKlijenta
             // 
@@ -211,6 +213,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmDodajKlijenta";
             this.Text = "Dodaj klijenta";
+            this.Load += new System.EventHandler(this.FrmDodajKlijenta_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

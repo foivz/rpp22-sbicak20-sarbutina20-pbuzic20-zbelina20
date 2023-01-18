@@ -67,6 +67,7 @@
             this.btnDodajKlijenta.TabIndex = 2;
             this.btnDodajKlijenta.Text = "Dodaj klijenta";
             this.btnDodajKlijenta.UseVisualStyleBackColor = true;
+            this.btnDodajKlijenta.Click += new System.EventHandler(this.btnDodajKlijenta_Click);
             // 
             // btnIzbrisiKlijenta
             // 
@@ -76,6 +77,7 @@
             this.btnIzbrisiKlijenta.TabIndex = 3;
             this.btnIzbrisiKlijenta.Text = "Izbriši klijenta";
             this.btnIzbrisiKlijenta.UseVisualStyleBackColor = true;
+            this.btnIzbrisiKlijenta.Click += new System.EventHandler(this.btnIzbrisiKlijenta_Click);
             // 
             // btnUrediKlijenta
             // 
@@ -85,6 +87,7 @@
             this.btnUrediKlijenta.TabIndex = 4;
             this.btnUrediKlijenta.Text = "Uredi klijenta";
             this.btnUrediKlijenta.UseVisualStyleBackColor = true;
+            this.btnUrediKlijenta.Click += new System.EventHandler(this.btnUrediKlijenta_Click);
             // 
             // btnDetaljiKlijenta
             // 
@@ -94,15 +97,17 @@
             this.btnDetaljiKlijenta.TabIndex = 5;
             this.btnDetaljiKlijenta.Text = "Detalji klijenta";
             this.btnDetaljiKlijenta.UseVisualStyleBackColor = true;
+            this.btnDetaljiKlijenta.Click += new System.EventHandler(this.btnDetaljiKlijenta_Click);
             // 
             // btnUveziKlijenta
             // 
             this.btnUveziKlijenta.Location = new System.Drawing.Point(642, 293);
             this.btnUveziKlijenta.Name = "btnUveziKlijenta";
-            this.btnUveziKlijenta.Size = new System.Drawing.Size(108, 41);
+            this.btnUveziKlijenta.Size = new System.Drawing.Size(108, 50);
             this.btnUveziKlijenta.TabIndex = 6;
             this.btnUveziKlijenta.Text = "Uvezi klijenta (XML)";
             this.btnUveziKlijenta.UseVisualStyleBackColor = true;
+            this.btnUveziKlijenta.Click += new System.EventHandler(this.btnUveziKlijenta_Click);
             // 
             // btnNatrag
             // 
@@ -112,6 +117,7 @@
             this.btnNatrag.TabIndex = 7;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // FrmPregledKlijenata
             // 
@@ -128,6 +134,7 @@
             this.Controls.Add(this.dgvKlijenti);
             this.Name = "FrmPregledKlijenata";
             this.Text = "Pregled klijenata";
+            this.Load += new System.EventHandler(this.FrmPregledKlijenata_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijenti)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

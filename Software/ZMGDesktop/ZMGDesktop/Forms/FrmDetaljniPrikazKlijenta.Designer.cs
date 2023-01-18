@@ -33,7 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvRacuni = new System.Windows.Forms.DataGridView();
             this.btnNatrag = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblImeiPrezime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadniNalozi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacuni)).BeginInit();
             this.SuspendLayout();
@@ -86,23 +86,24 @@
             this.btnNatrag.TabIndex = 4;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
-            // label3
+            // lblImeiPrezime
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(307, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(131, 25);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Ime Prezime";
+            this.lblImeiPrezime.AutoSize = true;
+            this.lblImeiPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblImeiPrezime.Location = new System.Drawing.Point(307, 22);
+            this.lblImeiPrezime.Name = "lblImeiPrezime";
+            this.lblImeiPrezime.Size = new System.Drawing.Size(131, 25);
+            this.lblImeiPrezime.TabIndex = 5;
+            this.lblImeiPrezime.Text = "Ime Prezime";
             // 
             // FrmDetaljniPrikazKlijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 532);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(798, 532);
+            this.Controls.Add(this.lblImeiPrezime);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvRacuni);
@@ -110,6 +111,7 @@
             this.Controls.Add(this.dgvRadniNalozi);
             this.Name = "FrmDetaljniPrikazKlijenta";
             this.Text = "FrmDetaljniPrikazKlijenta";
+            this.Load += new System.EventHandler(this.FrmDetaljniPrikazKlijenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadniNalozi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacuni)).EndInit();
             this.ResumeLayout(false);
@@ -124,6 +126,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvRacuni;
         private System.Windows.Forms.Button btnNatrag;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblImeiPrezime;
     }
 }
