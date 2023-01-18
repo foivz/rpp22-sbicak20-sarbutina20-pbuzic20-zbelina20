@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    internal class UslugaRepository : Repository<Usluga>
+    public class UslugaRepository : Repository<Usluga>
     {
         public UslugaRepository() : base(new Northwind())
         {
@@ -18,6 +18,12 @@ namespace DataAccessLayer.Repositories
             throw new NotImplementedException();
         }
 
+        public override IQueryable<Usluga> GetAll()
+        {
+            var query = from p in Entities.Include("Materijal").Include("StavkaRacun")
+                        select p;
+            return query;
+        }
 
 
 

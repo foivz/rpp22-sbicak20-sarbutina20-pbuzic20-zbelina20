@@ -18,5 +18,19 @@ namespace BusinessLogicLayer.Services
                 return materijali;
             }
         }
+
+        public bool obrisiMaterijal(Materijal materijal)
+        {
+            bool uspjeh = false;
+
+                using (var repo = new MaterijalRepository())
+                {
+                    int redovi = repo.Remove(materijal);
+                    uspjeh = redovi > 0;
+                }
+            
+
+            return uspjeh;
+        }
     }
 }

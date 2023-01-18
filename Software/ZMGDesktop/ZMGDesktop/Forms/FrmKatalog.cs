@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace ZMGDesktop
 {
     public partial class FrmKatalog : Form
     {
-        MaterijalServices servis = new MaterijalServices();
+        UslugaServices uslugaServis = new UslugaServices();
+        MaterijalServices matServis = new MaterijalServices();
         public FrmKatalog()
         {
             InitializeComponent();
@@ -27,7 +29,18 @@ namespace ZMGDesktop
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
+            var odabraniMaterijal = dgvMaterijali.CurrentRow.DataBoundItem as Materijal;
+            if(odabraniMaterijal != null)
+            {
+                bool uspjeh = matServis.obrisiMaterijal(odabraniMaterijal);
 
+                if (uspjeh == false)
+                {
+                    MessageBox.Show("Aplikacije nije uspjela obrisati materijal");
+                }
+                
+                PrikaziMaterijale();
+            }
         }
 
         private void btnZaprimi_Click(object sender, EventArgs e)
@@ -46,11 +59,18 @@ namespace ZMGDesktop
         private void FrmKatalog_Load(object sender, EventArgs e)
         {
             PrikaziMaterijale();
+            PrikaziUsluge();
+        }
+
+        private void PrikaziUsluge()
+        {
+            var usluge = uslugaServis.DohvatiUsluge();
+            dgvUsluge.DataSource = usluge;
         }
 
         private void PrikaziMaterijale()
         {
-            var materijali = servis.DohvatiMaterijale();
+            var materijali = matServis.DohvatiMaterijale();
 
             dgvMaterijali.DataSource = materijali;
             dgvMaterijali.Columns["Primka_ID"].Visible = false;

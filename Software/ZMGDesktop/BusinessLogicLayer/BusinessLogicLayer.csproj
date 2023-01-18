@@ -47,6 +47,7 @@
     <Compile Include="Services\RacunService.cs" />
     <Compile Include="Services\RadnikServices.cs" />
     <Compile Include="Services\RadniNalogService.cs" />
+    <Compile Include="Services\UslugaServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
