@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace ZMGDesktop
 {
     public partial class FrmKatalog : Form
     {
+        MaterijalServices servis = new MaterijalServices();
         public FrmKatalog()
         {
             InitializeComponent();
@@ -39,6 +41,22 @@ namespace ZMGDesktop
             FrmLogin login = new FrmLogin();
             login.Show();
             this.Close();
+        }
+
+        private void FrmKatalog_Load(object sender, EventArgs e)
+        {
+            PrikaziMaterijale();
+        }
+
+        private void PrikaziMaterijale()
+        {
+            var materijali = servis.DohvatiMaterijale();
+
+            dgvMaterijali.DataSource = materijali;
+            dgvMaterijali.Columns["Primka_ID"].Visible = false;
+            dgvMaterijali.Columns["Usluga_ID"].Visible = false;
+            dgvMaterijali.Columns["Primka"].Visible = false;
+            dgvMaterijali.Columns["Usluga"].Visible = false;
         }
     }
 }

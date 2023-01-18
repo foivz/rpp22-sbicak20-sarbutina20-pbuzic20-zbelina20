@@ -123,6 +123,7 @@
             this.Controls.Add(this.dgvMaterijali);
             this.Name = "FrmKatalog";
             this.Text = "FrmKatalog";
+            this.Load += new System.EventHandler(this.FrmKatalog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterijali)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsluge)).EndInit();
             this.ResumeLayout(false);

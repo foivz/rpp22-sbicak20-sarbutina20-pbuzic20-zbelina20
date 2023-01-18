@@ -63,6 +63,7 @@
     <Compile Include="Repositories\RadnikRepository.cs" />
     <Compile Include="Repositories\RadniNalogRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\UslugaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

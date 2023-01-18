@@ -54,6 +54,7 @@
             this.dgvPopisRadnihNaloga.Name = "dgvPopisRadnihNaloga";
             this.dgvPopisRadnihNaloga.Size = new System.Drawing.Size(622, 338);
             this.dgvPopisRadnihNaloga.TabIndex = 1;
+            this.dgvPopisRadnihNaloga.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPopisRadnihNaloga_CellContentClick);
             // 
             // btnNatrag
             // 
@@ -64,6 +65,7 @@
             this.btnNatrag.TabIndex = 8;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // btnObrisi
             // 
@@ -94,6 +96,7 @@
             this.btnNoviRadniNalog.TabIndex = 11;
             this.btnNoviRadniNalog.Text = "Novi radni nalog";
             this.btnNoviRadniNalog.UseVisualStyleBackColor = true;
+            this.btnNoviRadniNalog.Click += new System.EventHandler(this.btnNoviRadniNalog_Click);
             // 
             // FrmPopisRadnihNaloga
             // 
@@ -108,6 +111,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmPopisRadnihNaloga";
             this.Text = "Radni nalozi";
+            this.Load += new System.EventHandler(this.FrmPopisRadnihNaloga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisRadnihNaloga)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

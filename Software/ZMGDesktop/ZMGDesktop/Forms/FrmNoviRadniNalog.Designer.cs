@@ -31,22 +31,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txt6 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt2 = new System.Windows.Forms.TextBox();
+            this.txtQRKod = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt1 = new System.Windows.Forms.TextBox();
+            this.txtOpis = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.txtKolicina = new System.Windows.Forms.TextBox();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnPodnesi = new System.Windows.Forms.Button();
+            this.dtpDatumStvaranja = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,20 +63,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txt6);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txt5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txt4);
+            this.groupBox1.Controls.Add(this.dtpDatumStvaranja);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txt3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txt2);
+            this.groupBox1.Controls.Add(this.txtQRKod);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt1);
+            this.groupBox1.Controls.Add(this.txtOpis);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txt);
+            this.groupBox1.Controls.Add(this.txtKolicina);
             this.groupBox1.Location = new System.Drawing.Point(13, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(775, 357);
@@ -90,117 +78,62 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacije";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(267, 295);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 13);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Zahtjev:";
-            // 
-            // txt6
-            // 
-            this.txt6.Location = new System.Drawing.Point(270, 311);
-            this.txt6.Name = "txt6";
-            this.txt6.Size = new System.Drawing.Size(168, 20);
-            this.txt6.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(267, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Zahtjev:";
-            // 
-            // txt5
-            // 
-            this.txt5.Location = new System.Drawing.Point(270, 264);
-            this.txt5.Name = "txt5";
-            this.txt5.Size = new System.Drawing.Size(168, 20);
-            this.txt5.TabIndex = 10;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(267, 203);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Zahtjev:";
-            // 
-            // txt4
-            // 
-            this.txt4.Location = new System.Drawing.Point(270, 219);
-            this.txt4.Name = "txt4";
-            this.txt4.Size = new System.Drawing.Size(168, 20);
-            this.txt4.TabIndex = 8;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(267, 156);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.Size = new System.Drawing.Size(87, 13);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Zahtjev:";
-            // 
-            // txt3
-            // 
-            this.txt3.Location = new System.Drawing.Point(270, 172);
-            this.txt3.Name = "txt3";
-            this.txt3.Size = new System.Drawing.Size(168, 20);
-            this.txt3.TabIndex = 6;
+            this.label7.Text = "Datum stvaranja:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(267, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Zahtjev:";
+            this.label4.Text = "QR Kod:";
             // 
-            // txt2
+            // txtQRKod
             // 
-            this.txt2.Location = new System.Drawing.Point(270, 124);
-            this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(168, 20);
-            this.txt2.TabIndex = 4;
+            this.txtQRKod.Location = new System.Drawing.Point(270, 124);
+            this.txtQRKod.Name = "txtQRKod";
+            this.txtQRKod.Size = new System.Drawing.Size(168, 20);
+            this.txtQRKod.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(267, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Zahtjev:";
+            this.label3.Text = "Opis:";
             // 
-            // txt1
+            // txtOpis
             // 
-            this.txt1.Location = new System.Drawing.Point(270, 79);
-            this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(168, 20);
-            this.txt1.TabIndex = 2;
+            this.txtOpis.Location = new System.Drawing.Point(270, 79);
+            this.txtOpis.Name = "txtOpis";
+            this.txtOpis.Size = new System.Drawing.Size(168, 20);
+            this.txtOpis.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(267, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Zahtjev:";
+            this.label2.Text = "Količina:";
             // 
-            // txt
+            // txtKolicina
             // 
-            this.txt.Location = new System.Drawing.Point(270, 32);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(168, 20);
-            this.txt.TabIndex = 0;
+            this.txtKolicina.Location = new System.Drawing.Point(270, 32);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(168, 20);
+            this.txtKolicina.TabIndex = 0;
             // 
             // btnOdustani
             // 
@@ -211,6 +144,7 @@
             this.btnOdustani.TabIndex = 9;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
             // 
             // btnPodnesi
             // 
@@ -221,6 +155,14 @@
             this.btnPodnesi.TabIndex = 10;
             this.btnPodnesi.Text = "Podnesi";
             this.btnPodnesi.UseVisualStyleBackColor = true;
+            this.btnPodnesi.Click += new System.EventHandler(this.btnPodnesi_Click);
+            // 
+            // dtpDatumStvaranja
+            // 
+            this.dtpDatumStvaranja.Location = new System.Drawing.Point(270, 172);
+            this.dtpDatumStvaranja.Name = "dtpDatumStvaranja";
+            this.dtpDatumStvaranja.Size = new System.Drawing.Size(200, 20);
+            this.dtpDatumStvaranja.TabIndex = 8;
             // 
             // FrmNoviRadniNalog
             // 
@@ -248,19 +190,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnOdustani;
         private System.Windows.Forms.Button btnPodnesi;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt2;
+        private System.Windows.Forms.TextBox txtQRKod;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtKolicina;
+        private System.Windows.Forms.DateTimePicker dtpDatumStvaranja;
     }
 }

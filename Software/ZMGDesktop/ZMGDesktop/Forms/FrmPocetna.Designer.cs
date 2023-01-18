@@ -72,11 +72,13 @@
             this.btnStanjeSkladista.TabIndex = 15;
             this.btnStanjeSkladista.Text = "Stanje skladišta";
             this.btnStanjeSkladista.UseVisualStyleBackColor = true;
+            this.btnStanjeSkladista.Click += new System.EventHandler(this.btnStanjeSkladista_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ZMGDesktop.Properties.Resources.ZMG;
-            this.pictureBox1.Location = new System.Drawing.Point(238, 97);
+            this.pictureBox1.Location = new System.Drawing.Point(237, 97);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(239, 214);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -104,6 +106,7 @@
             this.btnRadniNalozi.TabIndex = 18;
             this.btnRadniNalozi.Text = "Radni nalozi";
             this.btnRadniNalozi.UseVisualStyleBackColor = true;
+            this.btnRadniNalozi.Click += new System.EventHandler(this.btnRadniNalozi_Click);
             // 
             // btnIzvjestaji
             // 
@@ -139,6 +142,7 @@
             this.Controls.Add(this.btnStanjeSkladista);
             this.Controls.Add(this.btnRacuni);
             this.Controls.Add(this.btnKlijenti);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPocetna";
             this.Text = "Glavni izbornik";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
