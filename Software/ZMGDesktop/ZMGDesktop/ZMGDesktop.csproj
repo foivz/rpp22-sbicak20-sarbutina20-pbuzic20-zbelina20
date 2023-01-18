@@ -103,7 +103,29 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Forms\FrmDodajMaterijal.cs">
+=======
+    <Compile Include="FrmDodajStavke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajStavke.Designer.cs">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIzdajNoviRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIzdajNoviRacun.Designer.cs">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPregledRacunaPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPregledRacunaPDF.Designer.cs">
+      <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRacuni.cs">
+>>>>>>> FormeZaRacune
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmDodajMaterijal.Designer.cs">
@@ -213,6 +235,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="Forms\FrmDodajMaterijal.resx">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +249,24 @@
       <DependentUpon>FrmPrimka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRacuni.resx">
+=======
+    <Compile Include="FrmDetaljniPregledRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetaljniPregledRacun.Designer.cs">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmDodajStavke.resx">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIzdajNoviRacun.resx">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPregledRacunaPDF.resx">
+      <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRacuni.resx">
+>>>>>>> FormeZaRacune
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.resx">
@@ -277,6 +318,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FrmDetaljniPregledRacun.resx">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
