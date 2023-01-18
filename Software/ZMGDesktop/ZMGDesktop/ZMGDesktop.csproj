@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -103,9 +103,9 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Forms\FrmDodajMaterijal.cs">
-=======
+    <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmDodajStavke.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,7 +125,6 @@
       <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRacuni.cs">
->>>>>>> FormeZaRacune
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmDodajMaterijal.Designer.cs">
@@ -235,7 +234,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <EmbeddedResource Include="Forms\FrmDodajMaterijal.resx">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,8 +246,11 @@
     <EmbeddedResource Include="Forms\FrmPrimka.resx">
       <DependentUpon>FrmPrimka.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="Forms\FrmRacuni.resx">
-=======
+      <DependentUpon>FrmRacuni.cs</DependentUpon>
+    </EmbeddedResource>
+
     <Compile Include="FrmDetaljniPregledRacun.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,7 +267,6 @@
       <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRacuni.resx">
->>>>>>> FormeZaRacune
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.resx">
