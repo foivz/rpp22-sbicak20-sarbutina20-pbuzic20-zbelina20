@@ -130,7 +130,7 @@ namespace DataAccessLayer
                 .IsUnicode(false);
 
             modelBuilder.Entity<Primka>()
-                .Property(e => e.Naziv)
+                .Property(e => e.Naziv_Materijal)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Racun>()
