@@ -22,5 +22,11 @@ namespace ZMGDesktop
             FrmPregledKlijenata forma = new FrmPregledKlijenata();
             forma.ShowDialog();
         }
+
+        private void btnRadniNalozi_Click(object sender, EventArgs e)
+        {
+            FrmPopisRadnihNaloga frmPopisRadnihNaloga = new FrmPopisRadnihNaloga();
+            frmPopisRadnihNaloga.ShowDialog();
+        }
     }
 }

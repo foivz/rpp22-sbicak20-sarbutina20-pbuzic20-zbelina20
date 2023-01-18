@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,37 @@ namespace ZMGDesktop
         public FrmPopisRadnihNaloga()
         {
             InitializeComponent();
+        }
+
+        RadniNalogService servis = new RadniNalogService();
+
+        private void btnNoviRadniNalog_Click(object sender, EventArgs e)
+        {
+            FrmNoviRadniNalog frmNoviRadniNalog = new FrmNoviRadniNalog();
+            frmNoviRadniNalog.ShowDialog();
+            UcitajRadneNaloge();
+        }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void dgvPopisRadnihNaloga_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmPopisRadnihNaloga_Load(object sender, EventArgs e)
+        {
+            UcitajRadneNaloge();
+        }
+
+        private void UcitajRadneNaloge()
+        {
+            var popisRadnihNaloga = servis.DohvatiRadneNaloge();
+            dgvPopisRadnihNaloga.DataSource = popisRadnihNaloga;
+            dgvPopisRadnihNaloga.Columns[9].Visible = false;
         }
     }
 }

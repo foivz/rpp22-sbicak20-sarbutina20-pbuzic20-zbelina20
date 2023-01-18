@@ -10,13 +10,29 @@ namespace BusinessLogicLayer.Services
 {
     public class RadniNalogService
     {
-
         public List<RadniNalog> DohvatiRadneNalogeZaKlijenta(Klijent klijent)
         {
             using(var repo = new RadniNalogRepository())
             {
                 List<RadniNalog> radniNalozi = repo.DohvatiRadneNalogeZaKlijenta(klijent).ToList();
                 return radniNalozi;
+            }
+        }
+
+        public List<RadniNalog> DohvatiRadneNaloge()
+        {
+            using(var repo = new RadniNalogRepository())
+            {
+                List<RadniNalog> radniNalozi = repo.DohvatiSveRadneNaloge().ToList();
+                return radniNalozi;
+            }
+        }
+
+        public void DodajRadniNalog(RadniNalog radniNalog)
+        {
+            using (var repo = new RadniNalogRepository())
+            {
+                repo.Add(radniNalog);
             }
         }
     }

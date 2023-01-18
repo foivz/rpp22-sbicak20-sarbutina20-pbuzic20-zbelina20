@@ -46,11 +46,13 @@
     <Compile Include="Entities\IzvjestajKlijenata.cs" />
     <Compile Include="Entities\IzvjestajRadnihNaloga.cs" />
     <Compile Include="Entities\Klijent.cs" />
+    <Compile Include="Entities\Klijent.Ext.cs" />
     <Compile Include="Entities\Materijal.cs" />
     <Compile Include="Entities\Poslodavac.cs" />
     <Compile Include="Entities\Primka.cs" />
     <Compile Include="Entities\Racun.cs" />
     <Compile Include="Entities\Radnik.cs" />
+    <Compile Include="Entities\Radnik.Ext.cs" />
     <Compile Include="Entities\RadniNalog.cs" />
     <Compile Include="Entities\Roba.cs" />
     <Compile Include="Entities\StavkaRacun.cs" />
