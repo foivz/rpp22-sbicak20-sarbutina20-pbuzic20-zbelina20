@@ -18,12 +18,12 @@ namespace EntitiesLayer.Entities
         public double CijenaMaterijala { get; set; }
 
         [Required]
-        [StringLength(20)]
-        public string JedinicaMjere { get; set; }
+        [MaxLength(10)]
+        public byte[] JedinicaMjere { get; set; }
 
         [Required]
-        [StringLength(100)]
-        public string Opis { get; set; }
+        [MaxLength(100)]
+        public byte[] Opis { get; set; }
 
         public int Kolicina { get; set; }
 

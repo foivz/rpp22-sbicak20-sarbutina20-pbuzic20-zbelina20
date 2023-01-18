@@ -1,5 +1,4 @@
-﻿using EntitiesLayer.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,15 +12,8 @@ namespace ZMGDesktop
 {
     public partial class FrmPocetna : Form
     {
-        Radnik radnik;
         public FrmPocetna()
         {
-            InitializeComponent();
-        }
-
-        public FrmPocetna(Radnik provjereniRadnik)
-        {
-            radnik = provjereniRadnik;
             InitializeComponent();
         }
 
@@ -35,12 +27,6 @@ namespace ZMGDesktop
         {
             FrmPopisRadnihNaloga frmPopisRadnihNaloga = new FrmPopisRadnihNaloga();
             frmPopisRadnihNaloga.ShowDialog();
-        }
-
-        private void btnStanjeSkladista_Click(object sender, EventArgs e)
-        {
-            FrmKatalog katalog = new FrmKatalog();
-            katalog.ShowDialog();
         }
     }
 }
