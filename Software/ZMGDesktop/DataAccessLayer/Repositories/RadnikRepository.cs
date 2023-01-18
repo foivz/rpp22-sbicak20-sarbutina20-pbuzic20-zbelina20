@@ -7,13 +7,20 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    internal class RadnikRepository : Repository<Radnik>
+    public class RadnikRepository : Repository<Radnik>
     {
         public RadnikRepository() : base(new Northwind())
         {
 
         }
 
+        public Radnik DohvatiRadnika(Radnik entity)
+        {
+            var query = (from s in Entities
+                        where (entity.Korime == s.Korime && entity.Lozinka == s.Lozinka) 
+                        select s).FirstOrDefault();
+            return query;
+        }
 
         public override int Update(Radnik entity, bool saveChanges = true)
         {
