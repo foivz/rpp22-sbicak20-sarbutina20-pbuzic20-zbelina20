@@ -67,26 +67,26 @@
             this.txtP_TELFAX = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtK_TEL = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtK_Email = new System.Windows.Forms.TextBox();
+            this.labelKIme = new System.Windows.Forms.Label();
+            this.txtK_Mjesto = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lblBrojRacuna = new System.Windows.Forms.Label();
-            this.txtK_Mjesto = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtK_Email = new System.Windows.Forms.TextBox();
-            this.labelKIme = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.txtDatumIzdavanja = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtVrijeme = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtFakturirao = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.txtK_TEL = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -441,6 +441,70 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Klijent";
             // 
+            // txtK_TEL
+            // 
+            this.txtK_TEL.Location = new System.Drawing.Point(60, 183);
+            this.txtK_TEL.Name = "txtK_TEL";
+            this.txtK_TEL.Size = new System.Drawing.Size(179, 20);
+            this.txtK_TEL.TabIndex = 55;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(22, 186);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(30, 13);
+            this.label22.TabIndex = 54;
+            this.label22.Text = "TEL:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(60, 157);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(179, 20);
+            this.textBox3.TabIndex = 31;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(19, 160);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 13);
+            this.label23.TabIndex = 30;
+            this.label23.Text = "IBAN:";
+            // 
+            // txtK_Email
+            // 
+            this.txtK_Email.Location = new System.Drawing.Point(60, 131);
+            this.txtK_Email.Name = "txtK_Email";
+            this.txtK_Email.Size = new System.Drawing.Size(179, 20);
+            this.txtK_Email.TabIndex = 29;
+            // 
+            // labelKIme
+            // 
+            this.labelKIme.AutoSize = true;
+            this.labelKIme.Location = new System.Drawing.Point(19, 134);
+            this.labelKIme.Name = "labelKIme";
+            this.labelKIme.Size = new System.Drawing.Size(35, 13);
+            this.labelKIme.TabIndex = 28;
+            this.labelKIme.Text = "Email:";
+            // 
+            // txtK_Mjesto
+            // 
+            this.txtK_Mjesto.Location = new System.Drawing.Point(60, 80);
+            this.txtK_Mjesto.Name = "txtK_Mjesto";
+            this.txtK_Mjesto.Size = new System.Drawing.Size(179, 20);
+            this.txtK_Mjesto.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 83);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Mjesto:";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -486,6 +550,7 @@
             this.label21.Size = new System.Drawing.Size(181, 37);
             this.label21.TabIndex = 48;
             this.label21.Text = "Račun broj:";
+            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // lblBrojRacuna
             // 
@@ -496,54 +561,6 @@
             this.lblBrojRacuna.Size = new System.Drawing.Size(62, 37);
             this.lblBrojRacuna.TabIndex = 49;
             this.lblBrojRacuna.Text = "xxx";
-            // 
-            // txtK_Mjesto
-            // 
-            this.txtK_Mjesto.Location = new System.Drawing.Point(60, 80);
-            this.txtK_Mjesto.Name = "txtK_Mjesto";
-            this.txtK_Mjesto.Size = new System.Drawing.Size(179, 20);
-            this.txtK_Mjesto.TabIndex = 27;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 83);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Mjesto:";
-            // 
-            // txtK_Email
-            // 
-            this.txtK_Email.Location = new System.Drawing.Point(60, 131);
-            this.txtK_Email.Name = "txtK_Email";
-            this.txtK_Email.Size = new System.Drawing.Size(179, 20);
-            this.txtK_Email.TabIndex = 29;
-            // 
-            // labelKIme
-            // 
-            this.labelKIme.AutoSize = true;
-            this.labelKIme.Location = new System.Drawing.Point(19, 134);
-            this.labelKIme.Name = "labelKIme";
-            this.labelKIme.Size = new System.Drawing.Size(35, 13);
-            this.labelKIme.TabIndex = 28;
-            this.labelKIme.Text = "Email:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(60, 157);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 20);
-            this.textBox3.TabIndex = 31;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(19, 160);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(35, 13);
-            this.label23.TabIndex = 30;
-            this.label23.Text = "IBAN:";
             // 
             // txtDatumIzdavanja
             // 
@@ -592,22 +609,6 @@
             this.label26.Size = new System.Drawing.Size(57, 13);
             this.label26.TabIndex = 52;
             this.label26.Text = "Fakturirao:";
-            // 
-            // txtK_TEL
-            // 
-            this.txtK_TEL.Location = new System.Drawing.Point(60, 183);
-            this.txtK_TEL.Name = "txtK_TEL";
-            this.txtK_TEL.Size = new System.Drawing.Size(179, 20);
-            this.txtK_TEL.TabIndex = 55;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(22, 186);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(30, 13);
-            this.label22.TabIndex = 54;
-            this.label22.Text = "TEL:";
             // 
             // FrmDetaljniPregledRacun
             // 
