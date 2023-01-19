@@ -42,13 +42,13 @@ namespace ZMGDesktop
         private void btnDodajMaterijal_Click(object sender, EventArgs e)
         {
             
-            var naziv = txtNaziv.Text;
-            var kolicina = Convert.ToInt32(txtKolicina.Text);
-            var odabranaJedinica = cmbMjernaJedinica.SelectedItem.ToString();
-            var cijena = Convert.ToDouble(txtCijena.Text);
-            var opis = txtOpis.Text;
-            //var opasno = Convert.ToByte(txtOpis);
-            var qr_kod = GenerirajRandomString();
+            string naziv = txtNaziv.Text;
+            int kolicina = Convert.ToInt32(txtKolicina.Text);
+            string odabranaJedinica = cmbMjernaJedinica.SelectedItem.ToString();
+            float cijena = float.Parse(txtCijena.Text);
+            string opis = txtOpis.Text;
+            int opasno = Convert.ToInt16(txtOpasno.Text);
+            string qr_kod = GenerirajRandomString();
             Materijal noviMaterijal = new Materijal
             {
                 Naziv = naziv,
@@ -56,7 +56,7 @@ namespace ZMGDesktop
                 JedinicaMjere = odabranaJedinica,
                 CijenaMaterijala = cijena,
                 Opis = opis,
-                OpasnoPoZivot = 1,
+                OpasnoPoZivot = opasno,
                 QR_kod = qr_kod
             };
             matServis.dodajMaterijal(noviMaterijal);

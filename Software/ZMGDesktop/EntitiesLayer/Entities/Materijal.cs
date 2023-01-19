@@ -27,7 +27,7 @@ namespace EntitiesLayer.Entities
 
         public int Kolicina { get; set; }
 
-        public byte? OpasnoPoZivot { get; set; }
+        public int? OpasnoPoZivot { get; set; }
 
         [StringLength(150)]
         public string QR_kod { get; set; }

@@ -17,7 +17,7 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Materijal entity, bool saveChanges = true)
         {
-            //var primka = Context.Primka.SingleOrDefault(k => k.Primka_ID == entity.Primka_ID);
+            var primka = Context.Primka.SingleOrDefault(k => k.Primka_ID == entity.Primka_ID);
             var usluga = Context.Usluga.SingleOrDefault(k => k.Usluga_ID == entity.Usluga_ID);
 
             var postoji = Entities.SingleOrDefault(k => k.Naziv == entity.Naziv);
@@ -26,14 +26,15 @@ namespace DataAccessLayer.Repositories
             {
                 var materijal = new Materijal
                 {
-                    Materijal_ID = entity.Materijal_ID,
                     Naziv = entity.Naziv,
                     CijenaMaterijala = entity.CijenaMaterijala,
                     JedinicaMjere = entity.JedinicaMjere,
                     Opis = entity.Opis,
                     OpasnoPoZivot = entity.OpasnoPoZivot,
                     Kolicina = entity.Kolicina,
-                    QR_kod = entity.QR_kod
+                    QR_kod = entity.QR_kod,
+                    /*Usluga = usluga,
+                    Primka = primka*/
                 };
                 Entities.Add(materijal);
                 if (saveChanges)

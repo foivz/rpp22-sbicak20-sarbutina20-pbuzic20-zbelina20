@@ -154,18 +154,9 @@
             this.picQR.TabIndex = 11;
             this.picQR.TabStop = false;
             // 
-            // btnGeneriraj
-            // 
-            
-            // 
-            // btnSpremi
-            // 
-            
-            // 
             // btnDodajMaterijal
             // 
             this.btnDodajMaterijal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDodajMaterijal.Enabled = false;
             this.btnDodajMaterijal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajMaterijal.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDodajMaterijal.Location = new System.Drawing.Point(247, 370);
