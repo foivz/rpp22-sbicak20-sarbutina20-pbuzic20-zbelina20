@@ -39,5 +39,6 @@ namespace EntitiesLayer.Entities
         public virtual Primka Primka { get; set; }
 
         public virtual Usluga Usluga { get; set; }
+
     }
 }

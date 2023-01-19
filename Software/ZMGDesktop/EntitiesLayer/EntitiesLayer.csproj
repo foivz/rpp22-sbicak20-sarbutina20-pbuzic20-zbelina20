@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Entities\Enumeracije.cs" />
     <Compile Include="Entities\IzvjestajKlijenata.cs" />
     <Compile Include="Entities\IzvjestajRadnihNaloga.cs" />
     <Compile Include="Entities\Klijent.cs" />

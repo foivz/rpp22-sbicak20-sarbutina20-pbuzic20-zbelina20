@@ -40,8 +40,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.picQR = new System.Windows.Forms.PictureBox();
-            this.btnGeneriraj = new System.Windows.Forms.Button();
-            this.btnSpremi = new System.Windows.Forms.Button();
             this.btnDodajMaterijal = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
@@ -149,51 +147,25 @@
             // 
             // picQR
             // 
-            this.picQR.Location = new System.Drawing.Point(590, 276);
+            this.picQR.Location = new System.Drawing.Point(494, 300);
             this.picQR.Name = "picQR";
             this.picQR.Size = new System.Drawing.Size(157, 125);
             this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picQR.TabIndex = 11;
             this.picQR.TabStop = false;
             // 
-            // btnGeneriraj
-            // 
-            this.btnGeneriraj.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGeneriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGeneriraj.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGeneriraj.Location = new System.Drawing.Point(387, 290);
-            this.btnGeneriraj.Name = "btnGeneriraj";
-            this.btnGeneriraj.Size = new System.Drawing.Size(169, 55);
-            this.btnGeneriraj.TabIndex = 12;
-            this.btnGeneriraj.Text = "Generiraj";
-            this.btnGeneriraj.UseVisualStyleBackColor = false;
-            this.btnGeneriraj.Click += new System.EventHandler(this.btnGeneriraj_Click);
-            // 
-            // btnSpremi
-            // 
-            this.btnSpremi.BackColor = System.Drawing.SystemColors.ControlText;
-            this.btnSpremi.Enabled = false;
-            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpremi.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSpremi.Location = new System.Drawing.Point(387, 370);
-            this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(169, 55);
-            this.btnSpremi.TabIndex = 13;
-            this.btnSpremi.Text = "Spremi lokalno";
-            this.btnSpremi.UseVisualStyleBackColor = false;
-            // 
             // btnDodajMaterijal
             // 
             this.btnDodajMaterijal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDodajMaterijal.Enabled = false;
             this.btnDodajMaterijal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDodajMaterijal.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDodajMaterijal.Location = new System.Drawing.Point(36, 290);
+            this.btnDodajMaterijal.Location = new System.Drawing.Point(247, 370);
             this.btnDodajMaterijal.Name = "btnDodajMaterijal";
             this.btnDodajMaterijal.Size = new System.Drawing.Size(169, 55);
             this.btnDodajMaterijal.TabIndex = 14;
             this.btnDodajMaterijal.Text = "Dodaj materijal";
             this.btnDodajMaterijal.UseVisualStyleBackColor = false;
+            this.btnDodajMaterijal.Click += new System.EventHandler(this.btnDodajMaterijal_Click);
             // 
             // btnNatrag
             // 
@@ -215,8 +187,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnDodajMaterijal);
-            this.Controls.Add(this.btnSpremi);
-            this.Controls.Add(this.btnGeneriraj);
             this.Controls.Add(this.picQR);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -231,6 +201,7 @@
             this.Controls.Add(this.txtNaziv);
             this.Name = "FrmDodajMaterijal";
             this.Text = "FrmDodaj";
+            this.Load += new System.EventHandler(this.FrmDodajMaterijal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -251,8 +222,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox picQR;
-        private System.Windows.Forms.Button btnGeneriraj;
-        private System.Windows.Forms.Button btnSpremi;
         private System.Windows.Forms.Button btnDodajMaterijal;
         private System.Windows.Forms.Button btnNatrag;
     }

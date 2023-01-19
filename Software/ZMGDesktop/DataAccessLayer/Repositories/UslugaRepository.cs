@@ -21,7 +21,7 @@ namespace DataAccessLayer.Repositories
         public override IQueryable<Usluga> GetAll()
         {
             var query = from p in Entities.Include("Materijal").Include("StavkaRacun")
-                        select p;
+                        select p; 
             return query;
         }
 

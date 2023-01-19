@@ -47,7 +47,7 @@
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Prijava";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.Login);
             // 
             // lblZMGDesktop
             // 

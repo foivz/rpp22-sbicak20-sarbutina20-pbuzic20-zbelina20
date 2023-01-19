@@ -10,11 +10,11 @@ namespace BusinessLogicLayer.Services
 {
     public class RadnikServices
     {
-        public Radnik ProvjeriRadnika(Radnik prosljRadnik)
+        public async Task<Radnik> ProvjeriRadnikaAsync(Radnik prosljRadnik)
         {
             using (var repo = new RadnikRepository())
             {
-                var radnik = repo.DohvatiRadnika(prosljRadnik);
+                var radnik = await repo.DohvatiRadnikaAsync(prosljRadnik);
                 return radnik;
             }
         }

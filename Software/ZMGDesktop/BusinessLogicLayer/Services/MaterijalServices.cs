@@ -32,5 +32,18 @@ namespace BusinessLogicLayer.Services
 
             return uspjeh;
         }
+
+        public bool dodajMaterijal(Materijal materijal)
+        {
+            bool uspjeh = false;
+            using (var repo = new MaterijalRepository())
+            {
+                int affectedRows = repo.Add(materijal);
+                uspjeh = affectedRows > 0;
+            }
+            return uspjeh;
+        }
+
+
     }
 }

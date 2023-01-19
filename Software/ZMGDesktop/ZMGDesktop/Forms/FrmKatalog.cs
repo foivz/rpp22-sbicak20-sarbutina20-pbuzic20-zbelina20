@@ -25,6 +25,7 @@ namespace ZMGDesktop
         {
             FrmDodajMaterijal dodaj = new FrmDodajMaterijal();
             dodaj.Show();
+            PrikaziMaterijale();
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
@@ -64,13 +65,13 @@ namespace ZMGDesktop
 
         private void PrikaziUsluge()
         {
-            var usluge = uslugaServis.DohvatiUsluge();
+            var usluge =  uslugaServis.DohvatiUsluge();
             dgvUsluge.DataSource = usluge;
         }
 
         private void PrikaziMaterijale()
         {
-            var materijali = matServis.DohvatiMaterijale();
+            var materijali =  matServis.DohvatiMaterijale();
 
             dgvMaterijali.DataSource = materijali;
             dgvMaterijali.Columns["Primka_ID"].Visible = false;
