@@ -156,29 +156,11 @@
             // 
             // btnGeneriraj
             // 
-            this.btnGeneriraj.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGeneriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnGeneriraj.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGeneriraj.Location = new System.Drawing.Point(387, 290);
-            this.btnGeneriraj.Name = "btnGeneriraj";
-            this.btnGeneriraj.Size = new System.Drawing.Size(169, 55);
-            this.btnGeneriraj.TabIndex = 12;
-            this.btnGeneriraj.Text = "Generiraj";
-            this.btnGeneriraj.UseVisualStyleBackColor = false;
-            this.btnGeneriraj.Click += new System.EventHandler(this.btnGeneriraj_Click);
+            
             // 
             // btnSpremi
             // 
-            this.btnSpremi.BackColor = System.Drawing.SystemColors.ControlText;
-            this.btnSpremi.Enabled = false;
-            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnSpremi.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSpremi.Location = new System.Drawing.Point(387, 370);
-            this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(169, 55);
-            this.btnSpremi.TabIndex = 13;
-            this.btnSpremi.Text = "Spremi lokalno";
-            this.btnSpremi.UseVisualStyleBackColor = false;
+            
             // 
             // btnDodajMaterijal
             // 
