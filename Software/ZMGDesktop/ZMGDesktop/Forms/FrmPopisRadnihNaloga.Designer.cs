@@ -97,6 +97,7 @@
             this.btnDetalji.TabIndex = 10;
             this.btnDetalji.Text = "Detalji";
             this.btnDetalji.UseVisualStyleBackColor = false;
+            this.btnDetalji.Click += new System.EventHandler(this.btnDetalji_Click);
             // 
             // btnNoviRadniNalog
             // 
