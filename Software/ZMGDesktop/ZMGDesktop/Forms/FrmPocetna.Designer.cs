@@ -41,37 +41,43 @@
             // 
             // btnKlijenti
             // 
+            this.btnKlijenti.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnKlijenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKlijenti.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnKlijenti.Location = new System.Drawing.Point(47, 101);
             this.btnKlijenti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKlijenti.Name = "btnKlijenti";
             this.btnKlijenti.Size = new System.Drawing.Size(149, 46);
             this.btnKlijenti.TabIndex = 13;
             this.btnKlijenti.Text = "Klijenti";
-            this.btnKlijenti.UseVisualStyleBackColor = true;
+            this.btnKlijenti.UseVisualStyleBackColor = false;
             this.btnKlijenti.Click += new System.EventHandler(this.btnKlijenti_Click);
             // 
             // btnRacuni
             // 
+            this.btnRacuni.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRacuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRacuni.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRacuni.Location = new System.Drawing.Point(47, 185);
             this.btnRacuni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRacuni.Name = "btnRacuni";
             this.btnRacuni.Size = new System.Drawing.Size(149, 46);
             this.btnRacuni.TabIndex = 14;
             this.btnRacuni.Text = "Računi";
-            this.btnRacuni.UseVisualStyleBackColor = true;
+            this.btnRacuni.UseVisualStyleBackColor = false;
             // 
             // btnStanjeSkladista
             // 
+            this.btnStanjeSkladista.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStanjeSkladista.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStanjeSkladista.ForeColor = System.Drawing.SystemColors.Control;
             this.btnStanjeSkladista.Location = new System.Drawing.Point(47, 265);
             this.btnStanjeSkladista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStanjeSkladista.Name = "btnStanjeSkladista";
             this.btnStanjeSkladista.Size = new System.Drawing.Size(149, 46);
             this.btnStanjeSkladista.TabIndex = 15;
             this.btnStanjeSkladista.Text = "Stanje skladišta";
-            this.btnStanjeSkladista.UseVisualStyleBackColor = true;
+            this.btnStanjeSkladista.UseVisualStyleBackColor = false;
             this.btnStanjeSkladista.Click += new System.EventHandler(this.btnStanjeSkladista_Click);
             // 
             // pictureBox1
@@ -87,37 +93,43 @@
             // 
             // btnPodrska
             // 
+            this.btnPodrska.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPodrska.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPodrska.ForeColor = System.Drawing.SystemColors.Control;
             this.btnPodrska.Location = new System.Drawing.Point(517, 265);
             this.btnPodrska.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPodrska.Name = "btnPodrska";
             this.btnPodrska.Size = new System.Drawing.Size(149, 46);
             this.btnPodrska.TabIndex = 19;
             this.btnPodrska.Text = "Podrška";
-            this.btnPodrska.UseVisualStyleBackColor = true;
+            this.btnPodrska.UseVisualStyleBackColor = false;
             // 
             // btnRadniNalozi
             // 
+            this.btnRadniNalozi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRadniNalozi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRadniNalozi.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRadniNalozi.Location = new System.Drawing.Point(517, 185);
             this.btnRadniNalozi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRadniNalozi.Name = "btnRadniNalozi";
             this.btnRadniNalozi.Size = new System.Drawing.Size(149, 46);
             this.btnRadniNalozi.TabIndex = 18;
             this.btnRadniNalozi.Text = "Radni nalozi";
-            this.btnRadniNalozi.UseVisualStyleBackColor = true;
+            this.btnRadniNalozi.UseVisualStyleBackColor = false;
             this.btnRadniNalozi.Click += new System.EventHandler(this.btnRadniNalozi_Click);
             // 
             // btnIzvjestaji
             // 
+            this.btnIzvjestaji.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzvjestaji.ForeColor = System.Drawing.SystemColors.Control;
             this.btnIzvjestaji.Location = new System.Drawing.Point(517, 101);
             this.btnIzvjestaji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIzvjestaji.Name = "btnIzvjestaji";
             this.btnIzvjestaji.Size = new System.Drawing.Size(149, 46);
             this.btnIzvjestaji.TabIndex = 17;
             this.btnIzvjestaji.Text = "Izvještaji";
-            this.btnIzvjestaji.UseVisualStyleBackColor = true;
+            this.btnIzvjestaji.UseVisualStyleBackColor = false;
             this.btnIzvjestaji.Click += new System.EventHandler(this.btnIzvjestaji_Click);
             // 
             // label1

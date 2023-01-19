@@ -171,22 +171,28 @@
             // 
             // btnSpremi
             // 
-            this.btnSpremi.Location = new System.Drawing.Point(64, 503);
+            this.btnSpremi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSpremi.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSpremi.Location = new System.Drawing.Point(72, 503);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(82, 37);
             this.btnSpremi.TabIndex = 15;
             this.btnSpremi.Text = "Spremi";
-            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.UseVisualStyleBackColor = false;
             this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
             // 
             // btnNatrag
             // 
-            this.btnNatrag.Location = new System.Drawing.Point(167, 503);
+            this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNatrag.Location = new System.Drawing.Point(175, 503);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(90, 37);
             this.btnNatrag.TabIndex = 16;
             this.btnNatrag.Text = "Natrag";
-            this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.UseVisualStyleBackColor = false;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // FrmDodajKlijenta

@@ -41,7 +41,7 @@
             // btnZatvori
             // 
             this.btnZatvori.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnZatvori.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZatvori.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnZatvori.ForeColor = System.Drawing.Color.White;
             this.btnZatvori.Location = new System.Drawing.Point(56, 359);
             this.btnZatvori.Name = "btnZatvori";

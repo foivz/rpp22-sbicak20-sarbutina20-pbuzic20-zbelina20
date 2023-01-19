@@ -80,12 +80,15 @@
             // 
             // btnNatrag
             // 
+            this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNatrag.ForeColor = System.Drawing.Color.OldLace;
             this.btnNatrag.Location = new System.Drawing.Point(680, 489);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(108, 35);
             this.btnNatrag.TabIndex = 4;
             this.btnNatrag.Text = "Natrag";
-            this.btnNatrag.UseVisualStyleBackColor = true;
+            this.btnNatrag.UseVisualStyleBackColor = false;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // lblImeiPrezime

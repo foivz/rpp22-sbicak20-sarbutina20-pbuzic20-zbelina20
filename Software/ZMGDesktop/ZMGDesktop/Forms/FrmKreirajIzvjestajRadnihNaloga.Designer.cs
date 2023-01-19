@@ -41,23 +41,29 @@
             // 
             // btnOdustani
             // 
+            this.btnOdustani.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdustani.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOdustani.Location = new System.Drawing.Point(901, 494);
             this.btnOdustani.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(149, 46);
             this.btnOdustani.TabIndex = 11;
             this.btnOdustani.Text = "Odustani";
-            this.btnOdustani.UseVisualStyleBackColor = true;
+            this.btnOdustani.UseVisualStyleBackColor = false;
             // 
             // btnSpremi
             // 
+            this.btnSpremi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSpremi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSpremi.Location = new System.Drawing.Point(747, 494);
             this.btnSpremi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(149, 46);
             this.btnSpremi.TabIndex = 12;
             this.btnSpremi.Text = "Spremi";
-            this.btnSpremi.UseVisualStyleBackColor = true;
+            this.btnSpremi.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -111,7 +117,7 @@
             this.Controls.Add(this.btnOdustani);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmKreirajIzvjestajRadnihNaloga";
             this.Text = "FrmKreirajIzvjestajRadnihNaloga";
             this.groupBox1.ResumeLayout(false);

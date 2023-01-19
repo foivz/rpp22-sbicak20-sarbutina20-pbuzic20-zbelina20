@@ -159,7 +159,7 @@
             // btnGeneriraj
             // 
             this.btnGeneriraj.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnGeneriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGeneriraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnGeneriraj.ForeColor = System.Drawing.SystemColors.Control;
             this.btnGeneriraj.Location = new System.Drawing.Point(387, 290);
             this.btnGeneriraj.Name = "btnGeneriraj";
@@ -173,7 +173,7 @@
             // 
             this.btnSpremi.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnSpremi.Enabled = false;
-            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSpremi.Location = new System.Drawing.Point(387, 370);
             this.btnSpremi.Name = "btnSpremi";
@@ -186,7 +186,7 @@
             // 
             this.btnDodajMaterijal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDodajMaterijal.Enabled = false;
-            this.btnDodajMaterijal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajMaterijal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajMaterijal.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDodajMaterijal.Location = new System.Drawing.Point(36, 290);
             this.btnDodajMaterijal.Name = "btnDodajMaterijal";
@@ -198,7 +198,7 @@
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.Control;
             this.btnNatrag.Location = new System.Drawing.Point(36, 370);
             this.btnNatrag.Name = "btnNatrag";

@@ -61,7 +61,7 @@
             // btnDodaj
             // 
             this.btnDodaj.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.ForeColor = System.Drawing.SystemColors.Control;
             this.btnDodaj.Location = new System.Drawing.Point(629, 34);
             this.btnDodaj.Name = "btnDodaj";
@@ -74,7 +74,7 @@
             // btnObrisi
             // 
             this.btnObrisi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObrisi.ForeColor = System.Drawing.SystemColors.Control;
             this.btnObrisi.Location = new System.Drawing.Point(629, 119);
             this.btnObrisi.Name = "btnObrisi";
@@ -87,7 +87,7 @@
             // btnZaprimi
             // 
             this.btnZaprimi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnZaprimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnZaprimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnZaprimi.ForeColor = System.Drawing.SystemColors.Control;
             this.btnZaprimi.Location = new System.Drawing.Point(629, 208);
             this.btnZaprimi.Name = "btnZaprimi";
@@ -100,7 +100,7 @@
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.Control;
             this.btnNatrag.Location = new System.Drawing.Point(643, 381);
             this.btnNatrag.Name = "btnNatrag";
