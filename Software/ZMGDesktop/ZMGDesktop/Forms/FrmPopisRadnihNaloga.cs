@@ -63,5 +63,13 @@ namespace ZMGDesktop
         {
             return dgvPopisRadnihNaloga.CurrentRow.DataBoundItem as RadniNalog;
         }
+
+        private void btnDetalji_Click(object sender, EventArgs e)
+        {
+            var odabraniRadniNalog = DohvatiRadniNalog();
+            FrmDetaljiRadnogNaloga frmDetaljiRadnogNaloga = new FrmDetaljiRadnogNaloga(odabraniRadniNalog, Radnik);
+            frmDetaljiRadnogNaloga.ShowDialog();
+            UcitajRadneNaloge();
+        }
     }
 }
