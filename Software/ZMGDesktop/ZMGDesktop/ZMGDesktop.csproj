@@ -36,8 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>ZMGDesktop.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
@@ -105,6 +104,24 @@
   <ItemGroup>
     <Compile Include="Forms\FrmDodajMaterijal.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajStavke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajStavke.Designer.cs">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIzdajNoviRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIzdajNoviRacun.Designer.cs">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPregledRacunaPDF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPregledRacunaPDF.Designer.cs">
+      <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmDodajMaterijal.Designer.cs">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
@@ -228,6 +245,21 @@
     <EmbeddedResource Include="Forms\FrmRacuni.resx">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
+    <Compile Include="FrmDetaljniPregledRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetaljniPregledRacun.Designer.cs">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmDodajStavke.resx">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIzdajNoviRacun.resx">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPregledRacunaPDF.resx">
+      <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.resx">
       <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +309,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="FrmDetaljniPregledRacun.resx">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
