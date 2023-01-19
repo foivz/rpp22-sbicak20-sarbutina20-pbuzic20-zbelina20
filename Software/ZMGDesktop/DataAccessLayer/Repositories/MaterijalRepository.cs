@@ -14,6 +14,7 @@ namespace DataAccessLayer.Repositories
 
         }
 
+
         public override int Add(Materijal entity, bool saveChanges = true)
         {
             //var primka = Context.Primka.SingleOrDefault(k => k.Primka_ID == entity.Primka_ID);
@@ -22,20 +23,19 @@ namespace DataAccessLayer.Repositories
             var postoji = Entities.SingleOrDefault(k => k.Naziv == entity.Naziv);
 
             if (postoji == null)
-            { 
-            var materijal = new Materijal
             {
-                Materijal_ID = entity.Materijal_ID,
-                Naziv= entity.Naziv,
-                CijenaMaterijala = entity.CijenaMaterijala,
-                JedinicaMjere = entity.JedinicaMjere,
-                Opis = entity.Opis,
-                OpasnoPoZivot = entity.OpasnoPoZivot,
-                Kolicina = entity.Kolicina,
-                QR_kod = entity.QR_kod,
-                Usluga = usluga
-            };
-            Entities.Add(materijal);
+                var materijal = new Materijal
+                {
+                    Materijal_ID = entity.Materijal_ID,
+                    Naziv = entity.Naziv,
+                    CijenaMaterijala = entity.CijenaMaterijala,
+                    JedinicaMjere = entity.JedinicaMjere,
+                    Opis = entity.Opis,
+                    OpasnoPoZivot = entity.OpasnoPoZivot,
+                    Kolicina = entity.Kolicina,
+                    QR_kod = entity.QR_kod
+                };
+                Entities.Add(materijal);
                 if (saveChanges)
                 {
                     return SaveChanges();
@@ -46,17 +46,15 @@ namespace DataAccessLayer.Repositories
                 }
             }
             else {
-                throw new Exception();
+                throw new Exception("Materijal već postoji");
             }
 
-            }
+        }
 
         public override int Update(Materijal entity, bool saveChanges = true)
         {
             throw new NotImplementedException();
         }
-
-
 
 
     }

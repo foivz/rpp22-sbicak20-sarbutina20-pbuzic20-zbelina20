@@ -19,7 +19,7 @@ namespace ZMGDesktop
         {
             InitializeComponent();
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void Login(object sender, EventArgs e)
         {
             var korime = txtKorIme.Text;
             var lozinka = txtLozinka.Text;
@@ -29,7 +29,7 @@ namespace ZMGDesktop
                 Lozinka = lozinka
             };
 
-            Radnik provjereniRadnik = servis.ProvjeriRadnika(radnik);
+            Radnik provjereniRadnik = await servis.ProvjeriRadnikaAsync(radnik);
             if (provjereniRadnik != null)
             {
                 FrmPocetna pocetna = new FrmPocetna(provjereniRadnik);
@@ -39,5 +39,6 @@ namespace ZMGDesktop
             else MessageBox.Show("Krivi podaci!");
             
         }
+
     }
 }

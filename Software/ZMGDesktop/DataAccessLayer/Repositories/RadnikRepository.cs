@@ -1,6 +1,7 @@
 ﻿using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,11 @@ namespace DataAccessLayer.Repositories
 
         }
 
-        public Radnik DohvatiRadnika(Radnik entity)
+        public async Task<Radnik> DohvatiRadnikaAsync(Radnik entity)
         {
-            var query = (from s in Entities
+            var query = await (from s in Entities
                         where (entity.Korime == s.Korime && entity.Lozinka == s.Lozinka) 
-                        select s).FirstOrDefault();
+                        select s).FirstOrDefaultAsync();
             return query;
         }
 
