@@ -32,7 +32,7 @@ namespace ZMGDesktop
             Radnik provjereniRadnik = servis.ProvjeriRadnika(radnik);
             if (provjereniRadnik != null)
             {
-                FrmPocetna pocetna = new FrmPocetna();
+                FrmPocetna pocetna = new FrmPocetna(provjereniRadnik);
                 pocetna.Show();
                 this.Hide();
             }
