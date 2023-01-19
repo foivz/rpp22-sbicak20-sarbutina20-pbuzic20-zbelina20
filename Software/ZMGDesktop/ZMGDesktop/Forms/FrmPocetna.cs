@@ -42,5 +42,11 @@ namespace ZMGDesktop
             FrmKatalog katalog = new FrmKatalog();
             katalog.ShowDialog();
         }
+
+        private void btnIzvjestaji_Click(object sender, EventArgs e)
+        {
+            FrmPopisIzvjestaja form = new FrmPopisIzvjestaja();
+            form.ShowDialog();
+        }
     }
 }

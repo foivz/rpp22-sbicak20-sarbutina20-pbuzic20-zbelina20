@@ -16,5 +16,11 @@ namespace ZMGDesktop
         {
             InitializeComponent();
         }
+
+        private void btnIzvjestajKlijenata_Click(object sender, EventArgs e)
+        {
+            FrmIzvjestajKlijenata form = new FrmIzvjestajKlijenata();
+            form.ShowDialog();
+        }
     }
 }

@@ -2,6 +2,7 @@
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,12 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Klijent> DohvatiDesetNajboljih()
+        {
+            var query = Entities.OrderByDescending(x => x.Racun.Count()).Take(5);
+            return query;
+        }
+
         public override int Add(Klijent entity, bool saveChanges = true)
         {
             var izvjestaj = Context.IzvjestajKlijenata.SingleOrDefault(k => k.IzvjestajKlijenata_ID == entity.IzvjestajKlijenata_ID);
@@ -38,6 +45,7 @@ namespace DataAccessLayer.Repositories
                 BrojTelefona = entity.BrojTelefona,
                 IBAN = entity.IBAN,
                 Email = entity.Email,
+                ukupniBrojRacuna = 0,
                 IzvjestajKlijenata = izvjestaj
             };
             Entities.Add(klijent);

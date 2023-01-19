@@ -20,6 +20,15 @@ namespace BusinessLogicLayer.Services
             }
         }
 
+        public List<Klijent> DohvatiDesetNajboljih()
+        {
+            using (var repo = new KlijentRepository())
+            {
+                List<Klijent> desetNajboljih = repo.DohvatiDesetNajboljih().ToList();
+                return desetNajboljih;
+            }
+        }
+
         public bool Add(Klijent klijent)
         {
             bool uspjesno = false;

@@ -72,6 +72,7 @@ namespace ZMGDesktop
                     dgvKlijentiXML.Columns[10].Visible = false;
                     dgvKlijentiXML.Columns[11].Visible = false;
                     dgvKlijentiXML.Columns[12].Visible = false;
+                    dgvKlijentiXML.Columns[13].Visible = false;
                     MessageBox.Show("Uspješno učitani korisnici");
                 }
                 else

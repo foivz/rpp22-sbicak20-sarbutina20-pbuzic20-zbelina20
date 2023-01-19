@@ -33,6 +33,7 @@ namespace ZMGDesktop
             dgvKlijenti.Columns[10].Visible = false;
             dgvKlijenti.Columns[11].Visible = false;
             dgvKlijenti.Columns[12].Visible = false;
+            dgvKlijenti.Columns[13].Visible = false;
         }
 
         private void btnDetaljiKlijenta_Click(object sender, EventArgs e)
