@@ -22,6 +22,7 @@ namespace ZMGDesktop
         public FrmPocetna(Radnik provjereniRadnik)
         {
             radnik = provjereniRadnik;
+            this.FormClosing += new FormClosingEventHandler(MyForm_FormClosing);
             InitializeComponent();
         }
 
@@ -47,6 +48,11 @@ namespace ZMGDesktop
         {
             FrmPopisIzvjestaja form = new FrmPopisIzvjestaja();
             form.ShowDialog();
+        }
+
+        private void MyForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
