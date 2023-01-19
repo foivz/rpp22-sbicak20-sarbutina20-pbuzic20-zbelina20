@@ -115,6 +115,7 @@
             this.btnIzvjestaji.TabIndex = 17;
             this.btnIzvjestaji.Text = "Izvještaji";
             this.btnIzvjestaji.UseVisualStyleBackColor = true;
+            this.btnIzvjestaji.Click += new System.EventHandler(this.btnIzvjestaji_Click);
             // 
             // label1
             // 
