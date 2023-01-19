@@ -62,7 +62,7 @@
             // btnDodajKlijenta
             // 
             this.btnDodajKlijenta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDodajKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajKlijenta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDodajKlijenta.Location = new System.Drawing.Point(884, 33);
             this.btnDodajKlijenta.Name = "btnDodajKlijenta";
@@ -75,7 +75,7 @@
             // btnIzbrisiKlijenta
             // 
             this.btnIzbrisiKlijenta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzbrisiKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzbrisiKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzbrisiKlijenta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnIzbrisiKlijenta.Location = new System.Drawing.Point(884, 90);
             this.btnIzbrisiKlijenta.Name = "btnIzbrisiKlijenta";
@@ -88,7 +88,7 @@
             // btnUrediKlijenta
             // 
             this.btnUrediKlijenta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUrediKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUrediKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUrediKlijenta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUrediKlijenta.Location = new System.Drawing.Point(884, 149);
             this.btnUrediKlijenta.Name = "btnUrediKlijenta";
@@ -101,7 +101,7 @@
             // btnDetaljiKlijenta
             // 
             this.btnDetaljiKlijenta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDetaljiKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetaljiKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetaljiKlijenta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDetaljiKlijenta.Location = new System.Drawing.Point(884, 209);
             this.btnDetaljiKlijenta.Name = "btnDetaljiKlijenta";
@@ -114,7 +114,7 @@
             // btnUveziKlijenta
             // 
             this.btnUveziKlijenta.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUveziKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUveziKlijenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUveziKlijenta.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUveziKlijenta.Location = new System.Drawing.Point(884, 267);
             this.btnUveziKlijenta.Name = "btnUveziKlijenta";
@@ -127,7 +127,7 @@
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNatrag.Location = new System.Drawing.Point(907, 432);
             this.btnNatrag.Name = "btnNatrag";

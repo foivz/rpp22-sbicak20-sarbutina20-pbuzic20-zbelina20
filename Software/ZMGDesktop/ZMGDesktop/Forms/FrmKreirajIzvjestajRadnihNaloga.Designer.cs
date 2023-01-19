@@ -42,7 +42,7 @@
             // btnOdustani
             // 
             this.btnOdustani.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdustani.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOdustani.Location = new System.Drawing.Point(901, 494);
             this.btnOdustani.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -55,7 +55,7 @@
             // btnSpremi
             // 
             this.btnSpremi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSpremi.Location = new System.Drawing.Point(747, 494);
             this.btnSpremi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

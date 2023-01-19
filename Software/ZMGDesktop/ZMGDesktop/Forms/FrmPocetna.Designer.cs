@@ -42,7 +42,7 @@
             // btnKlijenti
             // 
             this.btnKlijenti.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnKlijenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnKlijenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnKlijenti.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnKlijenti.Location = new System.Drawing.Point(47, 101);
             this.btnKlijenti.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -56,7 +56,7 @@
             // btnRacuni
             // 
             this.btnRacuni.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRacuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRacuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRacuni.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRacuni.Location = new System.Drawing.Point(47, 185);
             this.btnRacuni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -69,7 +69,7 @@
             // btnStanjeSkladista
             // 
             this.btnStanjeSkladista.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnStanjeSkladista.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnStanjeSkladista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnStanjeSkladista.ForeColor = System.Drawing.SystemColors.Control;
             this.btnStanjeSkladista.Location = new System.Drawing.Point(47, 265);
             this.btnStanjeSkladista.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -94,7 +94,7 @@
             // btnPodrska
             // 
             this.btnPodrska.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPodrska.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPodrska.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPodrska.ForeColor = System.Drawing.SystemColors.Control;
             this.btnPodrska.Location = new System.Drawing.Point(517, 265);
             this.btnPodrska.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -107,7 +107,7 @@
             // btnRadniNalozi
             // 
             this.btnRadniNalozi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRadniNalozi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRadniNalozi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRadniNalozi.ForeColor = System.Drawing.SystemColors.Control;
             this.btnRadniNalozi.Location = new System.Drawing.Point(517, 185);
             this.btnRadniNalozi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -121,7 +121,7 @@
             // btnIzvjestaji
             // 
             this.btnIzvjestaji.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvjestaji.ForeColor = System.Drawing.SystemColors.Control;
             this.btnIzvjestaji.Location = new System.Drawing.Point(517, 101);
             this.btnIzvjestaji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

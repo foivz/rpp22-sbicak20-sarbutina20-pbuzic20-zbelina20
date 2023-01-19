@@ -62,12 +62,12 @@
             // btnIzvjestajRadnihNaloga
             // 
             this.btnIzvjestajRadnihNaloga.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzvjestajRadnihNaloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzvjestajRadnihNaloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvjestajRadnihNaloga.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnIzvjestajRadnihNaloga.Location = new System.Drawing.Point(625, 48);
             this.btnIzvjestajRadnihNaloga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIzvjestajRadnihNaloga.Name = "btnIzvjestajRadnihNaloga";
-            this.btnIzvjestajRadnihNaloga.Size = new System.Drawing.Size(149, 46);
+            this.btnIzvjestajRadnihNaloga.Size = new System.Drawing.Size(149, 52);
             this.btnIzvjestajRadnihNaloga.TabIndex = 3;
             this.btnIzvjestajRadnihNaloga.Text = "Izrada izvještaja radnih naloga";
             this.btnIzvjestajRadnihNaloga.UseVisualStyleBackColor = false;
@@ -75,12 +75,12 @@
             // btnIzvjestajKlijenata
             // 
             this.btnIzvjestajKlijenata.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzvjestajKlijenata.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzvjestajKlijenata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvjestajKlijenata.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnIzvjestajKlijenata.Location = new System.Drawing.Point(625, 122);
             this.btnIzvjestajKlijenata.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIzvjestajKlijenata.Name = "btnIzvjestajKlijenata";
-            this.btnIzvjestajKlijenata.Size = new System.Drawing.Size(149, 46);
+            this.btnIzvjestajKlijenata.Size = new System.Drawing.Size(149, 52);
             this.btnIzvjestajKlijenata.TabIndex = 4;
             this.btnIzvjestajKlijenata.Text = "Izrada klijentskih izvještaja";
             this.btnIzvjestajKlijenata.UseVisualStyleBackColor = false;
@@ -89,12 +89,12 @@
             // btnDetaljiIzvjestaja
             // 
             this.btnDetaljiIzvjestaja.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDetaljiIzvjestaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetaljiIzvjestaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetaljiIzvjestaja.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDetaljiIzvjestaja.Location = new System.Drawing.Point(625, 194);
             this.btnDetaljiIzvjestaja.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDetaljiIzvjestaja.Name = "btnDetaljiIzvjestaja";
-            this.btnDetaljiIzvjestaja.Size = new System.Drawing.Size(149, 46);
+            this.btnDetaljiIzvjestaja.Size = new System.Drawing.Size(149, 52);
             this.btnDetaljiIzvjestaja.TabIndex = 5;
             this.btnDetaljiIzvjestaja.Text = "Detalji";
             this.btnDetaljiIzvjestaja.UseVisualStyleBackColor = false;
@@ -102,12 +102,12 @@
             // btbBrisanje
             // 
             this.btbBrisanje.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btbBrisanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btbBrisanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btbBrisanje.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btbBrisanje.Location = new System.Drawing.Point(625, 265);
             this.btbBrisanje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btbBrisanje.Name = "btbBrisanje";
-            this.btbBrisanje.Size = new System.Drawing.Size(149, 46);
+            this.btbBrisanje.Size = new System.Drawing.Size(149, 52);
             this.btbBrisanje.TabIndex = 6;
             this.btbBrisanje.Text = "Brisanje";
             this.btbBrisanje.UseVisualStyleBackColor = false;
@@ -115,12 +115,12 @@
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNatrag.Location = new System.Drawing.Point(625, 393);
             this.btnNatrag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(149, 46);
+            this.btnNatrag.Size = new System.Drawing.Size(149, 52);
             this.btnNatrag.TabIndex = 7;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = false;

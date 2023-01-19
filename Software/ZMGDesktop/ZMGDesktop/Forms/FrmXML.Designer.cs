@@ -47,11 +47,11 @@
             // btnOdaberi
             // 
             this.btnOdaberi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOdaberi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdaberi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdaberi.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOdaberi.Location = new System.Drawing.Point(178, 24);
+            this.btnOdaberi.Location = new System.Drawing.Point(178, 12);
             this.btnOdaberi.Name = "btnOdaberi";
-            this.btnOdaberi.Size = new System.Drawing.Size(101, 31);
+            this.btnOdaberi.Size = new System.Drawing.Size(101, 43);
             this.btnOdaberi.TabIndex = 1;
             this.btnOdaberi.Text = "Odaberi";
             this.btnOdaberi.UseVisualStyleBackColor = false;
@@ -60,11 +60,11 @@
             // btnUnesi
             // 
             this.btnUnesi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnUnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnUnesi.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUnesi.Location = new System.Drawing.Point(285, 24);
+            this.btnUnesi.Location = new System.Drawing.Point(285, 12);
             this.btnUnesi.Name = "btnUnesi";
-            this.btnUnesi.Size = new System.Drawing.Size(98, 31);
+            this.btnUnesi.Size = new System.Drawing.Size(98, 43);
             this.btnUnesi.TabIndex = 2;
             this.btnUnesi.Text = "Unesi";
             this.btnUnesi.UseVisualStyleBackColor = false;

@@ -51,7 +51,7 @@
             // 
             this.dgvRacuni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRacuni.Location = new System.Drawing.Point(168, 251);
-            this.dgvRacuni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvRacuni.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRacuni.Name = "dgvRacuni";
             this.dgvRacuni.RowHeadersWidth = 51;
             this.dgvRacuni.Size = new System.Drawing.Size(1404, 341);
@@ -60,10 +60,10 @@
             // btnIzdajNoviRacun
             // 
             this.btnIzdajNoviRacun.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzdajNoviRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzdajNoviRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzdajNoviRacun.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnIzdajNoviRacun.Location = new System.Drawing.Point(168, 601);
-            this.btnIzdajNoviRacun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIzdajNoviRacun.Margin = new System.Windows.Forms.Padding(4);
             this.btnIzdajNoviRacun.Name = "btnIzdajNoviRacun";
             this.btnIzdajNoviRacun.Size = new System.Drawing.Size(196, 49);
             this.btnIzdajNoviRacun.TabIndex = 1;
@@ -73,10 +73,10 @@
             // btnDetaljniPregled
             // 
             this.btnDetaljniPregled.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDetaljniPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetaljniPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetaljniPregled.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDetaljniPregled.Location = new System.Drawing.Point(385, 601);
-            this.btnDetaljniPregled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDetaljniPregled.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetaljniPregled.Name = "btnDetaljniPregled";
             this.btnDetaljniPregled.Size = new System.Drawing.Size(196, 49);
             this.btnDetaljniPregled.TabIndex = 2;
@@ -87,10 +87,10 @@
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNatrag.Location = new System.Drawing.Point(1376, 601);
-            this.btnNatrag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNatrag.Margin = new System.Windows.Forms.Padding(4);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(196, 49);
             this.btnNatrag.TabIndex = 3;
@@ -105,9 +105,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbKlijent);
             this.groupBox1.Location = new System.Drawing.Point(168, 43);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(760, 171);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
@@ -117,7 +117,7 @@
             // 
             this.rbtnVašiRačuni.AutoSize = true;
             this.rbtnVašiRačuni.Location = new System.Drawing.Point(444, 96);
-            this.rbtnVašiRačuni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnVašiRačuni.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnVašiRačuni.Name = "rbtnVašiRačuni";
             this.rbtnVašiRačuni.Size = new System.Drawing.Size(94, 20);
             this.rbtnVašiRačuni.TabIndex = 4;
@@ -129,7 +129,7 @@
             // 
             this.rbtnUkupniIznos.AutoSize = true;
             this.rbtnUkupniIznos.Location = new System.Drawing.Point(444, 68);
-            this.rbtnUkupniIznos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnUkupniIznos.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnUkupniIznos.Name = "rbtnUkupniIznos";
             this.rbtnUkupniIznos.Size = new System.Drawing.Size(148, 20);
             this.rbtnUkupniIznos.TabIndex = 3;
@@ -141,7 +141,7 @@
             // 
             this.rbtnDatumIzdaje.AutoSize = true;
             this.rbtnDatumIzdaje.Location = new System.Drawing.Point(444, 39);
-            this.rbtnDatumIzdaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnDatumIzdaje.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnDatumIzdaje.Name = "rbtnDatumIzdaje";
             this.rbtnDatumIzdaje.Size = new System.Drawing.Size(150, 20);
             this.rbtnDatumIzdaje.TabIndex = 2;
@@ -163,7 +163,7 @@
             // 
             this.cmbKlijent.FormattingEnabled = true;
             this.cmbKlijent.Location = new System.Drawing.Point(81, 64);
-            this.cmbKlijent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbKlijent.Margin = new System.Windows.Forms.Padding(4);
             this.cmbKlijent.Name = "cmbKlijent";
             this.cmbKlijent.Size = new System.Drawing.Size(260, 24);
             this.cmbKlijent.TabIndex = 0;
@@ -173,9 +173,9 @@
             this.groupBox2.Controls.Add(this.rbtnSilazno);
             this.groupBox2.Controls.Add(this.rbtnUzlazno);
             this.groupBox2.Location = new System.Drawing.Point(967, 91);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(267, 123);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
@@ -185,7 +185,7 @@
             // 
             this.rbtnSilazno.AutoSize = true;
             this.rbtnSilazno.Location = new System.Drawing.Point(35, 63);
-            this.rbtnSilazno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnSilazno.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnSilazno.Name = "rbtnSilazno";
             this.rbtnSilazno.Size = new System.Drawing.Size(72, 20);
             this.rbtnSilazno.TabIndex = 1;
@@ -197,7 +197,7 @@
             // 
             this.rbtnUzlazno.AutoSize = true;
             this.rbtnUzlazno.Location = new System.Drawing.Point(35, 34);
-            this.rbtnUzlazno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnUzlazno.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnUzlazno.Name = "rbtnUzlazno";
             this.rbtnUzlazno.Size = new System.Drawing.Size(76, 20);
             this.rbtnUzlazno.TabIndex = 0;
@@ -208,10 +208,10 @@
             // btnOcisti
             // 
             this.btnOcisti.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOcisti.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOcisti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOcisti.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOcisti.Location = new System.Drawing.Point(1255, 154);
-            this.btnOcisti.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOcisti.Margin = new System.Windows.Forms.Padding(4);
             this.btnOcisti.Name = "btnOcisti";
             this.btnOcisti.Size = new System.Drawing.Size(140, 60);
             this.btnOcisti.TabIndex = 6;
@@ -230,7 +230,7 @@
             this.Controls.Add(this.btnDetaljniPregled);
             this.Controls.Add(this.btnIzdajNoviRacun);
             this.Controls.Add(this.dgvRacuni);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRacuni";
             this.Text = "Računi";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacuni)).EndInit();

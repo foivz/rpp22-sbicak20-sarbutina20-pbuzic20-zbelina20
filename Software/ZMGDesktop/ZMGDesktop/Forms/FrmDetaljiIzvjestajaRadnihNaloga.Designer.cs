@@ -54,9 +54,9 @@
             this.groupBox1.Controls.Add(this.pbGraf);
             this.groupBox1.Controls.Add(this.dgvIzvjestajRadnihNaloga);
             this.groupBox1.Location = new System.Drawing.Point(17, 57);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1033, 426);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -65,7 +65,7 @@
             // pbGraf
             // 
             this.pbGraf.Location = new System.Drawing.Point(616, 25);
-            this.pbGraf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbGraf.Margin = new System.Windows.Forms.Padding(4);
             this.pbGraf.Name = "pbGraf";
             this.pbGraf.Size = new System.Drawing.Size(409, 394);
             this.pbGraf.TabIndex = 1;
@@ -75,7 +75,7 @@
             // 
             this.dgvIzvjestajRadnihNaloga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIzvjestajRadnihNaloga.Location = new System.Drawing.Point(9, 25);
-            this.dgvIzvjestajRadnihNaloga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvIzvjestajRadnihNaloga.Margin = new System.Windows.Forms.Padding(4);
             this.dgvIzvjestajRadnihNaloga.Name = "dgvIzvjestajRadnihNaloga";
             this.dgvIzvjestajRadnihNaloga.RowHeadersWidth = 51;
             this.dgvIzvjestajRadnihNaloga.Size = new System.Drawing.Size(585, 394);
@@ -84,7 +84,7 @@
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNatrag.Location = new System.Drawing.Point(901, 495);
             this.btnNatrag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -102,7 +102,7 @@
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDetaljiIzvjestajaRadnihNaloga";
             this.Text = "Detalji izvještaja radnih naloga";
             this.groupBox1.ResumeLayout(false);

@@ -58,7 +58,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(300, 86);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 1;
@@ -74,9 +74,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtKolicina);
             this.groupBox1.Location = new System.Drawing.Point(17, 48);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1033, 439);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -85,7 +85,7 @@
             // dtpDatumStvaranja
             // 
             this.dtpDatumStvaranja.Location = new System.Drawing.Point(360, 212);
-            this.dtpDatumStvaranja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpDatumStvaranja.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDatumStvaranja.Name = "dtpDatumStvaranja";
             this.dtpDatumStvaranja.Size = new System.Drawing.Size(265, 22);
             this.dtpDatumStvaranja.TabIndex = 8;
@@ -113,7 +113,7 @@
             // txtQRKod
             // 
             this.txtQRKod.Location = new System.Drawing.Point(360, 153);
-            this.txtQRKod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQRKod.Margin = new System.Windows.Forms.Padding(4);
             this.txtQRKod.Name = "txtQRKod";
             this.txtQRKod.Size = new System.Drawing.Size(223, 22);
             this.txtQRKod.TabIndex = 4;
@@ -131,7 +131,7 @@
             // txtOpis
             // 
             this.txtOpis.Location = new System.Drawing.Point(360, 97);
-            this.txtOpis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOpis.Margin = new System.Windows.Forms.Padding(4);
             this.txtOpis.Name = "txtOpis";
             this.txtOpis.Size = new System.Drawing.Size(223, 22);
             this.txtOpis.TabIndex = 2;
@@ -149,7 +149,7 @@
             // txtKolicina
             // 
             this.txtKolicina.Location = new System.Drawing.Point(360, 39);
-            this.txtKolicina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtKolicina.Margin = new System.Windows.Forms.Padding(4);
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(223, 22);
             this.txtKolicina.TabIndex = 0;
@@ -157,7 +157,7 @@
             // btnOdustani
             // 
             this.btnOdustani.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdustani.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOdustani.Location = new System.Drawing.Point(901, 495);
             this.btnOdustani.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -171,7 +171,7 @@
             // btnPodnesi
             // 
             this.btnPodnesi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPodnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPodnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPodnesi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnPodnesi.Location = new System.Drawing.Point(747, 495);
             this.btnPodnesi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -192,7 +192,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmNoviRadniNalog";
             this.Text = "Novi radni nalog";
             this.groupBox1.ResumeLayout(false);

@@ -64,7 +64,7 @@
             // txt6
             // 
             this.txt6.Location = new System.Drawing.Point(360, 383);
-            this.txt6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt6.Margin = new System.Windows.Forms.Padding(4);
             this.txt6.Name = "txt6";
             this.txt6.Size = new System.Drawing.Size(223, 22);
             this.txt6.TabIndex = 12;
@@ -82,7 +82,7 @@
             // txt5
             // 
             this.txt5.Location = new System.Drawing.Point(360, 325);
-            this.txt5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt5.Margin = new System.Windows.Forms.Padding(4);
             this.txt5.Name = "txt5";
             this.txt5.Size = new System.Drawing.Size(223, 22);
             this.txt5.TabIndex = 10;
@@ -100,7 +100,7 @@
             // txt4
             // 
             this.txt4.Location = new System.Drawing.Point(360, 270);
-            this.txt4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt4.Margin = new System.Windows.Forms.Padding(4);
             this.txt4.Name = "txt4";
             this.txt4.Size = new System.Drawing.Size(223, 22);
             this.txt4.TabIndex = 8;
@@ -118,7 +118,7 @@
             // txt3
             // 
             this.txt3.Location = new System.Drawing.Point(360, 212);
-            this.txt3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt3.Margin = new System.Windows.Forms.Padding(4);
             this.txt3.Name = "txt3";
             this.txt3.Size = new System.Drawing.Size(223, 22);
             this.txt3.TabIndex = 6;
@@ -136,7 +136,7 @@
             // txt2
             // 
             this.txt2.Location = new System.Drawing.Point(360, 153);
-            this.txt2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt2.Margin = new System.Windows.Forms.Padding(4);
             this.txt2.Name = "txt2";
             this.txt2.Size = new System.Drawing.Size(223, 22);
             this.txt2.TabIndex = 4;
@@ -164,7 +164,7 @@
             // txt
             // 
             this.txt.Location = new System.Drawing.Point(360, 39);
-            this.txt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt.Margin = new System.Windows.Forms.Padding(4);
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(223, 22);
             this.txt.TabIndex = 0;
@@ -172,7 +172,7 @@
             // btnSpremi
             // 
             this.btnSpremi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSpremi.Location = new System.Drawing.Point(747, 496);
             this.btnSpremi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -185,7 +185,7 @@
             // btnOdustani
             // 
             this.btnOdustani.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdustani.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOdustani.Location = new System.Drawing.Point(901, 496);
             this.btnOdustani.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -212,9 +212,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txt);
             this.groupBox1.Location = new System.Drawing.Point(17, 49);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1033, 439);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
@@ -223,7 +223,7 @@
             // txt1
             // 
             this.txt1.Location = new System.Drawing.Point(360, 97);
-            this.txt1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt1.Margin = new System.Windows.Forms.Padding(4);
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(223, 22);
             this.txt1.TabIndex = 2;
@@ -231,7 +231,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(300, 87);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 22);
             this.textBox1.TabIndex = 12;
@@ -250,7 +250,7 @@
             // btnIzmijeni
             // 
             this.btnIzmijeni.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzmijeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzmijeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzmijeni.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnIzmijeni.Location = new System.Drawing.Point(592, 496);
             this.btnIzmijeni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -271,7 +271,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDetaljiRadnogNaloga";
             this.Text = "FrmDetaljiRadnogNaloga";
             this.groupBox1.ResumeLayout(false);

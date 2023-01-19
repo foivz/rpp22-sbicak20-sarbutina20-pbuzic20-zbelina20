@@ -52,7 +52,7 @@
             // 
             this.dgvPopisRadnihNaloga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPopisRadnihNaloga.Location = new System.Drawing.Point(17, 57);
-            this.dgvPopisRadnihNaloga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPopisRadnihNaloga.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPopisRadnihNaloga.Name = "dgvPopisRadnihNaloga";
             this.dgvPopisRadnihNaloga.RowHeadersWidth = 51;
             this.dgvPopisRadnihNaloga.Size = new System.Drawing.Size(829, 416);
@@ -62,7 +62,7 @@
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNatrag.Location = new System.Drawing.Point(903, 495);
             this.btnNatrag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -76,7 +76,7 @@
             // btnObrisi
             // 
             this.btnObrisi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObrisi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnObrisi.Location = new System.Drawing.Point(903, 220);
             this.btnObrisi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -89,7 +89,7 @@
             // btnDetalji
             // 
             this.btnDetalji.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDetalji.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetalji.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetalji.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDetalji.Location = new System.Drawing.Point(903, 138);
             this.btnDetalji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -102,7 +102,7 @@
             // btnNoviRadniNalog
             // 
             this.btnNoviRadniNalog.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNoviRadniNalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnNoviRadniNalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNoviRadniNalog.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNoviRadniNalog.Location = new System.Drawing.Point(903, 57);
             this.btnNoviRadniNalog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -124,7 +124,7 @@
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.dgvPopisRadnihNaloga);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPopisRadnihNaloga";
             this.Text = "Radni nalozi";
             this.Load += new System.EventHandler(this.FrmPopisRadnihNaloga_Load);
