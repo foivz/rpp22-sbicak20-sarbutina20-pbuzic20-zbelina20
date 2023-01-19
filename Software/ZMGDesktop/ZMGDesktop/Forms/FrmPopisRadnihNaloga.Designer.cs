@@ -63,7 +63,7 @@
             this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNatrag.Location = new System.Drawing.Point(677, 402);
-            this.btnNatrag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNatrag.Margin = new System.Windows.Forms.Padding(2);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(112, 37);
             this.btnNatrag.TabIndex = 8;
@@ -77,12 +77,13 @@
             this.btnObrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnObrisi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnObrisi.Location = new System.Drawing.Point(677, 179);
-            this.btnObrisi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnObrisi.Margin = new System.Windows.Forms.Padding(2);
             this.btnObrisi.Name = "btnObrisi";
             this.btnObrisi.Size = new System.Drawing.Size(112, 37);
             this.btnObrisi.TabIndex = 9;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = false;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
             // 
             // btnDetalji
             // 
@@ -90,7 +91,7 @@
             this.btnDetalji.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetalji.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDetalji.Location = new System.Drawing.Point(677, 112);
-            this.btnDetalji.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDetalji.Margin = new System.Windows.Forms.Padding(2);
             this.btnDetalji.Name = "btnDetalji";
             this.btnDetalji.Size = new System.Drawing.Size(112, 37);
             this.btnDetalji.TabIndex = 10;
@@ -103,7 +104,7 @@
             this.btnNoviRadniNalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNoviRadniNalog.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNoviRadniNalog.Location = new System.Drawing.Point(677, 46);
-            this.btnNoviRadniNalog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNoviRadniNalog.Margin = new System.Windows.Forms.Padding(2);
             this.btnNoviRadniNalog.Name = "btnNoviRadniNalog";
             this.btnNoviRadniNalog.Size = new System.Drawing.Size(112, 44);
             this.btnNoviRadniNalog.TabIndex = 11;

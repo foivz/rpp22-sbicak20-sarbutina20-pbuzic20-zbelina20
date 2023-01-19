@@ -51,5 +51,17 @@ namespace ZMGDesktop
             dgvPopisRadnihNaloga.DataSource = popisRadnihNaloga;
             dgvPopisRadnihNaloga.Columns[10].Visible = false;
         }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            var odabraniRadniNalog = DohvatiRadniNalog();
+            servis.ObrisiRadniNalog(odabraniRadniNalog);
+            UcitajRadneNaloge();
+        }
+
+        private RadniNalog DohvatiRadniNalog()
+        {
+            return dgvPopisRadnihNaloga.CurrentRow.DataBoundItem as RadniNalog;
+        }
     }
 }
