@@ -7,6 +7,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,7 +56,10 @@ namespace ZMGDesktop
             float cijena = (float)txtCijena.Value;
             string opis = txtOpis.Text;
             bool opasno = txtOpasno.Checked;
-            string qr_kod = GenerirajRandomString();
+            string qr_kod = GenerirajQR(naziv, kolicina);
+            MessageBox.Show(qr_kod.Length.ToString());
+            //string qr_kod = GenerirajRandomString();
+
             Materijal noviMaterijal = new Materijal
             {
                 Naziv = naziv,
@@ -67,6 +72,19 @@ namespace ZMGDesktop
             };
             matServis.dodajMaterijal(noviMaterijal);
             this.Close();
+        }
+
+        private string GenerirajQR(string naziv, int kolicina)
+        {
+            string qrCodeData = $"{naziv}";
+
+            QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCode = qrGenerator.CreateQrCode(qrCodeData, QRCodeGenerator.ECCLevel.Q);
+            Base64QRCode qrCodeEncoded = new Base64QRCode(qrCode);
+            string qrCodeAsBase64 = qrCodeEncoded.GetGraphic(20);
+
+            return qrCodeAsBase64;
+
         }
 
         string GenerirajRandomString()

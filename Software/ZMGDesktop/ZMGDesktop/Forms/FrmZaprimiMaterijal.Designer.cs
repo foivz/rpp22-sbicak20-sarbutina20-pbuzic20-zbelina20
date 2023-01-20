@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnNatrag = new System.Windows.Forms.Button();
+            this.btnProba = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,11 +57,22 @@
             this.btnNatrag.UseVisualStyleBackColor = false;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
+            // btnProba
+            // 
+            this.btnProba.Location = new System.Drawing.Point(286, 322);
+            this.btnProba.Name = "btnProba";
+            this.btnProba.Size = new System.Drawing.Size(75, 23);
+            this.btnProba.TabIndex = 2;
+            this.btnProba.Text = "button1";
+            this.btnProba.UseVisualStyleBackColor = true;
+            this.btnProba.Click += new System.EventHandler(this.btnProba_Click);
+            // 
             // FrmZaprimiMaterijal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnProba);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.label1);
             this.Name = "FrmZaprimiMaterijal";
@@ -74,5 +86,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNatrag;
+        private System.Windows.Forms.Button btnProba;
     }
 }

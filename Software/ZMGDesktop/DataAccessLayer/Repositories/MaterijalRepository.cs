@@ -55,11 +55,19 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        public int Azuriraj(string naziv)
+        {
+            var postoji = Entities.SingleOrDefault(k => k.Naziv == naziv);
+            if (postoji != null) {
+                //postoji.Kolicina = kolicina;
+                return SaveChanges();
+            }
+            else return 0;
+        }
+
         public override int Update(Materijal entity, bool saveChanges = true)
         {
             throw new NotImplementedException();
         }
-
-
     }
 }
