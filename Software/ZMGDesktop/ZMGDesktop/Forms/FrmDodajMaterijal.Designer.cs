@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.txtNaziv = new System.Windows.Forms.TextBox();
-            this.txtKolicina = new System.Windows.Forms.TextBox();
-            this.txtCijena = new System.Windows.Forms.TextBox();
             this.cmbMjernaJedinica = new System.Windows.Forms.ComboBox();
             this.txtOpis = new System.Windows.Forms.TextBox();
-            this.txtOpasno = new System.Windows.Forms.TextBox();
             this.lblNaziv = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.picQR = new System.Windows.Forms.PictureBox();
             this.btnDodajMaterijal = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).BeginInit();
+            this.txtKolicina = new System.Windows.Forms.NumericUpDown();
+            this.txtCijena = new System.Windows.Forms.NumericUpDown();
+            this.txtOpasno = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKolicina)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCijena)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNaziv
@@ -52,22 +52,6 @@
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(169, 26);
             this.txtNaziv.TabIndex = 0;
-            // 
-            // txtKolicina
-            // 
-            this.txtKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKolicina.Location = new System.Drawing.Point(36, 134);
-            this.txtKolicina.Name = "txtKolicina";
-            this.txtKolicina.Size = new System.Drawing.Size(169, 26);
-            this.txtKolicina.TabIndex = 1;
-            // 
-            // txtCijena
-            // 
-            this.txtCijena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCijena.Location = new System.Drawing.Point(36, 220);
-            this.txtCijena.Name = "txtCijena";
-            this.txtCijena.Size = new System.Drawing.Size(169, 26);
-            this.txtCijena.TabIndex = 2;
             // 
             // cmbMjernaJedinica
             // 
@@ -86,14 +70,6 @@
             this.txtOpis.Name = "txtOpis";
             this.txtOpis.Size = new System.Drawing.Size(309, 109);
             this.txtOpis.TabIndex = 4;
-            // 
-            // txtOpasno
-            // 
-            this.txtOpasno.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOpasno.Location = new System.Drawing.Point(438, 220);
-            this.txtOpasno.Name = "txtOpasno";
-            this.txtOpasno.Size = new System.Drawing.Size(169, 26);
-            this.txtOpasno.TabIndex = 5;
             // 
             // lblNaziv
             // 
@@ -145,15 +121,6 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Opis materijala";
             // 
-            // picQR
-            // 
-            this.picQR.Location = new System.Drawing.Point(494, 300);
-            this.picQR.Name = "picQR";
-            this.picQR.Size = new System.Drawing.Size(157, 125);
-            this.picQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picQR.TabIndex = 11;
-            this.picQR.TabStop = false;
-            // 
             // btnDodajMaterijal
             // 
             this.btnDodajMaterijal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -180,29 +147,53 @@
             this.btnNatrag.UseVisualStyleBackColor = false;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
+            // txtKolicina
+            // 
+            this.txtKolicina.Location = new System.Drawing.Point(36, 140);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.Size = new System.Drawing.Size(169, 22);
+            this.txtKolicina.TabIndex = 16;
+            // 
+            // txtCijena
+            // 
+            this.txtCijena.Location = new System.Drawing.Point(36, 232);
+            this.txtCijena.Name = "txtCijena";
+            this.txtCijena.Size = new System.Drawing.Size(169, 22);
+            this.txtCijena.TabIndex = 17;
+            // 
+            // txtOpasno
+            // 
+            this.txtOpasno.AutoSize = true;
+            this.txtOpasno.Location = new System.Drawing.Point(438, 232);
+            this.txtOpasno.Name = "txtOpasno";
+            this.txtOpasno.Size = new System.Drawing.Size(159, 20);
+            this.txtOpasno.TabIndex = 18;
+            this.txtOpasno.Text = "Označi ako je opasno";
+            this.txtOpasno.UseVisualStyleBackColor = true;
+            // 
             // FrmDodajMaterijal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtOpasno);
+            this.Controls.Add(this.txtCijena);
+            this.Controls.Add(this.txtKolicina);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnDodajMaterijal);
-            this.Controls.Add(this.picQR);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNaziv);
-            this.Controls.Add(this.txtOpasno);
             this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.cmbMjernaJedinica);
-            this.Controls.Add(this.txtCijena);
-            this.Controls.Add(this.txtKolicina);
             this.Controls.Add(this.txtNaziv);
             this.Name = "FrmDodajMaterijal";
             this.Text = "FrmDodaj";
             this.Load += new System.EventHandler(this.FrmDodajMaterijal_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picQR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKolicina)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCijena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,18 +202,17 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtNaziv;
-        private System.Windows.Forms.TextBox txtKolicina;
-        private System.Windows.Forms.TextBox txtCijena;
         private System.Windows.Forms.ComboBox cmbMjernaJedinica;
         private System.Windows.Forms.TextBox txtOpis;
-        private System.Windows.Forms.TextBox txtOpasno;
         private System.Windows.Forms.Label lblNaziv;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox picQR;
         private System.Windows.Forms.Button btnDodajMaterijal;
         private System.Windows.Forms.Button btnNatrag;
+        private System.Windows.Forms.NumericUpDown txtKolicina;
+        private System.Windows.Forms.NumericUpDown txtCijena;
+        private System.Windows.Forms.CheckBox txtOpasno;
     }
 }

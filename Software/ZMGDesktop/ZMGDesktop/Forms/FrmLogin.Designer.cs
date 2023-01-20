@@ -68,6 +68,7 @@
             this.txtLozinka.Size = new System.Drawing.Size(249, 41);
             this.txtLozinka.TabIndex = 2;
             this.txtLozinka.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtLozinka.UseSystemPasswordChar = true;
             // 
             // txtKorIme
             // 

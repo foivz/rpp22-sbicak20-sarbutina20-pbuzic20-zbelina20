@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static EntitiesLayer.Entities.Enumeracije;
 
 namespace ZMGDesktop
@@ -41,13 +43,17 @@ namespace ZMGDesktop
 
         private void btnDodajMaterijal_Click(object sender, EventArgs e)
         {
-            
+            if (txtOpasno.Text == null || txtNaziv.Text == "" || txtKolicina.Text == "0" || txtCijena.Text == "0")
+            {
+                MessageBox.Show("Nisu uneseni svi obavezni podatci");
+                return;
+            }
             string naziv = txtNaziv.Text;
-            int kolicina = Convert.ToInt32(txtKolicina.Text);
+            int kolicina = (int)txtKolicina.Value;
             string odabranaJedinica = cmbMjernaJedinica.SelectedItem.ToString();
-            float cijena = float.Parse(txtCijena.Text);
+            float cijena = (float)txtCijena.Value;
             string opis = txtOpis.Text;
-            int opasno = Convert.ToInt16(txtOpasno.Text);
+            bool opasno = txtOpasno.Checked;
             string qr_kod = GenerirajRandomString();
             Materijal noviMaterijal = new Materijal
             {
@@ -69,6 +75,7 @@ namespace ZMGDesktop
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, 20)
               .Select(s => s[random.Next(s.Length)]).ToArray());
+
         }
     }
 }

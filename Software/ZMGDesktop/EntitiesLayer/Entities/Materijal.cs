@@ -21,13 +21,13 @@ namespace EntitiesLayer.Entities
         [StringLength(20)]
         public string JedinicaMjere { get; set; }
 
-        [Required]
+        
         [StringLength(100)]
         public string Opis { get; set; }
 
         public int Kolicina { get; set; }
 
-        public int? OpasnoPoZivot { get; set; }
+        public bool? OpasnoPoZivot { get; set; }
 
         [StringLength(150)]
         public string QR_kod { get; set; }

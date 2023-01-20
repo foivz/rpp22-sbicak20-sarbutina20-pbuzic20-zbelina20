@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,10 +18,19 @@ namespace DataAccessLayer.Repositories
 
         public async Task<Radnik> DohvatiRadnikaAsync(Radnik entity)
         {
-            var query = await (from s in Entities
-                        where (entity.Korime == s.Korime && entity.Lozinka == s.Lozinka) 
-                        select s).FirstOrDefaultAsync();
-            return query;
+            using (var sha256 = SHA256.Create())
+            {
+                var enteredBytes = Encoding.UTF8.GetBytes(entity.Lozinka);
+                var enteredHashedPassword = BitConverter.ToString(sha256.ComputeHash(enteredBytes)).Replace("-", "").ToLower();
+                entity.Lozinka = enteredHashedPassword;
+
+                var query = await (from s in Entities
+                                   where (entity.Korime == s.Korime && entity.Lozinka == s.Lozinka)
+                                   select s).FirstOrDefaultAsync();
+                return query;
+            }
+
+                
         }
 
         public override int Update(Radnik entity, bool saveChanges = true)
