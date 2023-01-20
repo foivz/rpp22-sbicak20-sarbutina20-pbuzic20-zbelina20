@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvKlijenti = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelKlijenti = new System.Windows.Forms.Label();
             this.btnDodajKlijenta = new System.Windows.Forms.Button();
             this.btnIzbrisiKlijenta = new System.Windows.Forms.Button();
             this.btnUrediKlijenta = new System.Windows.Forms.Button();
@@ -49,15 +49,15 @@
             this.dgvKlijenti.Size = new System.Drawing.Size(849, 439);
             this.dgvKlijenti.TabIndex = 0;
             // 
-            // label1
+            // labelKlijenti
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Pregled klijenata:";
+            this.labelKlijenti.AutoSize = true;
+            this.labelKlijenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelKlijenti.Location = new System.Drawing.Point(12, 9);
+            this.labelKlijenti.Name = "labelKlijenti";
+            this.labelKlijenti.Size = new System.Drawing.Size(137, 20);
+            this.labelKlijenti.TabIndex = 1;
+            this.labelKlijenti.Text = "Pregled klijenata:";
             // 
             // btnDodajKlijenta
             // 
@@ -148,7 +148,7 @@
             this.Controls.Add(this.btnUrediKlijenta);
             this.Controls.Add(this.btnIzbrisiKlijenta);
             this.Controls.Add(this.btnDodajKlijenta);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelKlijenti);
             this.Controls.Add(this.dgvKlijenti);
             this.Name = "FrmPregledKlijenata";
             this.Text = "Pregled klijenata";
@@ -162,7 +162,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvKlijenti;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelKlijenti;
         private System.Windows.Forms.Button btnDodajKlijenta;
         private System.Windows.Forms.Button btnIzbrisiKlijenta;
         private System.Windows.Forms.Button btnUrediKlijenta;

@@ -63,9 +63,14 @@ namespace ZMGDesktop
             var selektiran = dohvatiSelektiranog();
             if(selektiran != null)
             {
-                servis.Remove(selektiran);
-                ucitajKlijente();
+                izbrisiKlijenta(selektiran); 
             }
+        }
+
+        private void izbrisiKlijenta(Klijent selektiran)
+        {
+            servis.Remove(selektiran);
+            ucitajKlijente();
         }
 
         private void btnUrediKlijenta_Click(object sender, EventArgs e)

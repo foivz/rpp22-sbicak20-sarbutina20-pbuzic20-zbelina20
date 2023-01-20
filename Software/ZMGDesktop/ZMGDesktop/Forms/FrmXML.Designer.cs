@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelOdaberiDatoteku = new System.Windows.Forms.Label();
             this.btnOdaberi = new System.Windows.Forms.Button();
             this.btnUnesi = new System.Windows.Forms.Button();
             this.dgvKlijentiXML = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijentiXML)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelOdaberiDatoteku
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Odaberi XML datoteku:";
+            this.labelOdaberiDatoteku.AutoSize = true;
+            this.labelOdaberiDatoteku.Location = new System.Drawing.Point(29, 27);
+            this.labelOdaberiDatoteku.Name = "labelOdaberiDatoteku";
+            this.labelOdaberiDatoteku.Size = new System.Drawing.Size(143, 16);
+            this.labelOdaberiDatoteku.TabIndex = 0;
+            this.labelOdaberiDatoteku.Text = "Odaberi XML datoteku:";
             // 
             // btnOdaberi
             // 
@@ -88,7 +88,7 @@
             this.Controls.Add(this.dgvKlijentiXML);
             this.Controls.Add(this.btnUnesi);
             this.Controls.Add(this.btnOdaberi);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelOdaberiDatoteku);
             this.Name = "FrmXML";
             this.Text = "FrmXML";
             this.Load += new System.EventHandler(this.FrmXML_Load);
@@ -100,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelOdaberiDatoteku;
         private System.Windows.Forms.Button btnOdaberi;
         private System.Windows.Forms.Button btnUnesi;
         private System.Windows.Forms.DataGridView dgvKlijentiXML;

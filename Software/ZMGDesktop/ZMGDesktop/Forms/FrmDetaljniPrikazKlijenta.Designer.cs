@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvRadniNalozi = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelRadniNalozi = new System.Windows.Forms.Label();
+            this.labelRacuni = new System.Windows.Forms.Label();
             this.dgvRacuni = new System.Windows.Forms.DataGridView();
             this.btnNatrag = new System.Windows.Forms.Button();
-            this.lblImeiPrezime = new System.Windows.Forms.Label();
+            this.labelImePrezime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRadniNalozi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacuni)).BeginInit();
             this.SuspendLayout();
@@ -48,25 +48,25 @@
             this.dgvRadniNalozi.Size = new System.Drawing.Size(776, 164);
             this.dgvRadniNalozi.TabIndex = 0;
             // 
-            // label1
+            // labelRadniNalozi
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Popis radnih naloga";
+            this.labelRadniNalozi.AutoSize = true;
+            this.labelRadniNalozi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRadniNalozi.Location = new System.Drawing.Point(12, 81);
+            this.labelRadniNalozi.Name = "labelRadniNalozi";
+            this.labelRadniNalozi.Size = new System.Drawing.Size(156, 20);
+            this.labelRadniNalozi.TabIndex = 1;
+            this.labelRadniNalozi.Text = "Popis radnih naloga";
             // 
-            // label2
+            // labelRacuni
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(12, 287);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Popis računa:";
+            this.labelRacuni.AutoSize = true;
+            this.labelRacuni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelRacuni.Location = new System.Drawing.Point(12, 287);
+            this.labelRacuni.Name = "labelRacuni";
+            this.labelRacuni.Size = new System.Drawing.Size(112, 20);
+            this.labelRacuni.TabIndex = 3;
+            this.labelRacuni.Text = "Popis računa:";
             // 
             // dgvRacuni
             // 
@@ -91,26 +91,26 @@
             this.btnNatrag.UseVisualStyleBackColor = false;
             this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
-            // lblImeiPrezime
+            // labelImePrezime
             // 
-            this.lblImeiPrezime.AutoSize = true;
-            this.lblImeiPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblImeiPrezime.Location = new System.Drawing.Point(307, 22);
-            this.lblImeiPrezime.Name = "lblImeiPrezime";
-            this.lblImeiPrezime.Size = new System.Drawing.Size(131, 25);
-            this.lblImeiPrezime.TabIndex = 5;
-            this.lblImeiPrezime.Text = "Ime Prezime";
+            this.labelImePrezime.AutoSize = true;
+            this.labelImePrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelImePrezime.Location = new System.Drawing.Point(307, 22);
+            this.labelImePrezime.Name = "labelImePrezime";
+            this.labelImePrezime.Size = new System.Drawing.Size(131, 25);
+            this.labelImePrezime.TabIndex = 5;
+            this.labelImePrezime.Text = "Ime Prezime";
             // 
             // FrmDetaljniPrikazKlijenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 532);
-            this.Controls.Add(this.lblImeiPrezime);
+            this.Controls.Add(this.labelImePrezime);
             this.Controls.Add(this.btnNatrag);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelRacuni);
             this.Controls.Add(this.dgvRacuni);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelRadniNalozi);
             this.Controls.Add(this.dgvRadniNalozi);
             this.Name = "FrmDetaljniPrikazKlijenta";
             this.Text = "FrmDetaljniPrikazKlijenta";
@@ -125,10 +125,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvRadniNalozi;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelRadniNalozi;
+        private System.Windows.Forms.Label labelRacuni;
         private System.Windows.Forms.DataGridView dgvRacuni;
         private System.Windows.Forms.Button btnNatrag;
-        private System.Windows.Forms.Label lblImeiPrezime;
+        private System.Windows.Forms.Label labelImePrezime;
     }
 }

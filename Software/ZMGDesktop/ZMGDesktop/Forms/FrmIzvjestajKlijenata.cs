@@ -10,14 +10,25 @@ namespace ZMGDesktop
     public partial class FrmIzvjestajKlijenata : Form
     {
         KlijentServices servisKlijenta = new KlijentServices();
+        List<Klijent> desetNajboljih;
         public FrmIzvjestajKlijenata()
         {
             InitializeComponent();
         }
 
+        public FrmIzvjestajKlijenata(List<Klijent> desetNajboljih)
+        {
+            InitializeComponent();
+            this.desetNajboljih = desetNajboljih;
+        }
+
         private void FrmIzvjestajKlijenata_Load(object sender, EventArgs e)
         {
-            List<Klijent> desetNajboljih = servisKlijenta.DohvatiDesetNajboljih();
+            kreirajIzvjestaj();
+        }
+
+        private void kreirajIzvjestaj()
+        {
             provjeri(desetNajboljih);
             klijentBindingSource.DataSource = desetNajboljih;
             this.reportViewer1.RefreshReport();

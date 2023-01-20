@@ -63,7 +63,7 @@ namespace ZMGDesktop
             }
             else
             {
-                lblImeiPrezime.Text = selektiran.Naziv;
+                labelImePrezime.Text = selektiran.Naziv;
             }
         }
 
