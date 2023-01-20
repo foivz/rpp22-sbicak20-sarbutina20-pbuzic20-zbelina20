@@ -29,7 +29,7 @@ namespace EntitiesLayer.Entities
 
         public bool? OpasnoPoZivot { get; set; }
 
-        [StringLength(150)]
+        
         public string QR_kod { get; set; }
 
         public int? Primka_ID { get; set; }
