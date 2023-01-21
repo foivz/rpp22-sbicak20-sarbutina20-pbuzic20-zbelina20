@@ -28,6 +28,9 @@ namespace EntitiesLayer.Entities
 
         public DateTime DatumStvaranja { get; set; }
 
+        [StringLength(20)]
+        public string Status { get; set; }
+
         public int? Radnik_ID { get; set; }
 
         public int? Klijent_ID { get; set; }

@@ -110,21 +110,21 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.79104cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.79104cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.79104cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.79104cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.81386cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -269,7 +269,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.81386cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -422,10 +422,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DsKlijenti</DataSetName>
-            <Top>1.96003cm</Top>
+            <Top>1.36059cm</Top>
             <Left>0.2667cm</Left>
-            <Height>1.2cm</Height>
-            <Width>10cm</Width>
+            <Height>1.62772cm</Height>
+            <Width>11.16417cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -442,12 +442,12 @@
                       <GroupExpression>=Fields!Naziv.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <Label>=Fields!Naziv.Value</Label>
                   <SortExpressions>
                     <SortExpression>
                       <Value>=Fields!Naziv.Value</Value>
                     </SortExpression>
                   </SortExpressions>
+                  <Label>=Fields!Naziv.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
@@ -782,8 +782,8 @@
             <DataSetName>DsKlijenti</DataSetName>
             <Top>1.36059cm</Top>
             <Left>12.08703cm</Left>
-            <Height>4.02633cm</Height>
-            <Width>6.23cm</Width>
+            <Height>7.01083cm</Height>
+            <Width>10.6115cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -795,10 +795,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>2.63184in</Height>
+        <Height>3.55684in</Height>
         <Style />
       </Body>
-      <Width>7.45776in</Width>
+      <Width>9.09943in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

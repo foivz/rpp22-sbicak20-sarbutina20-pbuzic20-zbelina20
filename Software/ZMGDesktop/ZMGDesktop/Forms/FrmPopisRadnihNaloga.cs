@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,16 +14,18 @@ namespace ZMGDesktop
 {
     public partial class FrmPopisRadnihNaloga : Form
     {
-        public FrmPopisRadnihNaloga()
+        Radnik Radnik = new Radnik();
+        public FrmPopisRadnihNaloga(Radnik radnik)
         {
             InitializeComponent();
+            Radnik = radnik;
         }
 
         RadniNalogService servis = new RadniNalogService();
 
         private void btnNoviRadniNalog_Click(object sender, EventArgs e)
         {
-            FrmNoviRadniNalog frmNoviRadniNalog = new FrmNoviRadniNalog();
+            FrmNoviRadniNalog frmNoviRadniNalog = new FrmNoviRadniNalog(Radnik);
             frmNoviRadniNalog.ShowDialog();
             UcitajRadneNaloge();
         }
@@ -46,7 +49,27 @@ namespace ZMGDesktop
         {
             var popisRadnihNaloga = servis.DohvatiRadneNaloge();
             dgvPopisRadnihNaloga.DataSource = popisRadnihNaloga;
-            dgvPopisRadnihNaloga.Columns[9].Visible = false;
+            dgvPopisRadnihNaloga.Columns[10].Visible = false;
+        }
+
+        private void btnObrisi_Click(object sender, EventArgs e)
+        {
+            var odabraniRadniNalog = DohvatiRadniNalog();
+            servis.ObrisiRadniNalog(odabraniRadniNalog);
+            UcitajRadneNaloge();
+        }
+
+        private RadniNalog DohvatiRadniNalog()
+        {
+            return dgvPopisRadnihNaloga.CurrentRow.DataBoundItem as RadniNalog;
+        }
+
+        private void btnDetalji_Click(object sender, EventArgs e)
+        {
+            var odabraniRadniNalog = DohvatiRadniNalog();
+            FrmDetaljiRadnogNaloga frmDetaljiRadnogNaloga = new FrmDetaljiRadnogNaloga(odabraniRadniNalog, Radnik);
+            frmDetaljiRadnogNaloga.ShowDialog();
+            UcitajRadneNaloge();
         }
     }
 }

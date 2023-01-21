@@ -35,5 +35,21 @@ namespace BusinessLogicLayer.Services
                 repo.Add(radniNalog);
             }
         }
+
+        public void ObrisiRadniNalog(RadniNalog radniNalog)
+        {
+            using (var repo = new RadniNalogRepository())
+            {
+                repo.Remove(radniNalog);
+            }
+        }
+
+        public void AzurirajRadniNalog(RadniNalog radniNalog)
+        {
+            using (var repo = new RadniNalogRepository())
+            {
+                repo.Update(radniNalog);
+            }
+        }
     }
 }

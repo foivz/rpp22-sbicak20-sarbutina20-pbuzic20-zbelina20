@@ -11,15 +11,15 @@ namespace ZMGDesktop
     {
         KlijentServices servisKlijenta = new KlijentServices();
         List<Klijent> desetNajboljih;
-        public FrmIzvjestajKlijenata()
-        {
-            InitializeComponent();
-        }
 
         public FrmIzvjestajKlijenata(List<Klijent> desetNajboljih)
         {
             InitializeComponent();
             this.desetNajboljih = desetNajboljih;
+        }
+        public FrmIzvjestajKlijenata()
+        {
+            InitializeComponent();
         }
 
         private void FrmIzvjestajKlijenata_Load(object sender, EventArgs e)

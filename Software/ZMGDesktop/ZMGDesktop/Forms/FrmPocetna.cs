@@ -34,7 +34,7 @@ namespace ZMGDesktop
 
         private void btnRadniNalozi_Click(object sender, EventArgs e)
         {
-            FrmPopisRadnihNaloga frmPopisRadnihNaloga = new FrmPopisRadnihNaloga();
+            FrmPopisRadnihNaloga frmPopisRadnihNaloga = new FrmPopisRadnihNaloga(radnik);
             frmPopisRadnihNaloga.ShowDialog();
         }
 

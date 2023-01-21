@@ -43,6 +43,7 @@ namespace DataAccessLayer.Repositories
             radniNalog.QR_kod = entity.QR_kod;
             radniNalog.Opis = entity.Opis;
             radniNalog.DatumStvaranja = entity.DatumStvaranja;
+            radniNalog.Status= entity.Status;
             if (saveChanges)
             {
                 return SaveChanges();
