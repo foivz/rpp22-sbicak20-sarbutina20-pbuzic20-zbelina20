@@ -51,5 +51,11 @@ namespace ZMGDesktop
                 throw new Exception("Nema nikakvih podataka");
             }
         }
+
+        private void btnIzvjestajRadnihNaloga_Click(object sender, EventArgs e)
+        {
+            FrmKreirajIzvjestajRadnihNaloga frmKreirajIzvjestajRadnihNaloga = new FrmKreirajIzvjestajRadnihNaloga();
+            frmKreirajIzvjestajRadnihNaloga.ShowDialog();
+        }
     }
 }
