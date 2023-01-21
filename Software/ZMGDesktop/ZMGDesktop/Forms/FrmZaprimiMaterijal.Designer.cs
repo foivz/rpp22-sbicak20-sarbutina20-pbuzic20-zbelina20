@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSkeniraj = new System.Windows.Forms.Label();
             this.btnNatrag = new System.Windows.Forms.Button();
             this.btnProba = new System.Windows.Forms.Button();
+            this.btnZaprimi = new System.Windows.Forms.Button();
+            this.numKolicina = new System.Windows.Forms.NumericUpDown();
+            this.lblKolicina = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numKolicina)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblSkeniraj
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(199, 156);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(364, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Skenirajte QR kod materijala";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSkeniraj.AutoSize = true;
+            this.lblSkeniraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSkeniraj.Location = new System.Drawing.Point(257, 174);
+            this.lblSkeniraj.Name = "lblSkeniraj";
+            this.lblSkeniraj.Size = new System.Drawing.Size(364, 29);
+            this.lblSkeniraj.TabIndex = 0;
+            this.lblSkeniraj.Text = "Skenirajte QR kod materijala";
+            this.lblSkeniraj.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNatrag
             // 
@@ -59,24 +63,63 @@
             // 
             // btnProba
             // 
-            this.btnProba.Location = new System.Drawing.Point(286, 322);
+            this.btnProba.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnProba.Location = new System.Drawing.Point(30, 371);
             this.btnProba.Name = "btnProba";
-            this.btnProba.Size = new System.Drawing.Size(75, 23);
+            this.btnProba.Size = new System.Drawing.Size(190, 57);
             this.btnProba.TabIndex = 2;
-            this.btnProba.Text = "button1";
+            this.btnProba.Text = "Isprobaj uspješno skeniranje materijala";
             this.btnProba.UseVisualStyleBackColor = true;
             this.btnProba.Click += new System.EventHandler(this.btnProba_Click);
+            // 
+            // btnZaprimi
+            // 
+            this.btnZaprimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnZaprimi.Location = new System.Drawing.Point(37, 174);
+            this.btnZaprimi.Name = "btnZaprimi";
+            this.btnZaprimi.Size = new System.Drawing.Size(183, 62);
+            this.btnZaprimi.TabIndex = 3;
+            this.btnZaprimi.Text = "Ažuriraj količinu";
+            this.btnZaprimi.UseVisualStyleBackColor = true;
+            this.btnZaprimi.Click += new System.EventHandler(this.btnZaprimi_Click);
+            // 
+            // numKolicina
+            // 
+            this.numKolicina.Location = new System.Drawing.Point(37, 117);
+            this.numKolicina.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numKolicina.Name = "numKolicina";
+            this.numKolicina.Size = new System.Drawing.Size(183, 22);
+            this.numKolicina.TabIndex = 4;
+            // 
+            // lblKolicina
+            // 
+            this.lblKolicina.AutoSize = true;
+            this.lblKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.lblKolicina.Location = new System.Drawing.Point(32, 48);
+            this.lblKolicina.Name = "lblKolicina";
+            this.lblKolicina.Size = new System.Drawing.Size(252, 31);
+            this.lblKolicina.TabIndex = 5;
+            this.lblKolicina.Text = "Količina materijala";
             // 
             // FrmZaprimiMaterijal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblKolicina);
+            this.Controls.Add(this.numKolicina);
+            this.Controls.Add(this.btnZaprimi);
             this.Controls.Add(this.btnProba);
             this.Controls.Add(this.btnNatrag);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSkeniraj);
             this.Name = "FrmZaprimiMaterijal";
             this.Text = "FrmZaprimiMaterijal";
+            this.Load += new System.EventHandler(this.FrmZaprimiMaterijal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.numKolicina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,8 +127,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSkeniraj;
         private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.Button btnProba;
+        private System.Windows.Forms.Button btnZaprimi;
+        private System.Windows.Forms.NumericUpDown numKolicina;
+        private System.Windows.Forms.Label lblKolicina;
     }
 }

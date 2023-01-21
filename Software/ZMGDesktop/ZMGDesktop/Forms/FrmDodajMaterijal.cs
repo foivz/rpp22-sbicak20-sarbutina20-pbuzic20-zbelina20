@@ -56,9 +56,9 @@ namespace ZMGDesktop
             float cijena = (float)txtCijena.Value;
             string opis = txtOpis.Text;
             bool opasno = txtOpasno.Checked;
-            string qr_kod = GenerirajQR(naziv, kolicina);
-            MessageBox.Show(qr_kod.Length.ToString());
-            //string qr_kod = GenerirajRandomString();
+            //string qr_kod = GenerirajQR(naziv, kolicina);
+           
+            string qr_kod = GenerirajRandomString();
 
             Materijal noviMaterijal = new Materijal
             {

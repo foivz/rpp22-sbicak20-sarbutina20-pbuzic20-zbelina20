@@ -14,6 +14,23 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        public bool ProvjeriQR(string qrKod)
+        {
+            var postoji = Entities.SingleOrDefault(k => k.QR_kod == qrKod);
+            if (postoji!=null) return true;
+            else return false;
+        }
+
+        public int Azuriraj(string qrKod, int kolicina)
+        {
+            var postoji = Entities.SingleOrDefault(k => k.QR_kod == qrKod);
+            if (postoji != null)
+            {
+                postoji.Kolicina = kolicina;
+                return SaveChanges();
+            }
+            else return 0;
+        }
 
         public override int Add(Materijal entity, bool saveChanges = true)
         {
@@ -55,15 +72,7 @@ namespace DataAccessLayer.Repositories
 
         }
 
-        public int Azuriraj(string naziv)
-        {
-            var postoji = Entities.SingleOrDefault(k => k.Naziv == naziv);
-            if (postoji != null) {
-                //postoji.Kolicina = kolicina;
-                return SaveChanges();
-            }
-            else return 0;
-        }
+        
 
         public override int Update(Materijal entity, bool saveChanges = true)
         {

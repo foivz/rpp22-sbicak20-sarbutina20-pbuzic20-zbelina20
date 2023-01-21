@@ -49,6 +49,7 @@ namespace ZMGDesktop
         {
             FrmZaprimiMaterijal zaprimi = new FrmZaprimiMaterijal();
             zaprimi.ShowDialog();
+            PrikaziMaterijale();
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)

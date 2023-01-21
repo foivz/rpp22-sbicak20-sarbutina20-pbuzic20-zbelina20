@@ -18,13 +18,24 @@ namespace BusinessLogicLayer.Services
                 return materijali;
             }
         }
-        public bool AzurirajMaterijal(string naziv)
+
+        public bool ProvjeriQR(string qrKod)
+        {
+            using(var repo = new MaterijalRepository())
+            {
+                var postoji = repo.ProvjeriQR(qrKod);
+                if (postoji) return true;
+                else return false;
+            }
+            
+        }
+        public bool AzurirajMaterijal(string qrKod, int kolicina)
         {
             bool uspjesno = false;
 
             using (var repo = new MaterijalRepository())
             {
-                int red = repo.Azuriraj(naziv);
+                int red = repo.Azuriraj(qrKod, kolicina);
                 uspjesno = red > 0;
             }
 

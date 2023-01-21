@@ -17,9 +17,11 @@ namespace ZMGDesktop
     public partial class FrmZaprimiMaterijal : Form
     {
         MaterijalServices matServis = new MaterijalServices();
+        string provjereniQR;
         public FrmZaprimiMaterijal()
         {
             InitializeComponent();
+
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
@@ -29,28 +31,48 @@ namespace ZMGDesktop
 
         public void SkenirajMaterijal(string skeniranQR)
         {
-            QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode(skeniranQR, QRCodeGenerator.ECCLevel.Q);
+            /*QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            QRCodeData qrCodeData = qrGenerator.CreateQrCode(skeniranQR, QRCodeGenerator.ECCLevel.L);
             Base64QRCode qrKod = new Base64QRCode(qrCodeData);
             string decodedString = qrKod.GetGraphic(20);
             string naziv = decodedString;
-            //int kolicina = int.Parse(parts[1]);
+            int kolicina = int.Parse(parts[1]);*/
 
 
-
-            var uspjeh = matServis.AzurirajMaterijal(naziv);
-            if (!uspjeh) MessageBox.Show("Neuspješno zaprimanje materijala");
+            var uspjeh = matServis.ProvjeriQR(skeniranQR);
+            if (!uspjeh) MessageBox.Show("Neuspješno skeniranje materijala");
             else
             {
-                MessageBox.Show("Vrlo uspješno zaprimanje materijala");
+                provjereniQR = skeniranQR;
+                lblSkeniraj.Visible = false;
+                numKolicina.Visible = true;
+                btnZaprimi.Visible = true;
+                lblKolicina.Visible = true;
             }
 
         }
 
         private void btnProba_Click(object sender, EventArgs e)
         {
-            string proba = "+20f8My/9Td/5Tf/ALbXv9FABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH//Z";
+            string proba = "QEDA24L588AHRU2MFEK7";
             SkenirajMaterijal(proba);
+        }
+
+        private void btnZaprimi_Click(object sender, EventArgs e)
+        {
+            int kolicina = (int)numKolicina.Value;
+            var uspjeh = matServis.AzurirajMaterijal(provjereniQR, kolicina);
+            if (uspjeh) this.Close();
+            else MessageBox.Show("Neuspješno zaprimljen materijal");
+            
+        }
+
+        private void FrmZaprimiMaterijal_Load(object sender, EventArgs e)
+        {
+            numKolicina.Visible = false;
+            btnZaprimi.Visible = false;
+            lblKolicina.Visible = false;
+            provjereniQR = "";
         }
     }
 }
