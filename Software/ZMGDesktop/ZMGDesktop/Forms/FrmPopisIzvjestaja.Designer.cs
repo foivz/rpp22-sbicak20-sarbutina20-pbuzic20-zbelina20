@@ -72,7 +72,6 @@
             this.btnIzvjestajRadnihNaloga.TabIndex = 3;
             this.btnIzvjestajRadnihNaloga.Text = "Izrada izvještaja radnih naloga";
             this.btnIzvjestajRadnihNaloga.UseVisualStyleBackColor = false;
-            this.btnIzvjestajRadnihNaloga.Click += new System.EventHandler(this.btnIzvjestajRadnihNaloga_Click);
             // 
             // btnIzvjestajKlijenata
             // 
