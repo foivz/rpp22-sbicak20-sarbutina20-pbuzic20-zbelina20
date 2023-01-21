@@ -25,7 +25,9 @@ namespace DataAccessLayer.Repositories
 
         public IQueryable<Klijent> DohvatiDesetNajboljih()
         {
-            var query = Entities.OrderByDescending(x => x.Racun.Count()).Take(5);
+            var query = Entities.Where(x => x.Racun.Count() > 0)
+                     .OrderByDescending(x => x.Racun.Count())
+                     .Take(10);
             return query;
         }
 
