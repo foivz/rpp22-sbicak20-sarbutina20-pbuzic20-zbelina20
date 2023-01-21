@@ -91,9 +91,19 @@
             0,
             0,
             0});
+            this.numKolicina.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numKolicina.Name = "numKolicina";
             this.numKolicina.Size = new System.Drawing.Size(183, 22);
             this.numKolicina.TabIndex = 4;
+            this.numKolicina.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // lblKolicina
             // 

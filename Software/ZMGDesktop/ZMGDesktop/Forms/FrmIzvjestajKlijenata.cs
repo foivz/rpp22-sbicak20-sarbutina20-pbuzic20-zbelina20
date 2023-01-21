@@ -41,5 +41,10 @@ namespace ZMGDesktop
                 throw new Exception("Nema nikakvih podataka");
             }
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

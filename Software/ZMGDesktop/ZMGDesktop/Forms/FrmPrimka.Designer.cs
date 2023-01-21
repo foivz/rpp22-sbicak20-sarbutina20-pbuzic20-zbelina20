@@ -31,11 +31,12 @@
             this.btnZatvori = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.txtMjernaJedinica = new System.Windows.Forms.TextBox();
             this.txtDatum = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnPohrani = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnZatvori
@@ -71,6 +72,42 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Količina zaprimljenog materijala";
             // 
+            // txtNaziv
+            // 
+            this.txtNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNaziv.Location = new System.Drawing.Point(389, 42);
+            this.txtNaziv.Name = "txtNaziv";
+            this.txtNaziv.ReadOnly = true;
+            this.txtNaziv.Size = new System.Drawing.Size(195, 26);
+            this.txtNaziv.TabIndex = 4;
+            // 
+            // txtKolicina
+            // 
+            this.txtKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKolicina.Location = new System.Drawing.Point(389, 105);
+            this.txtKolicina.Name = "txtKolicina";
+            this.txtKolicina.ReadOnly = true;
+            this.txtKolicina.Size = new System.Drawing.Size(159, 26);
+            this.txtKolicina.TabIndex = 5;
+            // 
+            // txtMjernaJedinica
+            // 
+            this.txtMjernaJedinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMjernaJedinica.Location = new System.Drawing.Point(563, 105);
+            this.txtMjernaJedinica.Name = "txtMjernaJedinica";
+            this.txtMjernaJedinica.ReadOnly = true;
+            this.txtMjernaJedinica.Size = new System.Drawing.Size(79, 26);
+            this.txtMjernaJedinica.TabIndex = 6;
+            // 
+            // txtDatum
+            // 
+            this.txtDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDatum.Location = new System.Drawing.Point(389, 177);
+            this.txtDatum.Name = "txtDatum";
+            this.txtDatum.ReadOnly = true;
+            this.txtDatum.Size = new System.Drawing.Size(195, 26);
+            this.txtDatum.TabIndex = 7;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -81,43 +118,25 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Datum";
             // 
-            // txtNaziv
+            // btnPohrani
             // 
-            this.txtNaziv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNaziv.Location = new System.Drawing.Point(389, 42);
-            this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(195, 26);
-            this.txtNaziv.TabIndex = 4;
-            // 
-            // txtKolicina
-            // 
-            this.txtKolicina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKolicina.Location = new System.Drawing.Point(389, 105);
-            this.txtKolicina.Name = "txtKolicina";
-            this.txtKolicina.Size = new System.Drawing.Size(159, 26);
-            this.txtKolicina.TabIndex = 5;
-            // 
-            // txtMjernaJedinica
-            // 
-            this.txtMjernaJedinica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMjernaJedinica.Location = new System.Drawing.Point(563, 105);
-            this.txtMjernaJedinica.Name = "txtMjernaJedinica";
-            this.txtMjernaJedinica.Size = new System.Drawing.Size(79, 26);
-            this.txtMjernaJedinica.TabIndex = 6;
-            // 
-            // txtDatum
-            // 
-            this.txtDatum.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDatum.Location = new System.Drawing.Point(389, 177);
-            this.txtDatum.Name = "txtDatum";
-            this.txtDatum.Size = new System.Drawing.Size(195, 26);
-            this.txtDatum.TabIndex = 7;
+            this.btnPohrani.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPohrani.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPohrani.ForeColor = System.Drawing.Color.White;
+            this.btnPohrani.Location = new System.Drawing.Point(212, 359);
+            this.btnPohrani.Name = "btnPohrani";
+            this.btnPohrani.Size = new System.Drawing.Size(237, 45);
+            this.btnPohrani.TabIndex = 8;
+            this.btnPohrani.Text = "Pohrani datoteku lokalno";
+            this.btnPohrani.UseVisualStyleBackColor = false;
+            this.btnPohrani.Click += new System.EventHandler(this.btnPohrani_Click);
             // 
             // FrmPrimka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPohrani);
             this.Controls.Add(this.txtDatum);
             this.Controls.Add(this.txtMjernaJedinica);
             this.Controls.Add(this.txtKolicina);
@@ -128,6 +147,7 @@
             this.Controls.Add(this.btnZatvori);
             this.Name = "FrmPrimka";
             this.Text = "FrmPrimka";
+            this.Load += new System.EventHandler(this.FrmPrimka_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,10 +158,11 @@
         private System.Windows.Forms.Button btnZatvori;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNaziv;
         private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.TextBox txtMjernaJedinica;
         private System.Windows.Forms.TextBox txtDatum;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnPohrani;
     }
 }

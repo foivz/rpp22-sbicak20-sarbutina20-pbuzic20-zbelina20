@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.klijentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.klijentBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // klijentBindingSource
+            // 
+            this.klijentBindingSource.DataSource = typeof(EntitiesLayer.Entities.Klijent);
             // 
             // reportViewer1
             // 
@@ -47,10 +51,7 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1091, 453);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // klijentBindingSource
-            // 
-            this.klijentBindingSource.DataSource = typeof(EntitiesLayer.Entities.Klijent);
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // FrmIzvjestajKlijenata
             // 

@@ -21,15 +21,16 @@ namespace DataAccessLayer.Repositories
             else return false;
         }
 
-        public int Azuriraj(string qrKod, int kolicina)
+        public Materijal Azuriraj(string qrKod, int kolicina)
         {
             var postoji = Entities.SingleOrDefault(k => k.QR_kod == qrKod);
             if (postoji != null)
             {
-                postoji.Kolicina = kolicina;
-                return SaveChanges();
+                postoji.Kolicina += kolicina;
+                SaveChanges();
+                return postoji;
             }
-            else return 0;
+            else return null;
         }
 
         public override int Add(Materijal entity, bool saveChanges = true)

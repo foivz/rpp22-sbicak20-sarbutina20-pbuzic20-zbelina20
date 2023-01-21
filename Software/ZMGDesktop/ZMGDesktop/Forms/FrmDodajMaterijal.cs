@@ -1,4 +1,6 @@
 ﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Iznimke;
+using ZMGDesktop.ValidacijaUnosa;
 using EntitiesLayer.Entities;
 using QRCoder;
 using System;
@@ -14,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using ZMGDesktop.ValidacijaUnosa;
 using static EntitiesLayer.Entities.Enumeracije;
 
 namespace ZMGDesktop
@@ -21,6 +24,7 @@ namespace ZMGDesktop
     public partial class FrmDodajMaterijal : Form
     {
         MaterijalServices matServis = new MaterijalServices();
+        private Validacija validacija = new Validacija();
         public FrmDodajMaterijal()
         {
             InitializeComponent();
@@ -45,33 +49,30 @@ namespace ZMGDesktop
 
         private void btnDodajMaterijal_Click(object sender, EventArgs e)
         {
-            if (txtOpasno.Text == null || txtNaziv.Text == "" || txtKolicina.Text == "0" || txtCijena.Text == "0")
-            {
-                MessageBox.Show("Nisu uneseni svi obavezni podatci");
-                return;
-            }
-            string naziv = txtNaziv.Text;
-            int kolicina = (int)txtKolicina.Value;
-            string odabranaJedinica = cmbMjernaJedinica.SelectedItem.ToString();
-            float cijena = (float)txtCijena.Value;
-            string opis = txtOpis.Text;
-            bool opasno = txtOpasno.Checked;
-            //string qr_kod = GenerirajQR(naziv, kolicina);
-           
-            string qr_kod = GenerirajRandomString();
+            if(provjeriUnos() == true) {
+                string naziv = txtNaziv.Text;
+                int kolicina = (int)txtKolicina.Value;
+                string odabranaJedinica = cmbMjernaJedinica.SelectedItem.ToString();
+                float cijena = (float)txtCijena.Value;
+                string opis = txtOpis.Text;
+                bool opasno = txtOpasno.Checked;
+                //string qr_kod = GenerirajQR(naziv, kolicina);
 
-            Materijal noviMaterijal = new Materijal
-            {
-                Naziv = naziv,
-                Kolicina = kolicina,
-                JedinicaMjere = odabranaJedinica,
-                CijenaMaterijala = cijena,
-                Opis = opis,
-                OpasnoPoZivot = opasno,
-                QR_kod = qr_kod
-            };
-            matServis.dodajMaterijal(noviMaterijal);
-            this.Close();
+                string qr_kod = GenerirajRandomString();
+
+                Materijal noviMaterijal = new Materijal
+                {
+                    Naziv = naziv,
+                    Kolicina = kolicina,
+                    JedinicaMjere = odabranaJedinica,
+                    CijenaMaterijala = cijena,
+                    Opis = opis,
+                    OpasnoPoZivot = opasno,
+                    QR_kod = qr_kod
+                };
+                matServis.dodajMaterijal(noviMaterijal);
+                this.Close();
+            }
         }
 
         private string GenerirajQR(string naziv, int kolicina)
@@ -94,6 +95,26 @@ namespace ZMGDesktop
             return new string(Enumerable.Repeat(chars, 20)
               .Select(s => s[random.Next(s.Length)]).ToArray());
 
+        }
+
+
+        private bool provjeriUnos()
+        {
+            if (txtNaziv.Text == "" || txtCijena.Value == 0 || txtKolicina.Value == 0 || cmbMjernaJedinica.SelectedItem == null || txtOpasno.Checked == null || txtOpis.Text == null)
+            {
+                MessageBox.Show("Potrebno je ispuniti sva polja", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraSamoSlova(txtNaziv.Text) == false)
+            {
+                MessageBox.Show("Naziv može sadržavati samo slova");
+                return false;
+            }
+            if (validacija.provjeraSamoBrojevi(txtCijena.Value.ToString()) == false) {
+                MessageBox.Show("Cijena može sadržavati samo brojeve");
+                return false;
+            }
+            return true;
         }
     }
 }

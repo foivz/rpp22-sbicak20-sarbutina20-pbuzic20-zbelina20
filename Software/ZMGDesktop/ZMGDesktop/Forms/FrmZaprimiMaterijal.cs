@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Animation;
+using ZMGDesktop.ValidacijaUnosa;
 
 namespace ZMGDesktop
 {
@@ -61,8 +62,13 @@ namespace ZMGDesktop
         private void btnZaprimi_Click(object sender, EventArgs e)
         {
             int kolicina = (int)numKolicina.Value;
-            var uspjeh = matServis.AzurirajMaterijal(provjereniQR, kolicina);
-            if (uspjeh) this.Close();
+            var materijal = matServis.AzurirajMaterijal(provjereniQR, kolicina);
+            if (materijal != null)
+            {
+                FrmPrimka primka = new FrmPrimka(materijal, kolicina);
+                primka.ShowDialog();
+                this.Close();
+            }
             else MessageBox.Show("Neuspješno zaprimljen materijal");
             
         }

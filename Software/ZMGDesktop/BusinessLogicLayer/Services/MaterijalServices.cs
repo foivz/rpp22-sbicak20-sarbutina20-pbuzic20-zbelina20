@@ -29,17 +29,16 @@ namespace BusinessLogicLayer.Services
             }
             
         }
-        public bool AzurirajMaterijal(string qrKod, int kolicina)
+        public Materijal AzurirajMaterijal(string qrKod, int kolicina)
         {
-            bool uspjesno = false;
+            Materijal materijal;
 
             using (var repo = new MaterijalRepository())
             {
-                int red = repo.Azuriraj(qrKod, kolicina);
-                uspjesno = red > 0;
+                materijal = repo.Azuriraj(qrKod, kolicina);
             }
 
-            return uspjesno;
+            return materijal;
         }
 
         public bool obrisiMaterijal(Materijal materijal)

@@ -150,16 +150,36 @@
             // txtKolicina
             // 
             this.txtKolicina.Location = new System.Drawing.Point(36, 140);
+            this.txtKolicina.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(169, 22);
             this.txtKolicina.TabIndex = 16;
+            this.txtKolicina.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txtCijena
             // 
             this.txtCijena.Location = new System.Drawing.Point(36, 232);
+            this.txtCijena.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txtCijena.Name = "txtCijena";
             this.txtCijena.Size = new System.Drawing.Size(169, 22);
             this.txtCijena.TabIndex = 17;
+            this.txtCijena.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // txtOpasno
             // 
