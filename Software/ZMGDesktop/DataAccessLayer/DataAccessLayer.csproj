@@ -53,6 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Iznimke\EmailException.cs" />
+    <Compile Include="Iznimke\IBANException.cs" />
+    <Compile Include="Iznimke\OIBException.cs" />
+    <Compile Include="Iznimke\TelefonException.cs" />
     <Compile Include="Iznimke\UserException.cs" />
     <Compile Include="Northwind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

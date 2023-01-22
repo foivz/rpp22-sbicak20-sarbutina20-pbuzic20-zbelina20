@@ -43,7 +43,17 @@ namespace ZMGDesktop.ValidacijaUnosa
         public bool provjeraSamoSlova(string tekst)
         {
             bool validan = false;
-            if(Regex.IsMatch(tekst, @"^[a-zA-Z]+$"))
+            if(Regex.IsMatch(tekst, @"^[\p{L}\s]+$"))
+            {
+                validan = true;
+            }
+            return validan;
+        }
+
+        public bool provjeraMjesta(string mjesto)
+        {
+            bool validan = false;
+            if(Regex.IsMatch(mjesto, @"^[\p{L}\s]+$"))
             {
                 validan = true;
             }
@@ -63,7 +73,7 @@ namespace ZMGDesktop.ValidacijaUnosa
         public bool provjeraUlica(string ulica)
         {
             bool validan = false;
-            if(Regex.IsMatch(ulica, @"^[a-zA-Z][a-zA-Z0-9\s]*[a-zA-Z0-9]$"))
+            if(Regex.IsMatch(ulica, @"^[\p{L}\d\s]+$"))
             {
                 validan = true;
             }

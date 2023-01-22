@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using ZMGDesktop.ValidacijaUnosa;
 
 namespace ZMGDesktop
 {
@@ -19,6 +20,7 @@ namespace ZMGDesktop
     {
         private string fileName;
         private KlijentServices servisKlijent = new KlijentServices();
+        private Validacija validacija = new Validacija();
         public FrmXML()
         {
             InitializeComponent();
@@ -64,7 +66,14 @@ namespace ZMGDesktop
                 {
                     foreach (var klijent in klijentiList)
                     {
-                        servisKlijent.Add(klijent);
+                        if (provjeri(klijent))
+                            servisKlijent.Add(klijent);
+                        else
+                        {
+                            MessageBox.Show("Neuspješno ubacivanje korisnika", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        };
+                            
                     }
                     dgvKlijentiXML.DataSource = klijentiList;
                     dgvKlijentiXML.Columns[0].Visible = false;
@@ -84,6 +93,67 @@ namespace ZMGDesktop
             {
                 MessageBox.Show(ex.Poruka);
             }
+            catch (TelefonException ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
+            catch (IBANException ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
+            catch (OIBException ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
+            catch (EmailException ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
+        }
+
+        private bool provjeri(Klijent klijent)
+        {
+            if (klijent.IBAN == "" || klijent.Naziv == "" || klijent.Mjesto == "" || klijent.Adresa == "" || klijent.OIB == "" || klijent.BrojTelefona == "" || klijent.Email == "")
+            {
+                MessageBox.Show("Potrebno je ispuniti sva polja", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraSamoSlova(klijent.Naziv) == false)
+            {
+                MessageBox.Show("Naziv može sadržavati samo slova", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraOIB(klijent.OIB) == false)
+            {
+                MessageBox.Show("Krivo unesen OIB", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraUlica(klijent.Adresa) == false)
+            {
+                MessageBox.Show("Krivo unesena adresa", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraRacuna(klijent.IBAN) == false)
+            {
+                MessageBox.Show("Krivo uneesn IBAN račun", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraMjesta(klijent.Mjesto) == false)
+            {
+                MessageBox.Show("Krivo uneseno mjesto", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraTelefon(klijent.BrojTelefona) == false)
+            {
+                MessageBox.Show("Krivi broj telefona", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if (validacija.provjeraMaila(klijent.Email) == false)
+            {
+                MessageBox.Show("Krivi email", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

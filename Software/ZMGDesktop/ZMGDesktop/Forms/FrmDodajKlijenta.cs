@@ -40,25 +40,40 @@ namespace ZMGDesktop
         {
             if (provjeriUnos() == true)
             {
-                if (selektiran == null)
+                try
                 {
-                    try
+                    if (selektiran == null)
                     {
                         dodajKlijenta();
                         Close();
                     }
-                    catch (UserException ex)
+                    else
                     {
-                        MessageBox.Show(ex.Poruka);
+                        azurirajKlijenta(selektiran);
+                        Close();
                     }
-                    
                 }
-                else
+                catch (UserException ex)
                 {
-                    azurirajKlijenta(selektiran);
-                    Close();
+                    MessageBox.Show(ex.Poruka);
                 }
-                
+                catch (TelefonException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+                catch (IBANException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+                catch (OIBException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+                catch (EmailException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+
             }
         }
 
@@ -101,7 +116,7 @@ namespace ZMGDesktop
                 MessageBox.Show("Krivo uneesn IBAN račun");
                 return false;
             }
-            if(validacija.provjeraSamoSlova(txtMjesto.Text) == false)
+            if(validacija.provjeraMjesta(txtMjesto.Text) == false)
             {
                 MessageBox.Show("Krivo uneseno mjesto");
                 return false;
