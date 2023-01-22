@@ -6,24 +6,59 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Animation;
 using ZMGDesktop.ValidacijaUnosa;
+using HidLibrary;
+using System.Threading;
 
 namespace ZMGDesktop
 {
     public partial class FrmZaprimiMaterijal : Form
     {
+        HidDevice skener;
         MaterijalServices matServis = new MaterijalServices();
         string provjereniQR;
+        private bool skeniranje = true;
+
         public FrmZaprimiMaterijal()
         {
             InitializeComponent();
-
+            InitializeScanner();
         }
+
+        private void InitializeScanner()
+        {
+            skeniranje = true;
+
+            var devices = HidDevices.Enumerate();
+           
+            skener = devices.FirstOrDefault(d => d.Attributes.VendorId == 0x1234 && d.Attributes.ProductId == 0x5678);
+            
+            if (skener == null) return;
+
+            skener.OpenDevice();
+            
+            Task.Run(() => ReadDataFromScanner());
+        }
+
+        private void ReadDataFromScanner()
+        {
+            while (skeniranje)
+            {
+                var report = skener.ReadReport();
+                if (report != null)
+                {
+                    var podaci = Encoding.ASCII.GetString(report.Data);
+                    SkenirajMaterijal(podaci);
+                }
+            }
+        }
+
 
         private void btnNatrag_Click(object sender, EventArgs e)
         {
@@ -32,12 +67,7 @@ namespace ZMGDesktop
 
         public void SkenirajMaterijal(string skeniranQR)
         {
-            /*QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeData qrCodeData = qrGenerator.CreateQrCode(skeniranQR, QRCodeGenerator.ECCLevel.L);
-            Base64QRCode qrKod = new Base64QRCode(qrCodeData);
-            string decodedString = qrKod.GetGraphic(20);
-            string naziv = decodedString;
-            int kolicina = int.Parse(parts[1]);*/
+            skeniranje = false;
 
 
             var uspjeh = matServis.ProvjeriQR(skeniranQR);
