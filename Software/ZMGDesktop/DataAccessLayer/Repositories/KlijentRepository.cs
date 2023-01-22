@@ -142,5 +142,38 @@ namespace DataAccessLayer.Repositories
                     throw new TelefonException("Ovaj broj telefona se već koristi");
                 }
         }
+
+        public override int Remove(Klijent entity, bool saveChanges = true)
+        {
+            Entities.Attach(entity);
+            if (provjeri(entity) == true)
+            {
+                Entities.Remove(entity);
+                if (saveChanges)
+                {
+                    return SaveChanges();
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                throw new BrisanjeKlijentaException("Zabranjeno brisanje klijenta. Klijent ima radne naloge i račune");
+            }
+        }
+
+        private bool provjeri(Klijent entity)
+        {
+            if(entity.Racun.Count == 0 && entity.RadniNalog.Count == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

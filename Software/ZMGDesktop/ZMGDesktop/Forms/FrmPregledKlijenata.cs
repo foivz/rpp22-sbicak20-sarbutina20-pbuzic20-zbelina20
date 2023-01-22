@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Iznimke;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -61,10 +62,18 @@ namespace ZMGDesktop
         private void btnIzbrisiKlijenta_Click(object sender, EventArgs e)
         {
             var selektiran = dohvatiSelektiranog();
-            if(selektiran != null)
+            try
             {
-                izbrisiKlijenta(selektiran); 
+                if (selektiran != null)
+                {
+                    izbrisiKlijenta(selektiran);
+                }
             }
+            catch (BrisanjeKlijentaException ex)
+            {
+                MessageBox.Show(ex.Poruka);
+            }
+           
         }
 
         private void izbrisiKlijenta(Klijent selektiran)

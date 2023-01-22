@@ -57,30 +57,12 @@ namespace BusinessLogicLayer.Services
         public bool Remove(Klijent klijent)
         {
             bool uspjesno = false;
-
-            bool mozeSeObrisati = ProvjeriKlijenta(klijent);
-            if (mozeSeObrisati)
-            {
                 using(var repo = new KlijentRepository())
                 {
                     int red = repo.Remove(klijent);
                     uspjesno = red > 0;
                 }
-            }
-
             return uspjesno;
-        }
-
-        private bool ProvjeriKlijenta(Klijent klijent)
-        {
-            if(klijent == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
     }
 }

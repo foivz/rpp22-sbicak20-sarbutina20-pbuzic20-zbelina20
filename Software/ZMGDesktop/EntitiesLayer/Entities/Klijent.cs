@@ -45,7 +45,7 @@ namespace EntitiesLayer.Entities
         [Required]
         [StringLength(30)]
         public string IBAN { get; set; }
-
+        
         public int ukupniBrojRacuna { get; set; }
 
         public int? IzvjestajKlijenata_ID { get; set; }
