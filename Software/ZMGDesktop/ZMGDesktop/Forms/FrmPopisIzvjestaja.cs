@@ -57,5 +57,10 @@ namespace ZMGDesktop
             FrmKreirajIzvjestajRadnihNaloga frmKreirajIzvjestajRadnihNaloga = new FrmKreirajIzvjestajRadnihNaloga();
             frmKreirajIzvjestajRadnihNaloga.ShowDialog();
         }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

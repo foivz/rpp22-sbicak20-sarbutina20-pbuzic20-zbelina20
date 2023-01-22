@@ -100,6 +100,7 @@
             this.btnNatrag.TabIndex = 7;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = false;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // dgvRadniNalozi
             // 
