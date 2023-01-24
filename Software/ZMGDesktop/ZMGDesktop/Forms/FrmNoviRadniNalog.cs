@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Media3D;
 
 namespace ZMGDesktop
 {
@@ -81,11 +82,13 @@ namespace ZMGDesktop
         {
             var materijal = cmbMaterijali.SelectedItem as Materijal;
             materijali.Add(materijal);
+            List<Materijal> lista = new List<Materijal>();
+            lista.AddRange(materijali);
 
-            btnDodajMaterijalUTablicu();
+            btnDodajMaterijalUTablicu(lista);
         }
 
-        private void btnDodajMaterijalUTablicu()
+        private void btnDodajMaterijalUTablicu(List<Materijal> materijali)
         {
             dgvMaterijali.DataSource = materijali;
         }
