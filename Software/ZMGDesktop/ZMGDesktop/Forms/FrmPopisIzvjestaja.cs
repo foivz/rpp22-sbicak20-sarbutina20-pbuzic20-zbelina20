@@ -51,5 +51,10 @@ namespace ZMGDesktop
                 throw new Exception("Nema nikakvih podataka");
             }
         }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

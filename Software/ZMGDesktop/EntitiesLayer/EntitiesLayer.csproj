@@ -49,6 +49,7 @@
     <Compile Include="Entities\Klijent.cs" />
     <Compile Include="Entities\Klijent.Ext.cs" />
     <Compile Include="Entities\Materijal.cs" />
+    <Compile Include="Entities\Materijal.Ext.cs" />
     <Compile Include="Entities\Poslodavac.cs" />
     <Compile Include="Entities\Primka.cs" />
     <Compile Include="Entities\Racun.cs" />
