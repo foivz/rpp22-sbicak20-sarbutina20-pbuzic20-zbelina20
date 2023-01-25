@@ -4,6 +4,7 @@ namespace EntitiesLayer.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using DataAccessLayer;
 
     [Table("Primka")]
     public partial class Primka
@@ -24,9 +25,9 @@ namespace EntitiesLayer.Entities
         [Column(TypeName = "date")]
         public DateTime? Datum { get; set; }
 
+        public int? Kolicina { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Materijal> Materijal { get; set; }
-
-        public int Kolicina { get; set; }
     }
 }

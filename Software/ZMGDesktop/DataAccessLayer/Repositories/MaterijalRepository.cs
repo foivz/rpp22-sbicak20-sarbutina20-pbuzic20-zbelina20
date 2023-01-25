@@ -9,7 +9,7 @@ namespace DataAccessLayer.Repositories
 {
     public class MaterijalRepository : Repository<Materijal>
     {
-        public MaterijalRepository() : base(new Northwind())
+        public MaterijalRepository() : base(new ZMGBaza())
         {
 
         }

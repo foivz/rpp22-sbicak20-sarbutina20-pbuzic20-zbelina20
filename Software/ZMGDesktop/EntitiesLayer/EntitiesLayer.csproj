@@ -58,6 +58,7 @@
     <Compile Include="Entities\RadniNalog.cs" />
     <Compile Include="Entities\Roba.cs" />
     <Compile Include="Entities\StavkaRacun.cs" />
+    <Compile Include="Entities\sysdiagrams.cs" />
     <Compile Include="Entities\Usluga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

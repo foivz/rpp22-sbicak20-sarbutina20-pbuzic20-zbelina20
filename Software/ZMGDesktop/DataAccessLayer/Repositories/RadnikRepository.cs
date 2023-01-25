@@ -11,7 +11,7 @@ namespace DataAccessLayer.Repositories
 {
     public class RadnikRepository : Repository<Radnik>
     {
-        public RadnikRepository() : base(new Northwind())
+        public RadnikRepository() : base(new ZMGBaza())
         {
 
         }

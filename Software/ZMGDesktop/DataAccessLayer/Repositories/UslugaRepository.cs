@@ -9,7 +9,7 @@ namespace DataAccessLayer.Repositories
 {
     public class UslugaRepository : Repository<Usluga>
     {
-        public UslugaRepository() : base(new Northwind())
+        public UslugaRepository() : base(new ZMGBaza())
         {
 
         }

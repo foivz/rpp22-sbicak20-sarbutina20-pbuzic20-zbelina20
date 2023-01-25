@@ -9,7 +9,7 @@ namespace DataAccessLayer.Repositories
 {
     public class RadniNalogRepository : Repository<RadniNalog>
     {
-        public RadniNalogRepository() : base(new Northwind())
+        public RadniNalogRepository() : base(new ZMGBaza())
         {
 
         }

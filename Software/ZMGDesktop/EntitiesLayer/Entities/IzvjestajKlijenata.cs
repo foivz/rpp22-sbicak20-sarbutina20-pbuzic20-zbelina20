@@ -4,7 +4,6 @@ namespace EntitiesLayer.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
     [Table("IzvjestajKlijenata")]
     public partial class IzvjestajKlijenata
     {

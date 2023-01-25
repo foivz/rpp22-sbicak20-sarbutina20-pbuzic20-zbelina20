@@ -9,7 +9,7 @@ namespace DataAccessLayer.Repositories
 {
     public class PrimkaRepository : Repository<Primka>
     {
-        public PrimkaRepository() : base(new Northwind())
+        public PrimkaRepository() : base(new ZMGBaza())
         {
 
         }
