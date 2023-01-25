@@ -126,22 +126,22 @@
     <Compile Include="Forms\FrmDodajMaterijal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodajStavke.cs">
+    <Compile Include="Forms\FrmDodajStavke.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodajStavke.Designer.cs">
+    <Compile Include="Forms\FrmDodajStavke.Designer.cs">
       <DependentUpon>FrmDodajStavke.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmIzdajNoviRacun.cs">
+    <Compile Include="Forms\FrmIzdajNoviRacun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIzdajNoviRacun.Designer.cs">
+    <Compile Include="Forms\FrmIzdajNoviRacun.Designer.cs">
       <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPregledRacunaPDF.cs">
+    <Compile Include="Forms\FrmPregledRacunaPDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPregledRacunaPDF.Designer.cs">
+    <Compile Include="Forms\FrmPregledRacunaPDF.Designer.cs">
       <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmDodajMaterijal.Designer.cs">
@@ -267,19 +267,19 @@
     <EmbeddedResource Include="Forms\FrmRacuni.resx">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="FrmDetaljniPregledRacun.cs">
+    <Compile Include="Forms\FrmDetaljniPregledRacun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDetaljniPregledRacun.Designer.cs">
+    <Compile Include="Forms\FrmDetaljniPregledRacun.Designer.cs">
       <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmDodajStavke.resx">
+    <EmbeddedResource Include="Forms\FrmDodajStavke.resx">
       <DependentUpon>FrmDodajStavke.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIzdajNoviRacun.resx">
+    <EmbeddedResource Include="Forms\FrmIzdajNoviRacun.resx">
       <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPregledRacunaPDF.resx">
+    <EmbeddedResource Include="Forms\FrmPregledRacunaPDF.resx">
       <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.resx">
@@ -331,7 +331,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="FrmDetaljniPregledRacun.resx">
+    <EmbeddedResource Include="Forms\FrmDetaljniPregledRacun.resx">
       <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportKlijenti.rdlc" />
