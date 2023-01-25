@@ -150,6 +150,11 @@
             // txtKolicina
             // 
             this.txtKolicina.Location = new System.Drawing.Point(36, 140);
+            this.txtKolicina.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.txtKolicina.Minimum = new decimal(new int[] {
             1,
             0,
@@ -167,6 +172,11 @@
             // txtCijena
             // 
             this.txtCijena.Location = new System.Drawing.Point(36, 232);
+            this.txtCijena.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.txtCijena.Minimum = new decimal(new int[] {
             1,
             0,
