@@ -31,15 +31,11 @@
             this.btnSpremi = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnIzmijeni = new System.Windows.Forms.Button();
             this.cmbKlijent = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtRadnik = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.dtpDatumStvaranja = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +44,10 @@
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKolicina = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnIzmijeni = new System.Windows.Forms.Button();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.btnSpremi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnSpremi.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnSpremi.Location = new System.Drawing.Point(560, 403);
-            this.btnSpremi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSpremi.Margin = new System.Windows.Forms.Padding(2);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(112, 37);
             this.btnSpremi.TabIndex = 15;
@@ -71,7 +71,7 @@
             this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOdustani.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnOdustani.Location = new System.Drawing.Point(676, 403);
-            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2);
             this.btnOdustani.Name = "btnOdustani";
             this.btnOdustani.Size = new System.Drawing.Size(112, 37);
             this.btnOdustani.TabIndex = 14;
@@ -81,12 +81,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbStatus);
             this.groupBox1.Controls.Add(this.cmbKlijent);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtRadnik);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtStatus);
             this.groupBox1.Controls.Add(this.dtpDatumStvaranja);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
@@ -101,37 +101,6 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacije";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(225, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(309, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 29);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Radni nalog #";
-            // 
-            // btnIzmijeni
-            // 
-            this.btnIzmijeni.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnIzmijeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnIzmijeni.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnIzmijeni.Location = new System.Drawing.Point(444, 403);
-            this.btnIzmijeni.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnIzmijeni.Name = "btnIzmijeni";
-            this.btnIzmijeni.Size = new System.Drawing.Size(112, 37);
-            this.btnIzmijeni.TabIndex = 16;
-            this.btnIzmijeni.Text = "Izmijeni";
-            this.btnIzmijeni.UseVisualStyleBackColor = false;
-            this.btnIzmijeni.Click += new System.EventHandler(this.btnIzmijeni_Click);
             // 
             // cmbKlijent
             // 
@@ -175,13 +144,6 @@
             this.label5.Size = new System.Drawing.Size(40, 13);
             this.label5.TabIndex = 25;
             this.label5.Text = "Status:";
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(305, 223);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(168, 20);
-            this.txtStatus.TabIndex = 24;
             // 
             // dtpDatumStvaranja
             // 
@@ -247,6 +209,49 @@
             this.txtKolicina.Size = new System.Drawing.Size(168, 20);
             this.txtKolicina.TabIndex = 16;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(225, 71);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(309, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 29);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Radni nalog #";
+            // 
+            // btnIzmijeni
+            // 
+            this.btnIzmijeni.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnIzmijeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzmijeni.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnIzmijeni.Location = new System.Drawing.Point(444, 403);
+            this.btnIzmijeni.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIzmijeni.Name = "btnIzmijeni";
+            this.btnIzmijeni.Size = new System.Drawing.Size(112, 37);
+            this.btnIzmijeni.TabIndex = 16;
+            this.btnIzmijeni.Text = "Izmijeni";
+            this.btnIzmijeni.UseVisualStyleBackColor = false;
+            this.btnIzmijeni.Click += new System.EventHandler(this.btnIzmijeni_Click);
+            // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
+            "Napravljen",
+            "U izradi",
+            "Dovršen"});
+            this.cmbStatus.Location = new System.Drawing.Point(305, 223);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(168, 21);
+            this.cmbStatus.TabIndex = 30;
+            // 
             // FrmDetaljiRadnogNaloga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +264,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "FrmDetaljiRadnogNaloga";
-            this.Text = "FrmDetaljiRadnogNaloga";
+            this.Text = "Detalji radnog naloga";
             this.Load += new System.EventHandler(this.FrmDetaljiRadnogNaloga_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -280,7 +285,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtRadnik;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.DateTimePicker dtpDatumStvaranja;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
@@ -289,5 +293,6 @@
         private System.Windows.Forms.TextBox txtOpis;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKolicina;
+        private System.Windows.Forms.ComboBox cmbStatus;
     }
 }
