@@ -4,6 +4,7 @@ namespace EntitiesLayer.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using DataAccessLayer;
 
     [Table("RadniNalog")]
     public partial class RadniNalog
@@ -12,6 +13,7 @@ namespace EntitiesLayer.Entities
         public RadniNalog()
         {
             IzvjestajRadnihNaloga = new HashSet<IzvjestajRadnihNaloga>();
+            Materijal = new HashSet<Materijal>();
         }
 
         [Key]
@@ -28,6 +30,7 @@ namespace EntitiesLayer.Entities
 
         public DateTime DatumStvaranja { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string Status { get; set; }
 
@@ -41,5 +44,8 @@ namespace EntitiesLayer.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IzvjestajRadnihNaloga> IzvjestajRadnihNaloga { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Materijal> Materijal { get; set; }
     }
 }

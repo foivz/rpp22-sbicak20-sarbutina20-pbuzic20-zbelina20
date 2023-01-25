@@ -1,3 +1,4 @@
+
 namespace EntitiesLayer.Entities
 {
     using System;

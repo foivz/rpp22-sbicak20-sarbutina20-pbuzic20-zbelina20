@@ -10,7 +10,7 @@ namespace DataAccessLayer.Repositories
     public class RacunRepository: Repository<Racun>
     {
 
-        public RacunRepository(): base(new Northwind())
+        public RacunRepository(): base(new ZMGBaza())
         {
 
         }

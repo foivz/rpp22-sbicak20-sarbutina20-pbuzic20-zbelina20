@@ -9,10 +9,10 @@ namespace DataAccessLayer.Repositories
 {
     public abstract class Repository<T> : IDisposable where T : class
     {
-        public Northwind Context { get; set; }
+        public ZMGBaza Context { get; set; }
         public DbSet<T> Entities { get; set; }
 
-        public Repository(Northwind context)
+        public Repository(ZMGBaza context)
         {
             Context = context;
             Entities = Context.Set<T>();

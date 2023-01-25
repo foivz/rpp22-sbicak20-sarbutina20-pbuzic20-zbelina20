@@ -11,7 +11,7 @@ namespace DataAccessLayer.Repositories
 {
     public class KlijentRepository : Repository<Klijent>
     {
-        public KlijentRepository() : base(new Northwind())
+        public KlijentRepository() : base(new ZMGBaza())
         {
 
         }

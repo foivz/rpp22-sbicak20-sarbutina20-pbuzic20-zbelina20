@@ -41,13 +41,13 @@ namespace ZMGDesktop
                 Opis = txtOpis.Text,
                 QR_kod = txtQRKod.Text,
                 DatumStvaranja = dtpDatumStvaranja.Value,
-                Status = txtStatus.Text,
+                Status = cmbStatus.SelectedItem as string,
                 Radnik_ID = Radnik.Radnik_ID,
                 Klijent_ID = klijent.Klijent_ID,
                 Radnik = Radnik,
                 Klijent = klijent
             };
-
+            //poslati email
             servis.AzurirajRadniNalog(RadniNalog);
             Close();
         }
@@ -56,7 +56,7 @@ namespace ZMGDesktop
         {
             txtKolicina.Enabled = true;
             txtOpis.Enabled = true;
-            txtStatus.Enabled = true;
+            cmbStatus.Enabled = true;
             cmbKlijent.Enabled = true;
         }
 
@@ -68,14 +68,14 @@ namespace ZMGDesktop
             txtOpis.Enabled = false;
             txtQRKod.Enabled = false;
             dtpDatumStvaranja.Enabled = false;
-            txtStatus.Enabled = false;
+            cmbStatus.Enabled = false;
             cmbKlijent.Enabled = false;
 
             txtKolicina.Text = radniNalog.Kolicina.ToString();
             txtOpis.Text = radniNalog.Opis;
             txtQRKod.Text = radniNalog.QR_kod;
             dtpDatumStvaranja.Value = radniNalog.DatumStvaranja;
-            txtStatus.Text = radniNalog.Status;
+            cmbStatus.Text = radniNalog.Status;
             cmbKlijent.SelectedItem = radniNalog.Klijent;
 
             UcitajKlijente();

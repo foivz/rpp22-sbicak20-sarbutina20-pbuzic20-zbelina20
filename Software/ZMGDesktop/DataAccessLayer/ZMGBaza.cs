@@ -6,10 +6,10 @@ using System.Linq;
 
 namespace DataAccessLayer
 {
-    public partial class Northwind : DbContext
+    public partial class ZMGBaza : DbContext
     {
-        public Northwind()
-            : base("name=Northwind")
+        public ZMGBaza()
+            : base("name=ZMGBaza")
         {
         }
 
@@ -24,6 +24,7 @@ namespace DataAccessLayer
         public virtual DbSet<RadniNalog> RadniNalog { get; set; }
         public virtual DbSet<Roba> Roba { get; set; }
         public virtual DbSet<StavkaRacun> StavkaRacun { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Usluga> Usluga { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -90,8 +91,21 @@ namespace DataAccessLayer
                 .IsUnicode(false);
 
             modelBuilder.Entity<Materijal>()
+                .Property(e => e.JedinicaMjere)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Materijal>()
+                .Property(e => e.Opis)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Materijal>()
                 .Property(e => e.QR_kod)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<Materijal>()
+                .HasMany(e => e.RadniNalog)
+                .WithMany(e => e.Materijal)
+                .Map(m => m.ToTable("RadniNalogSadrziMaterijal").MapLeftKey("Materijal_ID").MapRightKey("RadniNalog_ID"));
 
             modelBuilder.Entity<Poslodavac>()
                 .Property(e => e.Naziv)
@@ -189,6 +203,10 @@ namespace DataAccessLayer
 
             modelBuilder.Entity<RadniNalog>()
                 .Property(e => e.QR_kod)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<RadniNalog>()
+                .Property(e => e.Status)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Roba>()
