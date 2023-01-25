@@ -50,6 +50,7 @@ namespace ZMGDesktop
             var popisRadnihNaloga = servis.DohvatiRadneNaloge();
             dgvPopisRadnihNaloga.DataSource = popisRadnihNaloga;
             dgvPopisRadnihNaloga.Columns[10].Visible = false;
+            dgvPopisRadnihNaloga.Columns[11].Visible = false;
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)

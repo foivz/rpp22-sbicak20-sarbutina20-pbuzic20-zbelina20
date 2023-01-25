@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,7 +51,8 @@ namespace ZMGDesktop
                 Radnik_ID = Radnik.Radnik_ID,
                 Klijent_ID = klijent.Klijent_ID,
                 Klijent = klijent,
-                Radnik = Radnik
+                Radnik = Radnik,
+                Materijal = materijali
             };
 
             servis.DodajRadniNalog(radniNalog);
@@ -82,6 +84,7 @@ namespace ZMGDesktop
         {
             var materijal = cmbMaterijali.SelectedItem as Materijal;
             materijali.Add(materijal);
+
             List<Materijal> lista = new List<Materijal>();
             lista.AddRange(materijali);
 
@@ -91,6 +94,33 @@ namespace ZMGDesktop
         private void btnDodajMaterijalUTablicu(List<Materijal> materijali)
         {
             dgvMaterijali.DataSource = materijali;
+            dgvMaterijali.Columns[8].Visible = false;
+            dgvMaterijali.Columns[9].Visible = false;
+            dgvMaterijali.Columns[10].Visible = false;
+            dgvMaterijali.Columns[11].Visible = false;
+            dgvMaterijali.Columns[12].Visible = false;
+        }
+
+        private void btnGenerirajQRKod_Click(object sender, EventArgs e)
+        {
+            string QRKod = GenerirajRandomString();
+
+            var qrGenerator = new QRCodeGenerator();
+            var qrCodeData = qrGenerator.CreateQrCode(QRKod, QRCodeGenerator.ECCLevel.Q); //generiranje QR koda
+            var qrCode = new QRCode(qrCodeData); //stvaranje Bitmap objekta koji se koristi da bi se prikazala slika
+
+            txtQRKod.Text = QRKod;
+
+            var qrCodeImage = qrCode.GetGraphic(8); //stvaranje slike QR koda
+            pbQRKod.Image = qrCodeImage;
+        }
+
+        string GenerirajRandomString()
+        {
+            Random random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, 20)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
         }
     }
 }
