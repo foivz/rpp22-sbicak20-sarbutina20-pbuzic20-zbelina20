@@ -17,13 +17,16 @@ namespace ZMGDesktop
 
         //servisi
         PoslodavacServices poslodavacServis;
+        KlijentServices klijentServis;
         //objekti
         Poslodavac poslodavac;
+        Klijent selektirani;
 
         public FrmRacuni()
         {
             InitializeComponent();
             poslodavacServis = new PoslodavacServices();
+            klijentServis= new KlijentServices();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +43,17 @@ namespace ZMGDesktop
         private void FrmRacuni_Load(object sender, EventArgs e)
         {
             poslodavac = poslodavacServis.GetPoslodavac();
+            cmbKlijent.DataSource = klijentServis.DohvatiKlijente();
+        }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void cmbKlijent_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selektirani = cmbKlijent.SelectedItem as Klijent;
         }
     }
 }

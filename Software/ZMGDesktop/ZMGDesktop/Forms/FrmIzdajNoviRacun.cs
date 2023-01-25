@@ -16,12 +16,15 @@ namespace ZMGDesktop
     {
         //objekti
         Poslodavac poslodavac;
+        Klijent selektirati;
         // servisi
         KlijentServices klijentServis;
+        PoslodavacServices poslodavacServis;
         public FrmIzdajNoviRacun(Poslodavac poslodavac1)
         {
             InitializeComponent();
             klijentServis= new KlijentServices();
+            poslodavacServis= new PoslodavacServices();
             poslodavac = poslodavac1;
         }
 
@@ -42,13 +45,16 @@ namespace ZMGDesktop
 
         private void FrmIzdajNoviRacun_Load(object sender, EventArgs e)
         {
+            poslodavac = poslodavacServis.GetPoslodavac();
             cmbKlijenti.DataSource = klijentServis.DohvatiKlijente();
             InitTextBoxPoslodavac(poslodavac);
+            txtNacinPlacanja.Text = "(T) Transakcijski račun";
+            txtRokPlacanja.Text = "do 15 dana";
         }
 
         private void cmbKlijenti_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Klijent selektirati = cmbKlijenti.SelectedItem as Klijent;
+            selektirati = cmbKlijenti.SelectedItem as Klijent;
             InitTextBoxKlijent(selektirati);
             
         }
@@ -78,6 +84,17 @@ namespace ZMGDesktop
             txtP_Naziv.Text = poslodavac.Naziv;
             txtP_IBAN.Text = poslodavac.IBAN;
             txtP_OIB.Text = poslodavac.OIB;
+        }
+
+        private void btnDodajStavke_Click(object sender, EventArgs e)
+        {
+            FrmDodajStavke formaStavki = new FrmDodajStavke(selektirati);
+            formaStavki.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

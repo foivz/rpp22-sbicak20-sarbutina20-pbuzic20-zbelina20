@@ -60,6 +60,7 @@
     <Compile Include="Entities\StavkaRacun.cs" />
     <Compile Include="Entities\sysdiagrams.cs" />
     <Compile Include="Entities\Usluga.cs" />
+    <Compile Include="Entities\Usluga.Ext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

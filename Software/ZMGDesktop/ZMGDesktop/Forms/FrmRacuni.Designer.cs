@@ -30,7 +30,6 @@
         {
             this.dgvRacuni = new System.Windows.Forms.DataGridView();
             this.btnIzdajNoviRacun = new System.Windows.Forms.Button();
-            this.btnDetaljniPregled = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbtnVašiRačuni = new System.Windows.Forms.RadioButton();
@@ -42,6 +41,7 @@
             this.rbtnSilazno = new System.Windows.Forms.RadioButton();
             this.rbtnUzlazno = new System.Windows.Forms.RadioButton();
             this.btnOcisti = new System.Windows.Forms.Button();
+            this.btnDetaljniPregled = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacuni)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,19 +69,6 @@
             this.btnIzdajNoviRacun.UseVisualStyleBackColor = false;
             this.btnIzdajNoviRacun.Click += new System.EventHandler(this.btnIzdajNoviRacun_Click);
             // 
-            // btnDetaljniPregled
-            // 
-            this.btnDetaljniPregled.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDetaljniPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDetaljniPregled.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDetaljniPregled.Location = new System.Drawing.Point(289, 488);
-            this.btnDetaljniPregled.Name = "btnDetaljniPregled";
-            this.btnDetaljniPregled.Size = new System.Drawing.Size(147, 40);
-            this.btnDetaljniPregled.TabIndex = 2;
-            this.btnDetaljniPregled.Text = "Detaljni pregled računa";
-            this.btnDetaljniPregled.UseVisualStyleBackColor = false;
-            this.btnDetaljniPregled.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btnNatrag
             // 
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -93,6 +80,7 @@
             this.btnNatrag.TabIndex = 3;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = false;
+            this.btnNatrag.Click += new System.EventHandler(this.btnNatrag_Click);
             // 
             // groupBox1
             // 
@@ -157,6 +145,7 @@
             this.cmbKlijent.Name = "cmbKlijent";
             this.cmbKlijent.Size = new System.Drawing.Size(196, 21);
             this.cmbKlijent.TabIndex = 0;
+            this.cmbKlijent.SelectedIndexChanged += new System.EventHandler(this.cmbKlijent_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -203,16 +192,28 @@
             this.btnOcisti.Text = "Očisti";
             this.btnOcisti.UseVisualStyleBackColor = false;
             // 
+            // btnDetaljniPregled
+            // 
+            this.btnDetaljniPregled.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDetaljniPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDetaljniPregled.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDetaljniPregled.Location = new System.Drawing.Point(279, 488);
+            this.btnDetaljniPregled.Name = "btnDetaljniPregled";
+            this.btnDetaljniPregled.Size = new System.Drawing.Size(147, 40);
+            this.btnDetaljniPregled.TabIndex = 7;
+            this.btnDetaljniPregled.Text = "Detaljni pregled";
+            this.btnDetaljniPregled.UseVisualStyleBackColor = false;
+            // 
             // FrmRacuni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 609);
+            this.Controls.Add(this.btnDetaljniPregled);
             this.Controls.Add(this.btnOcisti);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNatrag);
-            this.Controls.Add(this.btnDetaljniPregled);
             this.Controls.Add(this.btnIzdajNoviRacun);
             this.Controls.Add(this.dgvRacuni);
             this.Name = "FrmRacuni";
@@ -231,7 +232,6 @@
 
         private System.Windows.Forms.DataGridView dgvRacuni;
         private System.Windows.Forms.Button btnIzdajNoviRacun;
-        private System.Windows.Forms.Button btnDetaljniPregled;
         private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbtnVašiRačuni;
@@ -243,5 +243,6 @@
         private System.Windows.Forms.RadioButton rbtnSilazno;
         private System.Windows.Forms.RadioButton rbtnUzlazno;
         private System.Windows.Forms.Button btnOcisti;
+        private System.Windows.Forms.Button btnDetaljniPregled;
     }
 }
