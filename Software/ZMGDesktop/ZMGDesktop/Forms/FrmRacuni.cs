@@ -44,6 +44,7 @@ namespace ZMGDesktop
         {
             poslodavac = poslodavacServis.GetPoslodavac();
             cmbKlijent.DataSource = klijentServis.DohvatiKlijente();
+            dgvRacuni.DataSource = poslodavac.Racun.ToList();
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
