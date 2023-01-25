@@ -60,5 +60,10 @@ namespace ZMGDesktop
             FrmRacuni racuni = new FrmRacuni();
             racuni.ShowDialog();
         }
+
+        private void FrmPocetna_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -161,6 +161,7 @@
             this.Name = "FrmPocetna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Glavni izbornik";
+            this.Load += new System.EventHandler(this.FrmPocetna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

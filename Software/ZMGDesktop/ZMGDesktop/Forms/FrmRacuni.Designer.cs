@@ -217,6 +217,7 @@
             this.Controls.Add(this.dgvRacuni);
             this.Name = "FrmRacuni";
             this.Text = "Računi";
+            this.Load += new System.EventHandler(this.FrmRacuni_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacuni)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

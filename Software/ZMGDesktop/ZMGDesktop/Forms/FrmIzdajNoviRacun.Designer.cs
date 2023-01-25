@@ -80,6 +80,8 @@
             this.lblBrojRacuna = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.txtK_Email = new System.Windows.Forms.TextBox();
+            this.txtP_Naziv = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -397,6 +399,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtP_Naziv);
+            this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.txtP_BrojMobitela);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtP_TELFAX);
@@ -548,6 +552,22 @@
             this.txtK_Email.Size = new System.Drawing.Size(179, 20);
             this.txtK_Email.TabIndex = 27;
             // 
+            // txtP_Naziv
+            // 
+            this.txtP_Naziv.Location = new System.Drawing.Point(129, 14);
+            this.txtP_Naziv.Name = "txtP_Naziv";
+            this.txtP_Naziv.Size = new System.Drawing.Size(260, 20);
+            this.txtP_Naziv.TabIndex = 29;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(83, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 13);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "Naziv:";
+            // 
             // FrmIzdajNoviRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,5 +662,7 @@
         private System.Windows.Forms.Label lblBrojRacuna;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtK_Email;
+        private System.Windows.Forms.TextBox txtP_Naziv;
+        private System.Windows.Forms.Label label23;
     }
 }
