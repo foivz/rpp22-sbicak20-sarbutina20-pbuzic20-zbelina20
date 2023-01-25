@@ -78,6 +78,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lblBrojRacuna = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtK_Email = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -180,6 +182,7 @@
             this.cmbKlijenti.Name = "cmbKlijenti";
             this.cmbKlijenti.Size = new System.Drawing.Size(179, 21);
             this.cmbKlijenti.TabIndex = 10;
+            this.cmbKlijenti.SelectedIndexChanged += new System.EventHandler(this.cmbKlijenti_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -238,11 +241,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 31);
+            this.label7.Location = new System.Drawing.Point(19, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Ime:";
+            this.label7.Text = "Naziv:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -457,6 +461,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.txtK_Email);
             this.groupBox2.Controls.Add(this.txtK_Ime);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
@@ -465,7 +471,7 @@
             this.groupBox2.Controls.Add(this.txtK_OIB);
             this.groupBox2.Location = new System.Drawing.Point(815, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(267, 117);
+            this.groupBox2.Size = new System.Drawing.Size(267, 144);
             this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Klijent";
@@ -526,7 +532,23 @@
             this.lblBrojRacuna.TabIndex = 49;
             this.lblBrojRacuna.Text = "xxx";
             // 
-            // FrmDetaljniPregledRacuna
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(19, 108);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(35, 13);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "Email:";
+            // 
+            // txtK_Email
+            // 
+            this.txtK_Email.Location = new System.Drawing.Point(60, 105);
+            this.txtK_Email.Name = "txtK_Email";
+            this.txtK_Email.Size = new System.Drawing.Size(179, 20);
+            this.txtK_Email.TabIndex = 27;
+            // 
+            // FrmIzdajNoviRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -553,8 +575,9 @@
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnPDFPregled);
             this.Controls.Add(this.btnIzdajRačun);
-            this.Name = "FrmDetaljniPregledRacuna";
+            this.Name = "FrmIzdajNoviRacun";
             this.Text = "Izdavanje novog računa";
+            this.Load += new System.EventHandler(this.FrmIzdajNoviRacun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -617,5 +640,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblBrojRacuna;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtK_Email;
     }
 }

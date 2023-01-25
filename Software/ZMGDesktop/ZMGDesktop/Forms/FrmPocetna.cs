@@ -54,5 +54,11 @@ namespace ZMGDesktop
         {
             Application.Exit();
         }
+
+        private void btnRacuni_Click(object sender, EventArgs e)
+        {
+            FrmRacuni racuni = new FrmRacuni();
+            racuni.ShowDialog();
+        }
     }
 }

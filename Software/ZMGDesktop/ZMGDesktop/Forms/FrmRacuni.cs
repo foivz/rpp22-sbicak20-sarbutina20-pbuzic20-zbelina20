@@ -21,5 +21,11 @@ namespace ZMGDesktop
         {
 
         }
+
+        private void btnIzdajNoviRacun_Click(object sender, EventArgs e)
+        {
+            FrmIzdajNoviRacun noviRacun = new FrmIzdajNoviRacun();
+            noviRacun.ShowDialog();
+        }
     }
 }
