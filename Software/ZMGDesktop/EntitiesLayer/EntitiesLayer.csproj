@@ -53,6 +53,7 @@
     <Compile Include="Entities\Poslodavac.cs" />
     <Compile Include="Entities\Primka.cs" />
     <Compile Include="Entities\Racun.cs" />
+    <Compile Include="Entities\Racun.Ext.cs" />
     <Compile Include="Entities\Radnik.cs" />
     <Compile Include="Entities\Radnik.Ext.cs" />
     <Compile Include="Entities\RadniNalog.cs" />

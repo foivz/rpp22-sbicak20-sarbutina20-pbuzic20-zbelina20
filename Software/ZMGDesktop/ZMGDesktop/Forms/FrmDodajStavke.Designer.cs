@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvStavke = new System.Windows.Forms.DataGridView();
+            this.dgvStavkeDodaj = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.cmbUsluge = new System.Windows.Forms.ComboBox();
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.txtJedinicnaCijena = new System.Windows.Forms.TextBox();
-            this.txtUkupnaCijena = new System.Windows.Forms.TextBox();
             this.dtpDatumIzrade = new System.Windows.Forms.DateTimePicker();
             this.cmbRoba = new System.Windows.Forms.ComboBox();
             this.txtKolikoRobePoJedinici = new System.Windows.Forms.TextBox();
@@ -48,16 +46,17 @@
             this.btnObrisi = new System.Windows.Forms.Button();
             this.txtJedinicaMjere = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeDodaj)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvStavke
+            // dgvStavkeDodaj
             // 
-            this.dgvStavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStavke.Location = new System.Drawing.Point(402, 39);
-            this.dgvStavke.Name = "dgvStavke";
-            this.dgvStavke.Size = new System.Drawing.Size(897, 263);
-            this.dgvStavke.TabIndex = 0;
+            this.dgvStavkeDodaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStavkeDodaj.Location = new System.Drawing.Point(402, 39);
+            this.dgvStavkeDodaj.Name = "dgvStavkeDodaj";
+            this.dgvStavkeDodaj.Size = new System.Drawing.Size(897, 263);
+            this.dgvStavkeDodaj.TabIndex = 0;
+            this.dgvStavkeDodaj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStavkeDodaj_CellContentClick);
             // 
             // label1
             // 
@@ -104,15 +103,6 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Jedinična cijena:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 252);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Ukupna cijena:";
-            // 
             // cmbUsluge
             // 
             this.cmbUsluge.FormattingEnabled = true;
@@ -134,13 +124,6 @@
             this.txtJedinicnaCijena.Name = "txtJedinicnaCijena";
             this.txtJedinicnaCijena.Size = new System.Drawing.Size(240, 20);
             this.txtJedinicnaCijena.TabIndex = 13;
-            // 
-            // txtUkupnaCijena
-            // 
-            this.txtUkupnaCijena.Location = new System.Drawing.Point(138, 249);
-            this.txtUkupnaCijena.Name = "txtUkupnaCijena";
-            this.txtUkupnaCijena.Size = new System.Drawing.Size(241, 20);
-            this.txtUkupnaCijena.TabIndex = 14;
             // 
             // dtpDatumIzrade
             // 
@@ -243,21 +226,19 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbRoba);
             this.Controls.Add(this.dtpDatumIzrade);
-            this.Controls.Add(this.txtUkupnaCijena);
             this.Controls.Add(this.txtJedinicnaCijena);
             this.Controls.Add(this.txtKolicina);
             this.Controls.Add(this.cmbUsluge);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgvStavke);
+            this.Controls.Add(this.dgvStavkeDodaj);
             this.Name = "FrmDodajStavke";
             this.Text = "Dodavanje stavki na račun";
             this.Load += new System.EventHandler(this.FrmDodajStavke_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeDodaj)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,17 +246,15 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvStavke;
+        private System.Windows.Forms.DataGridView dgvStavkeDodaj;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbUsluge;
         private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.TextBox txtJedinicnaCijena;
-        private System.Windows.Forms.TextBox txtUkupnaCijena;
         private System.Windows.Forms.DateTimePicker dtpDatumIzrade;
         private System.Windows.Forms.ComboBox cmbRoba;
         private System.Windows.Forms.TextBox txtKolikoRobePoJedinici;

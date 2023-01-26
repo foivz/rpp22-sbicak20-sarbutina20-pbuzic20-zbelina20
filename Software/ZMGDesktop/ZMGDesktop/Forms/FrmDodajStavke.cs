@@ -36,13 +36,15 @@ namespace ZMGDesktop
         {
             cmbUsluge.DataSource= uslugaServis.DohvatiUsluge();
             cmbRoba.DataSource = robaServis.DohvatiRobuKlijenta(klijent.Klijent_ID);
-            dgvStavke.DataSource = stavkaRacunList;
         }
 
         private void Refresh()
         {
-            dgvStavke.DataSource = null;
-            dgvStavke.DataSource = stavkaRacunList;
+            dgvStavkeDodaj.DataSource = null;
+            dgvStavkeDodaj.DataSource = stavkaRacunList;
+            dgvStavkeDodaj.Columns[0].Visible = false;
+            dgvStavkeDodaj.Columns[1].Visible = false;
+            dgvStavkeDodaj.Columns[2].Visible = false;
         }
 
         private void btnNatrag_Click_1(object sender, EventArgs e)
@@ -57,12 +59,16 @@ namespace ZMGDesktop
                 Usluga_ID = (cmbUsluge.SelectedItem as Usluga).Usluga_ID,
                 Roba_ID = (cmbRoba.SelectedItem as Roba).Roba_ID,
                 Racun_ID = racun.Racun_ID,
+                Racun = racun,
+                Roba = cmbRoba.SelectedItem as Roba,
+                Usluga= cmbUsluge.SelectedItem as Usluga,
                 KolikoRobePoJedinici = int.Parse(txtKolikoRobePoJedinici.Text),
                 KolicinaRobe = int.Parse(txtKolicina.Text),
                 DatumIzrade = dtpDatumIzrade.Value,
                 JedinicaMjere = txtJedinicaMjere.Text,
                 JedinicnaCijena = float.Parse(txtJedinicnaCijena.Text),
                 UkupnaCijenaStavke = (double)(float.Parse(txtJedinicnaCijena.Text) * int.Parse(txtKolikoRobePoJedinici.Text))
+                
             };
             stavkaRacunList.Add(stavka);
             Refresh();
@@ -70,11 +76,20 @@ namespace ZMGDesktop
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
-            StavkaRacun selektiranaStavka = dgvStavke.CurrentRow.DataBoundItem as StavkaRacun;
-            if (selektiranaStavka!= null )
+            if (dgvStavkeDodaj.CurrentRow != null)
             {
-                stavkaRacunList.Remove(selektiranaStavka);
+                StavkaRacun selektiranaStavka = dgvStavkeDodaj.CurrentRow.DataBoundItem as StavkaRacun;
+                if (selektiranaStavka != null)
+                {
+                    stavkaRacunList.Remove(selektiranaStavka);
+                }
             }
+            Refresh();
+        }
+
+        private void dgvStavkeDodaj_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
