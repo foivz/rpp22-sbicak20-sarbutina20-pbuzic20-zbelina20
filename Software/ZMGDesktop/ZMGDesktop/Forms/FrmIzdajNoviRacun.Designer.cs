@@ -595,11 +595,11 @@
             this.btnDodajStavke.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDodajStavke.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodajStavke.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDodajStavke.Location = new System.Drawing.Point(1088, 465);
+            this.btnDodajStavke.Location = new System.Drawing.Point(1088, 383);
             this.btnDodajStavke.Name = "btnDodajStavke";
-            this.btnDodajStavke.Size = new System.Drawing.Size(147, 40);
+            this.btnDodajStavke.Size = new System.Drawing.Size(147, 196);
             this.btnDodajStavke.TabIndex = 53;
-            this.btnDodajStavke.Text = "Dodaj stavke";
+            this.btnDodajStavke.Text = "Upravljanje stavkama";
             this.btnDodajStavke.UseVisualStyleBackColor = false;
             this.btnDodajStavke.Click += new System.EventHandler(this.btnDodajStavke_Click);
             // 

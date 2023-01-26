@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
+using EntitiesLayer.GlobalniObjekti;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,6 +59,7 @@ namespace ZMGDesktop
         {
             selektiratiKlijent = cmbKlijenti.SelectedItem as Klijent;
             InitTextBoxKlijent(selektiratiKlijent);
+            GlobalListaStavki.stavkaRacunaList.Clear();
             
         }
 
@@ -90,8 +92,14 @@ namespace ZMGDesktop
 
         private void btnDodajStavke_Click(object sender, EventArgs e)
         {
-            FrmDodajStavke formaStavki = new FrmDodajStavke(selektiratiKlijent, racun);
+            FrmDodajStavke formaStavki = new FrmDodajStavke(selektiratiKlijent);
+            formaStavki.FormClosing += new FormClosingEventHandler(ChildFormClosing);
             formaStavki.ShowDialog();
+        }
+
+        private void ChildFormClosing(object sender, FormClosingEventArgs e)
+        {
+            dgvStavke.DataSource = GlobalListaStavki.stavkaRacunaList;
         }
 
         private void button1_Click(object sender, EventArgs e)

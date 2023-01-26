@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LogikaZaRacune\Racunanje.cs" />
+    <Compile Include="LogikaZaRacune\RacunanjeAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\KlijentServices.cs" />
     <Compile Include="Services\MaterijalServices.cs" />

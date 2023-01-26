@@ -1,6 +1,8 @@
 ﻿using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
+using EntitiesLayer.GlobalniObjekti;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,34 +16,31 @@ namespace ZMGDesktop
 {
     public partial class FrmDodajStavke : Form
     {
-
-        List<StavkaRacun> stavkaRacunList;
         //objekti
         Klijent klijent;
-        Racun racun;
         //servisi
         UslugaServices uslugaServis;
         RobaService robaServis;
-        public FrmDodajStavke(Klijent _klijent, Racun _racun)
+
+        public FrmDodajStavke(Klijent _klijent)
         {
             InitializeComponent();
             uslugaServis= new UslugaServices();
             robaServis= new RobaService();
-            stavkaRacunList = new List<StavkaRacun>();
             klijent= _klijent;
-            racun = _racun;
         }
 
         private void FrmDodajStavke_Load(object sender, EventArgs e)
         {
             cmbUsluge.DataSource= uslugaServis.DohvatiUsluge();
             cmbRoba.DataSource = robaServis.DohvatiRobuKlijenta(klijent.Klijent_ID);
+            dgvStavkeDodaj.DataSource = GlobalListaStavki.stavkaRacunaList;
         }
 
         private void Refresh()
         {
             dgvStavkeDodaj.DataSource = null;
-            dgvStavkeDodaj.DataSource = stavkaRacunList;
+            dgvStavkeDodaj.DataSource = GlobalListaStavki.stavkaRacunaList;
             dgvStavkeDodaj.Columns[0].Visible = false;
             dgvStavkeDodaj.Columns[1].Visible = false;
             dgvStavkeDodaj.Columns[2].Visible = false;
@@ -50,6 +49,7 @@ namespace ZMGDesktop
         private void btnNatrag_Click_1(object sender, EventArgs e)
         {
             Close();
+            
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
@@ -58,8 +58,6 @@ namespace ZMGDesktop
             {
                 Usluga_ID = (cmbUsluge.SelectedItem as Usluga).Usluga_ID,
                 Roba_ID = (cmbRoba.SelectedItem as Roba).Roba_ID,
-                Racun_ID = racun.Racun_ID,
-                Racun = racun,
                 Roba = cmbRoba.SelectedItem as Roba,
                 Usluga= cmbUsluge.SelectedItem as Usluga,
                 KolikoRobePoJedinici = int.Parse(txtKolikoRobePoJedinici.Text),
@@ -70,7 +68,7 @@ namespace ZMGDesktop
                 UkupnaCijenaStavke = (double)(float.Parse(txtJedinicnaCijena.Text) * int.Parse(txtKolikoRobePoJedinici.Text))
                 
             };
-            stavkaRacunList.Add(stavka);
+            GlobalListaStavki.stavkaRacunaList.Add(stavka);
             Refresh();
         }
 
@@ -81,7 +79,7 @@ namespace ZMGDesktop
                 StavkaRacun selektiranaStavka = dgvStavkeDodaj.CurrentRow.DataBoundItem as StavkaRacun;
                 if (selektiranaStavka != null)
                 {
-                    stavkaRacunList.Remove(selektiranaStavka);
+                    GlobalListaStavki.stavkaRacunaList.Remove(selektiranaStavka);
                 }
             }
             Refresh();
