@@ -33,6 +33,8 @@ namespace EntitiesLayer.Entities
 
         public DateTime? DatumIzrade { get; set; }
 
+        public int KolikoRobePoJedinici { get; set; }
+
         public virtual Racun Racun { get; set; }
 
         public virtual Roba Roba { get; set; }

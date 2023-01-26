@@ -51,6 +51,7 @@ namespace ZMGDesktop
             dgvPopisRadnihNaloga.DataSource = popisRadnihNaloga;
             dgvPopisRadnihNaloga.Columns[10].Visible = false;
             dgvPopisRadnihNaloga.Columns[11].Visible = false;
+            dgvPopisRadnihNaloga.Columns[12].Visible = false;
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)

@@ -58,6 +58,10 @@ namespace ZMGDesktop
             txtOpis.Enabled = true;
             cmbStatus.Enabled = true;
             cmbKlijent.Enabled = true;
+
+            btnDodajMaterijal.Enabled = true;
+            btnGenerirajQRKod.Enabled = true;
+            btnSpremi.Enabled = true;
         }
 
         private void FrmDetaljiRadnogNaloga_Load(object sender, EventArgs e)
@@ -77,6 +81,10 @@ namespace ZMGDesktop
             dtpDatumStvaranja.Value = radniNalog.DatumStvaranja;
             cmbStatus.Text = radniNalog.Status;
             cmbKlijent.SelectedItem = radniNalog.Klijent;
+
+            btnDodajMaterijal.Enabled = false;
+            btnGenerirajQRKod.Enabled = false;
+            btnSpremi.Enabled = false;
 
             UcitajKlijente();
             OdaberiKlijenta(radniNalog.Klijent_ID);
