@@ -33,6 +33,8 @@ namespace EntitiesLayer.Entities
 
         public int KolikoRobePoJedinici { get; set; }
 
+        public float JedinicnaCijena { get; set; }
+
         public DateTime? DatumIzrade { get; set; }
 
         public virtual Racun Racun { get; set; }

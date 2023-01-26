@@ -16,7 +16,8 @@ namespace ZMGDesktop
     {
         //objekti
         Poslodavac poslodavac;
-        Klijent selektirati;
+        Klijent selektiratiKlijent;
+        Racun racun;
         // servisi
         KlijentServices klijentServis;
         PoslodavacServices poslodavacServis;
@@ -26,6 +27,7 @@ namespace ZMGDesktop
             klijentServis= new KlijentServices();
             poslodavacServis= new PoslodavacServices();
             poslodavac = poslodavac1;
+            racun = new Racun();
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -54,8 +56,8 @@ namespace ZMGDesktop
 
         private void cmbKlijenti_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selektirati = cmbKlijenti.SelectedItem as Klijent;
-            InitTextBoxKlijent(selektirati);
+            selektiratiKlijent = cmbKlijenti.SelectedItem as Klijent;
+            InitTextBoxKlijent(selektiratiKlijent);
             
         }
 
@@ -88,7 +90,7 @@ namespace ZMGDesktop
 
         private void btnDodajStavke_Click(object sender, EventArgs e)
         {
-            FrmDodajStavke formaStavki = new FrmDodajStavke(selektirati);
+            FrmDodajStavke formaStavki = new FrmDodajStavke(selektiratiKlijent, racun);
             formaStavki.ShowDialog();
         }
 

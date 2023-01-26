@@ -46,6 +46,8 @@
             this.btnNatrag = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
+            this.txtJedinicaMjere = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,7 +89,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 178);
+            this.label4.Location = new System.Drawing.Point(63, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 6;
@@ -96,7 +98,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 201);
+            this.label5.Location = new System.Drawing.Point(48, 226);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 7;
@@ -105,7 +107,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(55, 227);
+            this.label6.Location = new System.Drawing.Point(54, 252);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 13);
             this.label6.TabIndex = 8;
@@ -121,21 +123,21 @@
             // 
             // txtKolicina
             // 
-            this.txtKolicina.Location = new System.Drawing.Point(140, 175);
+            this.txtKolicina.Location = new System.Drawing.Point(139, 200);
             this.txtKolicina.Name = "txtKolicina";
             this.txtKolicina.Size = new System.Drawing.Size(241, 20);
             this.txtKolicina.TabIndex = 12;
             // 
             // txtJedinicnaCijena
             // 
-            this.txtJedinicnaCijena.Location = new System.Drawing.Point(140, 198);
+            this.txtJedinicnaCijena.Location = new System.Drawing.Point(139, 223);
             this.txtJedinicnaCijena.Name = "txtJedinicnaCijena";
             this.txtJedinicnaCijena.Size = new System.Drawing.Size(240, 20);
             this.txtJedinicnaCijena.TabIndex = 13;
             // 
             // txtUkupnaCijena
             // 
-            this.txtUkupnaCijena.Location = new System.Drawing.Point(139, 224);
+            this.txtUkupnaCijena.Location = new System.Drawing.Point(138, 249);
             this.txtUkupnaCijena.Name = "txtUkupnaCijena";
             this.txtUkupnaCijena.Size = new System.Drawing.Size(241, 20);
             this.txtUkupnaCijena.TabIndex = 14;
@@ -190,12 +192,13 @@
             this.btnDodaj.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDodaj.Location = new System.Drawing.Point(169, 262);
+            this.btnDodaj.Location = new System.Drawing.Point(168, 287);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(147, 40);
             this.btnDodaj.TabIndex = 21;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // btnObrisi
             // 
@@ -208,12 +211,31 @@
             this.btnObrisi.TabIndex = 22;
             this.btnObrisi.Text = "Obriši";
             this.btnObrisi.UseVisualStyleBackColor = false;
+            this.btnObrisi.Click += new System.EventHandler(this.btnObrisi_Click);
+            // 
+            // txtJedinicaMjere
+            // 
+            this.txtJedinicaMjere.Location = new System.Drawing.Point(139, 175);
+            this.txtJedinicaMjere.Name = "txtJedinicaMjere";
+            this.txtJedinicaMjere.Size = new System.Drawing.Size(241, 20);
+            this.txtJedinicaMjere.TabIndex = 24;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(57, 178);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Jedinica mjere:";
             // 
             // FrmDodajStavke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1347, 483);
+            this.Controls.Add(this.txtJedinicaMjere);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnNatrag);
@@ -261,5 +283,7 @@
         private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnObrisi;
+        private System.Windows.Forms.TextBox txtJedinicaMjere;
+        private System.Windows.Forms.Label label8;
     }
 }
