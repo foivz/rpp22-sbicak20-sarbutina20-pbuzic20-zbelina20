@@ -214,7 +214,7 @@ namespace DataAccessLayer
                 .IsUnicode(false);
 
             modelBuilder.Entity<Roba>()
-                .Property(e => e.Opis)
+                .Property(e => e.Kolicina)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Roba>()

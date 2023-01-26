@@ -19,16 +19,19 @@ namespace ZMGDesktop
         Klijent klijent;
         //servisi
         UslugaServices uslugaServis;
+        RobaService robaServis;
         public FrmDodajStavke(Klijent _klijent)
         {
             InitializeComponent();
             uslugaServis= new UslugaServices();
+            robaServis= new RobaService();
             klijent= _klijent;
         }
 
         private void FrmDodajStavke_Load(object sender, EventArgs e)
         {
             cmbUsluge.DataSource= uslugaServis.DohvatiUsluge();
+            cmbRoba.DataSource = robaServis.DohvatiRobuKlijenta(klijent.Klijent_ID);
         }
 
         private void btnNatrag_Click_1(object sender, EventArgs e)

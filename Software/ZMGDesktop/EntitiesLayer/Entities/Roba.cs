@@ -23,7 +23,7 @@ namespace EntitiesLayer.Entities
 
         [Required]
         [StringLength(100)]
-        public string Opis { get; set; }
+        public string Kolicina { get; set; }
 
         public int? Klijent_ID { get; set; }
 

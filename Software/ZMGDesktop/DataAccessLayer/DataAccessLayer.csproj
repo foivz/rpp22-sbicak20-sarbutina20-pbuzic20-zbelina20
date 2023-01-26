@@ -68,6 +68,7 @@
     <Compile Include="Repositories\RadnikRepository.cs" />
     <Compile Include="Repositories\RadniNalogRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\RobaRepository.cs" />
     <Compile Include="Repositories\UslugaRepository.cs" />
     <Compile Include="ZMGBaza.cs" />
   </ItemGroup>

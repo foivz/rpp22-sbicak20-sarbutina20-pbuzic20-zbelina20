@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Software",
+    "\\Software\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms"
   ],
-  "SelectedNode": "\\ZMGDesktop.sln",
+  "SelectedNode": "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms\\FrmRacuni.cs",
   "PreviewInSolutionExplorer": false
 }
