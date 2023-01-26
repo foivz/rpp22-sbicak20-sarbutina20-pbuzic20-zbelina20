@@ -28,11 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnIzdajRačun = new System.Windows.Forms.Button();
-            this.btnPDFPregled = new System.Windows.Forms.Button();
-            this.btnNatrag = new System.Windows.Forms.Button();
             this.dgvStavke = new System.Windows.Forms.DataGridView();
-            this.btnDodajStavke = new System.Windows.Forms.Button();
             this.chkAutoEmail = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,48 +63,29 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtP_IBAN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtP_Naziv = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.txtP_BrojMobitela = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtP_TELFAX = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtK_Email = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.lblBrojRacuna = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPDFpregled = new System.Windows.Forms.Button();
+            this.btnIzdajRacun = new System.Windows.Forms.Button();
+            this.btnDodajStavke = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnIzdajRačun
-            // 
-            this.btnIzdajRačun.Location = new System.Drawing.Point(12, 710);
-            this.btnIzdajRačun.Name = "btnIzdajRačun";
-            this.btnIzdajRačun.Size = new System.Drawing.Size(156, 55);
-            this.btnIzdajRačun.TabIndex = 0;
-            this.btnIzdajRačun.Text = "Izdaj račun";
-            this.btnIzdajRačun.UseVisualStyleBackColor = true;
-            // 
-            // btnPDFPregled
-            // 
-            this.btnPDFPregled.Location = new System.Drawing.Point(179, 710);
-            this.btnPDFPregled.Name = "btnPDFPregled";
-            this.btnPDFPregled.Size = new System.Drawing.Size(156, 55);
-            this.btnPDFPregled.TabIndex = 1;
-            this.btnPDFPregled.Text = "Pregled PDF-a";
-            this.btnPDFPregled.UseVisualStyleBackColor = true;
-            // 
-            // btnNatrag
-            // 
-            this.btnNatrag.Location = new System.Drawing.Point(1162, 710);
-            this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(156, 55);
-            this.btnNatrag.TabIndex = 2;
-            this.btnNatrag.Text = "Natrag";
-            this.btnNatrag.UseVisualStyleBackColor = true;
             // 
             // dgvStavke
             // 
@@ -118,19 +95,10 @@
             this.dgvStavke.Size = new System.Drawing.Size(841, 196);
             this.dgvStavke.TabIndex = 3;
             // 
-            // btnDodajStavke
-            // 
-            this.btnDodajStavke.Location = new System.Drawing.Point(1088, 383);
-            this.btnDodajStavke.Name = "btnDodajStavke";
-            this.btnDodajStavke.Size = new System.Drawing.Size(103, 196);
-            this.btnDodajStavke.TabIndex = 4;
-            this.btnDodajStavke.Text = "Dodaj stavke";
-            this.btnDodajStavke.UseVisualStyleBackColor = true;
-            // 
             // chkAutoEmail
             // 
             this.chkAutoEmail.AutoSize = true;
-            this.chkAutoEmail.Location = new System.Drawing.Point(354, 730);
+            this.chkAutoEmail.Location = new System.Drawing.Point(12, 707);
             this.chkAutoEmail.Name = "chkAutoEmail";
             this.chkAutoEmail.Size = new System.Drawing.Size(190, 17);
             this.chkAutoEmail.TabIndex = 5;
@@ -180,6 +148,7 @@
             this.cmbKlijenti.Name = "cmbKlijenti";
             this.cmbKlijenti.Size = new System.Drawing.Size(179, 21);
             this.cmbKlijenti.TabIndex = 10;
+            this.cmbKlijenti.SelectedIndexChanged += new System.EventHandler(this.cmbKlijenti_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -194,6 +163,7 @@
             // 
             this.txtP_ObrtniRegistar.Location = new System.Drawing.Point(129, 40);
             this.txtP_ObrtniRegistar.Name = "txtP_ObrtniRegistar";
+            this.txtP_ObrtniRegistar.ReadOnly = true;
             this.txtP_ObrtniRegistar.Size = new System.Drawing.Size(260, 20);
             this.txtP_ObrtniRegistar.TabIndex = 12;
             // 
@@ -201,6 +171,7 @@
             // 
             this.txtP_BrObrtnice.Location = new System.Drawing.Point(129, 67);
             this.txtP_BrObrtnice.Name = "txtP_BrObrtnice";
+            this.txtP_BrObrtnice.ReadOnly = true;
             this.txtP_BrObrtnice.Size = new System.Drawing.Size(260, 20);
             this.txtP_BrObrtnice.TabIndex = 13;
             // 
@@ -208,6 +179,7 @@
             // 
             this.txtP_OIB.Location = new System.Drawing.Point(129, 93);
             this.txtP_OIB.Name = "txtP_OIB";
+            this.txtP_OIB.ReadOnly = true;
             this.txtP_OIB.Size = new System.Drawing.Size(260, 20);
             this.txtP_OIB.TabIndex = 14;
             // 
@@ -215,6 +187,7 @@
             // 
             this.txtP_Poslovnica.Location = new System.Drawing.Point(129, 122);
             this.txtP_Poslovnica.Name = "txtP_Poslovnica";
+            this.txtP_Poslovnica.ReadOnly = true;
             this.txtP_Poslovnica.Size = new System.Drawing.Size(260, 20);
             this.txtP_Poslovnica.TabIndex = 15;
             // 
@@ -222,6 +195,7 @@
             // 
             this.txtP_Ulica.Location = new System.Drawing.Point(129, 148);
             this.txtP_Ulica.Name = "txtP_Ulica";
+            this.txtP_Ulica.ReadOnly = true;
             this.txtP_Ulica.Size = new System.Drawing.Size(260, 20);
             this.txtP_Ulica.TabIndex = 16;
             // 
@@ -238,11 +212,12 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 31);
+            this.label7.Location = new System.Drawing.Point(19, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Ime:";
+            this.label7.Text = "Naziv:";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -266,6 +241,7 @@
             // 
             this.txtK_Ime.Location = new System.Drawing.Point(60, 28);
             this.txtK_Ime.Name = "txtK_Ime";
+            this.txtK_Ime.ReadOnly = true;
             this.txtK_Ime.Size = new System.Drawing.Size(179, 20);
             this.txtK_Ime.TabIndex = 23;
             // 
@@ -273,6 +249,7 @@
             // 
             this.txtK_Adresa.Location = new System.Drawing.Point(60, 54);
             this.txtK_Adresa.Name = "txtK_Adresa";
+            this.txtK_Adresa.ReadOnly = true;
             this.txtK_Adresa.Size = new System.Drawing.Size(179, 20);
             this.txtK_Adresa.TabIndex = 24;
             // 
@@ -280,6 +257,7 @@
             // 
             this.txtK_OIB.Location = new System.Drawing.Point(60, 79);
             this.txtK_OIB.Name = "txtK_OIB";
+            this.txtK_OIB.ReadOnly = true;
             this.txtK_OIB.Size = new System.Drawing.Size(179, 20);
             this.txtK_OIB.TabIndex = 25;
             // 
@@ -287,6 +265,7 @@
             // 
             this.txtNacinPlacanja.Location = new System.Drawing.Point(325, 592);
             this.txtNacinPlacanja.Name = "txtNacinPlacanja";
+            this.txtNacinPlacanja.ReadOnly = true;
             this.txtNacinPlacanja.Size = new System.Drawing.Size(179, 20);
             this.txtNacinPlacanja.TabIndex = 28;
             // 
@@ -303,6 +282,7 @@
             // 
             this.txtRokPlacanja.Location = new System.Drawing.Point(325, 618);
             this.txtRokPlacanja.Name = "txtRokPlacanja";
+            this.txtRokPlacanja.ReadOnly = true;
             this.txtRokPlacanja.Size = new System.Drawing.Size(179, 20);
             this.txtRokPlacanja.TabIndex = 30;
             // 
@@ -310,6 +290,7 @@
             // 
             this.txtUkupno.Location = new System.Drawing.Point(903, 592);
             this.txtUkupno.Name = "txtUkupno";
+            this.txtUkupno.ReadOnly = true;
             this.txtUkupno.Size = new System.Drawing.Size(179, 20);
             this.txtUkupno.TabIndex = 31;
             // 
@@ -317,6 +298,7 @@
             // 
             this.txtPDV.Location = new System.Drawing.Point(903, 618);
             this.txtPDV.Name = "txtPDV";
+            this.txtPDV.ReadOnly = true;
             this.txtPDV.Size = new System.Drawing.Size(179, 20);
             this.txtPDV.TabIndex = 32;
             // 
@@ -324,6 +306,7 @@
             // 
             this.txtUkupniIznos.Location = new System.Drawing.Point(903, 644);
             this.txtUkupniIznos.Name = "txtUkupniIznos";
+            this.txtUkupniIznos.ReadOnly = true;
             this.txtUkupniIznos.Size = new System.Drawing.Size(179, 20);
             this.txtUkupniIznos.TabIndex = 33;
             // 
@@ -340,6 +323,7 @@
             // 
             this.txtP_Mjesto.Location = new System.Drawing.Point(129, 177);
             this.txtP_Mjesto.Name = "txtP_Mjesto";
+            this.txtP_Mjesto.ReadOnly = true;
             this.txtP_Mjesto.Size = new System.Drawing.Size(260, 20);
             this.txtP_Mjesto.TabIndex = 35;
             // 
@@ -347,6 +331,7 @@
             // 
             this.txtP_Drzava.Location = new System.Drawing.Point(129, 205);
             this.txtP_Drzava.Name = "txtP_Drzava";
+            this.txtP_Drzava.ReadOnly = true;
             this.txtP_Drzava.Size = new System.Drawing.Size(260, 20);
             this.txtP_Drzava.TabIndex = 36;
             // 
@@ -372,6 +357,7 @@
             // 
             this.txtP_Banka.Location = new System.Drawing.Point(129, 235);
             this.txtP_Banka.Name = "txtP_Banka";
+            this.txtP_Banka.ReadOnly = true;
             this.txtP_Banka.Size = new System.Drawing.Size(260, 20);
             this.txtP_Banka.TabIndex = 39;
             // 
@@ -388,11 +374,14 @@
             // 
             this.txtP_IBAN.Location = new System.Drawing.Point(129, 263);
             this.txtP_IBAN.Name = "txtP_IBAN";
+            this.txtP_IBAN.ReadOnly = true;
             this.txtP_IBAN.Size = new System.Drawing.Size(260, 20);
             this.txtP_IBAN.TabIndex = 41;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtP_Naziv);
+            this.groupBox1.Controls.Add(this.label23);
             this.groupBox1.Controls.Add(this.txtP_BrojMobitela);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtP_TELFAX);
@@ -423,10 +412,28 @@
             this.groupBox1.Text = "Poslodavac";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // txtP_Naziv
+            // 
+            this.txtP_Naziv.Location = new System.Drawing.Point(129, 14);
+            this.txtP_Naziv.Name = "txtP_Naziv";
+            this.txtP_Naziv.ReadOnly = true;
+            this.txtP_Naziv.Size = new System.Drawing.Size(260, 20);
+            this.txtP_Naziv.TabIndex = 29;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(83, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(37, 13);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "Naziv:";
+            // 
             // txtP_BrojMobitela
             // 
             this.txtP_BrojMobitela.Location = new System.Drawing.Point(129, 318);
             this.txtP_BrojMobitela.Name = "txtP_BrojMobitela";
+            this.txtP_BrojMobitela.ReadOnly = true;
             this.txtP_BrojMobitela.Size = new System.Drawing.Size(260, 20);
             this.txtP_BrojMobitela.TabIndex = 45;
             // 
@@ -443,6 +450,7 @@
             // 
             this.txtP_TELFAX.Location = new System.Drawing.Point(129, 290);
             this.txtP_TELFAX.Name = "txtP_TELFAX";
+            this.txtP_TELFAX.ReadOnly = true;
             this.txtP_TELFAX.Size = new System.Drawing.Size(260, 20);
             this.txtP_TELFAX.TabIndex = 43;
             // 
@@ -457,6 +465,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label22);
+            this.groupBox2.Controls.Add(this.txtK_Email);
             this.groupBox2.Controls.Add(this.txtK_Ime);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
@@ -465,10 +475,27 @@
             this.groupBox2.Controls.Add(this.txtK_OIB);
             this.groupBox2.Location = new System.Drawing.Point(815, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(267, 117);
+            this.groupBox2.Size = new System.Drawing.Size(267, 144);
             this.groupBox2.TabIndex = 43;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Klijent";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(19, 108);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(35, 13);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "Email:";
+            // 
+            // txtK_Email
+            // 
+            this.txtK_Email.Location = new System.Drawing.Point(60, 105);
+            this.txtK_Email.Name = "txtK_Email";
+            this.txtK_Email.ReadOnly = true;
+            this.txtK_Email.Size = new System.Drawing.Size(179, 20);
+            this.txtK_Email.TabIndex = 27;
             // 
             // label10
             // 
@@ -526,11 +553,66 @@
             this.lblBrojRacuna.TabIndex = 49;
             this.lblBrojRacuna.Text = "xxx";
             // 
-            // FrmDetaljniPregledRacuna
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(1171, 730);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 40);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "Natrag";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnPDFpregled
+            // 
+            this.btnPDFpregled.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPDFpregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPDFpregled.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPDFpregled.Location = new System.Drawing.Point(172, 730);
+            this.btnPDFpregled.Name = "btnPDFpregled";
+            this.btnPDFpregled.Size = new System.Drawing.Size(147, 40);
+            this.btnPDFpregled.TabIndex = 51;
+            this.btnPDFpregled.Text = "Pregled PDF-a";
+            this.btnPDFpregled.UseVisualStyleBackColor = false;
+            // 
+            // btnIzdajRacun
+            // 
+            this.btnIzdajRacun.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnIzdajRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnIzdajRacun.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnIzdajRacun.Location = new System.Drawing.Point(12, 730);
+            this.btnIzdajRacun.Name = "btnIzdajRacun";
+            this.btnIzdajRacun.Size = new System.Drawing.Size(147, 40);
+            this.btnIzdajRacun.TabIndex = 52;
+            this.btnIzdajRacun.Text = "Izdaj račun";
+            this.btnIzdajRacun.UseVisualStyleBackColor = false;
+            this.btnIzdajRacun.Click += new System.EventHandler(this.btnIzdajRacun_Click);
+            // 
+            // btnDodajStavke
+            // 
+            this.btnDodajStavke.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDodajStavke.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDodajStavke.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDodajStavke.Location = new System.Drawing.Point(1088, 383);
+            this.btnDodajStavke.Name = "btnDodajStavke";
+            this.btnDodajStavke.Size = new System.Drawing.Size(147, 196);
+            this.btnDodajStavke.TabIndex = 53;
+            this.btnDodajStavke.Text = "Upravljanje stavkama";
+            this.btnDodajStavke.UseVisualStyleBackColor = false;
+            this.btnDodajStavke.Click += new System.EventHandler(this.btnDodajStavke_Click);
+            // 
+            // FrmIzdajNoviRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 777);
+            this.Controls.Add(this.btnDodajStavke);
+            this.Controls.Add(this.btnIzdajRacun);
+            this.Controls.Add(this.btnPDFpregled);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblBrojRacuna);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -548,13 +630,10 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbKlijenti);
             this.Controls.Add(this.chkAutoEmail);
-            this.Controls.Add(this.btnDodajStavke);
             this.Controls.Add(this.dgvStavke);
-            this.Controls.Add(this.btnNatrag);
-            this.Controls.Add(this.btnPDFPregled);
-            this.Controls.Add(this.btnIzdajRačun);
-            this.Name = "FrmDetaljniPregledRacuna";
+            this.Name = "FrmIzdajNoviRacun";
             this.Text = "Izdavanje novog računa";
+            this.Load += new System.EventHandler(this.FrmIzdajNoviRacun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -566,12 +645,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnIzdajRačun;
-        private System.Windows.Forms.Button btnPDFPregled;
-        private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.DataGridView dgvStavke;
-        private System.Windows.Forms.Button btnDodajStavke;
         private System.Windows.Forms.CheckBox chkAutoEmail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -617,5 +691,13 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblBrojRacuna;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtK_Email;
+        private System.Windows.Forms.TextBox txtP_Naziv;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPDFpregled;
+        private System.Windows.Forms.Button btnIzdajRacun;
+        private System.Windows.Forms.Button btnDodajStavke;
     }
 }

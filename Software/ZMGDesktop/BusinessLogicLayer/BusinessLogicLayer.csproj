@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,13 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogikaZaRacune\RacunanjeAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\KlijentServices.cs" />
     <Compile Include="Services\MaterijalServices.cs" />
+    <Compile Include="Services\PoslodavacServices.cs" />
     <Compile Include="Services\PrimkaServices.cs" />
     <Compile Include="Services\RacunService.cs" />
     <Compile Include="Services\RadnikServices.cs" />
     <Compile Include="Services\RadniNalogService.cs" />
+    <Compile Include="Services\RobaService.cs" />
     <Compile Include="Services\UslugaServices.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,5 +64,6 @@
       <Name>EntitiesLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

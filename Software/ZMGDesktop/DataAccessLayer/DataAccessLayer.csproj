@@ -62,11 +62,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\KlijentRepository.cs" />
     <Compile Include="Repositories\MaterijalRepository.cs" />
+    <Compile Include="Repositories\PoslodavacRepository.cs" />
     <Compile Include="Repositories\PrimkaRepository.cs" />
     <Compile Include="Repositories\RacunRepository.cs" />
     <Compile Include="Repositories\RadnikRepository.cs" />
     <Compile Include="Repositories\RadniNalogRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\RobaRepository.cs" />
     <Compile Include="Repositories\UslugaRepository.cs" />
     <Compile Include="ZMGBaza.cs" />
   </ItemGroup>
