@@ -62,6 +62,14 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<Racun> DohvatiSveRacune()
+        {
+            var poslodavac = Context.Poslodavac.SingleOrDefault(p => p.Poslodavac_ID == 1);
+
+            var query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik") where poslodavac.Poslodavac_ID == 1 select r;
+            return query;
+        }
+
         public override int Update(Racun entity, bool saveChanges = true)
         {
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);

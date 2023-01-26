@@ -42,6 +42,7 @@
             this.rbtnUzlazno = new System.Windows.Forms.RadioButton();
             this.btnOcisti = new System.Windows.Forms.Button();
             this.btnDetaljniPregled = new System.Windows.Forms.Button();
+            this.btnPretrazivanje = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRacuni)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -185,7 +186,7 @@
             this.btnOcisti.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOcisti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOcisti.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOcisti.Location = new System.Drawing.Point(941, 125);
+            this.btnOcisti.Location = new System.Drawing.Point(931, 81);
             this.btnOcisti.Name = "btnOcisti";
             this.btnOcisti.Size = new System.Drawing.Size(105, 49);
             this.btnOcisti.TabIndex = 6;
@@ -204,11 +205,24 @@
             this.btnDetaljniPregled.Text = "Detaljni pregled";
             this.btnDetaljniPregled.UseVisualStyleBackColor = false;
             // 
+            // btnPretrazivanje
+            // 
+            this.btnPretrazivanje.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPretrazivanje.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPretrazivanje.Location = new System.Drawing.Point(931, 136);
+            this.btnPretrazivanje.Name = "btnPretrazivanje";
+            this.btnPretrazivanje.Size = new System.Drawing.Size(248, 49);
+            this.btnPretrazivanje.TabIndex = 8;
+            this.btnPretrazivanje.Text = "Pretraživanje";
+            this.btnPretrazivanje.UseVisualStyleBackColor = false;
+            // 
             // FrmRacuni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1322, 609);
+            this.Controls.Add(this.btnPretrazivanje);
             this.Controls.Add(this.btnDetaljniPregled);
             this.Controls.Add(this.btnOcisti);
             this.Controls.Add(this.groupBox2);
@@ -244,5 +258,6 @@
         private System.Windows.Forms.RadioButton rbtnUzlazno;
         private System.Windows.Forms.Button btnOcisti;
         private System.Windows.Forms.Button btnDetaljniPregled;
+        private System.Windows.Forms.Button btnPretrazivanje;
     }
 }

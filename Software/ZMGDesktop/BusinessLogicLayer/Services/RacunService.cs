@@ -21,6 +21,15 @@ namespace BusinessLogicLayer.Services
             }
         }
 
+        public List<Racun> DohvatiSveRacune()
+        {
+            using (var repo = new RacunRepository())
+            {
+                List<Racun> racuni = repo.DohvatiSveRacune().ToList();
+                return racuni;
+            }
+        }
+
         public void DodajRacun(Racun racun)
         {
             using (var repo = new RacunRepository()) {

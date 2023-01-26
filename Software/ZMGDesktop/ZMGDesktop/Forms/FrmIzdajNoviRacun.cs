@@ -20,12 +20,13 @@ namespace ZMGDesktop
         Poslodavac poslodavac;
         Klijent selektiratiKlijent;
         Racun racun;
+        Radnik radnik;
         // servisi
         KlijentServices klijentServis;
         PoslodavacServices poslodavacServis;
         RacunanjeAPI racunanjeAPI;
         RacunService racunServis;
-        public FrmIzdajNoviRacun(Poslodavac poslodavac1)
+        public FrmIzdajNoviRacun(Poslodavac _poslodavac, Radnik _radnik)
         {
             InitializeComponent();
             klijentServis= new KlijentServices();
@@ -33,7 +34,8 @@ namespace ZMGDesktop
             racunanjeAPI= new RacunanjeAPI();
             racunServis= new RacunService();
 
-            poslodavac = poslodavac1;
+            poslodavac = _poslodavac;
+            radnik = _radnik;
             racun = new Racun();
         }
 
@@ -59,6 +61,9 @@ namespace ZMGDesktop
             InitTextBoxPoslodavac(poslodavac);
             txtNacinPlacanja.Text = "(T) Transakcijski račun";
             txtRokPlacanja.Text = "do 15 dana";
+            txtUkupniIznos.Text = "0";
+            txtUkupno.Text = "0";
+            txtPDV.Text = "0";
         }
 
         private void cmbKlijenti_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,6 +160,8 @@ namespace ZMGDesktop
             racun.UkupnaCijena = ukupnoiznos;
             racun.PDV = pdv;
             racun.UkupnoStavke = ukupno;
+            racun.Radnik= radnik;
+            racun.Radnik_ID = radnik.Radnik_ID;
         }
     }
 }

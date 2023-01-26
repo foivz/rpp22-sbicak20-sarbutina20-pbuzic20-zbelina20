@@ -18,15 +18,19 @@ namespace ZMGDesktop
         //servisi
         PoslodavacServices poslodavacServis;
         KlijentServices klijentServis;
+        RacunService racunServis;
         //objekti
         Poslodavac poslodavac;
         Klijent selektirani;
+        Radnik radnik;
 
-        public FrmRacuni()
+        public FrmRacuni(Radnik _radnik)
         {
             InitializeComponent();
             poslodavacServis = new PoslodavacServices();
             klijentServis= new KlijentServices();
+            racunServis = new RacunService();
+            radnik = _radnik;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,7 +40,7 @@ namespace ZMGDesktop
 
         private void btnIzdajNoviRacun_Click(object sender, EventArgs e)
         {
-            FrmIzdajNoviRacun noviRacun = new FrmIzdajNoviRacun(poslodavac);
+            FrmIzdajNoviRacun noviRacun = new FrmIzdajNoviRacun(poslodavac, radnik);
             noviRacun.ShowDialog();
         }
 
@@ -44,7 +48,7 @@ namespace ZMGDesktop
         {
             poslodavac = poslodavacServis.GetPoslodavac();
             cmbKlijent.DataSource = klijentServis.DohvatiKlijente();
-            dgvRacuni.DataSource = poslodavac.Racun.ToList();
+            Refresh();
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
@@ -55,6 +59,13 @@ namespace ZMGDesktop
         private void cmbKlijent_SelectedIndexChanged(object sender, EventArgs e)
         {
             selektirani = cmbKlijent.SelectedItem as Klijent;
+        }
+
+        private void Refresh()
+        {
+            dgvRacuni.DataSource = racunServis.DohvatiSveRacune();
+            dgvRacuni.Columns[13].Visible = false;
+            dgvRacuni.Columns[15].Visible = false;
         }
     }
 }
