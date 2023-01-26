@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer.LogikaZaRacune;
+using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
 using EntitiesLayer.GlobalniObjekti;
 using System;
@@ -22,11 +23,16 @@ namespace ZMGDesktop
         // servisi
         KlijentServices klijentServis;
         PoslodavacServices poslodavacServis;
+        RacunanjeAPI racunanjeAPI;
+        RacunService racunServis;
         public FrmIzdajNoviRacun(Poslodavac poslodavac1)
         {
             InitializeComponent();
             klijentServis= new KlijentServices();
             poslodavacServis= new PoslodavacServices();
+            racunanjeAPI= new RacunanjeAPI();
+            racunServis= new RacunService();
+
             poslodavac = poslodavac1;
             racun = new Racun();
         }
@@ -60,6 +66,7 @@ namespace ZMGDesktop
             selektiratiKlijent = cmbKlijenti.SelectedItem as Klijent;
             InitTextBoxKlijent(selektiratiKlijent);
             GlobalListaStavki.stavkaRacunaList.Clear();
+            Refresh();
             
         }
 
@@ -92,19 +99,62 @@ namespace ZMGDesktop
 
         private void btnDodajStavke_Click(object sender, EventArgs e)
         {
-            FrmDodajStavke formaStavki = new FrmDodajStavke(selektiratiKlijent);
+            FrmDodajStavke formaStavki = new FrmDodajStavke(selektiratiKlijent, racun);
             formaStavki.FormClosing += new FormClosingEventHandler(ChildFormClosing);
             formaStavki.ShowDialog();
         }
 
+        double ukupno, pdv, ukupnoiznos;
+
         private void ChildFormClosing(object sender, FormClosingEventArgs e)
         {
-            dgvStavke.DataSource = GlobalListaStavki.stavkaRacunaList;
+            Refresh();
+
+            ukupno = racunanjeAPI.RacunanjeUkupnog(GlobalListaStavki.stavkaRacunaList);
+            pdv = racunanjeAPI.RacunanjePDV(ukupno);
+            ukupnoiznos = racunanjeAPI.RacunanjeUkupnogPDV(ukupno, pdv);
+
+            txtUkupno.Text = ukupno.ToString();
+            txtPDV.Text = pdv.ToString();
+            txtUkupniIznos.Text = ukupnoiznos.ToString();
+        }
+
+        private void btnIzdajRacun_Click(object sender, EventArgs e)
+        {
+            InitRacun(racun);
+            racunServis.DodajRacun(racun);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Refresh()
+        {
+            dgvStavke.DataSource = null;
+            dgvStavke.DataSource = GlobalListaStavki.stavkaRacunaList;
+            dgvStavke.Columns[0].Visible = false;
+            dgvStavke.Columns[1].Visible = false;
+            dgvStavke.Columns[2].Visible = false;
+            dgvStavke.Columns[9].Visible = false;
+        }
+
+        private void InitRacun(Racun racun)
+        {
+            racun.NacinPlacanja = txtNacinPlacanja.Text;
+            racun.RokPlacanja = txtNacinPlacanja.Text;
+            racun.StavkaRacun = GlobalListaStavki.stavkaRacunaList;
+            racun.Fakturirao = "TEST";
+            racun.Poslodavac = poslodavac;
+            racun.DatumIzdavanja = DateTime.Now;
+            racun.Klijent = selektiratiKlijent;
+            racun.Klijent_ID = selektiratiKlijent.Klijent_ID;
+            racun.Poslodavac_ID = poslodavac.Poslodavac_ID;
+            racun.Opis = "OPIS";
+            racun.UkupnaCijena = ukupnoiznos;
+            racun.PDV = pdv;
+            racun.UkupnoStavke = ukupno;
         }
     }
 }

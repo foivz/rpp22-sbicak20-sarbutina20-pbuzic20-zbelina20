@@ -589,6 +589,7 @@
             this.btnIzdajRacun.TabIndex = 52;
             this.btnIzdajRacun.Text = "Izdaj račun";
             this.btnIzdajRacun.UseVisualStyleBackColor = false;
+            this.btnIzdajRacun.Click += new System.EventHandler(this.btnIzdajRacun_Click);
             // 
             // btnDodajStavke
             // 

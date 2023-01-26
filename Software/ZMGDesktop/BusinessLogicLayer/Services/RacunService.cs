@@ -20,5 +20,12 @@ namespace BusinessLogicLayer.Services
                 return racuni;
             }
         }
+
+        public void DodajRacun(Racun racun)
+        {
+            using (var repo = new RacunRepository()) {
+                repo.Add(racun);
+            }
+        }
     }
 }

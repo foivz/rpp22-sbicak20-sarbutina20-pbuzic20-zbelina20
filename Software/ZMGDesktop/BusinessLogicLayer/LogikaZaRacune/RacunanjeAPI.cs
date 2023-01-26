@@ -8,7 +8,7 @@ using System.Xml.Schema;
 
 namespace BusinessLogicLayer.LogikaZaRacune
 {
-    public class Racunanje
+    public class RacunanjeAPI
     {
         public double RacunanjeUkupnog(List<StavkaRacun> stavke)
         {

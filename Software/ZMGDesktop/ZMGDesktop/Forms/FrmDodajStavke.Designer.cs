@@ -52,7 +52,7 @@
             // dgvStavkeDodaj
             // 
             this.dgvStavkeDodaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStavkeDodaj.Location = new System.Drawing.Point(402, 39);
+            this.dgvStavkeDodaj.Location = new System.Drawing.Point(402, 38);
             this.dgvStavkeDodaj.Name = "dgvStavkeDodaj";
             this.dgvStavkeDodaj.Size = new System.Drawing.Size(897, 263);
             this.dgvStavkeDodaj.TabIndex = 0;
@@ -175,7 +175,7 @@
             this.btnDodaj.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDodaj.Location = new System.Drawing.Point(168, 287);
+            this.btnDodaj.Location = new System.Drawing.Point(180, 249);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(147, 40);
             this.btnDodaj.TabIndex = 21;

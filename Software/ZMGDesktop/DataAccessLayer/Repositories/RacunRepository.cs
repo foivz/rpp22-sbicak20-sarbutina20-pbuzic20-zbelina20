@@ -15,6 +15,43 @@ namespace DataAccessLayer.Repositories
 
         }
 
+        public override int Add(Racun entity, bool saveChanges = true)
+        {
+            var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
+            var poslodavac = Context.Poslodavac.SingleOrDefault(p => p.Poslodavac_ID == entity.Poslodavac_ID);
+            var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
+
+            var racun = new Racun
+            {
+                Klijent = klijent,
+                Poslodavac = poslodavac,
+                Radnik = radnik,
+                Fakturirao = entity.Fakturirao,
+                Opis = entity.Opis,
+                NacinPlacanja = entity.NacinPlacanja,
+                UkupnaCijena = entity.UkupnaCijena,
+                Radnik_ID = entity.Radnik_ID,
+                Klijent_ID = entity.Klijent_ID,
+                Poslodavac_ID = entity.Poslodavac_ID,
+                PDV= entity.PDV,
+                UkupnoStavke= entity.UkupnoStavke,
+                DatumIzdavanja= entity.DatumIzdavanja,
+                StavkaRacun= entity.StavkaRacun,
+                RokPlacanja= entity.RokPlacanja
+            };
+
+            Entities.Add(racun);
+            klijent.ukupniBrojRacuna = klijent.Racun.Count();
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         public IQueryable<Racun> DohvatiRacuneZaKlijenta(Klijent entity)
         {
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
