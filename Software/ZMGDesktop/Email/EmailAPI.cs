@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Email
 {
-    public static class Email
+    public static class EmailAPI
     {
         private static SmtpClient smtp = new SmtpClient();
         private static MimeMessage email = new MimeMessage();
@@ -49,7 +49,7 @@ namespace Email
         {
             email.Body = multipart;
             smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-            smtp.Authenticate("sebastijan.bicak@gmail.com", "uayccjrwqgsclrce");
+            smtp.Authenticate("zastitametalnegalanterije@gmail.com", "vbnosleeonorxcrg");
             smtp.Send(email);
             smtp.Disconnect(true);
             Reset();

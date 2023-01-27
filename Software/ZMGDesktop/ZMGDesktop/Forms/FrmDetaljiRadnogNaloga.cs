@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using Email;
 using EntitiesLayer.Entities;
 using QRCoder;
 using System;
@@ -33,6 +34,7 @@ namespace ZMGDesktop
         RobaService robaServis = new RobaService();
 
         string QRKod = "";
+        string status = "";
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
@@ -42,6 +44,7 @@ namespace ZMGDesktop
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             var klijent = cmbKlijent.SelectedItem as Klijent;
+            
             RadniNalog AzuriraniRadniNalog = new RadniNalog()
             {
                 RadniNalog_ID = radniNalog.RadniNalog_ID,
@@ -57,6 +60,15 @@ namespace ZMGDesktop
             };
             //poslati email
             servis.AzurirajRadniNalog(AzuriraniRadniNalog);
+
+            string emailBody = "Poštovani,<br/>radni nalog Vaše robe je u statusu: " + AzuriraniRadniNalog.Status + "<br/><br/>Informacije o radnom nalogu:<br/>Količina(kg): " + AzuriraniRadniNalog.Kolicina + "<br/>Opis: " + AzuriraniRadniNalog.Opis + "<br/>Datum podnošenja: " + AzuriraniRadniNalog.DatumStvaranja + "<br/>Podnositelj zahtjeva: " + AzuriraniRadniNalog.Radnik;
+
+            if(status != AzuriraniRadniNalog.Status)
+            {
+                EmailAPI.NapraviEmail("zastitametalnegalanterije@gmail.com", "sebastijan.bicak@gmail.com", "Obavijest o promjeni statusa", emailBody);
+                EmailAPI.Posalji();
+            }
+
             Close();
         }
 
@@ -79,6 +91,7 @@ namespace ZMGDesktop
         {
             label1.Text += radniNalog.RadniNalog_ID.ToString();
             txtRadnik.Text = Radnik.Ime + " " + Radnik.Prezime;
+            status = radniNalog.Status.ToString();
             
             txtKolicina.Enabled = false;
             txtOpis.Enabled = false;

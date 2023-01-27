@@ -31,9 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnObrisiRobuSRadnogNaloga = new System.Windows.Forms.Button();
+            this.btnPodnesi = new System.Windows.Forms.Button();
+            this.btnDodajNovuRobu = new System.Windows.Forms.Button();
+            this.btnOdustani = new System.Windows.Forms.Button();
+            this.btnDodajRobuNaRadniNalog = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.dgvKlijentovaRoba = new System.Windows.Forms.DataGridView();
             this.btnGenerirajQRKod = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             this.pbQRKod = new System.Windows.Forms.PictureBox();
+            this.dgvRobaRadnogNaloga = new System.Windows.Forms.DataGridView();
             this.txtKolicinaRobe = new System.Windows.Forms.TextBox();
             this.btnDodajMaterijal = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -53,20 +62,11 @@
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKolicina = new System.Windows.Forms.TextBox();
-            this.btnOdustani = new System.Windows.Forms.Button();
-            this.btnPodnesi = new System.Windows.Forms.Button();
-            this.dgvKlijentovaRoba = new System.Windows.Forms.DataGridView();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.dgvRobaRadnogNaloga = new System.Windows.Forms.DataGridView();
-            this.btnDodajNovuRobu = new System.Windows.Forms.Button();
-            this.btnDodajRobuNaRadniNalog = new System.Windows.Forms.Button();
-            this.btnObrisiRobuSRadnogNaloga = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQRKod)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterijali)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijentovaRoba)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQRKod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRobaRadnogNaloga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterijali)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -126,6 +126,82 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacije";
             // 
+            // btnObrisiRobuSRadnogNaloga
+            // 
+            this.btnObrisiRobuSRadnogNaloga.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnObrisiRobuSRadnogNaloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnObrisiRobuSRadnogNaloga.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnObrisiRobuSRadnogNaloga.Location = new System.Drawing.Point(119, 531);
+            this.btnObrisiRobuSRadnogNaloga.Name = "btnObrisiRobuSRadnogNaloga";
+            this.btnObrisiRobuSRadnogNaloga.Size = new System.Drawing.Size(108, 47);
+            this.btnObrisiRobuSRadnogNaloga.TabIndex = 27;
+            this.btnObrisiRobuSRadnogNaloga.Text = "Obrisi s radnog naloga";
+            this.btnObrisiRobuSRadnogNaloga.UseVisualStyleBackColor = false;
+            this.btnObrisiRobuSRadnogNaloga.Click += new System.EventHandler(this.btnObrisiRobuSRadnogNaloga_Click);
+            // 
+            // btnPodnesi
+            // 
+            this.btnPodnesi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPodnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPodnesi.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPodnesi.Location = new System.Drawing.Point(625, 523);
+            this.btnPodnesi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPodnesi.Name = "btnPodnesi";
+            this.btnPodnesi.Size = new System.Drawing.Size(112, 37);
+            this.btnPodnesi.TabIndex = 10;
+            this.btnPodnesi.Text = "Podnesi";
+            this.btnPodnesi.UseVisualStyleBackColor = false;
+            this.btnPodnesi.Click += new System.EventHandler(this.btnPodnesi_Click);
+            // 
+            // btnDodajNovuRobu
+            // 
+            this.btnDodajNovuRobu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDodajNovuRobu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajNovuRobu.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDodajNovuRobu.Location = new System.Drawing.Point(493, 530);
+            this.btnDodajNovuRobu.Name = "btnDodajNovuRobu";
+            this.btnDodajNovuRobu.Size = new System.Drawing.Size(85, 47);
+            this.btnDodajNovuRobu.TabIndex = 23;
+            this.btnDodajNovuRobu.Text = "Dodaj novu robu";
+            this.btnDodajNovuRobu.UseVisualStyleBackColor = false;
+            this.btnDodajNovuRobu.Click += new System.EventHandler(this.btnDodajNovuRobu_Click);
+            // 
+            // btnOdustani
+            // 
+            this.btnOdustani.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnOdustani.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOdustani.Location = new System.Drawing.Point(625, 572);
+            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOdustani.Name = "btnOdustani";
+            this.btnOdustani.Size = new System.Drawing.Size(112, 37);
+            this.btnOdustani.TabIndex = 9;
+            this.btnOdustani.Text = "Odustani";
+            this.btnOdustani.UseVisualStyleBackColor = false;
+            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
+            // 
+            // btnDodajRobuNaRadniNalog
+            // 
+            this.btnDodajRobuNaRadniNalog.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDodajRobuNaRadniNalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajRobuNaRadniNalog.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDodajRobuNaRadniNalog.Location = new System.Drawing.Point(15, 531);
+            this.btnDodajRobuNaRadniNalog.Name = "btnDodajRobuNaRadniNalog";
+            this.btnDodajRobuNaRadniNalog.Size = new System.Drawing.Size(98, 47);
+            this.btnDodajRobuNaRadniNalog.TabIndex = 24;
+            this.btnDodajRobuNaRadniNalog.Text = "Dodaj na radni nalog";
+            this.btnDodajRobuNaRadniNalog.UseVisualStyleBackColor = false;
+            this.btnDodajRobuNaRadniNalog.Click += new System.EventHandler(this.btnDodajRobuNaRadniNalog_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(334, 355);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(80, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Klijentova roba:";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -134,6 +210,14 @@
             this.label12.Size = new System.Drawing.Size(71, 13);
             this.label12.TabIndex = 26;
             this.label12.Text = "Kolicina robe:";
+            // 
+            // dgvKlijentovaRoba
+            // 
+            this.dgvKlijentovaRoba.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKlijentovaRoba.Location = new System.Drawing.Point(334, 374);
+            this.dgvKlijentovaRoba.Name = "dgvKlijentovaRoba";
+            this.dgvKlijentovaRoba.Size = new System.Drawing.Size(286, 150);
+            this.dgvKlijentovaRoba.TabIndex = 11;
             // 
             // btnGenerirajQRKod
             // 
@@ -148,6 +232,15 @@
             this.btnGenerirajQRKod.UseVisualStyleBackColor = false;
             this.btnGenerirajQRKod.Click += new System.EventHandler(this.btnGenerirajQRKod_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(20, 358);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(107, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Roba radnog naloga:";
+            // 
             // pbQRKod
             // 
             this.pbQRKod.Location = new System.Drawing.Point(456, 44);
@@ -158,6 +251,15 @@
             this.pbQRKod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pbQRKod.TabIndex = 21;
             this.pbQRKod.TabStop = false;
+            // 
+            // dgvRobaRadnogNaloga
+            // 
+            this.dgvRobaRadnogNaloga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRobaRadnogNaloga.Location = new System.Drawing.Point(15, 374);
+            this.dgvRobaRadnogNaloga.Name = "dgvRobaRadnogNaloga";
+            this.dgvRobaRadnogNaloga.Size = new System.Drawing.Size(280, 150);
+            this.dgvRobaRadnogNaloga.TabIndex = 13;
+            this.dgvRobaRadnogNaloga.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // txtKolicinaRobe
             // 
@@ -225,7 +327,7 @@
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Napravljen",
-            "U izradi",
+            "U obradi",
             "Dovršen"});
             this.cmbStatus.Location = new System.Drawing.Point(15, 131);
             this.cmbStatus.Name = "cmbStatus";
@@ -324,108 +426,6 @@
             this.txtKolicina.Size = new System.Drawing.Size(168, 20);
             this.txtKolicina.TabIndex = 0;
             // 
-            // btnOdustani
-            // 
-            this.btnOdustani.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnOdustani.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnOdustani.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOdustani.Location = new System.Drawing.Point(625, 572);
-            this.btnOdustani.Margin = new System.Windows.Forms.Padding(2);
-            this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(112, 37);
-            this.btnOdustani.TabIndex = 9;
-            this.btnOdustani.Text = "Odustani";
-            this.btnOdustani.UseVisualStyleBackColor = false;
-            this.btnOdustani.Click += new System.EventHandler(this.btnOdustani_Click);
-            // 
-            // btnPodnesi
-            // 
-            this.btnPodnesi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPodnesi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPodnesi.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPodnesi.Location = new System.Drawing.Point(625, 523);
-            this.btnPodnesi.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPodnesi.Name = "btnPodnesi";
-            this.btnPodnesi.Size = new System.Drawing.Size(112, 37);
-            this.btnPodnesi.TabIndex = 10;
-            this.btnPodnesi.Text = "Podnesi";
-            this.btnPodnesi.UseVisualStyleBackColor = false;
-            this.btnPodnesi.Click += new System.EventHandler(this.btnPodnesi_Click);
-            // 
-            // dgvKlijentovaRoba
-            // 
-            this.dgvKlijentovaRoba.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKlijentovaRoba.Location = new System.Drawing.Point(334, 374);
-            this.dgvKlijentovaRoba.Name = "dgvKlijentovaRoba";
-            this.dgvKlijentovaRoba.Size = new System.Drawing.Size(286, 150);
-            this.dgvKlijentovaRoba.TabIndex = 11;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(334, 355);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 13);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Klijentova roba:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 358);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(107, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Roba radnog naloga:";
-            // 
-            // dgvRobaRadnogNaloga
-            // 
-            this.dgvRobaRadnogNaloga.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRobaRadnogNaloga.Location = new System.Drawing.Point(15, 374);
-            this.dgvRobaRadnogNaloga.Name = "dgvRobaRadnogNaloga";
-            this.dgvRobaRadnogNaloga.Size = new System.Drawing.Size(280, 150);
-            this.dgvRobaRadnogNaloga.TabIndex = 13;
-            this.dgvRobaRadnogNaloga.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // btnDodajNovuRobu
-            // 
-            this.btnDodajNovuRobu.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDodajNovuRobu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajNovuRobu.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDodajNovuRobu.Location = new System.Drawing.Point(493, 530);
-            this.btnDodajNovuRobu.Name = "btnDodajNovuRobu";
-            this.btnDodajNovuRobu.Size = new System.Drawing.Size(85, 47);
-            this.btnDodajNovuRobu.TabIndex = 23;
-            this.btnDodajNovuRobu.Text = "Dodaj novu robu";
-            this.btnDodajNovuRobu.UseVisualStyleBackColor = false;
-            this.btnDodajNovuRobu.Click += new System.EventHandler(this.btnDodajNovuRobu_Click);
-            // 
-            // btnDodajRobuNaRadniNalog
-            // 
-            this.btnDodajRobuNaRadniNalog.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnDodajRobuNaRadniNalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajRobuNaRadniNalog.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDodajRobuNaRadniNalog.Location = new System.Drawing.Point(15, 531);
-            this.btnDodajRobuNaRadniNalog.Name = "btnDodajRobuNaRadniNalog";
-            this.btnDodajRobuNaRadniNalog.Size = new System.Drawing.Size(98, 47);
-            this.btnDodajRobuNaRadniNalog.TabIndex = 24;
-            this.btnDodajRobuNaRadniNalog.Text = "Dodaj na radni nalog";
-            this.btnDodajRobuNaRadniNalog.UseVisualStyleBackColor = false;
-            this.btnDodajRobuNaRadniNalog.Click += new System.EventHandler(this.btnDodajRobuNaRadniNalog_Click);
-            // 
-            // btnObrisiRobuSRadnogNaloga
-            // 
-            this.btnObrisiRobuSRadnogNaloga.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnObrisiRobuSRadnogNaloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObrisiRobuSRadnogNaloga.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnObrisiRobuSRadnogNaloga.Location = new System.Drawing.Point(119, 531);
-            this.btnObrisiRobuSRadnogNaloga.Name = "btnObrisiRobuSRadnogNaloga";
-            this.btnObrisiRobuSRadnogNaloga.Size = new System.Drawing.Size(108, 47);
-            this.btnObrisiRobuSRadnogNaloga.TabIndex = 27;
-            this.btnObrisiRobuSRadnogNaloga.Text = "Obrisi s radnog naloga";
-            this.btnObrisiRobuSRadnogNaloga.UseVisualStyleBackColor = false;
-            this.btnObrisiRobuSRadnogNaloga.Click += new System.EventHandler(this.btnObrisiRobuSRadnogNaloga_Click);
-            // 
             // FrmNoviRadniNalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,10 +440,10 @@
             this.Load += new System.EventHandler(this.FrmNoviRadniNalog_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbQRKod)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterijali)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlijentovaRoba)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQRKod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRobaRadnogNaloga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterijali)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
