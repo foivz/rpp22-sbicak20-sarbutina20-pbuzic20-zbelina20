@@ -126,7 +126,7 @@ namespace ZMGDesktop
 
         private void btnPDFpregled_Click(object sender, EventArgs e)
         {
-            GeneriranjePDF.SacuvajPDF(racun);
+            GeneriranjePDF.SacuvajPDF(racun, stavkeList);
         }
     }
 }

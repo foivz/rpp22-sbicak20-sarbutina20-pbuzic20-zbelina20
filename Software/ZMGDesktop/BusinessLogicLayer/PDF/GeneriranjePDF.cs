@@ -16,8 +16,8 @@ using System.Windows.Forms;
 namespace BusinessLogicLayer.PDF
 {
     public static class GeneriranjePDF
-    {        
-        public static void SacuvajPDF(Racun racun)
+    {      
+        public static void SacuvajPDF(Racun racun, List<StavkaRacun> listaStavki = null)
         {
             //Create PDF Document
             PdfDocument document = new PdfDocument();
@@ -28,6 +28,8 @@ namespace BusinessLogicLayer.PDF
             page.TrimMargins.Right = 0.5;
             page.TrimMargins.Bottom = 0.5;
             page.TrimMargins.Left = 0.5;
+
+            
 
             //pen
             XPen pen = new XPen(XColor.FromName("black"), 2.2);
@@ -90,11 +92,11 @@ namespace BusinessLogicLayer.PDF
             y += ls;
             gfx.DrawString($"Žiro račun: {racun.Poslodavac.IBAN}", font, XBrushes.Black, x, y);
             //telefone treba promijeniti
-            y = 170;
+            y = 180;
             x += 190;
             gfx.DrawString("Prima", font, XBrushes.Black, x, y);
             y += 3;
-            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x+140, y));
+            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x+160, y));
             y += 20;
             //klijent
             gfx.DrawString($"Naziv: {racun.Klijent.Naziv}", font, XBrushes.Black, x, y);
@@ -105,7 +107,95 @@ namespace BusinessLogicLayer.PDF
             y += ls;
             gfx.DrawString($"OIB: {racun.Klijent.OIB}", font, XBrushes.Black, x, y);
             y += ls;
-            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x + 140, y));
+            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x + 160, y));
+            y += 40;
+
+            // cetvrti dio -- racun i stavke
+
+            x = 50;
+            font = new XFont("Arial", 10, XFontStyle.Bold);
+            gfx.DrawString($"RAČUN BROJ: {racun.Racun_ID}", font, XBrushes.Black, x, y);
+            y += ls;
+            gfx.DrawString($"Stavke računa:", font, XBrushes.Black, x, y);
+            x = 390;
+            font = new XFont("Arial", 10, XFontStyle.Regular);
+            gfx.DrawString($"Datum izdavanja: {racun.DatumIzdavanja.Value.ToShortDateString()}", font, XBrushes.Black, x, y);
+            y -= ls;
+            gfx.DrawString($"Vrijeme izdavanja: {racun.DatumIzdavanja.Value.ToShortTimeString()}", font, XBrushes.Black, x, y);
+            y += ls;
+            x = 50;
+            y += ls - 3;
+            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(550, y));
+            y += ls + 3;
+
+
+            // stavke
+            font = new XFont("Arial", 9, XFontStyle.Regular);
+            gfx.DrawString($"r.b.", font, XBrushes.Black, x, y);
+            // 5 stavki izemdu 50 i 550
+            x += 24;
+            gfx.DrawString($"Naziv usluge", font, XBrushes.Black, x, y);
+            //x = 74
+            x += 70;
+            gfx.DrawString($"Naziv robe", font, XBrushes.Black, x, y);
+            //x = 144
+            x += 70;
+            gfx.DrawString($"Jed. količina", font, XBrushes.Black, x, y);
+            //x = 214
+            x += 70;
+            gfx.DrawString($"Datum izrade", font, XBrushes.Black, x, y);
+            //x = 284
+            x += 70;
+            gfx.DrawString($"Količina(kg)", font, XBrushes.Black, x, y);
+            //x = 354;
+            x += 70;
+            gfx.DrawString($"Jed. cijena/kg", font, XBrushes.Black, x, y);
+            //x = 424
+            x += 70;
+            gfx.DrawString($"Ukupna cijena", font, XBrushes.Black, x, y);
+            //x = 494
+
+
+            x = 50;
+            y += ls + 5;
+            StavkaRacun stavka = new StavkaRacun();
+            for (int i = 1; i <= 10; i++)
+            {
+                gfx.DrawString($"{i}.", font, XBrushes.Black, x, y);
+                // popunavanje izmedu
+                if (i <= listaStavki.Count && listaStavki != null)
+                {
+                    stavka = listaStavki[i - 1];
+
+                    x += 24;
+                    gfx.DrawString($"{stavka.Usluga.Naziv}", font, XBrushes.Black, x, y);
+                    //x = 74
+                    x += 70;
+                    gfx.DrawString($"{stavka.Roba.Naziv}", font, XBrushes.Black, x, y);
+                    //x = 144
+                    x += 70;
+                    gfx.DrawString($"{stavka.KolikoRobePoJedinici}", font, XBrushes.Black, x, y);
+                    //x = 214
+                    x += 70;
+                    gfx.DrawString($"{stavka.DatumIzrade.Value.ToShortDateString()}", font, XBrushes.Black, x, y);
+                    //x = 284
+                    x += 70;
+                    gfx.DrawString($"{stavka.KolicinaRobe}", font, XBrushes.Black, x, y);
+                    //x = 354;
+                    x += 70;
+                    gfx.DrawString($"{stavka.JedinicnaCijena}", font, XBrushes.Black, x, y);
+                    //x = 424
+                    x += 70;
+                    gfx.DrawString($"{stavka.UkupnaCijenaStavke}", font, XBrushes.Black, x, y);
+                    //x = 494
+                }
+                //kraj
+                y += ls + 5;
+                x = 50;
+            }
+
+
+            // peti dio -- kraj racuna, izdan u takvom obliku, fakturirao itd.
 
 
             string filename = "FirstPDFDocument.pdf";
