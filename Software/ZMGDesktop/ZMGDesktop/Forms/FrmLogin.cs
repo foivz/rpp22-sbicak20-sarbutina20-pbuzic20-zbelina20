@@ -18,7 +18,15 @@ namespace ZMGDesktop
         public FrmLogin()
         {
             InitializeComponent();
+            ucitajPomoc();
         }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
+        }
+
         private async void Login(object sender, EventArgs e)
         {
             var korime = txtKorIme.Text;
@@ -37,8 +45,13 @@ namespace ZMGDesktop
                 this.Hide();
             }
             else MessageBox.Show("Krivi podaci!");
-            
         }
-
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("C:\\Users\\Patrik\\source\\repos\\rpp22-sbicak20-sarbutina20-pbuzic20-zbelina20\\Documentation\\Pomoc\\Prijava\\prijava.html");
+            }
+        }
     }
 }
