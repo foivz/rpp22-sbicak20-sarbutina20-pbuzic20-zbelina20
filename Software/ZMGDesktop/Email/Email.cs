@@ -41,7 +41,7 @@ namespace Email
             email.From.Add(MailboxAddress.Parse(from));
             email.To.Add(MailboxAddress.Parse(to));
             email.Subject = subject;
-            var body = new TextPart(TextFormat.Html) { Text = $"<h1>{text}</h1>" };
+            var body = new TextPart(TextFormat.Html) { Text = $"<p>{text}<p>" };
             multipart.Add(body);
         }
 
