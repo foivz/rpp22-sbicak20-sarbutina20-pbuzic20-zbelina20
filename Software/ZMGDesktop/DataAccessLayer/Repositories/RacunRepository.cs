@@ -64,9 +64,97 @@ namespace DataAccessLayer.Repositories
 
         public IQueryable<Racun> DohvatiSveRacune()
         {
-            var poslodavac = Context.Poslodavac.SingleOrDefault(p => p.Poslodavac_ID == 1);
+            var query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik") where r.Poslodavac_ID == 1 select r;
+            return query;
+        }
 
-            var query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik") where poslodavac.Poslodavac_ID == 1 select r;
+        public IQueryable<Racun> DohvatiOdredeniRacun(int id)
+        {
+            var query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik") where r.Racun_ID == id select r;
+            return query;
+        }
+
+        //pretrazivanje
+        public IQueryable<Racun> DohvatiPremaPretrazivanju(Klijent entity, int Radnik_ID, int pretrazivanje = 0, int _sortiranje = 0)
+        {
+            IQueryable<Racun> query = null;
+            var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
+            // parametar pretrazivanje oznacava koji je radiobutton u toj grupi
+
+            switch (pretrazivanje)
+            {
+                case 0:
+                    if (_sortiranje == 0)
+                    {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID)
+                                orderby r descending
+                                select r;
+                    }
+                    else {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID)
+                                orderby r ascending
+                                select r;
+                    }
+                   
+                    break;
+                // datum
+                case 1:
+                    if (_sortiranje == 0)
+                    {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID)
+                                orderby r.DatumIzdavanja descending
+                                select r;
+                    }
+                    else
+                    {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID)
+                                orderby r.DatumIzdavanja ascending
+                                select r;
+                    }
+                   
+                    break;
+                // ukupno
+                case 2:
+                    if (_sortiranje == 0)
+                    {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID)
+                                orderby r.UkupnaCijena descending
+                                select r;
+                    }
+                    else
+                    {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID)
+                                orderby r.UkupnaCijena ascending
+                                select r;
+                    }
+                   
+                    break;
+                // prema racunima radnika
+                case 3:
+                    if (_sortiranje == 0)
+                    {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID && r.Radnik_ID == Radnik_ID)
+                                orderby r.Radnik_ID descending
+                                select r;
+                    }
+                    else
+                    {
+                        query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+                                where (r.Klijent_ID == entity.Klijent_ID && r.Radnik_ID == Radnik_ID)
+                                orderby r.Radnik_ID ascending
+                                select r;
+                    }
+                   
+                    break;
+            }
+
             return query;
         }
 

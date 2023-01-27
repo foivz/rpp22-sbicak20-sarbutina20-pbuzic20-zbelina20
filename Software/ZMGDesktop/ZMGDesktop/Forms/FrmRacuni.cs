@@ -67,5 +67,40 @@ namespace ZMGDesktop
             dgvRacuni.Columns[13].Visible = false;
             dgvRacuni.Columns[15].Visible = false;
         }
+
+        private void btnOcisti_Click(object sender, EventArgs e)
+        {
+            pretrazivanje = 0;
+            //pretrazivanje
+            rbtnDatumIzdaje.Checked = false;
+            rbtnVasiRacuni.Checked = false;
+            rbtnUkupniIznos.Checked = false;
+            // sortiranje
+            rbtnSilazno.Checked = false;
+            rbtnUzlazno.Checked = false;
+
+            Refresh();
+        }
+
+        int pretrazivanje = 0;
+        private void rbtnDatumIzdaje_CheckedChanged(object sender, EventArgs e)
+        {
+            pretrazivanje = 1;
+        }
+
+        private void rbtnUkupniIznos_CheckedChanged(object sender, EventArgs e)
+        {
+            pretrazivanje = 2;
+        }
+
+        private void rbtnVasiRacuni_CheckedChanged(object sender, EventArgs e)
+        {
+            pretrazivanje = 3;
+        }
+
+        private void btnPretrazivanje_Click(object sender, EventArgs e)
+        {
+            dgvRacuni.DataSource = racunServis.DohvatiRacunePretrazivanje(selektirani, radnik.Radnik_ID, pretrazivanje);
+        }
     }
 }
