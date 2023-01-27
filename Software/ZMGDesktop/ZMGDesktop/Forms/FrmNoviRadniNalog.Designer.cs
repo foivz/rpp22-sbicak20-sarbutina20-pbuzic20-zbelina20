@@ -150,7 +150,7 @@
             // 
             // pbQRKod
             // 
-            this.pbQRKod.Location = new System.Drawing.Point(449, 89);
+            this.pbQRKod.Location = new System.Drawing.Point(456, 44);
             this.pbQRKod.MaximumSize = new System.Drawing.Size(244, 244);
             this.pbQRKod.MinimumSize = new System.Drawing.Size(244, 244);
             this.pbQRKod.Name = "pbQRKod";

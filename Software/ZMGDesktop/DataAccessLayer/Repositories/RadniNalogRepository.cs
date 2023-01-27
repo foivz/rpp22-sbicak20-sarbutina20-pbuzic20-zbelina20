@@ -26,7 +26,7 @@ namespace DataAccessLayer.Repositories
 
         public IQueryable<RadniNalog> DohvatiSveRadneNaloge()
         {
-            var query = from r in Entities.Include("Klijent").Include("Radnik")
+            var query = from r in Entities.Include("Klijent").Include("Radnik").Include("Materijal").Include("Roba")
                         select r;
             return query;
         }
@@ -35,8 +35,8 @@ namespace DataAccessLayer.Repositories
         {
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
             var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
-
             var radniNalog = Entities.SingleOrDefault(r => r.RadniNalog_ID == entity.RadniNalog_ID);
+
             radniNalog.Radnik = radnik;
             radniNalog.Klijent = klijent;
             radniNalog.Kolicina = entity.Kolicina;
@@ -44,6 +44,9 @@ namespace DataAccessLayer.Repositories
             radniNalog.Opis = entity.Opis;
             radniNalog.DatumStvaranja = entity.DatumStvaranja;
             radniNalog.Status= entity.Status;
+            radniNalog.Materijal = entity.Materijal;
+            radniNalog.Roba = entity.Roba;
+
             if (saveChanges)
             {
                 return SaveChanges();

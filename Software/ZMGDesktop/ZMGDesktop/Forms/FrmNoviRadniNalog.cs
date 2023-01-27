@@ -51,7 +51,6 @@ namespace ZMGDesktop
                 var kolicina = int.Parse(txtKolicina.Text);
                 var opis = txtOpis.Text;
                 var datumStvaranja = dtpDatumStvaranja.Value;
-                var radnik = txtRadnik.Text;
 
                 RadniNalog radniNalog = new RadniNalog()
                 {
@@ -110,15 +109,12 @@ namespace ZMGDesktop
         {
             var materijal = cmbMaterijali.SelectedItem as Materijal;
             materijali.Add(materijal);
-
-            List<Materijal> lista = new List<Materijal>();
-            lista.AddRange(materijali);
-
-            btnDodajMaterijalUTablicu(lista);
+            DodajMaterijalUTablicu(materijali);
         }
 
-        private void btnDodajMaterijalUTablicu(List<Materijal> materijali)
+        private void DodajMaterijalUTablicu(List<Materijal> materijali)
         {
+            dgvMaterijali.DataSource = null;
             dgvMaterijali.DataSource = materijali;
             dgvMaterijali.Columns[8].Visible = false;
             dgvMaterijali.Columns[9].Visible = false;
@@ -195,7 +191,9 @@ namespace ZMGDesktop
 
         private void btnObrisiRobuSRadnogNaloga_Click(object sender, EventArgs e)
         {
-
+            Roba selektiranaRoba = dgvRobaRadnogNaloga.CurrentRow.DataBoundItem as Roba;
+            robaZaRadniNalog.Remove(selektiranaRoba);
+            UcitajRobuRadnogNaloga();
         }
     }
 }
