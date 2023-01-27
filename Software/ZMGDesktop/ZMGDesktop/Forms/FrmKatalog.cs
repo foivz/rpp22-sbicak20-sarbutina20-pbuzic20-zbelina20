@@ -78,6 +78,7 @@ namespace ZMGDesktop
             dgvMaterijali.Columns["Usluga_ID"].Visible = false;
             dgvMaterijali.Columns["Primka"].Visible = false;
             dgvMaterijali.Columns["Usluga"].Visible = false;
+            dgvMaterijali.Columns["RadniNalog"].Visible = false;
         }
     }
 }
