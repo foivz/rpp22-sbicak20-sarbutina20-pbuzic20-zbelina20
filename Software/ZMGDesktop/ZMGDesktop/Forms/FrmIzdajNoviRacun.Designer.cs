@@ -45,7 +45,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtK_Ime = new System.Windows.Forms.TextBox();
+            this.txtK_Naziv = new System.Windows.Forms.TextBox();
             this.txtK_Adresa = new System.Windows.Forms.TextBox();
             this.txtK_OIB = new System.Windows.Forms.TextBox();
             this.txtNacinPlacanja = new System.Windows.Forms.TextBox();
@@ -237,13 +237,13 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "OIB:";
             // 
-            // txtK_Ime
+            // txtK_Naziv
             // 
-            this.txtK_Ime.Location = new System.Drawing.Point(60, 28);
-            this.txtK_Ime.Name = "txtK_Ime";
-            this.txtK_Ime.ReadOnly = true;
-            this.txtK_Ime.Size = new System.Drawing.Size(179, 20);
-            this.txtK_Ime.TabIndex = 23;
+            this.txtK_Naziv.Location = new System.Drawing.Point(60, 28);
+            this.txtK_Naziv.Name = "txtK_Naziv";
+            this.txtK_Naziv.ReadOnly = true;
+            this.txtK_Naziv.Size = new System.Drawing.Size(179, 20);
+            this.txtK_Naziv.TabIndex = 23;
             // 
             // txtK_Adresa
             // 
@@ -467,7 +467,7 @@
             // 
             this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.txtK_Email);
-            this.groupBox2.Controls.Add(this.txtK_Ime);
+            this.groupBox2.Controls.Add(this.txtK_Naziv);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
@@ -547,11 +547,11 @@
             // 
             this.lblBrojRacuna.AutoSize = true;
             this.lblBrojRacuna.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBrojRacuna.Location = new System.Drawing.Point(997, 77);
+            this.lblBrojRacuna.Location = new System.Drawing.Point(984, 78);
             this.lblBrojRacuna.Name = "lblBrojRacuna";
-            this.lblBrojRacuna.Size = new System.Drawing.Size(62, 37);
+            this.lblBrojRacuna.Size = new System.Drawing.Size(171, 37);
             this.lblBrojRacuna.TabIndex = 49;
-            this.lblBrojRacuna.Text = "xxx";
+            this.lblBrojRacuna.Text = "Novi račun";
             // 
             // button1
             // 
@@ -662,7 +662,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtK_Ime;
+        private System.Windows.Forms.TextBox txtK_Naziv;
         private System.Windows.Forms.TextBox txtK_Adresa;
         private System.Windows.Forms.TextBox txtK_OIB;
         private System.Windows.Forms.TextBox txtNacinPlacanja;

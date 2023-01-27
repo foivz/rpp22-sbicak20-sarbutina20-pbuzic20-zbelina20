@@ -55,7 +55,6 @@ namespace ZMGDesktop
         {
             Close();
         }
-
         private void cmbKlijent_SelectedIndexChanged(object sender, EventArgs e)
         {
             selektirani = cmbKlijent.SelectedItem as Klijent;
@@ -113,6 +112,19 @@ namespace ZMGDesktop
         private void rbtnSilazno_CheckedChanged(object sender, EventArgs e)
         {
             sortiranje = 1;
+        }
+
+        private void btnDetaljniPregled_Click(object sender, EventArgs e)
+        {
+            if (dgvRacuni.CurrentRow != null)
+            {
+                Racun selektiraniRacun = dgvRacuni.CurrentRow.DataBoundItem as Racun;
+                if (selektiraniRacun!= null )
+                {
+                    FrmDetaljniPregledRacun pregledRacuna = new FrmDetaljniPregledRacun(selektiraniRacun);
+                    pregledRacuna.ShowDialog();
+                }
+            }
         }
     }
 }

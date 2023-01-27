@@ -210,6 +210,7 @@
             this.btnDetaljniPregled.TabIndex = 7;
             this.btnDetaljniPregled.Text = "Detaljni pregled";
             this.btnDetaljniPregled.UseVisualStyleBackColor = false;
+            this.btnDetaljniPregled.Click += new System.EventHandler(this.btnDetaljniPregled_Click);
             // 
             // btnPretrazivanje
             // 

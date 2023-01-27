@@ -80,7 +80,7 @@ namespace ZMGDesktop
         private void InitTextBoxKlijent(Klijent klijent)
         {
             txtK_Adresa.Text = klijent.Adresa;
-            txtK_Ime.Text = klijent.Naziv;
+            txtK_Naziv.Text = klijent.Naziv;
             txtK_OIB.Text = klijent.OIB;
             txtK_Email.Text = klijent.Email;
         }

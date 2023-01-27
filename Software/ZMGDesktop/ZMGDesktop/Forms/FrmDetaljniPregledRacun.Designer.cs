@@ -44,7 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtK_Ime = new System.Windows.Forms.TextBox();
+            this.txtK_Naziv = new System.Windows.Forms.TextBox();
             this.txtK_Adresa = new System.Windows.Forms.TextBox();
             this.txtK_OIB = new System.Windows.Forms.TextBox();
             this.txtNacinPlacanja = new System.Windows.Forms.TextBox();
@@ -87,6 +87,8 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtFakturirao = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtP_Naziv = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -201,11 +203,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(28, 31);
+            this.label7.Location = new System.Drawing.Point(17, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 18;
-            this.label7.Text = "Ime:";
+            this.label7.Text = "Naziv:";
             // 
             // label8
             // 
@@ -225,12 +227,12 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "OIB:";
             // 
-            // txtK_Ime
+            // txtK_Naziv
             // 
-            this.txtK_Ime.Location = new System.Drawing.Point(60, 28);
-            this.txtK_Ime.Name = "txtK_Ime";
-            this.txtK_Ime.Size = new System.Drawing.Size(179, 20);
-            this.txtK_Ime.TabIndex = 23;
+            this.txtK_Naziv.Location = new System.Drawing.Point(60, 28);
+            this.txtK_Naziv.Name = "txtK_Naziv";
+            this.txtK_Naziv.Size = new System.Drawing.Size(179, 20);
+            this.txtK_Naziv.TabIndex = 23;
             // 
             // txtK_Adresa
             // 
@@ -356,6 +358,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.txtP_Naziv);
             this.groupBox1.Controls.Add(this.txtP_BrojMobitela);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtP_TELFAX);
@@ -428,7 +432,7 @@
             this.groupBox2.Controls.Add(this.labelKIme);
             this.groupBox2.Controls.Add(this.txtK_Mjesto);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.txtK_Ime);
+            this.groupBox2.Controls.Add(this.txtK_Naziv);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
@@ -610,6 +614,23 @@
             this.label26.TabIndex = 52;
             this.label26.Text = "Fakturirao:";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(86, 17);
+            this.label27.Name = "label27";
+            this.label27.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label27.Size = new System.Drawing.Size(37, 13);
+            this.label27.TabIndex = 46;
+            this.label27.Text = "Naziv:";
+            // 
+            // txtP_Naziv
+            // 
+            this.txtP_Naziv.Location = new System.Drawing.Point(129, 14);
+            this.txtP_Naziv.Name = "txtP_Naziv";
+            this.txtP_Naziv.Size = new System.Drawing.Size(260, 20);
+            this.txtP_Naziv.TabIndex = 47;
+            // 
             // FrmDetaljniPregledRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,7 +660,8 @@
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnPDFPregled);
             this.Name = "FrmDetaljniPregledRacun";
-            this.Text = "Izdavanje novog računa";
+            this.Text = "Detaljni pregled računa";
+            this.Load += new System.EventHandler(this.FrmDetaljniPregledRacun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -667,7 +689,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtK_Ime;
+        private System.Windows.Forms.TextBox txtK_Naziv;
         private System.Windows.Forms.TextBox txtK_Adresa;
         private System.Windows.Forms.TextBox txtK_OIB;
         private System.Windows.Forms.TextBox txtNacinPlacanja;
@@ -710,5 +732,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtFakturirao;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox txtP_Naziv;
     }
 }
