@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,15 @@ namespace ZMGDesktop
         public FrmDetaljiRadnogNaloga(RadniNalog odabraniRadniNalog, Radnik radnik)
         {
             InitializeComponent();
+            ucitajPomoc();
             radniNalog = odabraniRadniNalog;
             Radnik = radnik;
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         List<Materijal> materijali = new List<Materijal>();
@@ -245,6 +253,15 @@ namespace ZMGDesktop
         {
             odabraniKlijent = cmbKlijent.SelectedItem as Klijent;
             UcitajRobu();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\RadniNalozi\\DetaljiRadnogNaloga\\detaljiRadnogNaloga.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }

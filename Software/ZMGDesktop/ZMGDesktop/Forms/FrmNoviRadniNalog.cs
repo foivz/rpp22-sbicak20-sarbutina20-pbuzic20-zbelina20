@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,14 @@ namespace ZMGDesktop
         public FrmNoviRadniNalog(Radnik radnik)
         {
             InitializeComponent();
+            ucitajPomoc();
             Radnik = radnik;
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         RadniNalogService servis = new RadniNalogService();
@@ -194,6 +202,15 @@ namespace ZMGDesktop
             Roba selektiranaRoba = dgvRobaRadnogNaloga.CurrentRow.DataBoundItem as Roba;
             robaZaRadniNalog.Remove(selektiranaRoba);
             UcitajRobuRadnogNaloga();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\RadniNalozi\\DodajRadniNalog\\dodajRadniNalog.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }
