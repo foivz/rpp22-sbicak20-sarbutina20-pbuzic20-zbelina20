@@ -403,6 +403,9 @@
     <Content Include="Pomoc\Prijava\prijava.html" />
     <Content Include="Pomoc\Prijava\prijava.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pomoc\RadniNalozi\DodajRadniNalog\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
