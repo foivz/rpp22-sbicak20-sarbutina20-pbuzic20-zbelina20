@@ -46,11 +46,7 @@ namespace EntitiesLayer.Entities
         [StringLength(30)]
         public string IBAN { get; set; }
 
-        public int? IzvjestajKlijenata_ID { get; set; }
-
         public int? ukupniBrojRacuna { get; set; }
-
-        public virtual IzvjestajKlijenata IzvjestajKlijenata { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Racun> Racun { get; set; }

@@ -40,19 +40,20 @@ namespace ZMGDesktop
         {
             var racuni = racunServis.DohvatiRacuneZaKlijenta(selektiran);
             dgvRacuni.DataSource = racuni;
-            dgvRacuni.Columns[8].Visible = false;
-            dgvRacuni.Columns[9].Visible = false;
-            dgvRacuni.Columns[10].Visible = false;
-            dgvRacuni.Columns[11].Visible = false;
+            dgvRacuni.Columns[5].Visible = false;
+            dgvRacuni.Columns[6].Visible = false;
+            dgvRacuni.Columns[7].Visible = false;
+            dgvRacuni.Columns[15].Visible = false;
         }
 
         private void ucitajRadneNaloge(Klijent selektiran)
         {
             var radniNalozi = radniNalogServis.DohvatiRadneNalogeZaKlijenta(selektiran);
             dgvRadniNalozi.DataSource = radniNalozi;
+            dgvRadniNalozi.Columns[6].Visible = false;
             dgvRadniNalozi.Columns[7].Visible = false;
-            dgvRadniNalozi.Columns[8].Visible = false;
-            dgvRadniNalozi.Columns[9].Visible = false;
+            dgvRadniNalozi.Columns[10].Visible = false;
+            dgvRadniNalozi.Columns[11].Visible = false;
         }
 
         private void provjeriKlijenta(Klijent selektiran)

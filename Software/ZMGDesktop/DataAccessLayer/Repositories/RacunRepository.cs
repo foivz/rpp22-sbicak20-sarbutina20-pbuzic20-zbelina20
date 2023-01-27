@@ -56,7 +56,7 @@ namespace DataAccessLayer.Repositories
         {
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
 
-            var query = from s in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
+            var query = from s in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik").Include("StavkaRacun")
                         where s.Klijent_ID == entity.Klijent_ID
                         select s;
             return query;

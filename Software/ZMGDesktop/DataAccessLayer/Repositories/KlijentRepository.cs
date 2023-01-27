@@ -18,7 +18,7 @@ namespace DataAccessLayer.Repositories
 
         public override IQueryable<Klijent> GetAll()
         {
-            var query = from s in Entities.Include("IzvjestajKlijenata")
+            var query = from s in Entities
                         select s;
             return query;
         }
@@ -33,7 +33,6 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Klijent entity, bool saveChanges = true)
         {
-            var izvjestaj = Context.IzvjestajKlijenata.SingleOrDefault(k => k.IzvjestajKlijenata_ID == entity.IzvjestajKlijenata_ID);
             vecPostoji(entity);
 
             var klijent = new Klijent
@@ -46,7 +45,6 @@ namespace DataAccessLayer.Repositories
                 IBAN = entity.IBAN,
                 Email = entity.Email,
                 ukupniBrojRacuna = 0,
-                IzvjestajKlijenata = izvjestaj
             };
             Entities.Add(klijent);
             if (saveChanges)
@@ -91,7 +89,6 @@ namespace DataAccessLayer.Repositories
         public override int Update(Klijent entity, bool saveChanges = true)
         {
 
-            var izvjestajKlijenata = Context.IzvjestajKlijenata.SingleOrDefault(k => k.IzvjestajKlijenata_ID == entity.IzvjestajKlijenata_ID);
             var klijent = Entities.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
             vecPostojiAzuriraj(entity, klijent);
 
@@ -102,7 +99,6 @@ namespace DataAccessLayer.Repositories
             klijent.OIB = entity.OIB;
             klijent.Email = entity.Email;
             klijent.IBAN = entity.IBAN;
-            //klijent.IzvjestajKlijenata_ID = izvjestajKlijenata.IzvjestajKlijenata_ID;
             if (saveChanges)
             {
                 return SaveChanges();
@@ -160,13 +156,13 @@ namespace DataAccessLayer.Repositories
             }
             else
             {
-                throw new BrisanjeKlijentaException("Zabranjeno brisanje klijenta. Klijent ima radne naloge i račune");
+                throw new BrisanjeKlijentaException("Zabranjeno brisanje klijenta. Klijent ima radne naloge, račune i robu");
             }
         }
 
         private bool provjeri(Klijent entity)
         {
-            if(entity.Racun.Count == 0 && entity.RadniNalog.Count == 0)
+            if(entity.Racun.Count == 0 && entity.RadniNalog.Count == 0 && entity.Roba.Count == 0)
             {
                 return true;
             }

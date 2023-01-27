@@ -49,7 +49,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1218, 453);
+            this.reportViewer1.Size = new System.Drawing.Size(966, 453);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
@@ -57,7 +57,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1218, 453);
+            this.ClientSize = new System.Drawing.Size(966, 453);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmIzvjestajKlijenata";
             this.Text = " ";
