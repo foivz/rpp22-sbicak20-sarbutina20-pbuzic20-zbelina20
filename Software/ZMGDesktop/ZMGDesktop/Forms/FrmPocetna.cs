@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,7 +74,8 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                System.Diagnostics.Process.Start("C:\\Users\\Patrik\\source\\repos\\rpp22-sbicak20-sarbutina20-pbuzic20-zbelina20\\Documentation\\Pomoc\\Klijenti\\Pocetna\\pocetna.html");
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Klijenti\\Pocetna\\pocetna.html");
+                System.Diagnostics.Process.Start(path);
             }
         }
     }

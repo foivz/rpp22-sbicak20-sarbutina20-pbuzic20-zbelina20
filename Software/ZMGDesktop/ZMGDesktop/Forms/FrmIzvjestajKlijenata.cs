@@ -2,6 +2,7 @@
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -54,7 +55,8 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                System.Diagnostics.Process.Start("C:\\Users\\Patrik\\source\\repos\\rpp22-sbicak20-sarbutina20-pbuzic20-zbelina20\\Documentation\\Pomoc\\Izvještaji\\IzvjestajKlijenata\\izvjestajKlijenata.html");
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Izvjestaji\\IzvjestajKlijenata\\izvjestajKlijenata.html");
+                System.Diagnostics.Process.Start(path);
             }
         }
 

@@ -374,6 +374,35 @@
       <Name>EntitiesLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\izvjestaji.css" />
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\izvjestaji.html" />
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\Izvjestaji.png" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.css" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.html" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.png" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\urediKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\Pocetna\pocetna.css" />
+    <Content Include="Pomoc\Klijenti\Pocetna\pocetna.html" />
+    <Content Include="Pomoc\Klijenti\Pocetna\Pocetna.png" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\Pregled.css" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\Pregled.html" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\PregledKlijenata.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta1.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta2.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta3.png" />
+    <Content Include="Pomoc\Prijava\prijava.css" />
+    <Content Include="Pomoc\Prijava\prijava.html" />
+    <Content Include="Pomoc\Prijava\prijava.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
