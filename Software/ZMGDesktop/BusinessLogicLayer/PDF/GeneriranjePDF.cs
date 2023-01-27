@@ -208,13 +208,30 @@ namespace BusinessLogicLayer.PDF
             gfx.DrawString($"{racun.PDV}", font, XBrushes.Black, x, y);
             y += ls + 3;
             x = 424;
-            gfx.DrawString($"Ukupan iznos:", font, XBrushes.Black, x, y);
+            gfx.DrawString($"Ukupno u EUR:", font, XBrushes.Black, x, y);
             x = 494;
             gfx.DrawString($"{racun.UkupnaCijena}", font, XBrushes.Black, x, y);
-            y += ls + 3;
-
+            y += 5;
+            gfx.DrawLine(pen, new XPoint(424, y), new XPoint(550, y));
+            y += ls + ls + ls;
 
             // peti dio -- kraj racuna, izdan u takvom obliku, fakturirao itd.
+            x = 50;
+            font = new XFont("Arial", 9, XFontStyle.Regular);
+            gfx.DrawString($"Način plaćanja: {racun.NacinPlacanja} - rok plaćanja {racun.RokPlacanja}", font, XBrushes.Black, x, y);
+            y += ls;
+            gfx.DrawString($"Porez na dodanu vrijednost je zaračunat prema zakonu o PDV-u objavljenog u NN 47/95 - 87/09,94/09,22/12,136/12.", font, XBrushes.Black, x, y);
+            y += ls;
+            gfx.DrawString($"U slučaju ne plaćanja po dospijeću, ovaj račun može poslužiti kao vjerodostojna isprava za ovršni postupak.", font, XBrushes.Black, x, y);
+            y += ls;
+            gfx.DrawString($"Reklamacije po ovom računu uvažavamo 8 (osam) dana po njegovom primitku.", font, XBrushes.Black, x, y);
+            y += ls;
+            gfx.DrawString($"Valuta plaćanja je u EURIMA.", font, XBrushes.Black, x, y);
+            y += ls;
+            gfx.DrawString($"Ovaj dokument je izdan u elektronsom obliku, te je valjan bez potpisa i pečata.", font, XBrushes.Black, x, y);
+            y += ls + ls + ls;
+            x = 354;
+            gfx.DrawString($"Fakturirao: {racun.Radnik.ToString()}", font, XBrushes.Black, x, y);
 
 
             string filename = "FirstPDFDocument.pdf";
