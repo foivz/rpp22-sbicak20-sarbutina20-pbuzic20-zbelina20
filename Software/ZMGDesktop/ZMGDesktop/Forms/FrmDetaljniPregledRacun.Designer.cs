@@ -60,6 +60,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtP_IBAN = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtP_Naziv = new System.Windows.Forms.TextBox();
             this.txtP_BrojMobitela = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtP_TELFAX = new System.Windows.Forms.TextBox();
@@ -85,8 +87,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtFakturirao = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtP_Naziv = new System.Windows.Forms.TextBox();
             this.btnPDFpregled = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
@@ -389,6 +389,24 @@
             this.groupBox1.Text = "Poslodavac";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(86, 17);
+            this.label27.Name = "label27";
+            this.label27.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label27.Size = new System.Drawing.Size(37, 13);
+            this.label27.TabIndex = 46;
+            this.label27.Text = "Naziv:";
+            // 
+            // txtP_Naziv
+            // 
+            this.txtP_Naziv.Location = new System.Drawing.Point(129, 14);
+            this.txtP_Naziv.Name = "txtP_Naziv";
+            this.txtP_Naziv.ReadOnly = true;
+            this.txtP_Naziv.Size = new System.Drawing.Size(260, 20);
+            this.txtP_Naziv.TabIndex = 47;
+            // 
             // txtP_BrojMobitela
             // 
             this.txtP_BrojMobitela.Location = new System.Drawing.Point(129, 318);
@@ -622,24 +640,6 @@
             this.label26.TabIndex = 52;
             this.label26.Text = "Fakturirao:";
             // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(86, 17);
-            this.label27.Name = "label27";
-            this.label27.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label27.Size = new System.Drawing.Size(37, 13);
-            this.label27.TabIndex = 46;
-            this.label27.Text = "Naziv:";
-            // 
-            // txtP_Naziv
-            // 
-            this.txtP_Naziv.Location = new System.Drawing.Point(129, 14);
-            this.txtP_Naziv.Name = "txtP_Naziv";
-            this.txtP_Naziv.ReadOnly = true;
-            this.txtP_Naziv.Size = new System.Drawing.Size(260, 20);
-            this.txtP_Naziv.TabIndex = 47;
-            // 
             // btnPDFpregled
             // 
             this.btnPDFpregled.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -651,6 +651,7 @@
             this.btnPDFpregled.TabIndex = 54;
             this.btnPDFpregled.Text = "Pregled PDF-a";
             this.btnPDFpregled.UseVisualStyleBackColor = false;
+            this.btnPDFpregled.Click += new System.EventHandler(this.btnPDFpregled_Click);
             // 
             // button1
             // 

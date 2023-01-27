@@ -1,4 +1,5 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer.PDF;
+using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -121,6 +122,11 @@ namespace ZMGDesktop
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnPDFpregled_Click(object sender, EventArgs e)
+        {
+            GeneriranjePDF.SacuvajPDF(racun);
         }
     }
 }
