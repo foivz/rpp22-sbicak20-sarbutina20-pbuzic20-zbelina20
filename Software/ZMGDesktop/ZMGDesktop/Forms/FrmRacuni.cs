@@ -41,7 +41,13 @@ namespace ZMGDesktop
         private void btnIzdajNoviRacun_Click(object sender, EventArgs e)
         {
             FrmIzdajNoviRacun noviRacun = new FrmIzdajNoviRacun(poslodavac, radnik);
+            noviRacun.FormClosing += new FormClosingEventHandler(ChildFormClosing);
             noviRacun.ShowDialog();
+        }
+
+        private void ChildFormClosing(object sender, FormClosingEventArgs e)
+        {
+            Refresh();
         }
 
         private void FrmRacuni_Load(object sender, EventArgs e)

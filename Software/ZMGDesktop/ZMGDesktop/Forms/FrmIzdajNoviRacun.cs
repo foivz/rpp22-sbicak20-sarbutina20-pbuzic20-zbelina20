@@ -148,7 +148,7 @@ namespace ZMGDesktop
         private void InitRacun(Racun racun)
         {
             racun.NacinPlacanja = txtNacinPlacanja.Text;
-            racun.RokPlacanja = txtNacinPlacanja.Text;
+            racun.RokPlacanja = txtRokPlacanja.Text;
             racun.StavkaRacun = GlobalListaStavki.stavkaRacunaList;
             racun.Fakturirao = "TEST";
             racun.Poslodavac = poslodavac;

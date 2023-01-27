@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPDFPregled = new System.Windows.Forms.Button();
-            this.btnNatrag = new System.Windows.Forms.Button();
             this.dgvStavke = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,7 +67,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtK_TEL = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtK_IBAN = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txtK_Email = new System.Windows.Forms.TextBox();
             this.labelKIme = new System.Windows.Forms.Label();
@@ -89,28 +87,12 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtP_Naziv = new System.Windows.Forms.TextBox();
+            this.btnPDFpregled = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnPDFPregled
-            // 
-            this.btnPDFPregled.Location = new System.Drawing.Point(12, 710);
-            this.btnPDFPregled.Name = "btnPDFPregled";
-            this.btnPDFPregled.Size = new System.Drawing.Size(156, 55);
-            this.btnPDFPregled.TabIndex = 1;
-            this.btnPDFPregled.Text = "Pregled u PDF-u";
-            this.btnPDFPregled.UseVisualStyleBackColor = true;
-            // 
-            // btnNatrag
-            // 
-            this.btnNatrag.Location = new System.Drawing.Point(1162, 710);
-            this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(156, 55);
-            this.btnNatrag.TabIndex = 2;
-            this.btnNatrag.Text = "Natrag";
-            this.btnNatrag.UseVisualStyleBackColor = true;
             // 
             // dgvStavke
             // 
@@ -169,6 +151,7 @@
             // 
             this.txtP_ObrtniRegistar.Location = new System.Drawing.Point(129, 40);
             this.txtP_ObrtniRegistar.Name = "txtP_ObrtniRegistar";
+            this.txtP_ObrtniRegistar.ReadOnly = true;
             this.txtP_ObrtniRegistar.Size = new System.Drawing.Size(260, 20);
             this.txtP_ObrtniRegistar.TabIndex = 12;
             // 
@@ -176,6 +159,7 @@
             // 
             this.txtP_BrObrtnice.Location = new System.Drawing.Point(129, 67);
             this.txtP_BrObrtnice.Name = "txtP_BrObrtnice";
+            this.txtP_BrObrtnice.ReadOnly = true;
             this.txtP_BrObrtnice.Size = new System.Drawing.Size(260, 20);
             this.txtP_BrObrtnice.TabIndex = 13;
             // 
@@ -183,6 +167,7 @@
             // 
             this.txtP_OIB.Location = new System.Drawing.Point(129, 93);
             this.txtP_OIB.Name = "txtP_OIB";
+            this.txtP_OIB.ReadOnly = true;
             this.txtP_OIB.Size = new System.Drawing.Size(260, 20);
             this.txtP_OIB.TabIndex = 14;
             // 
@@ -190,6 +175,7 @@
             // 
             this.txtP_Poslovnica.Location = new System.Drawing.Point(129, 122);
             this.txtP_Poslovnica.Name = "txtP_Poslovnica";
+            this.txtP_Poslovnica.ReadOnly = true;
             this.txtP_Poslovnica.Size = new System.Drawing.Size(260, 20);
             this.txtP_Poslovnica.TabIndex = 15;
             // 
@@ -197,6 +183,7 @@
             // 
             this.txtP_Ulica.Location = new System.Drawing.Point(129, 148);
             this.txtP_Ulica.Name = "txtP_Ulica";
+            this.txtP_Ulica.ReadOnly = true;
             this.txtP_Ulica.Size = new System.Drawing.Size(260, 20);
             this.txtP_Ulica.TabIndex = 16;
             // 
@@ -231,6 +218,7 @@
             // 
             this.txtK_Naziv.Location = new System.Drawing.Point(60, 28);
             this.txtK_Naziv.Name = "txtK_Naziv";
+            this.txtK_Naziv.ReadOnly = true;
             this.txtK_Naziv.Size = new System.Drawing.Size(179, 20);
             this.txtK_Naziv.TabIndex = 23;
             // 
@@ -238,6 +226,7 @@
             // 
             this.txtK_Adresa.Location = new System.Drawing.Point(60, 54);
             this.txtK_Adresa.Name = "txtK_Adresa";
+            this.txtK_Adresa.ReadOnly = true;
             this.txtK_Adresa.Size = new System.Drawing.Size(179, 20);
             this.txtK_Adresa.TabIndex = 24;
             // 
@@ -245,6 +234,7 @@
             // 
             this.txtK_OIB.Location = new System.Drawing.Point(60, 105);
             this.txtK_OIB.Name = "txtK_OIB";
+            this.txtK_OIB.ReadOnly = true;
             this.txtK_OIB.Size = new System.Drawing.Size(179, 20);
             this.txtK_OIB.TabIndex = 25;
             // 
@@ -252,6 +242,7 @@
             // 
             this.txtNacinPlacanja.Location = new System.Drawing.Point(325, 613);
             this.txtNacinPlacanja.Name = "txtNacinPlacanja";
+            this.txtNacinPlacanja.ReadOnly = true;
             this.txtNacinPlacanja.Size = new System.Drawing.Size(179, 20);
             this.txtNacinPlacanja.TabIndex = 28;
             // 
@@ -268,6 +259,7 @@
             // 
             this.txtRokPlacanja.Location = new System.Drawing.Point(325, 639);
             this.txtRokPlacanja.Name = "txtRokPlacanja";
+            this.txtRokPlacanja.ReadOnly = true;
             this.txtRokPlacanja.Size = new System.Drawing.Size(179, 20);
             this.txtRokPlacanja.TabIndex = 30;
             // 
@@ -275,6 +267,7 @@
             // 
             this.txtUkupno.Location = new System.Drawing.Point(903, 613);
             this.txtUkupno.Name = "txtUkupno";
+            this.txtUkupno.ReadOnly = true;
             this.txtUkupno.Size = new System.Drawing.Size(179, 20);
             this.txtUkupno.TabIndex = 31;
             // 
@@ -282,6 +275,7 @@
             // 
             this.txtPDV.Location = new System.Drawing.Point(903, 639);
             this.txtPDV.Name = "txtPDV";
+            this.txtPDV.ReadOnly = true;
             this.txtPDV.Size = new System.Drawing.Size(179, 20);
             this.txtPDV.TabIndex = 32;
             // 
@@ -289,6 +283,7 @@
             // 
             this.txtUkupniIznos.Location = new System.Drawing.Point(903, 665);
             this.txtUkupniIznos.Name = "txtUkupniIznos";
+            this.txtUkupniIznos.ReadOnly = true;
             this.txtUkupniIznos.Size = new System.Drawing.Size(179, 20);
             this.txtUkupniIznos.TabIndex = 33;
             // 
@@ -305,6 +300,7 @@
             // 
             this.txtP_Mjesto.Location = new System.Drawing.Point(129, 177);
             this.txtP_Mjesto.Name = "txtP_Mjesto";
+            this.txtP_Mjesto.ReadOnly = true;
             this.txtP_Mjesto.Size = new System.Drawing.Size(260, 20);
             this.txtP_Mjesto.TabIndex = 35;
             // 
@@ -312,6 +308,7 @@
             // 
             this.txtP_Drzava.Location = new System.Drawing.Point(129, 205);
             this.txtP_Drzava.Name = "txtP_Drzava";
+            this.txtP_Drzava.ReadOnly = true;
             this.txtP_Drzava.Size = new System.Drawing.Size(260, 20);
             this.txtP_Drzava.TabIndex = 36;
             // 
@@ -337,6 +334,7 @@
             // 
             this.txtP_Banka.Location = new System.Drawing.Point(129, 235);
             this.txtP_Banka.Name = "txtP_Banka";
+            this.txtP_Banka.ReadOnly = true;
             this.txtP_Banka.Size = new System.Drawing.Size(260, 20);
             this.txtP_Banka.TabIndex = 39;
             // 
@@ -353,6 +351,7 @@
             // 
             this.txtP_IBAN.Location = new System.Drawing.Point(129, 263);
             this.txtP_IBAN.Name = "txtP_IBAN";
+            this.txtP_IBAN.ReadOnly = true;
             this.txtP_IBAN.Size = new System.Drawing.Size(260, 20);
             this.txtP_IBAN.TabIndex = 41;
             // 
@@ -394,6 +393,7 @@
             // 
             this.txtP_BrojMobitela.Location = new System.Drawing.Point(129, 318);
             this.txtP_BrojMobitela.Name = "txtP_BrojMobitela";
+            this.txtP_BrojMobitela.ReadOnly = true;
             this.txtP_BrojMobitela.Size = new System.Drawing.Size(260, 20);
             this.txtP_BrojMobitela.TabIndex = 45;
             // 
@@ -410,6 +410,7 @@
             // 
             this.txtP_TELFAX.Location = new System.Drawing.Point(129, 290);
             this.txtP_TELFAX.Name = "txtP_TELFAX";
+            this.txtP_TELFAX.ReadOnly = true;
             this.txtP_TELFAX.Size = new System.Drawing.Size(260, 20);
             this.txtP_TELFAX.TabIndex = 43;
             // 
@@ -426,7 +427,7 @@
             // 
             this.groupBox2.Controls.Add(this.txtK_TEL);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtK_IBAN);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.txtK_Email);
             this.groupBox2.Controls.Add(this.labelKIme);
@@ -449,6 +450,7 @@
             // 
             this.txtK_TEL.Location = new System.Drawing.Point(60, 183);
             this.txtK_TEL.Name = "txtK_TEL";
+            this.txtK_TEL.ReadOnly = true;
             this.txtK_TEL.Size = new System.Drawing.Size(179, 20);
             this.txtK_TEL.TabIndex = 55;
             // 
@@ -461,12 +463,13 @@
             this.label22.TabIndex = 54;
             this.label22.Text = "TEL:";
             // 
-            // textBox3
+            // txtK_IBAN
             // 
-            this.textBox3.Location = new System.Drawing.Point(60, 157);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 20);
-            this.textBox3.TabIndex = 31;
+            this.txtK_IBAN.Location = new System.Drawing.Point(60, 157);
+            this.txtK_IBAN.Name = "txtK_IBAN";
+            this.txtK_IBAN.ReadOnly = true;
+            this.txtK_IBAN.Size = new System.Drawing.Size(179, 20);
+            this.txtK_IBAN.TabIndex = 31;
             // 
             // label23
             // 
@@ -481,6 +484,7 @@
             // 
             this.txtK_Email.Location = new System.Drawing.Point(60, 131);
             this.txtK_Email.Name = "txtK_Email";
+            this.txtK_Email.ReadOnly = true;
             this.txtK_Email.Size = new System.Drawing.Size(179, 20);
             this.txtK_Email.TabIndex = 29;
             // 
@@ -497,6 +501,7 @@
             // 
             this.txtK_Mjesto.Location = new System.Drawing.Point(60, 80);
             this.txtK_Mjesto.Name = "txtK_Mjesto";
+            this.txtK_Mjesto.ReadOnly = true;
             this.txtK_Mjesto.Size = new System.Drawing.Size(179, 20);
             this.txtK_Mjesto.TabIndex = 27;
             // 
@@ -570,6 +575,7 @@
             // 
             this.txtDatumIzdavanja.Location = new System.Drawing.Point(875, 339);
             this.txtDatumIzdavanja.Name = "txtDatumIzdavanja";
+            this.txtDatumIzdavanja.ReadOnly = true;
             this.txtDatumIzdavanja.Size = new System.Drawing.Size(179, 20);
             this.txtDatumIzdavanja.TabIndex = 33;
             // 
@@ -586,6 +592,7 @@
             // 
             this.txtVrijeme.Location = new System.Drawing.Point(875, 365);
             this.txtVrijeme.Name = "txtVrijeme";
+            this.txtVrijeme.ReadOnly = true;
             this.txtVrijeme.Size = new System.Drawing.Size(179, 20);
             this.txtVrijeme.TabIndex = 51;
             // 
@@ -602,6 +609,7 @@
             // 
             this.txtFakturirao.Location = new System.Drawing.Point(325, 668);
             this.txtFakturirao.Name = "txtFakturirao";
+            this.txtFakturirao.ReadOnly = true;
             this.txtFakturirao.Size = new System.Drawing.Size(179, 20);
             this.txtFakturirao.TabIndex = 53;
             // 
@@ -628,14 +636,42 @@
             // 
             this.txtP_Naziv.Location = new System.Drawing.Point(129, 14);
             this.txtP_Naziv.Name = "txtP_Naziv";
+            this.txtP_Naziv.ReadOnly = true;
             this.txtP_Naziv.Size = new System.Drawing.Size(260, 20);
             this.txtP_Naziv.TabIndex = 47;
+            // 
+            // btnPDFpregled
+            // 
+            this.btnPDFpregled.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPDFpregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnPDFpregled.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPDFpregled.Location = new System.Drawing.Point(241, 725);
+            this.btnPDFpregled.Name = "btnPDFpregled";
+            this.btnPDFpregled.Size = new System.Drawing.Size(147, 40);
+            this.btnPDFpregled.TabIndex = 54;
+            this.btnPDFpregled.Text = "Pregled PDF-a";
+            this.btnPDFpregled.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(935, 725);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 40);
+            this.button1.TabIndex = 55;
+            this.button1.Text = "Natrag";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmDetaljniPregledRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 777);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPDFpregled);
             this.Controls.Add(this.txtFakturirao);
             this.Controls.Add(this.label26);
             this.Controls.Add(this.txtVrijeme);
@@ -657,8 +693,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtNacinPlacanja);
             this.Controls.Add(this.dgvStavke);
-            this.Controls.Add(this.btnNatrag);
-            this.Controls.Add(this.btnPDFPregled);
             this.Name = "FrmDetaljniPregledRacun";
             this.Text = "Detaljni pregled računa";
             this.Load += new System.EventHandler(this.FrmDetaljniPregledRacun_Load);
@@ -673,8 +707,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnPDFPregled;
-        private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.DataGridView dgvStavke;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -720,7 +752,7 @@
         private System.Windows.Forms.Label lblBrojRacuna;
         private System.Windows.Forms.TextBox txtK_TEL;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtK_IBAN;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtK_Email;
         private System.Windows.Forms.Label labelKIme;
@@ -734,5 +766,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txtP_Naziv;
+        private System.Windows.Forms.Button btnPDFpregled;
+        private System.Windows.Forms.Button button1;
     }
 }
