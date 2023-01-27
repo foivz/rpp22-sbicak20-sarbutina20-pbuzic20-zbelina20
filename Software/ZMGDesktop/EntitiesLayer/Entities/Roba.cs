@@ -12,6 +12,7 @@ namespace EntitiesLayer.Entities
         public Roba()
         {
             StavkaRacun = new HashSet<StavkaRacun>();
+            RadniNalog = new HashSet<RadniNalog>();
         }
 
         [Key]
@@ -23,7 +24,7 @@ namespace EntitiesLayer.Entities
 
         [Required]
         [StringLength(100)]
-        public string Opis { get; set; }
+        public string Kolicina { get; set; }
 
         public int? Klijent_ID { get; set; }
 
@@ -31,5 +32,8 @@ namespace EntitiesLayer.Entities
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StavkaRacun> StavkaRacun { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RadniNalog> RadniNalog { get; set; }
     }
 }

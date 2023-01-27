@@ -42,7 +42,7 @@
             // dgvKlijenti
             // 
             this.dgvKlijenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKlijenti.Location = new System.Drawing.Point(16, 33);
+            this.dgvKlijenti.Location = new System.Drawing.Point(12, 33);
             this.dgvKlijenti.Name = "dgvKlijenti";
             this.dgvKlijenti.RowHeadersWidth = 51;
             this.dgvKlijenti.RowTemplate.Height = 24;
@@ -53,7 +53,7 @@
             // 
             this.labelKlijenti.AutoSize = true;
             this.labelKlijenti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelKlijenti.Location = new System.Drawing.Point(12, 9);
+            this.labelKlijenti.Location = new System.Drawing.Point(12, 8);
             this.labelKlijenti.Name = "labelKlijenti";
             this.labelKlijenti.Size = new System.Drawing.Size(137, 20);
             this.labelKlijenti.TabIndex = 1;
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 484);
+            this.ClientSize = new System.Drawing.Size(1043, 483);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnUveziKlijenta);
             this.Controls.Add(this.btnDetaljiKlijenta);

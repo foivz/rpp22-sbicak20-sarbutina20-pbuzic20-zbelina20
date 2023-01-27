@@ -32,7 +32,6 @@
             this.btnRacuni = new System.Windows.Forms.Button();
             this.btnStanjeSkladista = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnPodrska = new System.Windows.Forms.Button();
             this.btnRadniNalozi = new System.Windows.Forms.Button();
             this.btnIzvjestaji = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@
             this.btnRacuni.TabIndex = 14;
             this.btnRacuni.Text = "Računi";
             this.btnRacuni.UseVisualStyleBackColor = false;
+            this.btnRacuni.Click += new System.EventHandler(this.btnRacuni_Click);
             // 
             // btnStanjeSkladista
             // 
@@ -91,25 +91,12 @@
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
-            // btnPodrska
-            // 
-            this.btnPodrska.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnPodrska.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPodrska.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPodrska.Location = new System.Drawing.Point(517, 265);
-            this.btnPodrska.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnPodrska.Name = "btnPodrska";
-            this.btnPodrska.Size = new System.Drawing.Size(149, 46);
-            this.btnPodrska.TabIndex = 19;
-            this.btnPodrska.Text = "Podrška";
-            this.btnPodrska.UseVisualStyleBackColor = false;
-            // 
             // btnRadniNalozi
             // 
             this.btnRadniNalozi.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnRadniNalozi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnRadniNalozi.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRadniNalozi.Location = new System.Drawing.Point(517, 185);
+            this.btnRadniNalozi.Location = new System.Drawing.Point(498, 225);
             this.btnRadniNalozi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRadniNalozi.Name = "btnRadniNalozi";
             this.btnRadniNalozi.Size = new System.Drawing.Size(149, 46);
@@ -123,7 +110,7 @@
             this.btnIzvjestaji.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIzvjestaji.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvjestaji.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnIzvjestaji.Location = new System.Drawing.Point(517, 101);
+            this.btnIzvjestaji.Location = new System.Drawing.Point(498, 141);
             this.btnIzvjestaji.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIzvjestaji.Name = "btnIzvjestaji";
             this.btnIzvjestaji.Size = new System.Drawing.Size(149, 46);
@@ -136,7 +123,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Location = new System.Drawing.Point(256, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 39);
             this.label1.TabIndex = 20;
@@ -148,7 +135,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 368);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnPodrska);
             this.Controls.Add(this.btnRadniNalozi);
             this.Controls.Add(this.btnIzvjestaji);
             this.Controls.Add(this.pictureBox1);
@@ -171,7 +157,6 @@
         private System.Windows.Forms.Button btnRacuni;
         private System.Windows.Forms.Button btnStanjeSkladista;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnPodrska;
         private System.Windows.Forms.Button btnRadniNalozi;
         private System.Windows.Forms.Button btnIzvjestaji;
         private System.Windows.Forms.Label label1;

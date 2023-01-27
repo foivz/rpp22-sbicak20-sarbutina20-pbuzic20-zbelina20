@@ -15,7 +15,7 @@ namespace BusinessLogicLayer.Services
         {
             using (var repo = new UslugaRepository())
             {
-                var usluge = repo.GetAll().ToList();
+                var usluge = repo.GetAll().Distinct().ToList();
                 return usluge;
             }
         }

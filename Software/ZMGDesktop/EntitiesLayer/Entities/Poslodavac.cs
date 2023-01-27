@@ -1,4 +1,3 @@
-
 namespace EntitiesLayer.Entities
 {
     using System;
@@ -30,7 +29,8 @@ namespace EntitiesLayer.Entities
         [StringLength(50)]
         public string Mjesto { get; set; }
 
-        public int OIB { get; set; }
+        [StringLength(11)]
+        public string OIB { get; set; }
 
         [Required]
         [StringLength(10)]
@@ -55,6 +55,18 @@ namespace EntitiesLayer.Entities
         [Required]
         [StringLength(30)]
         public string Poslovnica { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Drzava { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string BrojObrtnice { get; set; }
+
+        [Required]
+        [StringLength(30)]
+        public string TEL_FAX { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Racun> Racun { get; set; }

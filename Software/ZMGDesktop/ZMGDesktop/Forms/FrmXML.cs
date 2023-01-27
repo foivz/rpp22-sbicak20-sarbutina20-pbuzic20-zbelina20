@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,13 @@ namespace ZMGDesktop
         public FrmXML()
         {
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void FrmXML_Load(object sender, EventArgs e)
@@ -77,11 +85,10 @@ namespace ZMGDesktop
                     }
                     dgvKlijentiXML.DataSource = klijentiList;
                     dgvKlijentiXML.Columns[0].Visible = false;
+                    dgvKlijentiXML.Columns[8].Visible = false;
                     dgvKlijentiXML.Columns[9].Visible = false;
                     dgvKlijentiXML.Columns[10].Visible = false;
                     dgvKlijentiXML.Columns[11].Visible = false;
-                    dgvKlijentiXML.Columns[12].Visible = false;
-                    dgvKlijentiXML.Columns[13].Visible = false;
                     MessageBox.Show("Uspješno učitani korisnici");
                 }
                 else
@@ -155,5 +162,15 @@ namespace ZMGDesktop
             }
             return true;
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Klijenti\\UveziKlijentaXML\\uveziKlijenta.html");
+                System.Diagnostics.Process.Start(path);
+            }
+        }
+        
     }
 }

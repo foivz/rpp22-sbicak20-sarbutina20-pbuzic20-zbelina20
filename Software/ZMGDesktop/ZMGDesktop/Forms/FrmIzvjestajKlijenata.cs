@@ -2,6 +2,7 @@
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -15,11 +16,19 @@ namespace ZMGDesktop
         public FrmIzvjestajKlijenata(List<Klijent> desetNajboljih)
         {
             InitializeComponent();
+            ucitajPomoc();
             this.desetNajboljih = desetNajboljih;
         }
         public FrmIzvjestajKlijenata()
         {
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void FrmIzvjestajKlijenata_Load(object sender, EventArgs e)
@@ -42,9 +51,15 @@ namespace ZMGDesktop
             }
         }
 
-        private void reportViewer1_Load(object sender, EventArgs e)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Izvjestaji\\IzvjestajKlijenata\\izvjestajKlijenata.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
+
+        
     }
 }

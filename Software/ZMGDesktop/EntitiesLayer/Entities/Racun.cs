@@ -1,5 +1,3 @@
-
-
 namespace EntitiesLayer.Entities
 {
     using System;
@@ -38,6 +36,11 @@ namespace EntitiesLayer.Entities
         public int? Radnik_ID { get; set; }
 
         public int? Poslodavac_ID { get; set; }
+
+        public double? PDV { get; set; }
+        public double? UkupnoStavke { get; set; }
+        public string RokPlacanja { get; set; }
+        public DateTime? DatumIzdavanja { get; set; }
 
         public virtual Klijent Klijent { get; set; }
 

@@ -28,6 +28,15 @@ namespace BusinessLogicLayer.Services
             }
         }
 
+        public List<RadniNalog> DohvatiRadneNalogePoStatusima()
+        {
+            using (var repo = new RadniNalogRepository())
+            {
+                List<RadniNalog> radniNalozi = repo.DohvatiRadneNalogePoStatusima().ToList();
+                return radniNalozi;
+            }
+        }
+
         public void DodajRadniNalog(RadniNalog radniNalog)
         {
             using (var repo = new RadniNalogRepository())

@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Software",
+    "\\Software\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\Email",
+    "\\Software\\ZMGDesktop\\EntitiesLayer",
+    "\\Software\\ZMGDesktop\\EntitiesLayer\\Entities",
+    "\\Software\\ZMGDesktop\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms"
   ],
-  "SelectedNode": "\\ZMGDesktop.sln",
+  "SelectedNode": "\\Software\\ZMGDesktop\\Email\\Email.cs",
   "PreviewInSolutionExplorer": false
 }

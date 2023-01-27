@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,11 +24,19 @@ namespace ZMGDesktop
         public FrmDodajKlijenta()
         {
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         public FrmDodajKlijenta(Klijent klijent)
         {
             InitializeComponent();
+            ucitajPomoc();
             this.selektiran = klijent;
         }
 
@@ -153,7 +162,12 @@ namespace ZMGDesktop
         {
             if(selektiran != null)
             {
+                labelDodajKlijenta.Text = selektiran.Naziv;
                 ucitajPodatke(selektiran);
+            }
+            else
+            {
+                labelDodajKlijenta.Text = "Dodaj klijenta";
             }
         }
 
@@ -166,6 +180,15 @@ namespace ZMGDesktop
             txtMjesto.Text = selektiran.Mjesto;
             txtTelefon.Text = selektiran.BrojTelefona;
             txtEmail.Text = selektiran.Email;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Klijenti\\DodajKlijenta\\dodajKlijenta.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }
