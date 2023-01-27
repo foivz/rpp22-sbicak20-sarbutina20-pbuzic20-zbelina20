@@ -56,5 +56,35 @@ namespace DataAccessLayer.Repositories
                 return 0;
             }
         }
+
+        public override int Add(RadniNalog entity, bool saveChanges = true)
+        {
+            var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
+            var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
+
+            var nalog = new RadniNalog
+            {
+                Kolicina = entity.Kolicina,
+                Radnik = radnik,
+                Klijent = klijent,
+                QR_kod = entity.QR_kod,
+                Opis = entity.Opis,
+                DatumStvaranja= entity.DatumStvaranja,
+                Status = entity.Status,
+                Materijal = entity.Materijal,
+                Roba = entity.Roba,
+                Klijent_ID = klijent.Klijent_ID,
+                Radnik_ID = radnik.Radnik_ID
+            };
+            Entities.Add(nalog);
+            if (saveChanges)
+            {
+                return SaveChanges();
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

@@ -13,8 +13,6 @@ namespace DataAccessLayer
         {
         }
 
-        public virtual DbSet<IzvjestajKlijenata> IzvjestajKlijenata { get; set; }
-        public virtual DbSet<IzvjestajRadnihNaloga> IzvjestajRadnihNaloga { get; set; }
         public virtual DbSet<Klijent> Klijent { get; set; }
         public virtual DbSet<Materijal> Materijal { get; set; }
         public virtual DbSet<Poslodavac> Poslodavac { get; set; }
@@ -29,35 +27,6 @@ namespace DataAccessLayer
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<IzvjestajKlijenata>()
-                .Property(e => e.Naziv)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<IzvjestajKlijenata>()
-                .Property(e => e.Opis)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<IzvjestajKlijenata>()
-                .Property(e => e.Stvorio)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<IzvjestajRadnihNaloga>()
-                .Property(e => e.Naziv)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<IzvjestajRadnihNaloga>()
-                .Property(e => e.Opis)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<IzvjestajRadnihNaloga>()
-                .Property(e => e.Stvorio)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<IzvjestajRadnihNaloga>()
-                .HasMany(e => e.RadniNalog)
-                .WithMany(e => e.IzvjestajRadnihNaloga)
-                .Map(m => m.ToTable("IzvjestajiSadrzeRadneNaloge").MapLeftKey("IzvjestajRadnihNaloga_ID").MapRightKey("RadniNalog_ID"));
-
             modelBuilder.Entity<Klijent>()
                 .Property(e => e.Naziv)
                 .IsUnicode(false);
@@ -207,11 +176,6 @@ namespace DataAccessLayer
             modelBuilder.Entity<Radnik>()
                 .Property(e => e.Email)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Radnik>()
-                .HasMany(e => e.IzvjestajKlijenata)
-                .WithRequired(e => e.Radnik)
-                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<RadniNalog>()
                 .Property(e => e.Opis)

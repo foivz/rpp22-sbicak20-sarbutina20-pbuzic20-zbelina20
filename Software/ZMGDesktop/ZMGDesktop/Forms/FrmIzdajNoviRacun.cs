@@ -80,7 +80,7 @@ namespace ZMGDesktop
         private void InitTextBoxKlijent(Klijent klijent)
         {
             txtK_Adresa.Text = klijent.Adresa;
-            txtK_Ime.Text = klijent.Naziv;
+            txtK_Naziv.Text = klijent.Naziv;
             txtK_OIB.Text = klijent.OIB;
             txtK_Email.Text = klijent.Email;
         }
@@ -148,7 +148,7 @@ namespace ZMGDesktop
         private void InitRacun(Racun racun)
         {
             racun.NacinPlacanja = txtNacinPlacanja.Text;
-            racun.RokPlacanja = txtNacinPlacanja.Text;
+            racun.RokPlacanja = txtRokPlacanja.Text;
             racun.StavkaRacun = GlobalListaStavki.stavkaRacunaList;
             racun.Fakturirao = "TEST";
             racun.Poslodavac = poslodavac;

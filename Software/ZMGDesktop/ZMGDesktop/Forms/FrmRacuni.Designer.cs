@@ -32,7 +32,7 @@
             this.btnIzdajNoviRacun = new System.Windows.Forms.Button();
             this.btnNatrag = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnVašiRačuni = new System.Windows.Forms.RadioButton();
+            this.rbtnVasiRacuni = new System.Windows.Forms.RadioButton();
             this.rbtnUkupniIznos = new System.Windows.Forms.RadioButton();
             this.rbtnDatumIzdaje = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbtnVašiRačuni);
+            this.groupBox1.Controls.Add(this.rbtnVasiRacuni);
             this.groupBox1.Controls.Add(this.rbtnUkupniIznos);
             this.groupBox1.Controls.Add(this.rbtnDatumIzdaje);
             this.groupBox1.Controls.Add(this.label1);
@@ -97,16 +97,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pretraživanje";
             // 
-            // rbtnVašiRačuni
+            // rbtnVasiRacuni
             // 
-            this.rbtnVašiRačuni.AutoSize = true;
-            this.rbtnVašiRačuni.Location = new System.Drawing.Point(333, 78);
-            this.rbtnVašiRačuni.Name = "rbtnVašiRačuni";
-            this.rbtnVašiRačuni.Size = new System.Drawing.Size(77, 17);
-            this.rbtnVašiRačuni.TabIndex = 4;
-            this.rbtnVašiRačuni.TabStop = true;
-            this.rbtnVašiRačuni.Text = "Vaši računi";
-            this.rbtnVašiRačuni.UseVisualStyleBackColor = true;
+            this.rbtnVasiRacuni.AutoSize = true;
+            this.rbtnVasiRacuni.Location = new System.Drawing.Point(333, 78);
+            this.rbtnVasiRacuni.Name = "rbtnVasiRacuni";
+            this.rbtnVasiRacuni.Size = new System.Drawing.Size(77, 17);
+            this.rbtnVasiRacuni.TabIndex = 4;
+            this.rbtnVasiRacuni.TabStop = true;
+            this.rbtnVasiRacuni.Text = "Vaši računi";
+            this.rbtnVasiRacuni.UseVisualStyleBackColor = true;
+            this.rbtnVasiRacuni.CheckedChanged += new System.EventHandler(this.rbtnVasiRacuni_CheckedChanged);
             // 
             // rbtnUkupniIznos
             // 
@@ -118,6 +119,7 @@
             this.rbtnUkupniIznos.TabStop = true;
             this.rbtnUkupniIznos.Text = "Ukupni iznos računa";
             this.rbtnUkupniIznos.UseVisualStyleBackColor = true;
+            this.rbtnUkupniIznos.CheckedChanged += new System.EventHandler(this.rbtnUkupniIznos_CheckedChanged);
             // 
             // rbtnDatumIzdaje
             // 
@@ -129,6 +131,7 @@
             this.rbtnDatumIzdaje.TabStop = true;
             this.rbtnDatumIzdaje.Text = "Datum izdaje računa";
             this.rbtnDatumIzdaje.UseVisualStyleBackColor = true;
+            this.rbtnDatumIzdaje.CheckedChanged += new System.EventHandler(this.rbtnDatumIzdaje_CheckedChanged);
             // 
             // label1
             // 
@@ -152,9 +155,9 @@
             // 
             this.groupBox2.Controls.Add(this.rbtnSilazno);
             this.groupBox2.Controls.Add(this.rbtnUzlazno);
-            this.groupBox2.Location = new System.Drawing.Point(725, 74);
+            this.groupBox2.Location = new System.Drawing.Point(702, 67);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.Size = new System.Drawing.Size(200, 105);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sortiranje";
@@ -169,6 +172,7 @@
             this.rbtnSilazno.TabStop = true;
             this.rbtnSilazno.Text = "Silazno";
             this.rbtnSilazno.UseVisualStyleBackColor = true;
+            this.rbtnSilazno.CheckedChanged += new System.EventHandler(this.rbtnSilazno_CheckedChanged);
             // 
             // rbtnUzlazno
             // 
@@ -180,18 +184,20 @@
             this.rbtnUzlazno.TabStop = true;
             this.rbtnUzlazno.Text = "Uzlazno";
             this.rbtnUzlazno.UseVisualStyleBackColor = true;
+            this.rbtnUzlazno.CheckedChanged += new System.EventHandler(this.rbtnUzlazno_CheckedChanged);
             // 
             // btnOcisti
             // 
             this.btnOcisti.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOcisti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOcisti.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOcisti.Location = new System.Drawing.Point(931, 81);
+            this.btnOcisti.Location = new System.Drawing.Point(908, 72);
             this.btnOcisti.Name = "btnOcisti";
             this.btnOcisti.Size = new System.Drawing.Size(105, 49);
             this.btnOcisti.TabIndex = 6;
             this.btnOcisti.Text = "Očisti";
             this.btnOcisti.UseVisualStyleBackColor = false;
+            this.btnOcisti.Click += new System.EventHandler(this.btnOcisti_Click);
             // 
             // btnDetaljniPregled
             // 
@@ -204,18 +210,20 @@
             this.btnDetaljniPregled.TabIndex = 7;
             this.btnDetaljniPregled.Text = "Detaljni pregled";
             this.btnDetaljniPregled.UseVisualStyleBackColor = false;
+            this.btnDetaljniPregled.Click += new System.EventHandler(this.btnDetaljniPregled_Click);
             // 
             // btnPretrazivanje
             // 
             this.btnPretrazivanje.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPretrazivanje.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPretrazivanje.Location = new System.Drawing.Point(931, 136);
+            this.btnPretrazivanje.Location = new System.Drawing.Point(908, 123);
             this.btnPretrazivanje.Name = "btnPretrazivanje";
             this.btnPretrazivanje.Size = new System.Drawing.Size(248, 49);
             this.btnPretrazivanje.TabIndex = 8;
             this.btnPretrazivanje.Text = "Pretraživanje";
             this.btnPretrazivanje.UseVisualStyleBackColor = false;
+            this.btnPretrazivanje.Click += new System.EventHandler(this.btnPretrazivanje_Click);
             // 
             // FrmRacuni
             // 
@@ -248,7 +256,7 @@
         private System.Windows.Forms.Button btnIzdajNoviRacun;
         private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rbtnVašiRačuni;
+        private System.Windows.Forms.RadioButton rbtnVasiRacuni;
         private System.Windows.Forms.RadioButton rbtnUkupniIznos;
         private System.Windows.Forms.RadioButton rbtnDatumIzdaje;
         private System.Windows.Forms.Label label1;

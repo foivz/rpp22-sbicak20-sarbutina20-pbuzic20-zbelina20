@@ -37,11 +37,10 @@ namespace ZMGDesktop
             desetNajboljih = servisKlijent.DohvatiDesetNajboljih();
             provjeri(desetNajboljih);
             dgvKlijenti.DataSource = desetNajboljih;
+            dgvKlijenti.Columns[8].Visible = false;
             dgvKlijenti.Columns[9].Visible = false;
             dgvKlijenti.Columns[10].Visible = false;
             dgvKlijenti.Columns[11].Visible = false;
-            dgvKlijenti.Columns[12].Visible = false;
-            dgvKlijenti.Columns[13].Visible = false;
         }
 
         private void provjeri(List<Klijent> desetNajboljih)
