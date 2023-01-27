@@ -172,6 +172,7 @@
             this.rbtnSilazno.TabStop = true;
             this.rbtnSilazno.Text = "Silazno";
             this.rbtnSilazno.UseVisualStyleBackColor = true;
+            this.rbtnSilazno.CheckedChanged += new System.EventHandler(this.rbtnSilazno_CheckedChanged);
             // 
             // rbtnUzlazno
             // 
@@ -183,6 +184,7 @@
             this.rbtnUzlazno.TabStop = true;
             this.rbtnUzlazno.Text = "Uzlazno";
             this.rbtnUzlazno.UseVisualStyleBackColor = true;
+            this.rbtnUzlazno.CheckedChanged += new System.EventHandler(this.rbtnUzlazno_CheckedChanged);
             // 
             // btnOcisti
             // 

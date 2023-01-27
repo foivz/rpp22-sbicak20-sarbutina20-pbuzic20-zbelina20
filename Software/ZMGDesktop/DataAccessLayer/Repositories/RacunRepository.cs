@@ -84,24 +84,23 @@ namespace DataAccessLayer.Repositories
             switch (pretrazivanje)
             {
                 case 0:
-                    if (_sortiranje == 0)
+                    if (_sortiranje == 1)
                     {
                         query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
                                 where (r.Klijent_ID == entity.Klijent_ID)
-                                orderby r descending
+                                orderby r.Racun_ID descending
                                 select r;
                     }
                     else {
                         query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
                                 where (r.Klijent_ID == entity.Klijent_ID)
-                                orderby r ascending
+                                orderby r.Racun_ID ascending
                                 select r;
                     }
-                   
                     break;
                 // datum
                 case 1:
-                    if (_sortiranje == 0)
+                    if (_sortiranje == 1)
                     {
                         query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
                                 where (r.Klijent_ID == entity.Klijent_ID)
@@ -115,11 +114,10 @@ namespace DataAccessLayer.Repositories
                                 orderby r.DatumIzdavanja ascending
                                 select r;
                     }
-                   
                     break;
                 // ukupno
                 case 2:
-                    if (_sortiranje == 0)
+                    if (_sortiranje == 1)
                     {
                         query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
                                 where (r.Klijent_ID == entity.Klijent_ID)
@@ -133,11 +131,10 @@ namespace DataAccessLayer.Repositories
                                 orderby r.UkupnaCijena ascending
                                 select r;
                     }
-                   
                     break;
                 // prema racunima radnika
                 case 3:
-                    if (_sortiranje == 0)
+                    if (_sortiranje == 1)
                     {
                         query = from r in Entities.Include("Klijent").Include("Poslodavac").Include("Radnik")
                                 where (r.Klijent_ID == entity.Klijent_ID && r.Radnik_ID == Radnik_ID)
@@ -151,7 +148,6 @@ namespace DataAccessLayer.Repositories
                                 orderby r.Radnik_ID ascending
                                 select r;
                     }
-                   
                     break;
             }
 

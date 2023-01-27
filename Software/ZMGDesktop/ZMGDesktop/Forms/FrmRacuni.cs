@@ -71,6 +71,7 @@ namespace ZMGDesktop
         private void btnOcisti_Click(object sender, EventArgs e)
         {
             pretrazivanje = 0;
+            sortiranje = 0;
             //pretrazivanje
             rbtnDatumIzdaje.Checked = false;
             rbtnVasiRacuni.Checked = false;
@@ -83,6 +84,7 @@ namespace ZMGDesktop
         }
 
         int pretrazivanje = 0;
+        int sortiranje = 0;
         private void rbtnDatumIzdaje_CheckedChanged(object sender, EventArgs e)
         {
             pretrazivanje = 1;
@@ -100,7 +102,17 @@ namespace ZMGDesktop
 
         private void btnPretrazivanje_Click(object sender, EventArgs e)
         {
-            dgvRacuni.DataSource = racunServis.DohvatiRacunePretrazivanje(selektirani, radnik.Radnik_ID, pretrazivanje);
+            dgvRacuni.DataSource = racunServis.DohvatiRacunePretrazivanje(selektirani, radnik.Radnik_ID, pretrazivanje, sortiranje);
+        }
+
+        private void rbtnUzlazno_CheckedChanged(object sender, EventArgs e)
+        {
+            sortiranje = 0;
+        }
+
+        private void rbtnSilazno_CheckedChanged(object sender, EventArgs e)
+        {
+            sortiranje = 1;
         }
     }
 }
