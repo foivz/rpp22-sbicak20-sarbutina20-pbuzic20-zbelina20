@@ -193,6 +193,25 @@ namespace BusinessLogicLayer.PDF
                 y += ls + 5;
                 x = 50;
             }
+            font = new XFont("Arial", 10, XFontStyle.Bold);
+            y -= ls;
+            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(550, y));
+            x = 424;
+            y += ls;
+            gfx.DrawString($"Ukupno:", font, XBrushes.Black, x, y);
+            x = 494;
+            gfx.DrawString($"{racun.UkupnoStavke}", font, XBrushes.Black, x, y);
+            y += ls + 3;
+            x = 424;
+            gfx.DrawString($"PDV(25%):", font, XBrushes.Black, x, y);
+            x = 494;
+            gfx.DrawString($"{racun.PDV}", font, XBrushes.Black, x, y);
+            y += ls + 3;
+            x = 424;
+            gfx.DrawString($"Ukupan iznos:", font, XBrushes.Black, x, y);
+            x = 494;
+            gfx.DrawString($"{racun.UkupnaCijena}", font, XBrushes.Black, x, y);
+            y += ls + 3;
 
 
             // peti dio -- kraj racuna, izdan u takvom obliku, fakturirao itd.
