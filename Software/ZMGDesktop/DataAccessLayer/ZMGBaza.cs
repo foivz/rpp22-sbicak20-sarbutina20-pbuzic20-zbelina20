@@ -120,6 +120,10 @@ namespace DataAccessLayer
                 .IsUnicode(false);
 
             modelBuilder.Entity<Poslodavac>()
+                .Property(e => e.OIB)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Poslodavac>()
                 .Property(e => e.BrojTelefona)
                 .IsUnicode(false);
 
@@ -141,6 +145,18 @@ namespace DataAccessLayer
 
             modelBuilder.Entity<Poslodavac>()
                 .Property(e => e.Poslovnica)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Poslodavac>()
+                .Property(e => e.Drzava)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Poslodavac>()
+                .Property(e => e.BrojObrtnice)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Poslodavac>()
+                .Property(e => e.TEL_FAX)
                 .IsUnicode(false);
 
             modelBuilder.Entity<Primka>()
@@ -208,6 +224,11 @@ namespace DataAccessLayer
             modelBuilder.Entity<RadniNalog>()
                 .Property(e => e.Status)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<RadniNalog>()
+                .HasMany(e => e.Roba)
+                .WithMany(e => e.RadniNalog)
+                .Map(m => m.ToTable("RadniNalogSadrziRobu").MapLeftKey("RadniNalog_ID").MapRightKey("Roba_ID"));
 
             modelBuilder.Entity<Roba>()
                 .Property(e => e.Naziv)

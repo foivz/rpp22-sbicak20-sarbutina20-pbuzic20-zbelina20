@@ -30,7 +30,7 @@ namespace DataAccessLayer.Repositories
                 Kolicina = entity.Kolicina,
                 Klijent_ID = entity.Klijent_ID
             };
-
+            
             Entities.Add(roba);
             if (saveChanges)
             {
