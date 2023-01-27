@@ -17,6 +17,7 @@ namespace ZMGDesktop
         public FrmPocetna()
         {
             InitializeComponent();
+            ucitajPomoc();
         }
 
         public FrmPocetna(Radnik provjereniRadnik)
@@ -24,6 +25,13 @@ namespace ZMGDesktop
             radnik = provjereniRadnik;
             this.FormClosing += new FormClosingEventHandler(MyForm_FormClosing);
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void btnKlijenti_Click(object sender, EventArgs e)
@@ -61,9 +69,12 @@ namespace ZMGDesktop
             racuni.ShowDialog();
         }
 
-        private void FrmPocetna_Load(object sender, EventArgs e)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("C:\\Users\\Patrik\\source\\repos\\rpp22-sbicak20-sarbutina20-pbuzic20-zbelina20\\Documentation\\Pomoc\\Klijenti\\Pocetna\\pocetna.html");
+            }
         }
     }
 }

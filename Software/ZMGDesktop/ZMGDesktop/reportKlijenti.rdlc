@@ -923,9 +923,9 @@
             </ChartNoDataMessage>
             <DataSetName>DsKlijenti</DataSetName>
             <Top>3.28676cm</Top>
-            <Left>0.2667cm</Left>
-            <Height>5.08466cm</Height>
-            <Width>10.5315cm</Width>
+            <Left>2.78553cm</Left>
+            <Height>5.74761cm</Height>
+            <Width>11.6745cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -937,7 +937,7 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.55684in</Height>
+        <Height>3.76517in</Height>
         <Style />
       </Body>
       <Width>6.68276in</Width>

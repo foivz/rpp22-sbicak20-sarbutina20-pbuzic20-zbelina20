@@ -24,6 +24,13 @@ namespace ZMGDesktop
         public FrmXML()
         {
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void FrmXML_Load(object sender, EventArgs e)
@@ -154,5 +161,14 @@ namespace ZMGDesktop
             }
             return true;
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                System.Diagnostics.Process.Start("C:\\Users\\Patrik\\source\\repos\\rpp22-sbicak20-sarbutina20-pbuzic20-zbelina20\\Documentation\\Pomoc\\Klijenti\\UveziKlijentaXML\\uveziKlijenta.html");
+            }
+        }
+        
     }
 }
