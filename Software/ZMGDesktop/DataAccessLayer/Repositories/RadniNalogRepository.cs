@@ -45,6 +45,11 @@ namespace DataAccessLayer.Repositories
             var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
             var radniNalog = Entities.SingleOrDefault(r => r.RadniNalog_ID == entity.RadniNalog_ID);
 
+            foreach (var materijal in entity.Materijal)
+            {
+                Context.Materijal.Attach(materijal);
+            }
+
             radniNalog.Radnik = radnik;
             radniNalog.Klijent = klijent;
             radniNalog.Kolicina = entity.Kolicina;
@@ -69,6 +74,16 @@ namespace DataAccessLayer.Repositories
         {
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
             var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
+
+            foreach (var materijal in entity.Materijal)
+            {
+                Context.Materijal.Attach(materijal);
+            }
+            
+            foreach (var roba in entity.Roba)
+            {
+                Context.Roba.Attach(roba);
+            } 
 
             var nalog = new RadniNalog
             {

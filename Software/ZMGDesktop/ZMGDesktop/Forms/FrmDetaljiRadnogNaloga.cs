@@ -67,11 +67,13 @@ namespace ZMGDesktop
 
                 servis.AzurirajRadniNalog(AzuriraniRadniNalog);
 
-                string emailBody = "Poštovani,<br/>radni nalog Vaše robe je u statusu: " + AzuriraniRadniNalog.Status + "<br/><br/>Informacije o radnom nalogu:<br/>Količina(kg): " + AzuriraniRadniNalog.Kolicina + "<br/>Opis: " + AzuriraniRadniNalog.Opis + "<br/>Datum podnošenja: " + AzuriraniRadniNalog.DatumStvaranja + "<br/>Podnositelj zahtjeva: " + AzuriraniRadniNalog.Radnik;
+                string emailBody = "Poštovani,<br/>radni nalog Vaše robe je u statusu: " + AzuriraniRadniNalog.Status + 
+                    "<br/><br/>Informacije o radnom nalogu:<br/>Količina(kg): " + AzuriraniRadniNalog.Kolicina + "<br/>Opis: " + AzuriraniRadniNalog.Opis +
+                    "<br/>Datum podnošenja: " + AzuriraniRadniNalog.DatumStvaranja + "<br/>Podnositelj zahtjeva: " + AzuriraniRadniNalog.Radnik;
 
                 if (status != AzuriraniRadniNalog.Status)
                 {
-                    EmailAPI.NapraviEmail("zastitametalnegalanterije@gmail.com", "sebastijan.bicak@gmail.com", "Obavijest o promjeni statusa", emailBody);
+                    EmailAPI.NapraviEmail("zastitametalnegalanterije@gmail.com", "zvonimir.belina1@gmail.com", "Obavijest o promjeni statusa", emailBody);
                     EmailAPI.Posalji();
                 }
 

@@ -843,9 +843,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>2.69958cm</Top>
+            <Top>1.35847cm</Top>
+            <Left>16.54528cm</Left>
             <Height>5cm</Height>
-            <Width>16.51cm</Width>
+            <Width>7.56708cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -860,7 +861,7 @@
         <Height>4.02975in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>9.53125in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

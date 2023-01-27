@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewRadniNalozi = new Microsoft.Reporting.WinForms.ReportViewer();
             this.radniNalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewRadniNalozi = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.radniNalogBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // radniNalogBindingSource
+            // 
+            this.radniNalogBindingSource.DataSource = typeof(EntitiesLayer.Entities.RadniNalog);
             // 
             // reportViewRadniNalozi
             // 
@@ -45,18 +49,14 @@
             this.reportViewRadniNalozi.Location = new System.Drawing.Point(0, 0);
             this.reportViewRadniNalozi.Name = "reportViewRadniNalozi";
             this.reportViewRadniNalozi.ServerReport.BearerToken = null;
-            this.reportViewRadniNalozi.Size = new System.Drawing.Size(800, 450);
+            this.reportViewRadniNalozi.Size = new System.Drawing.Size(1051, 450);
             this.reportViewRadniNalozi.TabIndex = 0;
-            // 
-            // radniNalogBindingSource
-            // 
-            this.radniNalogBindingSource.DataSource = typeof(EntitiesLayer.Entities.RadniNalog);
             // 
             // FrmKreirajIzvjestajRadnihNaloga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1051, 450);
             this.Controls.Add(this.reportViewRadniNalozi);
             this.Name = "FrmKreirajIzvjestajRadnihNaloga";
             this.Text = "Izvještaj radnih naloga";
