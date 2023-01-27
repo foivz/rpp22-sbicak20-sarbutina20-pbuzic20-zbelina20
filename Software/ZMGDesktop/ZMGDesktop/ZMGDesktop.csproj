@@ -336,8 +336,10 @@
       <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportKlijenti.rdlc" />
+    <EmbeddedResource Include="rptRadniNalozi.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.Klijent.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.RadniNalog.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

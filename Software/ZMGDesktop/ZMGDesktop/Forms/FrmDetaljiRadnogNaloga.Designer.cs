@@ -325,7 +325,7 @@
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Items.AddRange(new object[] {
             "Napravljen",
-            "U izradi",
+            "U obradi",
             "Dovršen"});
             this.cmbStatus.Location = new System.Drawing.Point(36, 129);
             this.cmbStatus.Name = "cmbStatus";
