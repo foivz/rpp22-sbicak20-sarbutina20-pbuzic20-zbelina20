@@ -577,6 +577,7 @@
             this.btnPDFpregled.TabIndex = 51;
             this.btnPDFpregled.Text = "Pregled PDF-a";
             this.btnPDFpregled.UseVisualStyleBackColor = false;
+            this.btnPDFpregled.Click += new System.EventHandler(this.btnPDFpregled_Click);
             // 
             // btnIzdajRacun
             // 

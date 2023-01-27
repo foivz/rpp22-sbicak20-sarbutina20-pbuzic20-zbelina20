@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.LogikaZaRacune;
+using BusinessLogicLayer.PDF;
 using BusinessLogicLayer.Services;
 using EntitiesLayer.Entities;
 using EntitiesLayer.GlobalniObjekti;
@@ -64,6 +65,8 @@ namespace ZMGDesktop
             txtUkupniIznos.Text = "0";
             txtUkupno.Text = "0";
             txtPDV.Text = "0";
+
+            racun.Radnik = radnik;
         }
 
         private void cmbKlijenti_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +86,8 @@ namespace ZMGDesktop
             txtK_Naziv.Text = klijent.Naziv;
             txtK_OIB.Text = klijent.OIB;
             txtK_Email.Text = klijent.Email;
+
+            racun.Klijent = klijent;
         }
 
 
@@ -100,6 +105,8 @@ namespace ZMGDesktop
             txtP_Naziv.Text = poslodavac.Naziv;
             txtP_IBAN.Text = poslodavac.IBAN;
             txtP_OIB.Text = poslodavac.OIB;
+
+            racun.Poslodavac = poslodavac;
         }
 
         private void btnDodajStavke_Click(object sender, EventArgs e)
@@ -122,6 +129,10 @@ namespace ZMGDesktop
             txtUkupno.Text = ukupno.ToString();
             txtPDV.Text = pdv.ToString();
             txtUkupniIznos.Text = ukupnoiznos.ToString();
+
+            racun.UkupnaCijena = ukupnoiznos;
+            racun.PDV = pdv;
+            racun.UkupnoStavke = ukupno;
         }
 
         private void btnIzdajRacun_Click(object sender, EventArgs e)
@@ -133,6 +144,11 @@ namespace ZMGDesktop
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnPDFpregled_Click(object sender, EventArgs e)
+        {
+            GeneriranjePDF.SacuvajPDF(racun, GlobalListaStavki.stavkaRacunaList);
         }
 
         private void Refresh()

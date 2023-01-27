@@ -119,9 +119,24 @@ namespace BusinessLogicLayer.PDF
             gfx.DrawString($"Stavke računa:", font, XBrushes.Black, x, y);
             x = 390;
             font = new XFont("Arial", 10, XFontStyle.Regular);
-            gfx.DrawString($"Datum izdavanja: {racun.DatumIzdavanja.Value.ToShortDateString()}", font, XBrushes.Black, x, y);
+            if (racun.DatumIzdavanja == null)
+            {
+                gfx.DrawString($"Datum izdavanja: nije uneseno", font, XBrushes.Black, x, y);
+            }
+            else
+            {
+                gfx.DrawString($"Datum izdavanja: {racun.DatumIzdavanja.Value.ToShortDateString()}", font, XBrushes.Black, x, y);
+            }
             y -= ls;
-            gfx.DrawString($"Vrijeme izdavanja: {racun.DatumIzdavanja.Value.ToShortTimeString()}", font, XBrushes.Black, x, y);
+            if (racun.DatumIzdavanja == null)
+            {
+                 gfx.DrawString($"Vrijeme izdavanja: nije uneseno", font, XBrushes.Black, x, y);
+            }
+            else
+            {
+                gfx.DrawString($"Vrijeme izdavanja: {racun.DatumIzdavanja.Value.ToShortTimeString()}", font, XBrushes.Black, x, y);
+            }
+            
             y += ls;
             x = 50;
             y += ls - 3;
@@ -208,7 +223,7 @@ namespace BusinessLogicLayer.PDF
             gfx.DrawString($"{racun.PDV}", font, XBrushes.Black, x, y);
             y += ls + 3;
             x = 424;
-            gfx.DrawString($"Ukupno u EUR:", font, XBrushes.Black, x, y);
+            gfx.DrawString($"Ukupno(EUR):", font, XBrushes.Black, x, y);
             x = 494;
             gfx.DrawString($"{racun.UkupnaCijena}", font, XBrushes.Black, x, y);
             y += 5;
@@ -218,7 +233,7 @@ namespace BusinessLogicLayer.PDF
             // peti dio -- kraj racuna, izdan u takvom obliku, fakturirao itd.
             x = 50;
             font = new XFont("Arial", 9, XFontStyle.Regular);
-            gfx.DrawString($"Način plaćanja: {racun.NacinPlacanja} - rok plaćanja {racun.RokPlacanja}", font, XBrushes.Black, x, y);
+            gfx.DrawString($"Način plaćanja: {racun.NacinPlacanja} - rok plaćanja{racun.RokPlacanja}", font, XBrushes.Black, x, y);
             y += ls;
             gfx.DrawString($"Porez na dodanu vrijednost je zaračunat prema zakonu o PDV-u objavljenog u NN 47/95 - 87/09,94/09,22/12,136/12.", font, XBrushes.Black, x, y);
             y += ls;
@@ -234,7 +249,7 @@ namespace BusinessLogicLayer.PDF
             gfx.DrawString($"Fakturirao: {racun.Radnik.ToString()}", font, XBrushes.Black, x, y);
 
 
-            string filename = "FirstPDFDocument.pdf";
+            string filename = $"ZMG - RACUN BROJ {racun.Racun_ID}.pdf";
 
             document.Save(filename);
             //Load PDF File for viewing

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Email
 {
-    public static class Email
+    public static class EmailAPI
     {
         private static SmtpClient smtp = new SmtpClient();
         private static MimeMessage email = new MimeMessage();
