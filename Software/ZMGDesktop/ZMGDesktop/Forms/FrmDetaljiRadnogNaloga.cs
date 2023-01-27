@@ -44,32 +44,39 @@ namespace ZMGDesktop
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             var klijent = cmbKlijent.SelectedItem as Klijent;
-            
-            RadniNalog AzuriraniRadniNalog = new RadniNalog()
-            {
-                RadniNalog_ID = radniNalog.RadniNalog_ID,
-                Kolicina = int.Parse(txtKolicina.Text),
-                Opis = txtOpis.Text,
-                DatumStvaranja = dtpDatumStvaranja.Value,
-                Status = cmbStatus.SelectedItem as string,
-                QR_kod = QRKod,
-                Radnik_ID = Radnik.Radnik_ID,
-                Klijent_ID = klijent.Klijent_ID,
-                Radnik = Radnik,
-                Klijent = klijent
-            };
-            //poslati email
-            servis.AzurirajRadniNalog(AzuriraniRadniNalog);
 
-            string emailBody = "Poštovani,<br/>radni nalog Vaše robe je u statusu: " + AzuriraniRadniNalog.Status + "<br/><br/>Informacije o radnom nalogu:<br/>Količina(kg): " + AzuriraniRadniNalog.Kolicina + "<br/>Opis: " + AzuriraniRadniNalog.Opis + "<br/>Datum podnošenja: " + AzuriraniRadniNalog.DatumStvaranja + "<br/>Podnositelj zahtjeva: " + AzuriraniRadniNalog.Radnik;
-
-            if(status != AzuriraniRadniNalog.Status)
+            if (txtKolicina.Text == "" || status == "")
             {
-                EmailAPI.NapraviEmail("zastitametalnegalanterije@gmail.com", "sebastijan.bicak@gmail.com", "Obavijest o promjeni statusa", emailBody);
-                EmailAPI.Posalji();
+                MessageBox.Show("Morate upisati količinu i status!");
             }
+            else
+            {
+                RadniNalog AzuriraniRadniNalog = new RadniNalog()
+                {
+                    RadniNalog_ID = radniNalog.RadniNalog_ID,
+                    Kolicina = int.Parse(txtKolicina.Text),
+                    Opis = txtOpis.Text,
+                    DatumStvaranja = dtpDatumStvaranja.Value,
+                    Status = cmbStatus.SelectedItem as string,
+                    QR_kod = QRKod,
+                    Radnik_ID = Radnik.Radnik_ID,
+                    Klijent_ID = klijent.Klijent_ID,
+                    Radnik = Radnik,
+                    Klijent = klijent
+                };
 
-            Close();
+                servis.AzurirajRadniNalog(AzuriraniRadniNalog);
+
+                string emailBody = "Poštovani,<br/>radni nalog Vaše robe je u statusu: " + AzuriraniRadniNalog.Status + "<br/><br/>Informacije o radnom nalogu:<br/>Količina(kg): " + AzuriraniRadniNalog.Kolicina + "<br/>Opis: " + AzuriraniRadniNalog.Opis + "<br/>Datum podnošenja: " + AzuriraniRadniNalog.DatumStvaranja + "<br/>Podnositelj zahtjeva: " + AzuriraniRadniNalog.Radnik;
+
+                if (status != AzuriraniRadniNalog.Status)
+                {
+                    EmailAPI.NapraviEmail("zastitametalnegalanterije@gmail.com", "sebastijan.bicak@gmail.com", "Obavijest o promjeni statusa", emailBody);
+                    EmailAPI.Posalji();
+                }
+
+                Close();
+            }
         }
 
         private void btnIzmijeni_Click(object sender, EventArgs e)

@@ -58,7 +58,16 @@ namespace ZMGDesktop
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             var odabraniRadniNalog = DohvatiRadniNalog();
-            servis.ObrisiRadniNalog(odabraniRadniNalog);
+
+            if(odabraniRadniNalog == null)
+            {
+                MessageBox.Show("Morate odabrati radni nalog da biste ga izbrisali!");
+            }
+            else
+            {
+                servis.ObrisiRadniNalog(odabraniRadniNalog);
+            }
+            
             UcitajRadneNaloge();
         }
 
@@ -70,8 +79,17 @@ namespace ZMGDesktop
         private void btnDetalji_Click(object sender, EventArgs e)
         {
             var odabraniRadniNalog = DohvatiRadniNalog();
-            FrmDetaljiRadnogNaloga frmDetaljiRadnogNaloga = new FrmDetaljiRadnogNaloga(odabraniRadniNalog, Radnik);
-            frmDetaljiRadnogNaloga.ShowDialog();
+
+            if (odabraniRadniNalog == null)
+            {
+                MessageBox.Show("Morate odabrati radni nalog da biste vidjeli njegove detalje!");
+            }
+            else
+            {
+                FrmDetaljiRadnogNaloga frmDetaljiRadnogNaloga = new FrmDetaljiRadnogNaloga(odabraniRadniNalog, Radnik);
+                frmDetaljiRadnogNaloga.ShowDialog();
+            }
+            
             UcitajRadneNaloge();
         }
     }
