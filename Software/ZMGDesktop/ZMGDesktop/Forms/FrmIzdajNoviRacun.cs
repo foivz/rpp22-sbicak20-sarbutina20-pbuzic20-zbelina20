@@ -1,6 +1,7 @@
 ﻿using BusinessLogicLayer.LogikaZaRacune;
 using BusinessLogicLayer.PDF;
 using BusinessLogicLayer.Services;
+using Email;
 using EntitiesLayer.Entities;
 using EntitiesLayer.GlobalniObjekti;
 using System;
@@ -135,10 +136,25 @@ namespace ZMGDesktop
             racun.UkupnoStavke = ukupno;
         }
 
+        private void Send()
+        {
+            string from = "zastitametalnegalanterije@gmail.com";
+            string to = "patrikbuzic4@gmail.com";
+            string subject = $"Račun {DateTime.Now}";
+            string text = "Poštovani,<br> u prilogu se nalazi račun. Izdan je u elektroničnom obliku te valja bez potpisa.";
+            EmailAPI.NapraviEmail(from, to, subject, text);
+        }
+
         private void btnIzdajRacun_Click(object sender, EventArgs e)
         {
             InitRacun(racun);
             racunServis.DodajRacun(racun);
+            racun = racunServis.DohvatiZadnjiRacun();
+            Send();
+            GeneriranjePDF.SacuvajPDF(racun, GlobalListaStavki.stavkaRacunaList);
+            EmailAPI.DodajPrilog(GeneriranjePDF.nazivDatoteke);
+            EmailAPI.Posalji();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)

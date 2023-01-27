@@ -37,6 +37,31 @@ namespace BusinessLogicLayer.Services
                 repo.Add(racun);
             }
         }
+
+        public Racun DohvatiOdredeniRacun(int id)
+        {
+            List<Racun> listaRacuna = new List<Racun>();
+            using (var repo = new RacunRepository())
+            {
+                listaRacuna = repo.DohvatiOdredeniRacun(id).ToList();
+            }
+            Racun racun;
+            racun = listaRacuna[0];
+            return racun;
+        }
+
+        public Racun DohvatiZadnjiRacun()
+        {
+            List<Racun> listaRacuna = new List<Racun>();
+            using (var repo = new RacunRepository())
+            {
+                listaRacuna = repo.DohvatiSveRacune().ToList();
+            }
+            Racun racun;
+            racun = listaRacuna.Last();
+            return racun;
+        }
+
         public List<Racun> DohvatiRacunePretrazivanje(Klijent klijent, int id, int pretrazivanje = 0, int sortiranje = 0)
         {
             using (var repo = new RacunRepository())

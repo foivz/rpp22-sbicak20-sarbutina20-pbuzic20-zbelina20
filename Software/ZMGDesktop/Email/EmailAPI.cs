@@ -49,7 +49,7 @@ namespace Email
         {
             email.Body = multipart;
             smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-            smtp.Authenticate("sebastijan.bicak@gmail.com", "uayccjrwqgsclrce");
+            smtp.Authenticate("zastitametalnegalanterije@gmail.com", "vbnosleeonorxcrg");
             smtp.Send(email);
             smtp.Disconnect(true);
             Reset();

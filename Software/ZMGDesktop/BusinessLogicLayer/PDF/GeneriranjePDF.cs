@@ -12,11 +12,13 @@ using EntitiesLayer.Entities;
 using PdfSharp.Pdf.Advanced;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace BusinessLogicLayer.PDF
 {
     public static class GeneriranjePDF
-    {      
+    {
+        public static string nazivDatoteke = null;
         public static void SacuvajPDF(Racun racun, List<StavkaRacun> listaStavki = null)
         {
             //Create PDF Document
@@ -249,11 +251,18 @@ namespace BusinessLogicLayer.PDF
             gfx.DrawString($"Fakturirao: {racun.Radnik.ToString()}", font, XBrushes.Black, x, y);
 
 
-            string filename = $"ZMG - RACUN BROJ {racun.Racun_ID}.pdf";
+            nazivDatoteke = $"ZMG - RACUN BROJ {racun.Racun_ID}.pdf";
 
-            document.Save(filename);
+            document.Save(nazivDatoteke);
+
             //Load PDF File for viewing
-            Process.Start(filename);
+        }
+        public static void OtvoriPDF()
+        {
+            if (nazivDatoteke != null)
+            {
+                Process.Start(nazivDatoteke);
+            }
         }
     }
 }
