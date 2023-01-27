@@ -43,7 +43,7 @@
             // 
             this.dgvKlijenti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKlijenti.Location = new System.Drawing.Point(9, 39);
-            this.dgvKlijenti.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvKlijenti.Margin = new System.Windows.Forms.Padding(2);
             this.dgvKlijenti.Name = "dgvKlijenti";
             this.dgvKlijenti.RowHeadersWidth = 51;
             this.dgvKlijenti.RowTemplate.Height = 24;
@@ -67,12 +67,13 @@
             this.btnIzvjestajRadnihNaloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvjestajRadnihNaloga.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnIzvjestajRadnihNaloga.Location = new System.Drawing.Point(670, 279);
-            this.btnIzvjestajRadnihNaloga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIzvjestajRadnihNaloga.Margin = new System.Windows.Forms.Padding(2);
             this.btnIzvjestajRadnihNaloga.Name = "btnIzvjestajRadnihNaloga";
             this.btnIzvjestajRadnihNaloga.Size = new System.Drawing.Size(112, 64);
             this.btnIzvjestajRadnihNaloga.TabIndex = 3;
             this.btnIzvjestajRadnihNaloga.Text = "Izrada izvještaja radnih naloga";
             this.btnIzvjestajRadnihNaloga.UseVisualStyleBackColor = false;
+            this.btnIzvjestajRadnihNaloga.Click += new System.EventHandler(this.btnIzvjestajRadnihNaloga_Click);
             // 
             // btnIzvjestajKlijenata
             // 
@@ -80,7 +81,7 @@
             this.btnIzvjestajKlijenata.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzvjestajKlijenata.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnIzvjestajKlijenata.Location = new System.Drawing.Point(670, 39);
-            this.btnIzvjestajKlijenata.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIzvjestajKlijenata.Margin = new System.Windows.Forms.Padding(2);
             this.btnIzvjestajKlijenata.Name = "btnIzvjestajKlijenata";
             this.btnIzvjestajKlijenata.Size = new System.Drawing.Size(112, 63);
             this.btnIzvjestajKlijenata.TabIndex = 4;
@@ -94,7 +95,7 @@
             this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNatrag.Location = new System.Drawing.Point(670, 431);
-            this.btnNatrag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNatrag.Margin = new System.Windows.Forms.Padding(2);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(112, 42);
             this.btnNatrag.TabIndex = 7;
@@ -106,7 +107,7 @@
             // 
             this.dgvRadniNalozi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRadniNalozi.Location = new System.Drawing.Point(9, 279);
-            this.dgvRadniNalozi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvRadniNalozi.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRadniNalozi.Name = "dgvRadniNalozi";
             this.dgvRadniNalozi.RowHeadersWidth = 51;
             this.dgvRadniNalozi.RowTemplate.Height = 24;
@@ -136,7 +137,7 @@
             this.Controls.Add(this.btnIzvjestajRadnihNaloga);
             this.Controls.Add(this.labelDesetNajvecihKlijenata);
             this.Controls.Add(this.dgvKlijenti);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmPopisIzvjestaja";
             this.Text = "Izvještaji";
             this.Load += new System.EventHandler(this.FrmPopisIzvjestaja_Load);

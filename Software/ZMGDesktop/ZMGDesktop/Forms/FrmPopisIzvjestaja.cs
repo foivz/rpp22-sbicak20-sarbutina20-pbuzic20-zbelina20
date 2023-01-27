@@ -15,7 +15,10 @@ namespace ZMGDesktop
     public partial class FrmPopisIzvjestaja : Form
     {
         private KlijentServices servisKlijent = new KlijentServices();
+        private RadniNalogService servisRadnihNaloga = new RadniNalogService();
+
         List<Klijent> desetNajboljih;
+        List<RadniNalog> radniNaloziPoStatusima;
         public FrmPopisIzvjestaja()
         {
             InitializeComponent();
@@ -30,6 +33,17 @@ namespace ZMGDesktop
         private void FrmPopisIzvjestaja_Load(object sender, EventArgs e)
         {
             ucitajKlijente();
+            ucitajRadneNaloge();
+        }
+
+        private void ucitajRadneNaloge()
+        {
+            radniNaloziPoStatusima = servisRadnihNaloga.DohvatiRadneNalogePoStatusima();
+            dgvRadniNalozi.DataSource = radniNaloziPoStatusima;
+            dgvRadniNalozi.Columns[6].Visible = false;
+            dgvRadniNalozi.Columns[7].Visible = false;
+            dgvRadniNalozi.Columns[10].Visible = false;
+            dgvRadniNalozi.Columns[11].Visible = false;
         }
 
         private void ucitajKlijente()
@@ -51,15 +65,15 @@ namespace ZMGDesktop
             }
         }
 
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void btnIzvjestajRadnihNaloga_Click(object sender, EventArgs e)
         {
             FrmKreirajIzvjestajRadnihNaloga frmKreirajIzvjestajRadnihNaloga = new FrmKreirajIzvjestajRadnihNaloga();
             frmKreirajIzvjestajRadnihNaloga.ShowDialog();
-        }
-
-        private void btnNatrag_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }

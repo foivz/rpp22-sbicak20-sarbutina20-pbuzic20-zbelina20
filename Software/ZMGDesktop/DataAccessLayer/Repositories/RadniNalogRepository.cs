@@ -31,6 +31,14 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<RadniNalog> DohvatiRadneNalogePoStatusima()
+        {
+            var query = from r in Entities.Include("Klijent").Include("Radnik").Include("Materijal").Include("Roba")
+                        orderby r.Status
+                        select r;
+            return query;
+        }
+
         public override int Update(RadniNalog entity, bool saveChanges = true)
         {
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);

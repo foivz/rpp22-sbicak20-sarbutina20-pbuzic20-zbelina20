@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BusinessLogicLayer.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,19 @@ namespace ZMGDesktop
 {
     public partial class FrmKreirajIzvjestajRadnihNaloga : Form
     {
+        RadniNalogService servis = new RadniNalogService();
+
         public FrmKreirajIzvjestajRadnihNaloga()
         {
             InitializeComponent();
         }
 
-        private void btnOdustani_Click(object sender, EventArgs e)
+        private void FrmKreirajIzvjestajRadnihNaloga_Load(object sender, EventArgs e)
         {
-            Close();
+            var listaRadnihNaloga = servis.DohvatiRadneNalogePoStatusima();
+            radniNalogBindingSource.DataSource = listaRadnihNaloga;
+
+            this.reportViewRadniNalozi.RefreshReport();
         }
     }
 }
