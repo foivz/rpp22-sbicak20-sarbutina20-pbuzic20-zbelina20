@@ -37,6 +37,11 @@ namespace ZMGTests
         }
 
         [TestMethod]
+
+        /*
+         U ovom testu dohvaća se lista računa i radnih naloga za pojedinog klijenta. U ovom slučaju
+        za klijenta Bent. Test provjerava je li dobro dohvaća radne naloge i račune za klijenta.
+         * */
         public void DohvacanjeRacunaiRadneNalogeZaKorisnika()
         {
             RadniNalogService servisNalozi = new RadniNalogService();
@@ -48,15 +53,20 @@ namespace ZMGTests
             
             var radniNalozi = servisNalozi.DohvatiRadneNalogeZaKlijenta(postojeci);
             var racuni = servisRacuni.DohvatiRacuneZaKlijenta(postojeci);
-            Assert.IsTrue(radniNalozi.Count == 1 && racuni.Count == 6);
+            Assert.IsTrue(radniNalozi.Count == postojeci.RadniNalog.Count && racuni.Count == postojeci.Racun.Count);
         }
 
         [TestMethod]
+
+        /*
+         Kod ovog testa u objekt k.Naziv se može staviti naziv klijenta koji postoji u bazi. Kada
+         
+         */
         public void BrisanjeKlijentaIzBaze()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var klijenti = servisKlijenta.DohvatiKlijente();
-            var brisi = klijenti.FirstOrDefault(k => k.Naziv == "MIAZ");
+            var brisi = klijenti.FirstOrDefault(k => k.Naziv == "Preis");
             bool uspjesno = servisKlijenta.Remove(brisi);
             Assert.IsTrue(uspjesno == true);
         }
