@@ -82,7 +82,6 @@
             this.Controls.Add(this.wbPregledPDF);
             this.Name = "FrmPregledRacunaPDF";
             this.Text = "Pregled računa u PDF obliku";
-            this.Load += new System.EventHandler(this.FrmPregledRacunaPDF_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
