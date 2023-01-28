@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Iznimke;
 using EntitiesLayer.Entities;
 using QRCoder;
 using System;
@@ -50,33 +51,40 @@ namespace ZMGDesktop
         {
             var status = cmbStatus.SelectedItem as string;
 
-            if (txtKolicina.Text == "" || status == "")
+            try
             {
-                MessageBox.Show("Morate upisati količinu i status!");
-            }
-            else
-            {
-                var kolicina = int.Parse(txtKolicina.Text);
-                var opis = txtOpis.Text;
-                var datumStvaranja = dtpDatumStvaranja.Value;
-
-                RadniNalog radniNalog = new RadniNalog()
+                if (txtKolicina.Text == "" || status == "")
                 {
-                    Kolicina = kolicina,
-                    Opis = opis,
-                    QR_kod = QRKod,
-                    DatumStvaranja = datumStvaranja,
-                    Status = status,
-                    Radnik_ID = Radnik.Radnik_ID,
-                    Klijent_ID = odabraniKlijent.Klijent_ID,
-                    Klijent = odabraniKlijent,
-                    Radnik = Radnik,
-                    Materijal = materijali,
-                    Roba = robaZaRadniNalog
-                };
+                    MessageBox.Show("Morate upisati količinu i status!");
+                }
+                else
+                {
+                    var kolicina = int.Parse(txtKolicina.Text);
+                    var opis = txtOpis.Text;
+                    var datumStvaranja = dtpDatumStvaranja.Value;
 
-                servis.DodajRadniNalog(radniNalog);
-                Close();
+                    RadniNalog radniNalog = new RadniNalog()
+                    {
+                        Kolicina = kolicina,
+                        Opis = opis,
+                        QR_kod = QRKod,
+                        DatumStvaranja = datumStvaranja,
+                        Status = status,
+                        Radnik_ID = Radnik.Radnik_ID,
+                        Klijent_ID = odabraniKlijent.Klijent_ID,
+                        Klijent = odabraniKlijent,
+                        Radnik = Radnik,
+                        Materijal = materijali,
+                        Roba = robaZaRadniNalog
+                    };
+
+                    servis.DodajRadniNalog(radniNalog);
+                    Close();
+                }
+            }
+            catch (MaterijalRobaException exc)
+            {
+                MessageBox.Show(exc.Poruka);
             }
         }
 
