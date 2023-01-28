@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPopisRadnihNaloga = new System.Windows.Forms.Label();
             this.dgvPopisRadnihNaloga = new System.Windows.Forms.DataGridView();
             this.btnNatrag = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
@@ -37,15 +37,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisRadnihNaloga)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // labelPopisRadnihNaloga
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Popis radnih naloga";
+            this.labelPopisRadnihNaloga.AutoSize = true;
+            this.labelPopisRadnihNaloga.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPopisRadnihNaloga.Location = new System.Drawing.Point(13, 13);
+            this.labelPopisRadnihNaloga.Name = "labelPopisRadnihNaloga";
+            this.labelPopisRadnihNaloga.Size = new System.Drawing.Size(227, 29);
+            this.labelPopisRadnihNaloga.TabIndex = 0;
+            this.labelPopisRadnihNaloga.Text = "Popis radnih naloga";
             // 
             // dgvPopisRadnihNaloga
             // 
@@ -55,7 +55,6 @@
             this.dgvPopisRadnihNaloga.RowHeadersWidth = 51;
             this.dgvPopisRadnihNaloga.Size = new System.Drawing.Size(622, 338);
             this.dgvPopisRadnihNaloga.TabIndex = 1;
-            this.dgvPopisRadnihNaloga.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPopisRadnihNaloga_CellContentClick);
             // 
             // btnNatrag
             // 
@@ -123,7 +122,7 @@
             this.Controls.Add(this.btnObrisi);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.dgvPopisRadnihNaloga);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelPopisRadnihNaloga);
             this.Name = "FrmPopisRadnihNaloga";
             this.Text = "Radni nalozi";
             this.Load += new System.EventHandler(this.FrmPopisRadnihNaloga_Load);
@@ -135,7 +134,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPopisRadnihNaloga;
         private System.Windows.Forms.DataGridView dgvPopisRadnihNaloga;
         private System.Windows.Forms.Button btnNatrag;
         private System.Windows.Forms.Button btnObrisi;
