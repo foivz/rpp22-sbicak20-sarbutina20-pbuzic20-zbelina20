@@ -97,7 +97,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 226);
+            this.label5.Location = new System.Drawing.Point(48, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 7;
@@ -120,9 +120,9 @@
             // 
             // txtJedinicnaCijena
             // 
-            this.txtJedinicnaCijena.Location = new System.Drawing.Point(139, 223);
+            this.txtJedinicnaCijena.Location = new System.Drawing.Point(139, 225);
             this.txtJedinicnaCijena.Name = "txtJedinicnaCijena";
-            this.txtJedinicnaCijena.Size = new System.Drawing.Size(240, 20);
+            this.txtJedinicnaCijena.Size = new System.Drawing.Size(242, 20);
             this.txtJedinicnaCijena.TabIndex = 13;
             // 
             // dtpDatumIzrade
@@ -175,7 +175,7 @@
             this.btnDodaj.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDodaj.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDodaj.Location = new System.Drawing.Point(180, 249);
+            this.btnDodaj.Location = new System.Drawing.Point(180, 251);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(147, 40);
             this.btnDodaj.TabIndex = 21;

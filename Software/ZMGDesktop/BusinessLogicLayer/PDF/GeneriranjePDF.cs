@@ -245,7 +245,7 @@ namespace BusinessLogicLayer.PDF
             y += ls;
             gfx.DrawString($"Valuta plaćanja je u EURIMA.", font, XBrushes.Black, x, y);
             y += ls;
-            gfx.DrawString($"Ovaj dokument je izdan u elektronsom obliku, te je valjan bez potpisa i pečata.", font, XBrushes.Black, x, y);
+            gfx.DrawString($"Ovaj dokument je izdan u elektronskom obliku, te je valjan bez potpisa i pečata.", font, XBrushes.Black, x, y);
             y += ls + ls + ls;
             x = 354;
             gfx.DrawString($"Fakturirao: {racun.Radnik.ToString()}", font, XBrushes.Black, x, y);

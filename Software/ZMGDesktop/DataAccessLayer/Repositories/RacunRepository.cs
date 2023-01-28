@@ -30,9 +30,6 @@ namespace DataAccessLayer.Repositories
                 Opis = entity.Opis,
                 NacinPlacanja = entity.NacinPlacanja,
                 UkupnaCijena = entity.UkupnaCijena,
-                Radnik_ID = entity.Radnik_ID,
-                Klijent_ID = entity.Klijent_ID,
-                Poslodavac_ID = entity.Poslodavac_ID,
                 PDV= entity.PDV,
                 UkupnoStavke= entity.UkupnoStavke,
                 DatumIzdavanja= entity.DatumIzdavanja,
@@ -168,9 +165,6 @@ namespace DataAccessLayer.Repositories
             racun.Opis = entity.Opis;
             racun.NacinPlacanja = entity.NacinPlacanja;
             racun.UkupnaCijena = entity.UkupnaCijena;
-            racun.Radnik_ID = radnik.Radnik_ID;
-            racun.Klijent_ID = klijent.Klijent_ID;
-            racun.Poslodavac_ID = poslodavac.Poslodavac_ID;
             if (saveChanges)
             {
                 return SaveChanges();
