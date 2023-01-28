@@ -46,7 +46,7 @@ namespace ZMGTests
 
             var klijenti = servisKlijent.DohvatiKlijente();
             Klijent postojeci = klijenti.FirstOrDefault(k => k.Naziv == "Bent");
-            
+
             var radniNalozi = servisNalozi.DohvatiRadneNalogeZaKlijenta(postojeci);
             var racuni = servisRacuni.DohvatiRacuneZaKlijenta(postojeci);
             Assert.IsTrue(radniNalozi.Count == 2 && racuni.Count == 6);
@@ -82,7 +82,7 @@ namespace ZMGTests
         public void PostojeciOIB_DodavanjeKlijentaSPostojecimOIBom()
         {
             KlijentServices servisKlijenta = new KlijentServices();
-          
+
             var klijent = new Klijent
             {
                 Naziv = "Preis",
@@ -120,8 +120,8 @@ namespace ZMGTests
             var radnici = servisRadnika.DohvatiSveRadnike();
             var radnik = radnici.FirstOrDefault(r => r.Radnik_ID == 2);
 
-            materijal.Add(new Materijal {Materijal_ID=23, Naziv = "Željezo", CijenaMaterijala=146, JedinicaMjere="kg", Kolicina=2, Opis="", OpasnoPoZivot=false, QR_kod="0Q69O3V24CQ6IE1PWXO3"});
-            roba.Add(new Roba {Roba_ID=17, Naziv = "ROBA1", Kolicina = "3" });
+            materijal.Add(new Materijal { Materijal_ID = 23, Naziv = "Željezo", CijenaMaterijala = 146, JedinicaMjere = "kg", Kolicina = 2, Opis = "", OpasnoPoZivot = false, QR_kod = "0Q69O3V24CQ6IE1PWXO3" });
+            roba.Add(new Roba { Roba_ID = 17, Naziv = "ROBA1", Kolicina = "3" });
 
             var radniNalog = new RadniNalog
             {
@@ -149,7 +149,7 @@ namespace ZMGTests
 
             var radniNalozi = servis.DohvatiRadneNaloge();
             var radniNalog = radniNalozi.FirstOrDefault(r => r.QR_kod == "NEK1QR123KOD12345678");
-            
+
             bool uspjesno = servis.ObrisiRadniNalog(radniNalog);
             Assert.IsTrue(uspjesno == true);
         }
