@@ -12,7 +12,7 @@ namespace ZMGTests
     public class UnitTest1
     {
         [TestMethod]
-        public void DodavanjeKlijentauBazu()
+        public void ADodavanjeKlijentauBazu()
         {
             /*Kod ovog testa nakon što se izvrši test, doda se novi korisnik u bazu
             */
@@ -79,7 +79,7 @@ namespace ZMGTests
 
         [TestMethod]
         [ExpectedException(typeof(OIBException))]
-        public void DodavanjaKlijentVSVecPostojecimOIBom()
+        public void PostojeciOIB_DodavanjeKlijentaSPostojecimOIBom()
         {
             KlijentServices servisKlijenta = new KlijentServices();
           
