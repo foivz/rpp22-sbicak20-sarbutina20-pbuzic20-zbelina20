@@ -106,7 +106,7 @@ namespace ZMGDesktop
 
         private void FrmDetaljiRadnogNaloga_Load(object sender, EventArgs e)
         {
-            label1.Text += radniNalog.RadniNalog_ID.ToString();
+            labelRadniNalog.Text += radniNalog.RadniNalog_ID.ToString();
             txtRadnik.Text = Radnik.Ime + " " + Radnik.Prezime;
             status = radniNalog.Status.ToString();
             
@@ -163,22 +163,12 @@ namespace ZMGDesktop
             cmbKlijent.DataSource = klijenti;
         }
 
-        private void btnDodajRobuNaRadniNalog_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void UcitajRobuRadnogNaloga()
         {
             dgvRobaRadnogNaloga.Columns[3].Visible = false;
             dgvRobaRadnogNaloga.Columns[4].Visible = false;
             dgvRobaRadnogNaloga.Columns[5].Visible = false;
             dgvRobaRadnogNaloga.Columns[6].Visible = false;
-        }
-
-        private void btnObrisiRobuSRadnogNaloga_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnDodajNovuRobu_Click(object sender, EventArgs e)
@@ -217,11 +207,6 @@ namespace ZMGDesktop
             dgvKlijentovaRoba.Columns[4].Visible = false;
             dgvKlijentovaRoba.Columns[5].Visible = false;
             dgvKlijentovaRoba.Columns[6].Visible = false;
-        }
-
-        private void btnDodajMaterijal_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void DodajMaterijalUTablicu()

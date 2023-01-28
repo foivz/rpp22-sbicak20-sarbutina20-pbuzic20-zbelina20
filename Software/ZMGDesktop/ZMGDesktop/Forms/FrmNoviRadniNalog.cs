@@ -156,11 +156,6 @@ namespace ZMGDesktop
             pbQRKod.Image = qrCodeImage;
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void cmbKlijent_SelectedIndexChanged(object sender, EventArgs e)
         {
             odabraniKlijent = cmbKlijent.SelectedItem as Klijent;
