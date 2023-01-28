@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace ZMGDesktop
         public FrmIzdajNoviRacun(Poslodavac _poslodavac, Radnik _radnik)
         {
             InitializeComponent();
+            ucitajPomoc();
             klijentServis= new KlijentServices();
             poslodavacServis= new PoslodavacServices();
             racunanjeAPI= new RacunanjeAPI();
@@ -39,6 +41,12 @@ namespace ZMGDesktop
             poslodavac = _poslodavac;
             radnik = _radnik;
             racun = new Racun();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -195,6 +203,15 @@ namespace ZMGDesktop
             racun.UkupnoStavke = ukupno;
             racun.Radnik= radnik;
             racun.Radnik_ID = radnik.Radnik_ID;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Racuni\\DodajRacun\\dodajRacun.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }
