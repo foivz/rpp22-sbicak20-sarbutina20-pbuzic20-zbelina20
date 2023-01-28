@@ -633,7 +633,7 @@
             this.Controls.Add(this.chkAutoEmail);
             this.Controls.Add(this.dgvStavke);
             this.Name = "FrmIzdajNoviRacun";
-            this.Text = "Izdavanje novog računa";
+            this.Text = "q";
             this.Load += new System.EventHandler(this.FrmIzdajNoviRacun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
             this.groupBox1.ResumeLayout(false);
