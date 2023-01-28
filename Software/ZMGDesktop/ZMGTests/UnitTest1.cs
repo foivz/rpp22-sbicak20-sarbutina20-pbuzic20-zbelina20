@@ -12,13 +12,9 @@ namespace ZMGTests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestiranjeDodavanjeKorisnikauBazu()
+        public void DodavanjeKlijentauBazu()
         {
             /*Kod ovog testa nakon što se izvrši test, doda se novi korisnik u bazu
-            Ako ćete pokrenuti opet javit će Vam greška da test nije uspješan
-            jer korisnik već postoji u bazi. Pa kako bi test bio uspješan potrebno je 
-            ili izbrisati korisnika iz baze pa pokrenuti test ili tu kod objekta klijent napisati
-            drugačije podatke.
             */
             KlijentServices servis = new KlijentServices();
             var klijent = new Klijent
@@ -53,7 +49,7 @@ namespace ZMGTests
             
             var radniNalozi = servisNalozi.DohvatiRadneNalogeZaKlijenta(postojeci);
             var racuni = servisRacuni.DohvatiRacuneZaKlijenta(postojeci);
-            Assert.IsTrue(radniNalozi.Count == postojeci.RadniNalog.Count && racuni.Count == postojeci.Racun.Count);
+            Assert.IsTrue(radniNalozi.Count == 2 && racuni.Count == 6);
         }
 
         [TestMethod]
@@ -62,7 +58,7 @@ namespace ZMGTests
          Kod ovog testa u objekt k.Naziv se može staviti naziv klijenta koji postoji u bazi. Kada
          
          */
-        public void BrisanjeKlijentaIzBaze()
+        public void ObrisiKlijentaIzBaze()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var klijenti = servisKlijenta.DohvatiKlijente();
@@ -83,13 +79,10 @@ namespace ZMGTests
 
         [TestMethod]
         [ExpectedException(typeof(OIBException))]
-        public void DodavanjaKlijentaSVecPostojecimOIBom()
+        public void DodavanjaKlijentVSVecPostojecimOIBom()
         {
             KlijentServices servisKlijenta = new KlijentServices();
-            /*
-             Kad se test izvrši, klijent se doda u bazu pa je potrebno obrisati tog klijenta prije nego
-            se test ponovno pokrene jer inače će bacat drugu grešku.
-              */
+          
             var klijent = new Klijent
             {
                 Naziv = "Preis",
