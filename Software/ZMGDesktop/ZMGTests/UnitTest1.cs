@@ -3,6 +3,7 @@ using DataAccessLayer.Iznimke;
 using EntitiesLayer.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ZMGTests
@@ -98,6 +99,126 @@ namespace ZMGTests
             KlijentServices servisKlijenta = new KlijentServices();
             var desetNajboljih = servisKlijenta.DohvatiDesetNajboljih();
             Assert.IsTrue(desetNajboljih.Count == 10);
+        }
+
+        //TESTOVI ZA RADNE NALOGE
+
+        [TestMethod]
+        public void DodajRadniNalog_DodanRadniNalog_RadniNalogSeDodajeUBazu()
+        {
+            RadniNalogService servis = new RadniNalogService();
+            KlijentServices servisKlijenta = new KlijentServices();
+            RadnikServices servisRadnika = new RadnikServices();
+            List<Materijal> materijal = new List<Materijal>();
+            List<Roba> roba = new List<Roba>();
+
+            var klijenti = servisKlijenta.DohvatiKlijente();
+            var klijent = klijenti.FirstOrDefault(k => k.Klijent_ID == 3);
+            var radnici = servisRadnika.DohvatiSveRadnike();
+            var radnik = radnici.FirstOrDefault(r => r.Radnik_ID == 2);
+
+            materijal.Add(new Materijal {Materijal_ID=23, Naziv = "Željezo", CijenaMaterijala=146, JedinicaMjere="kg", Kolicina=2, Opis="", OpasnoPoZivot=false, QR_kod="0Q69O3V24CQ6IE1PWXO3"});
+            roba.Add(new Roba {Roba_ID=17, Naziv = "ROBA1", Kolicina = "3" });
+
+            var radniNalog = new RadniNalog
+            {
+                Kolicina = 15,
+                Opis = "Treba poniklati robu klijenta",
+                QR_kod = "NEK1QR123KOD12345678",
+                DatumStvaranja = DateTime.Now,
+                Status = "Napravljen",
+                Radnik_ID = 2,
+                Klijent_ID = 3,
+                Klijent = klijent,
+                Radnik = radnik,
+                Materijal = materijal,
+                Roba = roba
+            };
+
+            bool uspjesno = servis.DodajRadniNalog(radniNalog);
+            Assert.IsTrue(uspjesno == true);
+        }
+
+        [TestMethod]
+        public void ObrisiRadniNalog_ObrisanRadniNalog_RadniNalogJeIzbrisanIzBaze()
+        {
+            RadniNalogService servis = new RadniNalogService();
+
+            var radniNalozi = servis.DohvatiRadneNaloge();
+            var radniNalog = radniNalozi.FirstOrDefault(r => r.QR_kod == "NEK1QR123KOD12345678");
+            
+            bool uspjesno = servis.ObrisiRadniNalog(radniNalog);
+            Assert.IsTrue(uspjesno == true);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MaterijalRobaException))]
+        public void DodajRadniNalog_DodavanjeRadnogNalogaBezRobe_BacanjeIznimke()
+        {
+            RadniNalogService servis = new RadniNalogService();
+            KlijentServices servisKlijenta = new KlijentServices();
+            RadnikServices servisRadnika = new RadnikServices();
+            List<Materijal> materijal = new List<Materijal>();
+            List<Roba> roba = new List<Roba>();
+
+            var klijenti = servisKlijenta.DohvatiKlijente();
+            var klijent = klijenti.FirstOrDefault(k => k.Klijent_ID == 3);
+            var radnici = servisRadnika.DohvatiSveRadnike();
+            var radnik = radnici.FirstOrDefault(r => r.Radnik_ID == 2);
+
+            materijal.Add(new Materijal { Materijal_ID = 23, Naziv = "Željezo", CijenaMaterijala = 146, JedinicaMjere = "kg", Kolicina = 2, Opis = "", OpasnoPoZivot = false, QR_kod = "0Q69O3V24CQ6IE1PWXO3" });
+
+            var radniNalog = new RadniNalog
+            {
+                Kolicina = 15,
+                Opis = "Treba poniklati robu klijenta",
+                QR_kod = "NEK1QR123KOD12345678",
+                DatumStvaranja = DateTime.Now,
+                Status = "Napravljen",
+                Radnik_ID = 2,
+                Klijent_ID = 3,
+                Klijent = klijent,
+                Radnik = radnik,
+                Materijal = materijal,
+                Roba = roba
+            };
+
+            servis.DodajRadniNalog(radniNalog);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MaterijalRobaException))]
+        public void DodajRadniNalog_DodavanjeRadnogNalogaBezMaterijala_BacanjeIznimke()
+        {
+            RadniNalogService servis = new RadniNalogService();
+            KlijentServices servisKlijenta = new KlijentServices();
+            RadnikServices servisRadnika = new RadnikServices();
+            List<Materijal> materijal = new List<Materijal>();
+            List<Roba> roba = new List<Roba>();
+
+            var klijenti = servisKlijenta.DohvatiKlijente();
+            var klijent = klijenti.FirstOrDefault(k => k.Klijent_ID == 3);
+            var radnici = servisRadnika.DohvatiSveRadnike();
+            var radnik = radnici.FirstOrDefault(r => r.Radnik_ID == 2);
+
+            roba.Add(new Roba { Roba_ID = 17, Naziv = "ROBA1", Kolicina = "3" });
+
+            var radniNalog = new RadniNalog
+            {
+                Kolicina = 15,
+                Opis = "Treba poniklati robu klijenta",
+                QR_kod = "NEK1QR123KOD12345678",
+                DatumStvaranja = DateTime.Now,
+                Status = "Napravljen",
+                Radnik_ID = 2,
+                Klijent_ID = 3,
+                Klijent = klijent,
+                Radnik = radnik,
+                Materijal = materijal,
+                Roba = roba
+            };
+
+            servis.DodajRadniNalog(radniNalog);
         }
     }
 }

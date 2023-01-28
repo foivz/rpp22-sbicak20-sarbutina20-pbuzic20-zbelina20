@@ -1,4 +1,5 @@
-﻿using EntitiesLayer.Entities;
+﻿using DataAccessLayer.Iznimke;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +73,8 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(RadniNalog entity, bool saveChanges = true)
         {
+            ProvjeriMaterijalIRobu(entity);
+
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
             var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
 
@@ -107,6 +110,17 @@ namespace DataAccessLayer.Repositories
             else
             {
                 return 0;
+            }
+        }
+
+        private void ProvjeriMaterijalIRobu(RadniNalog entity)
+        {
+            var materijali = entity.Materijal;
+            var roba = entity.Roba;
+
+            if(materijali.Count == 0 || roba.Count == 0)
+            {
+                throw new MaterijalRobaException("Morate staviti materijal i robu u radni nalog!");
             }
         }
     }

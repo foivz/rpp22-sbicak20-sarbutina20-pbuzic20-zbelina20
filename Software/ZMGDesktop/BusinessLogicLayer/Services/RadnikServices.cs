@@ -18,5 +18,14 @@ namespace BusinessLogicLayer.Services
                 return radnik;
             }
         }
+
+        public List<Radnik> DohvatiSveRadnike()
+        {
+            using (var repo = new RadnikRepository())
+            {
+                var radnici = repo.DohvatiSveRadnike().ToList();
+                return radnici;
+            }
+        }
     }
 }

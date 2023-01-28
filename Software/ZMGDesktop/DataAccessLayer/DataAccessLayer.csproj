@@ -56,6 +56,7 @@
     <Compile Include="Iznimke\BrisanjeKlijentaException.cs" />
     <Compile Include="Iznimke\EmailException.cs" />
     <Compile Include="Iznimke\IBANException.cs" />
+    <Compile Include="Iznimke\MaterijalRobaException.cs" />
     <Compile Include="Iznimke\OIBException.cs" />
     <Compile Include="Iznimke\TelefonException.cs" />
     <Compile Include="Iznimke\UserException.cs" />
