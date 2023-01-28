@@ -13,7 +13,7 @@ namespace ZMGTests
     public class UnitTest1
     {
         [TestMethod]
-        public void ADodavanjeKlijentauBazu()
+        public void ADodajKlijenta_DodavanjeKlijenta_KlijentDodanUBazu()
         {
             /*Kod ovog testa nakon što se izvrši test, doda se novi korisnik u bazu
             */
@@ -39,7 +39,7 @@ namespace ZMGTests
          U ovom testu dohvaća se lista računa i radnih naloga za pojedinog klijenta. U ovom slučaju
         za klijenta Bent. Test provjerava je li dobro dohvaća radne naloge i račune za klijenta.
          * */
-        public void DohvacanjeRacunaiRadneNalogeZaKorisnika()
+        public void UcitajRadneNalogeUcitajRacune_DohvacanjeRacuneIRacnihNalogaZaKlijenta_DohvaceniRadniNaloziIRacuni()
         {
             RadniNalogService servisNalozi = new RadniNalogService();
             RacunService servisRacuni = new RacunService();
@@ -59,7 +59,7 @@ namespace ZMGTests
          Kod ovog testa u objekt k.Naziv se može staviti naziv klijenta koji postoji u bazi. Kada
          
          */
-        public void ObrisiKlijentaIzBaze()
+        public void IzbrisiKlijenta_BrisanjeKlijentaIzBaze_IzbrisanKlijentIzBaze()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var klijenti = servisKlijenta.DohvatiKlijente();
@@ -70,7 +70,7 @@ namespace ZMGTests
 
         [TestMethod]
         [ExpectedException(typeof(BrisanjeKlijentaException))]
-        public void BrisanjeKlijentaKojiImaRadneNalogeiliRacune()
+        public void IzbrisiKlijenta_BrisanjeKlijentaKojiImaRadneNaloge_BacanjeIznimke()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var klijenti = servisKlijenta.DohvatiKlijente();
@@ -98,7 +98,7 @@ namespace ZMGTests
         }
 
         [TestMethod]
-        public void DohvacanjeDesetNajboljih()
+        public void DohvatiDesetNajboljih_DohvacanjeDesetNajvecihKlijenata_DohvacenoDesetNajvecihKlijenata()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var desetNajboljih = servisKlijenta.DohvatiDesetNajboljih();
