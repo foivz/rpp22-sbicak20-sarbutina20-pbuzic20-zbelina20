@@ -43,11 +43,6 @@ namespace ZMGDesktop
             Close();
         }
 
-        private void dgvPopisRadnihNaloga_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void FrmPopisRadnihNaloga_Load(object sender, EventArgs e)
         {
             UcitajRadneNaloge();
