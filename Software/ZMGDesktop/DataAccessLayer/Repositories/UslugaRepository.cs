@@ -24,5 +24,12 @@ namespace DataAccessLayer.Repositories
                         select p; 
             return query;
         }
+
+        public IQueryable<string> DohvatiUslugeDistinct()
+        {
+            var query = from p in Entities.Include("Materijal")
+                        select p.Naziv;
+            return query;
+        }
     }
 }

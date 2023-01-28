@@ -139,13 +139,17 @@ namespace ZMGDesktop
             EmailAPI.NapraviEmail(from, to, subject, text);
         }
 
-        private void btnIzdajRacun_Click(object sender, EventArgs e)
+        private async void btnIzdajRacun_Click(object sender, EventArgs e)
         {
-            IzdajRacun();
-            Dispose();
+            var izdajRacun = Task.Run(() => IzdajRacunAsync());
+            await izdajRacun;
+            if (izdajRacun.Result == true)
+            {
+                Dispose();
+            }
         }
 
-        private bool IzdajRacun()
+        private async Task<bool> IzdajRacunAsync()
         {
             if (GlobalListaStavki.stavkaRacunaList.Count != 0)
             {

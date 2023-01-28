@@ -253,7 +253,14 @@ namespace BusinessLogicLayer.PDF
 
             nazivDatoteke = $"ZMG - RACUN BROJ {racun.Racun_ID}.pdf";
 
-            document.Save(nazivDatoteke);
+            try
+            {
+                document.Save(nazivDatoteke);
+            }
+            catch (System.IO.IOException)
+            {
+                MessageBox.Show("Proces za PDF je zauzet!", "Prioritet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
             //Load PDF File for viewing
         }

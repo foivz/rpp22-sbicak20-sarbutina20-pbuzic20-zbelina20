@@ -37,7 +37,7 @@ namespace Email
         }
 
         public static void NapraviEmail(string from, string to, string subject, string text)
-        {
+        { 
             email.From.Add(MailboxAddress.Parse(from));
             email.To.Add(MailboxAddress.Parse(to));
             email.Subject = subject;
