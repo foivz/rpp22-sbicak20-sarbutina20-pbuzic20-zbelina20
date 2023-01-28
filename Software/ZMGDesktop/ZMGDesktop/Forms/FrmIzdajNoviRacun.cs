@@ -49,20 +49,6 @@ namespace ZMGDesktop
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void FrmIzdajNoviRacun_Load(object sender, EventArgs e)
         {
@@ -144,10 +130,10 @@ namespace ZMGDesktop
             racun.UkupnoStavke = ukupno;
         }
 
-        private void Send()
+        private void Poruka()
         {
-            string from = "zastitametalnegalanterije@gmail.com";
-            string to = "patrikbuzic4@gmail.com";
+            string from = $"{poslodavac.Email}";
+            string to = $"{selektiratiKlijent.Email}";
             string subject = $"Račun {DateTime.Now}";
             string text = "Poštovani,<br> u prilogu se nalazi račun. Izdan je u elektroničnom obliku te valja bez potpisa.";
             EmailAPI.NapraviEmail(from, to, subject, text);
@@ -155,14 +141,32 @@ namespace ZMGDesktop
 
         private void btnIzdajRacun_Click(object sender, EventArgs e)
         {
-            InitRacun(racun);
-            racunServis.DodajRacun(racun);
-            racun = racunServis.DohvatiZadnjiRacun();
-            Send();
-            GeneriranjePDF.SacuvajPDF(racun, GlobalListaStavki.stavkaRacunaList);
-            EmailAPI.DodajPrilog(GeneriranjePDF.nazivDatoteke);
-            EmailAPI.Posalji();
-           
+            if (GlobalListaStavki.stavkaRacunaList.Count != 0)
+            {
+                if (chkAutoEmail.Checked == true)
+                {
+                    InitRacun(racun);
+                    racunServis.DodajRacun(racun);
+                    racun = racunServis.DohvatiZadnjiRacun();
+                    Poruka();
+                    GeneriranjePDF.SacuvajPDF(racun, GlobalListaStavki.stavkaRacunaList);
+                    EmailAPI.DodajPrilog(GeneriranjePDF.nazivDatoteke);
+                    EmailAPI.Posalji();
+                    MessageBox.Show($"Uspješno ste izdali račun i poslali klijentu na mail ({selektiratiKlijent.Email})", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dispose();
+                }
+                else
+                {
+                    InitRacun(racun);
+                    racunServis.DodajRacun(racun);
+                    MessageBox.Show("Uspješno ste izdali račun.", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Dispose();
+                } 
+            }
+            else
+            {
+                MessageBox.Show("Morate imati barem jednu stavku.", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

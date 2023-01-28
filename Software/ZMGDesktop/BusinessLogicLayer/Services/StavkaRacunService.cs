@@ -18,5 +18,14 @@ namespace BusinessLogicLayer.Services
                 return lista;
             }
         }
+
+        public StavkaRacun InitStavka(StavkaRacun _stavka, Roba roba, Usluga usluga)
+        {
+            using (var repo = new StavkaRepository())
+            {
+                StavkaRacun stavka = repo.InitStavka(_stavka, roba, usluga);
+                return stavka;
+            }
+        }
     }
 }

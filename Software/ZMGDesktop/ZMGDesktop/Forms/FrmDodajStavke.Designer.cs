@@ -54,9 +54,9 @@
             this.dgvStavkeDodaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavkeDodaj.Location = new System.Drawing.Point(402, 38);
             this.dgvStavkeDodaj.Name = "dgvStavkeDodaj";
+            this.dgvStavkeDodaj.ReadOnly = true;
             this.dgvStavkeDodaj.Size = new System.Drawing.Size(897, 263);
             this.dgvStavkeDodaj.TabIndex = 0;
-            this.dgvStavkeDodaj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStavkeDodaj_CellContentClick);
             // 
             // label1
             // 
@@ -110,6 +110,7 @@
             this.cmbUsluge.Name = "cmbUsluge";
             this.cmbUsluge.Size = new System.Drawing.Size(241, 21);
             this.cmbUsluge.TabIndex = 9;
+            this.cmbUsluge.SelectedIndexChanged += new System.EventHandler(this.cmbUsluge_SelectedIndexChanged);
             // 
             // txtKolicina
             // 
@@ -140,6 +141,7 @@
             this.cmbRoba.Name = "cmbRoba";
             this.cmbRoba.Size = new System.Drawing.Size(241, 21);
             this.cmbRoba.TabIndex = 17;
+            this.cmbRoba.SelectedIndexChanged += new System.EventHandler(this.cmbRoba_SelectedIndexChanged);
             // 
             // txtKolikoRobePoJedinici
             // 

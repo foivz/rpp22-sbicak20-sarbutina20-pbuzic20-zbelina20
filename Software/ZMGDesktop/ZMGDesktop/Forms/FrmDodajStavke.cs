@@ -20,9 +20,12 @@ namespace ZMGDesktop
         //objekti
         Klijent klijent;
         Racun racun;
+        Roba selektiranaRoba;
+        Usluga selektiranaUsluga;
         //servisi
         UslugaServices uslugaServis;
         RobaService robaServis;
+        StavkaRacunService stavkaServis;
 
         public FrmDodajStavke(Klijent _klijent, Racun _racun)
         {
@@ -30,6 +33,7 @@ namespace ZMGDesktop
             ucitajPomoc();
             uslugaServis= new UslugaServices();
             robaServis= new RobaService();
+            stavkaServis= new StavkaRacunService();
             klijent= _klijent;
             racun= _racun;
         }
@@ -44,7 +48,7 @@ namespace ZMGDesktop
         {
             cmbUsluge.DataSource= uslugaServis.DohvatiUsluge();
             cmbRoba.DataSource = robaServis.DohvatiRobuKlijenta(klijent.Klijent_ID);
-            Refresh();
+            dgvStavkeDodaj.DataSource = null;
         }
 
         private void Refresh()
@@ -64,14 +68,10 @@ namespace ZMGDesktop
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+
+            // napraviStavku(Stavka, selektiranaRoba, selektiranaUsluga)
             StavkaRacun stavka = new StavkaRacun
             {
-                Usluga_ID = (cmbUsluge.SelectedItem as Usluga).Usluga_ID,
-                Roba_ID = (cmbRoba.SelectedItem as Roba).Roba_ID,
-                Roba = cmbRoba.SelectedItem as Roba,
-                //Racun = racun,
-                //Racun_ID = racun.Racun_ID,
-                Usluga= cmbUsluge.SelectedItem as Usluga,
                 KolikoRobePoJedinici = int.Parse(txtKolikoRobePoJedinici.Text),
                 KolicinaRobe = int.Parse(txtKolicina.Text),
                 DatumIzrade = dtpDatumIzrade.Value,
@@ -80,6 +80,7 @@ namespace ZMGDesktop
                 UkupnaCijenaStavke = (double)(double.Parse(txtJedinicnaCijena.Text) * int.Parse(txtKolicina.Text))
                 
             };
+            stavka = stavkaServis.InitStavka(stavka, selektiranaRoba, selektiranaUsluga);
             GlobalListaStavki.stavkaRacunaList.Add(stavka);
             Refresh();
         }
@@ -96,12 +97,6 @@ namespace ZMGDesktop
             }
             Refresh();
         }
-
-        private void dgvStavkeDodaj_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
@@ -109,6 +104,16 @@ namespace ZMGDesktop
                 string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Racuni\\Stavke\\stavkeRacuna.html");
                 System.Diagnostics.Process.Start(path);
             }
+        }
+
+        private void cmbUsluge_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selektiranaUsluga = cmbUsluge.SelectedItem as Usluga;
+        }
+
+        private void cmbRoba_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selektiranaRoba = cmbRoba.SelectedItem as Roba;
         }
     }
 }

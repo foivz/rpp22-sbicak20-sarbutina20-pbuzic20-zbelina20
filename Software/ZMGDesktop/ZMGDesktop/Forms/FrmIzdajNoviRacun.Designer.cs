@@ -92,6 +92,7 @@
             this.dgvStavke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStavke.Location = new System.Drawing.Point(241, 383);
             this.dgvStavke.Name = "dgvStavke";
+            this.dgvStavke.ReadOnly = true;
             this.dgvStavke.Size = new System.Drawing.Size(841, 196);
             this.dgvStavke.TabIndex = 3;
             // 
@@ -207,7 +208,6 @@
             this.label6.Size = new System.Drawing.Size(83, 13);
             this.label6.TabIndex = 17;
             this.label6.Text = "Odabir klijenata:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -217,7 +217,6 @@
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 18;
             this.label7.Text = "Naziv:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -410,7 +409,6 @@
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Poslodavac";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtP_Naziv
             // 
