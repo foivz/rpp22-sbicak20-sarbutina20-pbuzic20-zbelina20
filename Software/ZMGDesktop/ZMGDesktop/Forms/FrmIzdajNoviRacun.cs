@@ -141,6 +141,12 @@ namespace ZMGDesktop
 
         private void btnIzdajRacun_Click(object sender, EventArgs e)
         {
+            IzdajRacun();
+            Dispose();
+        }
+
+        private bool IzdajRacun()
+        {
             if (GlobalListaStavki.stavkaRacunaList.Count != 0)
             {
                 if (chkAutoEmail.Checked == true)
@@ -153,19 +159,20 @@ namespace ZMGDesktop
                     EmailAPI.DodajPrilog(GeneriranjePDF.nazivDatoteke);
                     EmailAPI.Posalji();
                     MessageBox.Show($"Uspješno ste izdali račun i poslali klijentu na mail ({selektiratiKlijent.Email})", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Dispose();
+                    return true;
                 }
                 else
                 {
                     InitRacun(racun);
                     racunServis.DodajRacun(racun);
                     MessageBox.Show("Uspješno ste izdali račun.", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Dispose();
-                } 
+                    return true;
+                }
             }
             else
             {
                 MessageBox.Show("Morate imati barem jednu stavku.", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
 

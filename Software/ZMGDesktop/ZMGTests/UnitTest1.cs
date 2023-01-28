@@ -1,8 +1,10 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer.LogikaZaRacune;
+using BusinessLogicLayer.Services;
 using DataAccessLayer.Iznimke;
 using EntitiesLayer.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ZMGTests
@@ -93,11 +95,35 @@ namespace ZMGTests
         }
 
         [TestMethod]
-        public void DohvaćanjeDesetNajboljih()
+        public void DohvacanjeDesetNajboljih()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var desetNajboljih = servisKlijenta.DohvatiDesetNajboljih();
             Assert.IsTrue(desetNajboljih.Count == 10);
         }
+
+
+        [TestMethod]
+        public void UnosPodataka_NoviRacun_IspravnoRacucanjeIznosaStavki()
+        {
+            RacunanjeAPI racunanje = new RacunanjeAPI();
+            List<StavkaRacun> lista = new List<StavkaRacun>();
+            StavkaRacun stavka = new StavkaRacun()
+            {
+                UkupnaCijenaStavke = 300
+            };
+            lista.Add(stavka);
+            StavkaRacun stavka2 = new StavkaRacun()
+            {
+                UkupnaCijenaStavke = 300
+            };
+            lista.Add(stavka2);
+
+            double ukupno = racunanje.RacunanjeUkupnog(lista);
+
+            Assert.IsTrue(ukupno == 600);
+        }
+
+
     }
 }

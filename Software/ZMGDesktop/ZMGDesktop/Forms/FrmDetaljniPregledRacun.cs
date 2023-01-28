@@ -43,21 +43,6 @@ namespace ZMGDesktop
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmDetaljniPregledRacun_Load(object sender, EventArgs e)
         {
             lblBrojRacuna.Text = racun.Racun_ID.ToString();
