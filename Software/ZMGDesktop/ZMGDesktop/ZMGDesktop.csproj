@@ -402,6 +402,15 @@
     <Content Include="Pomoc\Prijava\prijava.css" />
     <Content Include="Pomoc\Prijava\prijava.html" />
     <Content Include="Pomoc\Prijava\prijava.png" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.css" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.html" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.png" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.css" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.html" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.png" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.css" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.html" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.png" />
     <Content Include="Resources\klijenti.xml" />
   </ItemGroup>
   <ItemGroup>
