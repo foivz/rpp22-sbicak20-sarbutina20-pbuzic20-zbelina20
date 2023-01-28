@@ -82,6 +82,8 @@
             this.btnPDFpregled = new System.Windows.Forms.Button();
             this.btnIzdajRacun = new System.Windows.Forms.Button();
             this.btnDodajStavke = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtOpis = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -603,11 +605,30 @@
             this.btnDodajStavke.UseVisualStyleBackColor = false;
             this.btnDodajStavke.Click += new System.EventHandler(this.btnDodajStavke_Click);
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(283, 647);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(31, 13);
+            this.label24.TabIndex = 55;
+            this.label24.Text = "Opis:";
+            // 
+            // txtOpis
+            // 
+            this.txtOpis.Location = new System.Drawing.Point(325, 647);
+            this.txtOpis.Multiline = true;
+            this.txtOpis.Name = "txtOpis";
+            this.txtOpis.Size = new System.Drawing.Size(179, 65);
+            this.txtOpis.TabIndex = 54;
+            // 
             // FrmIzdajNoviRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1330, 777);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.btnDodajStavke);
             this.Controls.Add(this.btnIzdajRacun);
             this.Controls.Add(this.btnPDFpregled);
@@ -631,7 +652,6 @@
             this.Controls.Add(this.chkAutoEmail);
             this.Controls.Add(this.dgvStavke);
             this.Name = "FrmIzdajNoviRacun";
-            this.Text = "q";
             this.Load += new System.EventHandler(this.FrmIzdajNoviRacun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -698,5 +718,7 @@
         private System.Windows.Forms.Button btnPDFpregled;
         private System.Windows.Forms.Button btnIzdajRacun;
         private System.Windows.Forms.Button btnDodajStavke;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox txtOpis;
     }
 }

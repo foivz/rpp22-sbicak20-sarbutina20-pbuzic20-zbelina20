@@ -67,7 +67,7 @@ namespace ZMGDesktop
         private void btnRacuni_Click(object sender, EventArgs e)
         {
             FrmRacuni racuni = new FrmRacuni(radnik);
-            racuni.ShowDialog();
+            racuni.Show();
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

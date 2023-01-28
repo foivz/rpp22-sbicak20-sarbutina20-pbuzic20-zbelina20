@@ -53,6 +53,7 @@
             this.dgvRacuni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRacuni.Location = new System.Drawing.Point(126, 204);
             this.dgvRacuni.Name = "dgvRacuni";
+            this.dgvRacuni.ReadOnly = true;
             this.dgvRacuni.RowHeadersWidth = 51;
             this.dgvRacuni.Size = new System.Drawing.Size(1053, 277);
             this.dgvRacuni.TabIndex = 0;

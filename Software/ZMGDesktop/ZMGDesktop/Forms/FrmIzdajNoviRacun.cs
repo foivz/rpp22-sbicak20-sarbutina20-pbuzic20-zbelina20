@@ -70,7 +70,6 @@ namespace ZMGDesktop
             InitTextBoxKlijent(selektiratiKlijent);
             GlobalListaStavki.stavkaRacunaList.Clear();
             Osvjezi();
-            
         }
 
 
@@ -109,10 +108,10 @@ namespace ZMGDesktop
             FrmDodajStavke formaStavki = new FrmDodajStavke(selektiratiKlijent, racun);
             formaStavki.FormClosing += new FormClosingEventHandler(ChildFormClosing);
             formaStavki.ShowDialog();
+            
         }
 
         double ukupno, pdv, ukupnoiznos;
-
         private void ChildFormClosing(object sender, FormClosingEventArgs e)
         {
             Osvjezi();
@@ -121,13 +120,17 @@ namespace ZMGDesktop
             pdv = racunanjeAPI.RacunanjePDV(ukupno);
             ukupnoiznos = racunanjeAPI.RacunanjeUkupnogPDV(ukupno, pdv);
 
+            ukupno = Math.Round(ukupno, 2);
+            pdv = Math.Round(pdv, 2);
+            ukupnoiznos = Math.Round(ukupnoiznos, 2);
+
             txtUkupno.Text = ukupno.ToString();
             txtPDV.Text = pdv.ToString();
             txtUkupniIznos.Text = ukupnoiznos.ToString();
 
             racun.UkupnaCijena = ukupnoiznos;
             racun.PDV = pdv;
-            racun.UkupnoStavke = ukupno;
+            racun.UkupnoStavke = ukupno;    
         }
 
         private void Poruka()
@@ -151,8 +154,15 @@ namespace ZMGDesktop
 
         private async Task<bool> IzdajRacunAsync()
         {
-            if (GlobalListaStavki.stavkaRacunaList.Count != 0)
+            if (txtOpis.Text.Length >= 100)
             {
+                MessageBox.Show("Opis mora biti manji od 100 znakova.", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (GlobalListaStavki.stavkaRacunaList.Count != 0 && txtOpis.Text != "")
+            {
+               
+
                 if (chkAutoEmail.Checked == true)
                 {
                     InitRacun(racun);
@@ -175,7 +185,7 @@ namespace ZMGDesktop
             }
             else
             {
-                MessageBox.Show("Morate imati barem jednu stavku.", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Morate imati barem jednu stavku i opis je obvezan.", "Izdavanje računa", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -193,6 +203,7 @@ namespace ZMGDesktop
 
         private void Osvjezi()
         {
+            this.Invalidate();
             dgvStavke.DataSource = null;
             dgvStavke.DataSource = GlobalListaStavki.stavkaRacunaList;
             dgvStavke.Columns[0].Visible = false;
@@ -206,13 +217,13 @@ namespace ZMGDesktop
             racun.NacinPlacanja = txtNacinPlacanja.Text;
             racun.RokPlacanja = txtRokPlacanja.Text;
             racun.StavkaRacun = GlobalListaStavki.stavkaRacunaList;
-            racun.Fakturirao = "TEST";
+            racun.Fakturirao = radnik.ToString();
             racun.Poslodavac = poslodavac;
             racun.DatumIzdavanja = DateTime.Now;
             racun.Klijent = selektiratiKlijent;
             racun.Klijent_ID = selektiratiKlijent.Klijent_ID;
             racun.Poslodavac_ID = poslodavac.Poslodavac_ID;
-            racun.Opis = "OPIS";
+            racun.Opis = txtOpis.Text;
             racun.UkupnaCijena = ukupnoiznos;
             racun.PDV = pdv;
             racun.UkupnoStavke = ukupno;
