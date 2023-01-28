@@ -67,7 +67,7 @@ namespace ZMGDesktop
             InitUkupno();
             InitPlacanje();
             InitDatum();
-            Refresh();
+            Osvjezi();
         }
 
         private void InitPoslodavac()
@@ -106,7 +106,7 @@ namespace ZMGDesktop
             stavkeList = stavkaServis.DohvatiStavkeRacuna(racun.Racun_ID);
         }
 
-        private void Refresh()
+        private void Osvjezi()
         {
             dgvStavke.DataSource = stavkeList;
             dgvStavke.Columns[0].Visible = false;

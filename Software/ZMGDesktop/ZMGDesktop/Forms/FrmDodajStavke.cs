@@ -48,10 +48,11 @@ namespace ZMGDesktop
         {
             cmbUsluge.DataSource= uslugaServis.DohvatiUsluge();
             cmbRoba.DataSource = robaServis.DohvatiRobuKlijenta(klijent.Klijent_ID);
+            txtJedinicaMjere.Text = "kg";
             dgvStavkeDodaj.DataSource = null;
         }
 
-        private void Refresh()
+        private void Osvjezi()
         {
             dgvStavkeDodaj.DataSource = null;
             dgvStavkeDodaj.DataSource = GlobalListaStavki.stavkaRacunaList;
@@ -66,23 +67,35 @@ namespace ZMGDesktop
             Close();
         }
 
+        private int kolikoRobe, kolicinaRobe;
+        private double jedinicnaCijena;
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            try
+            {
+                kolikoRobe= int.Parse(txtKolikoRobePoJedinici.Text);
+                jedinicnaCijena = double.Parse(txtJedinicnaCijena.Text);
+                kolicinaRobe = int.Parse(txtKolicina.Text);
 
-            // napraviStavku(Stavka, selektiranaRoba, selektiranaUsluga)
+            } catch(FormatException)
+            {
+                MessageBox.Show("Neispravan unos znakova tamo gdje se traže brojevi!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+       
             StavkaRacun stavka = new StavkaRacun
             {
-                KolikoRobePoJedinici = int.Parse(txtKolikoRobePoJedinici.Text),
-                KolicinaRobe = int.Parse(txtKolicina.Text),
+                KolikoRobePoJedinici = kolikoRobe,
+                KolicinaRobe = kolicinaRobe,
                 DatumIzrade = dtpDatumIzrade.Value,
                 JedinicaMjere = txtJedinicaMjere.Text,
-                JedinicnaCijena = double.Parse(txtJedinicnaCijena.Text),
-                UkupnaCijenaStavke = (double)(double.Parse(txtJedinicnaCijena.Text) * int.Parse(txtKolicina.Text))
-                
+                JedinicnaCijena = jedinicnaCijena,
+                UkupnaCijenaStavke = (double)(jedinicnaCijena * kolikoRobe)
+
             };
             stavka = stavkaServis.InitStavka(stavka, selektiranaRoba, selektiranaUsluga);
             GlobalListaStavki.stavkaRacunaList.Add(stavka);
-            Refresh();
+            Osvjezi();
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
@@ -95,7 +108,7 @@ namespace ZMGDesktop
                     GlobalListaStavki.stavkaRacunaList.Remove(selektiranaStavka);
                 }
             }
-            Refresh();
+            Osvjezi();
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {

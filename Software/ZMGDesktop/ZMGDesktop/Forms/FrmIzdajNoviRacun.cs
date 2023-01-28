@@ -69,7 +69,7 @@ namespace ZMGDesktop
             selektiratiKlijent = cmbKlijenti.SelectedItem as Klijent;
             InitTextBoxKlijent(selektiratiKlijent);
             GlobalListaStavki.stavkaRacunaList.Clear();
-            Refresh();
+            Osvjezi();
             
         }
 
@@ -115,7 +115,7 @@ namespace ZMGDesktop
 
         private void ChildFormClosing(object sender, FormClosingEventArgs e)
         {
-            Refresh();
+            Osvjezi();
 
             ukupno = racunanjeAPI.RacunanjeUkupnog(GlobalListaStavki.stavkaRacunaList);
             pdv = racunanjeAPI.RacunanjePDV(ukupno);
@@ -180,7 +180,7 @@ namespace ZMGDesktop
             GeneriranjePDF.OtvoriPDF();
         }
 
-        private void Refresh()
+        private void Osvjezi()
         {
             dgvStavke.DataSource = null;
             dgvStavke.DataSource = GlobalListaStavki.stavkaRacunaList;

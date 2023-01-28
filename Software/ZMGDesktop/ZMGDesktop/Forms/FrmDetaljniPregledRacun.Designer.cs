@@ -387,7 +387,6 @@
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Poslodavac";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label27
             // 
@@ -577,7 +576,6 @@
             this.label21.Size = new System.Drawing.Size(181, 37);
             this.label21.TabIndex = 48;
             this.label21.Text = "Račun broj:";
-            this.label21.Click += new System.EventHandler(this.label21_Click);
             // 
             // lblBrojRacuna
             // 

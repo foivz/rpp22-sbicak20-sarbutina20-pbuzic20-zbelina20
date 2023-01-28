@@ -202,6 +202,7 @@
             // 
             this.txtJedinicaMjere.Location = new System.Drawing.Point(139, 175);
             this.txtJedinicaMjere.Name = "txtJedinicaMjere";
+            this.txtJedinicaMjere.ReadOnly = true;
             this.txtJedinicaMjere.Size = new System.Drawing.Size(241, 20);
             this.txtJedinicaMjere.TabIndex = 24;
             // 
