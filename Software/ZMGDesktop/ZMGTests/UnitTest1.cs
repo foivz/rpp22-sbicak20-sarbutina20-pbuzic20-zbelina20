@@ -227,7 +227,7 @@ namespace ZMGTests
 
 
         [TestMethod]
-        public void UnosPodataka_NoviRacun_IspravnoRacucanjeIznosaStavki()
+        public void RacunanjeUkupnog_IzdavanjeNovogRacuna_IspravnoRacunanjeIznosaStavki()
         {
             RacunanjeAPI racunanje = new RacunanjeAPI();
             List<StavkaRacun> lista = new List<StavkaRacun>();
