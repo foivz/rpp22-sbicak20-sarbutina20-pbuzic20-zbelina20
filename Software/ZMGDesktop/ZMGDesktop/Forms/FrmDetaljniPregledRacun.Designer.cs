@@ -717,18 +717,7 @@
             this.btnPDFpregled.Click += new System.EventHandler(this.btnPDFpregled_Click);
             // 
             // btnNatrag
-            // 
-            this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNatrag.Location = new System.Drawing.Point(1247, 892);
-            this.btnNatrag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(196, 49);
-            this.btnNatrag.TabIndex = 55;
-            this.btnNatrag.Text = "Natrag";
-            this.btnNatrag.UseVisualStyleBackColor = false;
-            this.btnNatrag.Click += new System.EventHandler(this.button1_Click);
+            //
             // 
             // txtOpis
             // 
