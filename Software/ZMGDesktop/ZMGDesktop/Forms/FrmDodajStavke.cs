@@ -98,6 +98,10 @@ namespace ZMGDesktop
 
             };
             stavka = stavkaServis.InitStavka(stavka, selektiranaRoba, selektiranaUsluga);
+            if (stavkaServis.ProvjeriDuplikat(GlobalListaStavki.stavkaRacunaList, stavka)){
+                MessageBox.Show("Stavka je već dodana!", "Provjera stavki", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             GlobalListaStavki.stavkaRacunaList.Add(stavka);
             Osvjezi();
         }

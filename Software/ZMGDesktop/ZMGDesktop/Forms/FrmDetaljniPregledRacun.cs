@@ -113,12 +113,6 @@ namespace ZMGDesktop
             txtRokPlacanja.Text = racun.RokPlacanja;
             txtFakturirao.Text = racun.Fakturirao;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btnPDFpregled_Click(object sender, EventArgs e)
         {
             GeneriranjePDF.SacuvajPDF(racun, stavkeList);
@@ -132,6 +126,11 @@ namespace ZMGDesktop
                 string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Racuni\\DetaljiRacuna\\detaljiRacuna.html");
                 System.Diagnostics.Process.Start(path);
             }
+        }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
