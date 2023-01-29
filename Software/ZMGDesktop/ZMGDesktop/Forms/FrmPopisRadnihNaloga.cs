@@ -76,7 +76,11 @@ namespace ZMGDesktop
 
         private RadniNalog DohvatiRadniNalog()
         {
-            return dgvPopisRadnihNaloga.CurrentRow.DataBoundItem as RadniNalog;
+            if(dgvPopisRadnihNaloga.CurrentRow != null)
+            {
+                return dgvPopisRadnihNaloga.CurrentRow.DataBoundItem as RadniNalog;
+            }
+            return null;
         }
 
         private void btnDetalji_Click(object sender, EventArgs e)
