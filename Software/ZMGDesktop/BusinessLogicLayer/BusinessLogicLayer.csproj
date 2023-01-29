@@ -31,8 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogikaZaRacune\RacunanjeAPI.cs" />
+    <Compile Include="PDF\GeneriranjePDF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\KlijentServices.cs" />
+    <Compile Include="Services\MaterijalServices.cs" />
+    <Compile Include="Services\PoslodavacServices.cs" />
+    <Compile Include="Services\PrimkaServices.cs" />
     <Compile Include="Services\RacunService.cs" />
+    <Compile Include="Services\RadnikServices.cs" />
     <Compile Include="Services\RadniNalogService.cs" />
+    <Compile Include="Services\RobaService.cs" />
+    <Compile Include="Services\StavkaRacunService.cs" />
+    <Compile Include="Services\UslugaServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
@@ -55,6 +76,10 @@
       <Project>{969baf40-7473-43b9-b39d-c0371c085d3f}</Project>
       <Name>EntitiesLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xhtml xml:lang="hr">
+<klijenti>
+	<klijent>
+		<Naziv>Hađar</Naziv>
+		<Adresa>Petrova Gora 23</Adresa>
+		<Mjesto>Petrova Gora</Mjesto>
+		<OIB>27521582612</OIB>
+		<BrojTelefona>0921421295</BrojTelefona>
+		<Email>hadar@gmail.com</Email>
+		<IBAN>HR2715264621925728321</IBAN>
+	</klijent>
+	<klijent>
+		<Naziv>Hudić</Naziv>
+		<Adresa>Sesvete 20</Adresa>
+		<Mjesto>Sesvete</Mjesto>
+		<OIB>85721265201</OIB>
+		<BrojTelefona>0962142582</BrojTelefona>
+		<Email>hudic@gmail.com</Email>
+		<IBAN>HR2716425125252721572</IBAN>
+	</klijent>
+	<klijent>
+		<Naziv>BAMT</Naziv>
+		<Adresa>Mače 20</Adresa>
+		<Mjesto>Mače</Mjesto>
+		<OIB>82752125672</OIB>
+		<BrojTelefona>0992615721</BrojTelefona>
+		<Email>bamt@gmail.com</Email>
+		<IBAN>HR2652125962817257281</IBAN>
+	</klijent>
+	<klijent>
+		<Naziv>Boxmark</Naziv>
+		<Adresa>Trnovec 21</Adresa>
+		<Mjesto>Trnovec</Mjesto>
+		<OIB>27165281562</OIB>
+		<BrojTelefona>0972429104</BrojTelefona>
+		<Email>boxmark@gmail.com</Email>
+		<IBAN>HR9281527626492105286</IBAN>
+	</klijent>
+</klijenti>
+</xhtml>

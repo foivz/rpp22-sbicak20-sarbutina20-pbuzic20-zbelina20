@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,19 @@ namespace ZMGDesktop
         public FrmDetaljniPrikazKlijenta()
         {
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         public FrmDetaljniPrikazKlijenta(Klijent klijent)
         {
             InitializeComponent();
+            ucitajPomoc();
             this.selektiran = klijent;
         }
 
@@ -40,19 +49,20 @@ namespace ZMGDesktop
         {
             var racuni = racunServis.DohvatiRacuneZaKlijenta(selektiran);
             dgvRacuni.DataSource = racuni;
-            dgvRacuni.Columns[8].Visible = false;
-            dgvRacuni.Columns[9].Visible = false;
-            dgvRacuni.Columns[10].Visible = false;
-            dgvRacuni.Columns[11].Visible = false;
+            dgvRacuni.Columns[5].Visible = false;
+            dgvRacuni.Columns[6].Visible = false;
+            dgvRacuni.Columns[7].Visible = false;
+            dgvRacuni.Columns[15].Visible = false;
         }
 
         private void ucitajRadneNaloge(Klijent selektiran)
         {
             var radniNalozi = radniNalogServis.DohvatiRadneNalogeZaKlijenta(selektiran);
             dgvRadniNalozi.DataSource = radniNalozi;
+            dgvRadniNalozi.Columns[6].Visible = false;
             dgvRadniNalozi.Columns[7].Visible = false;
-            dgvRadniNalozi.Columns[8].Visible = false;
-            dgvRadniNalozi.Columns[9].Visible = false;
+            dgvRadniNalozi.Columns[10].Visible = false;
+            dgvRadniNalozi.Columns[11].Visible = false;
         }
 
         private void provjeriKlijenta(Klijent selektiran)
@@ -63,7 +73,7 @@ namespace ZMGDesktop
             }
             else
             {
-                lblImeiPrezime.Text = selektiran.Naziv;
+                labelImePrezime.Text = selektiran.Naziv;
             }
         }
 
@@ -71,5 +81,15 @@ namespace ZMGDesktop
         {
             Close();
         }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Klijenti\\DetaljiKlijenta\\detaljiKlijenta.html");
+                System.Diagnostics.Process.Start(path);
+            }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -36,8 +37,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>ZMGDesktop.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
@@ -49,14 +49,35 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="HidLibrary, Version=3.2.49.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\hidlibrary.3.3.40\lib\net45\HidLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
     <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.1.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -72,21 +93,21 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
     </Reference>
-    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    <Reference Include="System.Text.Encoding.CodePages, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.7.0.0\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
@@ -105,6 +126,18 @@
   <ItemGroup>
     <Compile Include="Forms\FrmDodajMaterijal.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDodajStavke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDodajStavke.Designer.cs">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmIzdajNoviRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIzdajNoviRacun.Designer.cs">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmDodajMaterijal.Designer.cs">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
@@ -132,12 +165,6 @@
     </Compile>
     <Compile Include="Forms\FrmRacuni.Designer.cs">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.Designer.cs">
-      <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmDetaljiRadnogNaloga.cs">
       <SubType>Form</SubType>
@@ -205,14 +232,15 @@
     <Compile Include="Forms\FrmZaprimiMaterijal.Designer.cs">
       <DependentUpon>FrmZaprimiMaterijal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmXML.cs">
+    <Compile Include="Forms\FrmXML.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmXML.Designer.cs">
+    <Compile Include="Forms\FrmXML.Designer.cs">
       <DependentUpon>FrmXML.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidacijaUnosa\Validacija.cs" />
     <EmbeddedResource Include="Forms\FrmDodajMaterijal.resx">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,8 +256,17 @@
     <EmbeddedResource Include="Forms\FrmRacuni.resx">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.resx">
-      <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
+    <Compile Include="Forms\FrmDetaljniPregledRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDetaljniPregledRacun.Designer.cs">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FrmDodajStavke.resx">
+      <DependentUpon>FrmDodajStavke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIzdajNoviRacun.resx">
+      <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetaljiRadnogNaloga.resx">
       <DependentUpon>FrmDetaljiRadnogNaloga.cs</DependentUpon>
@@ -264,7 +301,7 @@
     <EmbeddedResource Include="Forms\FrmZaprimiMaterijal.resx">
       <DependentUpon>FrmZaprimiMaterijal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmXML.resx">
+    <EmbeddedResource Include="Forms\FrmXML.resx">
       <DependentUpon>FrmXML.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -277,7 +314,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Forms\FrmDetaljniPregledRacun.resx">
+      <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportKlijenti.rdlc" />
+    <EmbeddedResource Include="rptRadniNalozi.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.Klijent.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.RadniNalog.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -303,12 +347,57 @@
       <Project>{DF1307F3-7420-45A3-9C7D-50FE8172602B}</Project>
       <Name>DataAccessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Email\Email.csproj">
+      <Project>{933F3363-D231-43AB-A2B2-8B8BB5F7583D}</Project>
+      <Name>Email</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntitiesLayer\EntitiesLayer.csproj">
       <Project>{969baf40-7473-43b9-b39d-c0371c085d3f}</Project>
       <Name>EntitiesLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\izvjestaji.css" />
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\izvjestaji.html" />
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\Izvjestaji.png" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.css" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.html" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.png" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\urediKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\Pocetna\pocetna.css" />
+    <Content Include="Pomoc\Klijenti\Pocetna\pocetna.html" />
+    <Content Include="Pomoc\Klijenti\Pocetna\Pocetna.png" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\Pregled.css" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\Pregled.html" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\PregledKlijenata.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta1.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta2.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta3.png" />
+    <Content Include="Pomoc\Prijava\prijava.css" />
+    <Content Include="Pomoc\Prijava\prijava.html" />
+    <Content Include="Pomoc\Prijava\prijava.png" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.css" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.html" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.png" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.css" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.html" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.png" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.css" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.html" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.png" />
+    <Content Include="Resources\klijenti.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pomoc\RadniNalozi\DodajRadniNalog\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -316,6 +405,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

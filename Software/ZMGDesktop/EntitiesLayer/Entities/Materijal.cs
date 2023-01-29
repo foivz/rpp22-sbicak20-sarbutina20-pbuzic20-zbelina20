@@ -8,6 +8,12 @@ namespace EntitiesLayer.Entities
     [Table("Materijal")]
     public partial class Materijal
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Materijal()
+        {
+            RadniNalog = new HashSet<RadniNalog>();
+        }
+
         [Key]
         public int Materijal_ID { get; set; }
 
@@ -18,18 +24,16 @@ namespace EntitiesLayer.Entities
         public double CijenaMaterijala { get; set; }
 
         [Required]
-        [MaxLength(10)]
-        public byte[] JedinicaMjere { get; set; }
-
-        [Required]
-        [MaxLength(100)]
-        public byte[] Opis { get; set; }
+        [StringLength(20)]
+        public string JedinicaMjere { get; set; }
 
         public int Kolicina { get; set; }
 
-        public byte? OpasnoPoZivot { get; set; }
+        [StringLength(100)]
+        public string Opis { get; set; }
 
-        [StringLength(150)]
+        public bool? OpasnoPoZivot { get; set; }
+
         public string QR_kod { get; set; }
 
         public int? Primka_ID { get; set; }
@@ -39,5 +43,8 @@ namespace EntitiesLayer.Entities
         public virtual Primka Primka { get; set; }
 
         public virtual Usluga Usluga { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RadniNalog> RadniNalog { get; set; }
     }
 }

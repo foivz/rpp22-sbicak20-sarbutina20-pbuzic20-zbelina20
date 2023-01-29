@@ -20,6 +20,15 @@ namespace BusinessLogicLayer.Services
             }
         }
 
+        public List<Klijent> DohvatiDesetNajboljih()
+        {
+            using (var repo = new KlijentRepository())
+            {
+                List<Klijent> desetNajboljih = repo.DohvatiDesetNajboljih().ToList();
+                return desetNajboljih;
+            }
+        }
+
         public bool Add(Klijent klijent)
         {
             bool uspjesno = false;
@@ -48,30 +57,12 @@ namespace BusinessLogicLayer.Services
         public bool Remove(Klijent klijent)
         {
             bool uspjesno = false;
-
-            bool mozeSeObrisati = ProvjeriKlijenta(klijent);
-            if (mozeSeObrisati)
-            {
                 using(var repo = new KlijentRepository())
                 {
                     int red = repo.Remove(klijent);
                     uspjesno = red > 0;
                 }
-            }
-
             return uspjesno;
-        }
-
-        private bool ProvjeriKlijenta(Klijent klijent)
-        {
-            if(klijent == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
         }
     }
 }

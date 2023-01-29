@@ -31,6 +31,10 @@ namespace EntitiesLayer.Entities
 
         public double UkupnaCijenaStavke { get; set; }
 
+        public int KolikoRobePoJedinici { get; set; }
+
+        public double JedinicnaCijena { get; set; }
+
         public DateTime? DatumIzrade { get; set; }
 
         public virtual Racun Racun { get; set; }

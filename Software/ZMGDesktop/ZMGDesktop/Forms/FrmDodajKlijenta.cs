@@ -4,12 +4,15 @@ using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZMGDesktop.ValidacijaUnosa;
 
 namespace ZMGDesktop
 {
@@ -17,14 +20,23 @@ namespace ZMGDesktop
     {
         private KlijentServices servisKlijent = new KlijentServices();
         private Klijent selektiran;
+        private Validacija validacija = new Validacija();
         public FrmDodajKlijenta()
         {
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         public FrmDodajKlijenta(Klijent klijent)
         {
             InitializeComponent();
+            ucitajPomoc();
             this.selektiran = klijent;
         }
 
@@ -37,25 +49,40 @@ namespace ZMGDesktop
         {
             if (provjeriUnos() == true)
             {
-                if (selektiran == null)
+                try
                 {
-                    try
+                    if (selektiran == null)
                     {
                         dodajKlijenta();
                         Close();
                     }
-                    catch (UserException ex)
+                    else
                     {
-                        MessageBox.Show(ex.Poruka);
+                        azurirajKlijenta(selektiran);
+                        Close();
                     }
-                    
                 }
-                else
+                catch (UserException ex)
                 {
-                    azurirajKlijenta(selektiran);
-                    Close();
+                    MessageBox.Show(ex.Poruka);
                 }
-                
+                catch (TelefonException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+                catch (IBANException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+                catch (OIBException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+                catch (EmailException ex)
+                {
+                    MessageBox.Show(ex.Poruka);
+                }
+
             }
         }
 
@@ -76,6 +103,41 @@ namespace ZMGDesktop
             if(txtIBAN.Text == "" || txtNaziv.Text == "" || txtMjesto.Text == "" || txtAdresa.Text == "" || txtOIB.Text == "" || txtTelefon.Text == "" || txtEmail.Text == "")
             {
                 MessageBox.Show("Potrebno je ispuniti sva polja", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            if(validacija.provjeraSamoSlova(txtNaziv.Text) == false)
+            {
+                MessageBox.Show("Naziv može sadržavati samo slova");
+                return false;
+            }
+            if(validacija.provjeraOIB(txtOIB.Text) == false)
+            {
+                MessageBox.Show("Krivo unesen OIB");
+                return false;
+            }
+            if(validacija.provjeraUlica(txtAdresa.Text) == false)
+            {
+                MessageBox.Show("Krivo unesena adresa");
+                return false;
+            }
+            if(validacija.provjeraRacuna(txtIBAN.Text) == false)
+            {
+                MessageBox.Show("Krivo uneesn IBAN račun");
+                return false;
+            }
+            if(validacija.provjeraMjesta(txtMjesto.Text) == false)
+            {
+                MessageBox.Show("Krivo uneseno mjesto");
+                return false;
+            }
+            if(validacija.provjeraTelefon(txtTelefon.Text) == false)
+            {
+                MessageBox.Show("Krivi broj telefona");
+                return false;
+            }
+            if(validacija.provjeraMaila(txtEmail.Text) == false)
+            {
+                MessageBox.Show("Krivi email");
                 return false;
             }
             return true;
@@ -100,7 +162,12 @@ namespace ZMGDesktop
         {
             if(selektiran != null)
             {
+                labelDodajKlijenta.Text = selektiran.Naziv;
                 ucitajPodatke(selektiran);
+            }
+            else
+            {
+                labelDodajKlijenta.Text = "Dodaj klijenta";
             }
         }
 
@@ -113,6 +180,15 @@ namespace ZMGDesktop
             txtMjesto.Text = selektiran.Mjesto;
             txtTelefon.Text = selektiran.BrojTelefona;
             txtEmail.Text = selektiran.Email;
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Klijenti\\DodajKlijenta\\dodajKlijenta.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }

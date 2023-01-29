@@ -19,10 +19,12 @@ namespace EntitiesLayer.Entities
 
         [Required]
         [StringLength(50)]
-        public string Naziv { get; set; }
+        public string Naziv_Materijal { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? Datum { get; set; }
+
+        public int? Kolicina { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Materijal> Materijal { get; set; }
