@@ -35,7 +35,7 @@
             this.rbtnVasiRacuni = new System.Windows.Forms.RadioButton();
             this.rbtnUkupniIznos = new System.Windows.Forms.RadioButton();
             this.rbtnDatumIzdaje = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelKlijent = new System.Windows.Forms.Label();
             this.cmbKlijent = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtnSilazno = new System.Windows.Forms.RadioButton();
@@ -51,10 +51,11 @@
             // dgvRacuni
             // 
             this.dgvRacuni.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRacuni.Location = new System.Drawing.Point(126, 204);
+            this.dgvRacuni.Location = new System.Drawing.Point(168, 251);
+            this.dgvRacuni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvRacuni.Name = "dgvRacuni";
             this.dgvRacuni.RowHeadersWidth = 51;
-            this.dgvRacuni.Size = new System.Drawing.Size(1053, 277);
+            this.dgvRacuni.Size = new System.Drawing.Size(1404, 341);
             this.dgvRacuni.TabIndex = 0;
             // 
             // btnIzdajNoviRacun
@@ -62,9 +63,10 @@
             this.btnIzdajNoviRacun.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIzdajNoviRacun.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnIzdajNoviRacun.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnIzdajNoviRacun.Location = new System.Drawing.Point(126, 488);
+            this.btnIzdajNoviRacun.Location = new System.Drawing.Point(168, 601);
+            this.btnIzdajNoviRacun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIzdajNoviRacun.Name = "btnIzdajNoviRacun";
-            this.btnIzdajNoviRacun.Size = new System.Drawing.Size(147, 40);
+            this.btnIzdajNoviRacun.Size = new System.Drawing.Size(196, 49);
             this.btnIzdajNoviRacun.TabIndex = 1;
             this.btnIzdajNoviRacun.Text = "Izdaj novi račun";
             this.btnIzdajNoviRacun.UseVisualStyleBackColor = false;
@@ -75,9 +77,10 @@
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnNatrag.Location = new System.Drawing.Point(1032, 488);
+            this.btnNatrag.Location = new System.Drawing.Point(1376, 601);
+            this.btnNatrag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNatrag.Name = "btnNatrag";
-            this.btnNatrag.Size = new System.Drawing.Size(147, 40);
+            this.btnNatrag.Size = new System.Drawing.Size(196, 49);
             this.btnNatrag.TabIndex = 3;
             this.btnNatrag.Text = "Natrag";
             this.btnNatrag.UseVisualStyleBackColor = false;
@@ -88,11 +91,13 @@
             this.groupBox1.Controls.Add(this.rbtnVasiRacuni);
             this.groupBox1.Controls.Add(this.rbtnUkupniIznos);
             this.groupBox1.Controls.Add(this.rbtnDatumIzdaje);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelKlijent);
             this.groupBox1.Controls.Add(this.cmbKlijent);
-            this.groupBox1.Location = new System.Drawing.Point(126, 35);
+            this.groupBox1.Location = new System.Drawing.Point(168, 43);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 139);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(760, 171);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pretraživanje";
@@ -100,9 +105,10 @@
             // rbtnVasiRacuni
             // 
             this.rbtnVasiRacuni.AutoSize = true;
-            this.rbtnVasiRacuni.Location = new System.Drawing.Point(333, 78);
+            this.rbtnVasiRacuni.Location = new System.Drawing.Point(444, 96);
+            this.rbtnVasiRacuni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnVasiRacuni.Name = "rbtnVasiRacuni";
-            this.rbtnVasiRacuni.Size = new System.Drawing.Size(77, 17);
+            this.rbtnVasiRacuni.Size = new System.Drawing.Size(94, 20);
             this.rbtnVasiRacuni.TabIndex = 4;
             this.rbtnVasiRacuni.TabStop = true;
             this.rbtnVasiRacuni.Text = "Vaši računi";
@@ -112,9 +118,10 @@
             // rbtnUkupniIznos
             // 
             this.rbtnUkupniIznos.AutoSize = true;
-            this.rbtnUkupniIznos.Location = new System.Drawing.Point(333, 55);
+            this.rbtnUkupniIznos.Location = new System.Drawing.Point(444, 68);
+            this.rbtnUkupniIznos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnUkupniIznos.Name = "rbtnUkupniIznos";
-            this.rbtnUkupniIznos.Size = new System.Drawing.Size(122, 17);
+            this.rbtnUkupniIznos.Size = new System.Drawing.Size(148, 20);
             this.rbtnUkupniIznos.TabIndex = 3;
             this.rbtnUkupniIznos.TabStop = true;
             this.rbtnUkupniIznos.Text = "Ukupni iznos računa";
@@ -124,30 +131,33 @@
             // rbtnDatumIzdaje
             // 
             this.rbtnDatumIzdaje.AutoSize = true;
-            this.rbtnDatumIzdaje.Location = new System.Drawing.Point(333, 32);
+            this.rbtnDatumIzdaje.Location = new System.Drawing.Point(444, 39);
+            this.rbtnDatumIzdaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnDatumIzdaje.Name = "rbtnDatumIzdaje";
-            this.rbtnDatumIzdaje.Size = new System.Drawing.Size(122, 17);
+            this.rbtnDatumIzdaje.Size = new System.Drawing.Size(150, 20);
             this.rbtnDatumIzdaje.TabIndex = 2;
             this.rbtnDatumIzdaje.TabStop = true;
             this.rbtnDatumIzdaje.Text = "Datum izdaje računa";
             this.rbtnDatumIzdaje.UseVisualStyleBackColor = true;
             this.rbtnDatumIzdaje.CheckedChanged += new System.EventHandler(this.rbtnDatumIzdaje_CheckedChanged);
             // 
-            // label1
+            // labelKlijent
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Klijent:";
+            this.labelKlijent.AutoSize = true;
+            this.labelKlijent.Location = new System.Drawing.Point(23, 68);
+            this.labelKlijent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelKlijent.Name = "labelKlijent";
+            this.labelKlijent.Size = new System.Drawing.Size(45, 16);
+            this.labelKlijent.TabIndex = 1;
+            this.labelKlijent.Text = "Klijent:";
             // 
             // cmbKlijent
             // 
             this.cmbKlijent.FormattingEnabled = true;
-            this.cmbKlijent.Location = new System.Drawing.Point(61, 52);
+            this.cmbKlijent.Location = new System.Drawing.Point(81, 64);
+            this.cmbKlijent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbKlijent.Name = "cmbKlijent";
-            this.cmbKlijent.Size = new System.Drawing.Size(196, 21);
+            this.cmbKlijent.Size = new System.Drawing.Size(260, 24);
             this.cmbKlijent.TabIndex = 0;
             this.cmbKlijent.SelectedIndexChanged += new System.EventHandler(this.cmbKlijent_SelectedIndexChanged);
             // 
@@ -155,9 +165,11 @@
             // 
             this.groupBox2.Controls.Add(this.rbtnSilazno);
             this.groupBox2.Controls.Add(this.rbtnUzlazno);
-            this.groupBox2.Location = new System.Drawing.Point(702, 67);
+            this.groupBox2.Location = new System.Drawing.Point(936, 82);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 105);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(267, 129);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sortiranje";
@@ -165,9 +177,10 @@
             // rbtnSilazno
             // 
             this.rbtnSilazno.AutoSize = true;
-            this.rbtnSilazno.Location = new System.Drawing.Point(26, 51);
+            this.rbtnSilazno.Location = new System.Drawing.Point(35, 63);
+            this.rbtnSilazno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnSilazno.Name = "rbtnSilazno";
-            this.rbtnSilazno.Size = new System.Drawing.Size(59, 17);
+            this.rbtnSilazno.Size = new System.Drawing.Size(72, 20);
             this.rbtnSilazno.TabIndex = 1;
             this.rbtnSilazno.TabStop = true;
             this.rbtnSilazno.Text = "Silazno";
@@ -177,9 +190,10 @@
             // rbtnUzlazno
             // 
             this.rbtnUzlazno.AutoSize = true;
-            this.rbtnUzlazno.Location = new System.Drawing.Point(26, 28);
+            this.rbtnUzlazno.Location = new System.Drawing.Point(35, 34);
+            this.rbtnUzlazno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rbtnUzlazno.Name = "rbtnUzlazno";
-            this.rbtnUzlazno.Size = new System.Drawing.Size(63, 17);
+            this.rbtnUzlazno.Size = new System.Drawing.Size(76, 20);
             this.rbtnUzlazno.TabIndex = 0;
             this.rbtnUzlazno.TabStop = true;
             this.rbtnUzlazno.Text = "Uzlazno";
@@ -191,9 +205,10 @@
             this.btnOcisti.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnOcisti.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnOcisti.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnOcisti.Location = new System.Drawing.Point(908, 72);
+            this.btnOcisti.Location = new System.Drawing.Point(1211, 89);
+            this.btnOcisti.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOcisti.Name = "btnOcisti";
-            this.btnOcisti.Size = new System.Drawing.Size(105, 49);
+            this.btnOcisti.Size = new System.Drawing.Size(140, 60);
             this.btnOcisti.TabIndex = 6;
             this.btnOcisti.Text = "Očisti";
             this.btnOcisti.UseVisualStyleBackColor = false;
@@ -204,9 +219,10 @@
             this.btnDetaljniPregled.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDetaljniPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnDetaljniPregled.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDetaljniPregled.Location = new System.Drawing.Point(279, 488);
+            this.btnDetaljniPregled.Location = new System.Drawing.Point(372, 601);
+            this.btnDetaljniPregled.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDetaljniPregled.Name = "btnDetaljniPregled";
-            this.btnDetaljniPregled.Size = new System.Drawing.Size(147, 40);
+            this.btnDetaljniPregled.Size = new System.Drawing.Size(196, 49);
             this.btnDetaljniPregled.TabIndex = 7;
             this.btnDetaljniPregled.Text = "Detaljni pregled";
             this.btnDetaljniPregled.UseVisualStyleBackColor = false;
@@ -217,9 +233,10 @@
             this.btnPretrazivanje.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnPretrazivanje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPretrazivanje.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnPretrazivanje.Location = new System.Drawing.Point(908, 123);
+            this.btnPretrazivanje.Location = new System.Drawing.Point(1211, 151);
+            this.btnPretrazivanje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPretrazivanje.Name = "btnPretrazivanje";
-            this.btnPretrazivanje.Size = new System.Drawing.Size(248, 49);
+            this.btnPretrazivanje.Size = new System.Drawing.Size(331, 60);
             this.btnPretrazivanje.TabIndex = 8;
             this.btnPretrazivanje.Text = "Pretraživanje";
             this.btnPretrazivanje.UseVisualStyleBackColor = false;
@@ -227,9 +244,9 @@
             // 
             // FrmRacuni
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1322, 609);
+            this.ClientSize = new System.Drawing.Size(1763, 750);
             this.Controls.Add(this.btnPretrazivanje);
             this.Controls.Add(this.btnDetaljniPregled);
             this.Controls.Add(this.btnOcisti);
@@ -238,6 +255,7 @@
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.btnIzdajNoviRacun);
             this.Controls.Add(this.dgvRacuni);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmRacuni";
             this.Text = "Računi";
             this.Load += new System.EventHandler(this.FrmRacuni_Load);
@@ -259,7 +277,7 @@
         private System.Windows.Forms.RadioButton rbtnVasiRacuni;
         private System.Windows.Forms.RadioButton rbtnUkupniIznos;
         private System.Windows.Forms.RadioButton rbtnDatumIzdaje;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelKlijent;
         private System.Windows.Forms.ComboBox cmbKlijent;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbtnSilazno;
