@@ -45,7 +45,14 @@ namespace ZMGDesktop
         {
             FrmIzdajNoviRacun noviRacun = new FrmIzdajNoviRacun(poslodavac, radnik);
             noviRacun.FormClosing += new FormClosingEventHandler(ChildFormClosing);
-            noviRacun.ShowDialog();
+            try
+            {
+                noviRacun.ShowDialog();
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                MessageBox.Show("Index je izvan dosega.", "Iznenadna greška.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ChildFormClosing(object sender, FormClosingEventArgs e)

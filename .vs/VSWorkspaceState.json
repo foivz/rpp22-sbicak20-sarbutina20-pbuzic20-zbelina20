@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Software",
+    "\\Software\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\DataAccessLayer",
+    "\\Software\\ZMGDesktop\\DataAccessLayer\\Repositories",
+    "\\Software\\ZMGDesktop\\Email",
+    "\\Software\\ZMGDesktop\\EntitiesLayer",
+    "\\Software\\ZMGDesktop\\EntitiesLayer\\Entities",
+    "\\Software\\ZMGDesktop\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms"
   ],
-  "SelectedNode": "\\ZMGDesktop.sln",
+  "SelectedNode": "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms\\FrmZaprimiMaterijal.cs",
   "PreviewInSolutionExplorer": false
 }

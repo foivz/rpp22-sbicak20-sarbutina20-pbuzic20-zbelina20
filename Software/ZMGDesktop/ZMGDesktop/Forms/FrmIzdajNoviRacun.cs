@@ -107,8 +107,15 @@ namespace ZMGDesktop
         {
             FrmDodajStavke formaStavki = new FrmDodajStavke(selektiratiKlijent, racun);
             formaStavki.FormClosing += new FormClosingEventHandler(ChildFormClosing);
-            formaStavki.ShowDialog();
-            
+
+            try
+            {
+                formaStavki.ShowDialog();
+            }
+            catch (System.IndexOutOfRangeException)
+            {
+                MessageBox.Show("Index je izvan dosega.", "Iznenadna greška.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         double ukupno, pdv, ukupnoiznos;
