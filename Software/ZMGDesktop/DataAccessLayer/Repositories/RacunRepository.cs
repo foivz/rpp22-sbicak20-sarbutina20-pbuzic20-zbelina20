@@ -153,26 +153,7 @@ namespace DataAccessLayer.Repositories
 
         public override int Update(Racun entity, bool saveChanges = true)
         {
-            var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
-            var poslodavac = Context.Poslodavac.SingleOrDefault(p => p.Poslodavac_ID == entity.Poslodavac_ID);
-            var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
-
-            var racun = Entities.SingleOrDefault(r => r.Racun_ID == entity.Racun_ID);
-            racun.Klijent = klijent;
-            racun.Poslodavac = poslodavac;
-            racun.Radnik = radnik;
-            racun.Fakturirao = entity.Fakturirao;
-            racun.Opis = entity.Opis;
-            racun.NacinPlacanja = entity.NacinPlacanja;
-            racun.UkupnaCijena = entity.UkupnaCijena;
-            if (saveChanges)
-            {
-                return SaveChanges();
-            }
-            else
-            {
-                return 0;
-            }
+            throw new NotImplementedException();
         }
     }
 }

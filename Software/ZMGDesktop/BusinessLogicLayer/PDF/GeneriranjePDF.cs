@@ -259,7 +259,7 @@ namespace BusinessLogicLayer.PDF
             }
             catch (System.IO.IOException)
             {
-                MessageBox.Show("Proces za PDF je zauzet!", "Prioritet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Proces za PDF je zauzet! Pričekajte.", "Prioritet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             //Load PDF File for viewing

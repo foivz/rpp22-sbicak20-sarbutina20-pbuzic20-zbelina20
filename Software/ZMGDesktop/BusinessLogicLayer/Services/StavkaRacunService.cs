@@ -27,5 +27,19 @@ namespace BusinessLogicLayer.Services
                 return stavka;
             }
         }
+
+        public bool ProvjeriDuplikat(List<StavkaRacun> listaStavki, StavkaRacun stavka)
+        {
+            bool provjera = false;
+            foreach(var s in listaStavki)
+            {
+                if (s.Roba == stavka.Roba || s.Roba_ID == stavka.Roba_ID)
+                {
+                    provjera = true;
+                    break;
+                }
+            }
+            return provjera;
+        }
     }
 }

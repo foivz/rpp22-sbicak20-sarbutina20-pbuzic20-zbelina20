@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,6 +23,7 @@ namespace ZMGDesktop
         Racun racun;
         Roba selektiranaRoba;
         Usluga selektiranaUsluga;
+
         //servisi
         UslugaServices uslugaServis;
         RobaService robaServis;
@@ -44,16 +46,18 @@ namespace ZMGDesktop
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
+
         private void FrmDodajStavke_Load(object sender, EventArgs e)
         {
             cmbUsluge.DataSource= uslugaServis.DohvatiUsluge();
             cmbRoba.DataSource = robaServis.DohvatiRobuKlijenta(klijent.Klijent_ID);
             txtJedinicaMjere.Text = "kg";
-            dgvStavkeDodaj.DataSource = null;
+            Osvjezi();
         }
 
         private void Osvjezi()
         {
+            this.Invalidate();
             dgvStavkeDodaj.DataSource = null;
             dgvStavkeDodaj.DataSource = GlobalListaStavki.stavkaRacunaList;
             dgvStavkeDodaj.Columns[0].Visible = false;
@@ -82,7 +86,7 @@ namespace ZMGDesktop
                 MessageBox.Show("Neispravan unos znakova tamo gdje se traže brojevi!", "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-       
+
             StavkaRacun stavka = new StavkaRacun
             {
                 KolikoRobePoJedinici = kolikoRobe,
@@ -90,10 +94,14 @@ namespace ZMGDesktop
                 DatumIzrade = dtpDatumIzrade.Value,
                 JedinicaMjere = txtJedinicaMjere.Text,
                 JedinicnaCijena = jedinicnaCijena,
-                UkupnaCijenaStavke = (double)(jedinicnaCijena * kolikoRobe)
+                UkupnaCijenaStavke = Math.Round((double)(jedinicnaCijena * kolikoRobe), 2)
 
             };
             stavka = stavkaServis.InitStavka(stavka, selektiranaRoba, selektiranaUsluga);
+            if (stavkaServis.ProvjeriDuplikat(GlobalListaStavki.stavkaRacunaList, stavka)){
+                MessageBox.Show("Stavka je već dodana!", "Provjera stavki", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             GlobalListaStavki.stavkaRacunaList.Add(stavka);
             Osvjezi();
         }
