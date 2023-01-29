@@ -211,7 +211,7 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\RadniNalozi\\DodajRadniNalog\\dodajRadniNalog.html");
+                string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\RadniNalozi\\DodajRadniNalog\\dodajRadniNalog.html");
                 System.Diagnostics.Process.Start(path);
             }
         }

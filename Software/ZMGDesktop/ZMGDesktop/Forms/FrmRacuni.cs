@@ -144,7 +144,7 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Racuni\\Racuni\\racuni.html");
+                string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Racuni\\Racuni\\racuni.html");
                 System.Diagnostics.Process.Start(path);
             }
         }

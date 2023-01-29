@@ -387,6 +387,9 @@
     <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.css" />
     <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.html" />
     <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.png" />
+    <Content Include="Pomoc\Skladiste\Primka\primka.css" />
+    <Content Include="Pomoc\Skladiste\Primka\primka.html" />
+    <Content Include="Pomoc\Skladiste\Primka\primka.png" />
     <Content Include="Pomoc\Skladiste\Skladiste\skladiste.css" />
     <Content Include="Pomoc\Skladiste\Skladiste\skladiste.html" />
     <Content Include="Pomoc\Skladiste\Skladiste\skladiste.png" />

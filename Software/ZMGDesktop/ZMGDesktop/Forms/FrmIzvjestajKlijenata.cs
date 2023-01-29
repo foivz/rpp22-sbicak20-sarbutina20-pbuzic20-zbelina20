@@ -63,7 +63,7 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Izvjestaji\\IzvjestajKlijenata\\izvjestajKlijenata.html");
+                string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Izvjestaji\\IzvjestajKlijenata\\izvjestajKlijenata.html");
                 System.Diagnostics.Process.Start(path);
             }
         }

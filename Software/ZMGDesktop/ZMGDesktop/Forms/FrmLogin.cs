@@ -51,7 +51,7 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Prijava\\prijava.html");
+                string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Prijava\\prijava.html");
                 System.Diagnostics.Process.Start(path);
             }
         }

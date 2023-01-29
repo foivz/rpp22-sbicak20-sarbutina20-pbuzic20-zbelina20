@@ -138,7 +138,7 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Skladiste\\DodajMaterijal\\dodajMaterijal.html");
+                string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Skladiste\\DodajMaterijal\\dodajMaterijal.html");
                 System.Diagnostics.Process.Start(path);
             }
         }

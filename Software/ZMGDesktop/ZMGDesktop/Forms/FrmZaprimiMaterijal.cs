@@ -123,7 +123,7 @@ namespace ZMGDesktop
         {
             if (e.KeyCode == Keys.F1)
             {
-                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Skladiste\\ZaprimiMaterijal\\zaprimiMaterijal.html");
+                string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Skladiste\\ZaprimiMaterijal\\zaprimiMaterijal.html");
                 System.Diagnostics.Process.Start(path);
             }
         }

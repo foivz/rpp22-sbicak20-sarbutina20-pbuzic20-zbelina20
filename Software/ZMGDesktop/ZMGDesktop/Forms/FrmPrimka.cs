@@ -24,6 +24,13 @@ namespace ZMGDesktop
             mat = materijal;
             kol = kolicina;
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void btnZatvori_Click(object sender, EventArgs e)
@@ -61,6 +68,15 @@ namespace ZMGDesktop
                     string podaci = "Naziv materijala: " + txtNaziv.Text + Environment.NewLine + "Količina: " + txtKolicina.Text + " " + txtMjernaJedinica.Text + Environment.NewLine + "Datum: " + txtDatum.Text;
                     File.WriteAllText(saveDialog.FileName, podaci);
                 }
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Skladiste\\Primka\\primka.html");
+                System.Diagnostics.Process.Start(path);
             }
         }
     }
