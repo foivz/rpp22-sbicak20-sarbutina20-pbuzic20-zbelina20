@@ -405,6 +405,9 @@
     <Content Include="Pomoc\RadniNalozi\DetaljiRadnogNaloga\detaljiRadnogNaloga.css" />
     <Content Include="Pomoc\RadniNalozi\DetaljiRadnogNaloga\detaljiRadnogNaloga.html" />
     <Content Include="Pomoc\RadniNalozi\DetaljiRadnogNaloga\detaljiRadnogNaloga.png" />
+    <Content Include="Pomoc\RadniNalozi\DodajRadniNalog\dodajRadniNalog.css" />
+    <Content Include="Pomoc\RadniNalozi\DodajRadniNalog\dodajRadniNalog.html" />
+    <Content Include="Pomoc\RadniNalozi\DodajRadniNalog\noviRadniNalog.png" />
     <Content Include="Pomoc\RadniNalozi\RadniNalozi\radniNalozi.css" />
     <Content Include="Pomoc\RadniNalozi\RadniNalozi\radniNalozi.html" />
     <Content Include="Pomoc\RadniNalozi\RadniNalozi\radniNalozi.png" />
@@ -422,9 +425,7 @@
     <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.png" />
     <Content Include="Resources\klijenti.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pomoc\RadniNalozi\DodajRadniNalog\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
