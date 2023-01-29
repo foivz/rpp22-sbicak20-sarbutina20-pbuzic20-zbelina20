@@ -1,7 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Software",
+    "\\Software\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\BusinessLogicLayer",
+    "\\Software\\ZMGDesktop\\BusinessLogicLayer\\PDF",
+    "\\Software\\ZMGDesktop\\Email",
+    "\\Software\\ZMGDesktop\\EntitiesLayer",
+    "\\Software\\ZMGDesktop\\EntitiesLayer\\Entities",
+    "\\Software\\ZMGDesktop\\ZMGDesktop",
+    "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms"
   ],
-  "SelectedNode": "\\ZMGDesktop.sln",
+  "SelectedNode": "\\Software\\ZMGDesktop\\BusinessLogicLayer\\PDF\\GeneriranjePDF.cs",
   "PreviewInSolutionExplorer": false
 }

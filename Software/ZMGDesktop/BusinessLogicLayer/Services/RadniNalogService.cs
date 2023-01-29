@@ -28,20 +28,39 @@ namespace BusinessLogicLayer.Services
             }
         }
 
-        public void DodajRadniNalog(RadniNalog radniNalog)
+        public List<RadniNalog> DohvatiRadneNalogePoStatusima()
         {
             using (var repo = new RadniNalogRepository())
             {
-                repo.Add(radniNalog);
+                List<RadniNalog> radniNalozi = repo.DohvatiRadneNalogePoStatusima().ToList();
+                return radniNalozi;
             }
         }
 
-        public void ObrisiRadniNalog(RadniNalog radniNalog)
+        public bool DodajRadniNalog(RadniNalog radniNalog)
         {
+            bool uspjesno = false;
+
             using (var repo = new RadniNalogRepository())
             {
-                repo.Remove(radniNalog);
+                int red = repo.Add(radniNalog);
+                uspjesno = red > 0;
             }
+
+            return uspjesno;
+        }
+
+        public bool ObrisiRadniNalog(RadniNalog radniNalog)
+        {
+            bool uspjesno = false;
+
+            using (var repo = new RadniNalogRepository())
+            {
+                int red = repo.Remove(radniNalog);
+                uspjesno = red > 0;
+            }
+
+            return uspjesno;
         }
 
         public void AzurirajRadniNalog(RadniNalog radniNalog)

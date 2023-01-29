@@ -37,6 +37,7 @@ namespace DataAccessLayer.Repositories
         {
             var primka = Context.Primka.SingleOrDefault(k => k.Primka_ID == entity.Primka_ID);
             var usluga = Context.Usluga.SingleOrDefault(k => k.Usluga_ID == entity.Usluga_ID);
+            
             string provjereniOpis;
             if (entity.Opis == null)  provjereniOpis = " ";
             else provjereniOpis = entity.Opis.ToString();

@@ -4,7 +4,6 @@ namespace EntitiesLayer.Entities
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using DataAccessLayer;
 
     [Table("RadniNalog")]
     public partial class RadniNalog
@@ -12,8 +11,8 @@ namespace EntitiesLayer.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public RadniNalog()
         {
-            IzvjestajRadnihNaloga = new HashSet<IzvjestajRadnihNaloga>();
             Materijal = new HashSet<Materijal>();
+            Roba = new HashSet<Roba>();
         }
 
         [Key]
@@ -25,7 +24,7 @@ namespace EntitiesLayer.Entities
         [StringLength(100)]
         public string Opis { get; set; }
 
-        [StringLength(150)]
+        [StringLength(1000)]
         public string QR_kod { get; set; }
 
         public DateTime DatumStvaranja { get; set; }
@@ -42,10 +41,11 @@ namespace EntitiesLayer.Entities
 
         public virtual Radnik Radnik { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IzvjestajRadnihNaloga> IzvjestajRadnihNaloga { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Materijal> Materijal { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Roba> Roba { get; set; }
     }
 }

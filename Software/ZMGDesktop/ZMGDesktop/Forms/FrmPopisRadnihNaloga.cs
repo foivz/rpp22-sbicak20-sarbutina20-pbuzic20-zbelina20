@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,14 @@ namespace ZMGDesktop
         public FrmPopisRadnihNaloga(Radnik radnik)
         {
             InitializeComponent();
+            ucitajPomoc();
             Radnik = radnik;
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         RadniNalogService servis = new RadniNalogService();
@@ -35,11 +43,6 @@ namespace ZMGDesktop
             Close();
         }
 
-        private void dgvPopisRadnihNaloga_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void FrmPopisRadnihNaloga_Load(object sender, EventArgs e)
         {
             UcitajRadneNaloge();
@@ -49,13 +52,25 @@ namespace ZMGDesktop
         {
             var popisRadnihNaloga = servis.DohvatiRadneNaloge();
             dgvPopisRadnihNaloga.DataSource = popisRadnihNaloga;
+            dgvPopisRadnihNaloga.Columns[6].Visible = false;
+            dgvPopisRadnihNaloga.Columns[7].Visible = false;
             dgvPopisRadnihNaloga.Columns[10].Visible = false;
+            dgvPopisRadnihNaloga.Columns[11].Visible = false;
         }
 
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             var odabraniRadniNalog = DohvatiRadniNalog();
-            servis.ObrisiRadniNalog(odabraniRadniNalog);
+
+            if(odabraniRadniNalog == null)
+            {
+                MessageBox.Show("Morate odabrati radni nalog da biste ga izbrisali!");
+            }
+            else
+            {
+                servis.ObrisiRadniNalog(odabraniRadniNalog);
+            }
+            
             UcitajRadneNaloge();
         }
 
@@ -67,9 +82,26 @@ namespace ZMGDesktop
         private void btnDetalji_Click(object sender, EventArgs e)
         {
             var odabraniRadniNalog = DohvatiRadniNalog();
-            FrmDetaljiRadnogNaloga frmDetaljiRadnogNaloga = new FrmDetaljiRadnogNaloga(odabraniRadniNalog, Radnik);
-            frmDetaljiRadnogNaloga.ShowDialog();
+
+            if (odabraniRadniNalog == null)
+            {
+                MessageBox.Show("Morate odabrati radni nalog da biste vidjeli njegove detalje!");
+            }
+            else
+            {
+                FrmDetaljiRadnogNaloga frmDetaljiRadnogNaloga = new FrmDetaljiRadnogNaloga(odabraniRadniNalog, Radnik);
+                frmDetaljiRadnogNaloga.ShowDialog();
+            }
+            
             UcitajRadneNaloge();
+        }
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\RadniNalozi\\RadniNalozi\\radniNalozi.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }

@@ -20,12 +20,16 @@ namespace DataAccessLayer.Repositories
 
         public override IQueryable<Usluga> GetAll()
         {
-            var query = from p in Entities.Include("Materijal").Include("StavkaRacun")
+            var query = from p in Entities.Include("Materijal")
                         select p; 
             return query;
         }
 
-
-
+        public IQueryable<string> DohvatiUslugeDistinct()
+        {
+            var query = from p in Entities.Include("Materijal")
+                        select p.Naziv;
+            return query;
+        }
     }
 }

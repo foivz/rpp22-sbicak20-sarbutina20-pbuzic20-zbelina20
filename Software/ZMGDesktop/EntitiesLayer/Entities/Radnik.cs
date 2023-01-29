@@ -1,5 +1,3 @@
-
-
 namespace EntitiesLayer.Entities
 {
     using System;
@@ -13,8 +11,6 @@ namespace EntitiesLayer.Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Radnik()
         {
-            IzvjestajKlijenata = new HashSet<IzvjestajKlijenata>();
-            IzvjestajRadnihNaloga = new HashSet<IzvjestajRadnihNaloga>();
             Racun = new HashSet<Racun>();
             RadniNalog = new HashSet<RadniNalog>();
         }
@@ -47,12 +43,6 @@ namespace EntitiesLayer.Entities
         [Required]
         [StringLength(50)]
         public string Email { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IzvjestajKlijenata> IzvjestajKlijenata { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IzvjestajRadnihNaloga> IzvjestajRadnihNaloga { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Racun> Racun { get; set; }

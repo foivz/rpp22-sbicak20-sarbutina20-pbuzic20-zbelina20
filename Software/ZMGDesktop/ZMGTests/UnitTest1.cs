@@ -1,8 +1,10 @@
-﻿using BusinessLogicLayer.Services;
+﻿using BusinessLogicLayer.LogikaZaRacune;
+using BusinessLogicLayer.Services;
 using DataAccessLayer.Iznimke;
 using EntitiesLayer.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ZMGTests
@@ -11,13 +13,9 @@ namespace ZMGTests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestiranjeDodavanjeKorisnikauBazu()
+        public void ADodajKlijenta_DodavanjeKlijenta_KlijentDodanUBazu()
         {
             /*Kod ovog testa nakon što se izvrši test, doda se novi korisnik u bazu
-            Ako ćete pokrenuti opet javit će Vam greška da test nije uspješan
-            jer korisnik već postoji u bazi. Pa kako bi test bio uspješan potrebno je 
-            ili izbrisati korisnika iz baze pa pokrenuti test ili tu kod objekta klijent napisati
-            drugačije podatke.
             */
             KlijentServices servis = new KlijentServices();
             var klijent = new Klijent
@@ -36,7 +34,12 @@ namespace ZMGTests
         }
 
         [TestMethod]
-        public void DohvacanjeRacunaiRadneNalogeZaKorisnika()
+
+        /*
+         U ovom testu dohvaća se lista računa i radnih naloga za pojedinog klijenta. U ovom slučaju
+        za klijenta Bent. Test provjerava je li dobro dohvaća radne naloge i račune za klijenta.
+         * */
+        public void UcitajRadneNalogeUcitajRacune_DohvacanjeRacuneIRacnihNalogaZaKlijenta_DohvaceniRadniNaloziIRacuni()
         {
             RadniNalogService servisNalozi = new RadniNalogService();
             RacunService servisRacuni = new RacunService();
@@ -44,25 +47,30 @@ namespace ZMGTests
 
             var klijenti = servisKlijent.DohvatiKlijente();
             Klijent postojeci = klijenti.FirstOrDefault(k => k.Naziv == "Bent");
-            
+
             var radniNalozi = servisNalozi.DohvatiRadneNalogeZaKlijenta(postojeci);
             var racuni = servisRacuni.DohvatiRacuneZaKlijenta(postojeci);
-            Assert.IsTrue(radniNalozi.Count == 1 && racuni.Count == 6);
+            Assert.IsTrue(radniNalozi.Count == 2 && racuni.Count == 6);
         }
 
         [TestMethod]
-        public void BrisanjeKlijentaIzBaze()
+
+        /*
+         Kod ovog testa u objekt k.Naziv se može staviti naziv klijenta koji postoji u bazi. Kada
+         
+         */
+        public void IzbrisiKlijenta_BrisanjeKlijentaIzBaze_IzbrisanKlijentIzBaze()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var klijenti = servisKlijenta.DohvatiKlijente();
-            var brisi = klijenti.FirstOrDefault(k => k.Naziv == "MIAZ");
+            var brisi = klijenti.FirstOrDefault(k => k.Naziv == "Preis");
             bool uspjesno = servisKlijenta.Remove(brisi);
             Assert.IsTrue(uspjesno == true);
         }
 
         [TestMethod]
         [ExpectedException(typeof(BrisanjeKlijentaException))]
-        public void BrisanjeKlijentaKojiImaRadneNalogeiliRacune()
+        public void IzbrisiKlijenta_BrisanjeKlijentaKojiImaRadneNaloge_BacanjeIznimke()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var klijenti = servisKlijenta.DohvatiKlijente();
@@ -72,13 +80,10 @@ namespace ZMGTests
 
         [TestMethod]
         [ExpectedException(typeof(OIBException))]
-        public void DodavanjaKlijentaSVecPostojecimOIBom()
+        public void PostojeciOIB_DodavanjeKlijentaSPostojecimOIBom()
         {
             KlijentServices servisKlijenta = new KlijentServices();
-            /*
-             Kad se test izvrši, klijent se doda u bazu pa je potrebno obrisati tog klijenta prije nego
-            se test ponovno pokrene jer inače će bacat drugu grešku.
-              */
+
             var klijent = new Klijent
             {
                 Naziv = "Preis",
@@ -93,11 +98,155 @@ namespace ZMGTests
         }
 
         [TestMethod]
-        public void DohvaćanjeDesetNajboljih()
+        public void DohvatiDesetNajboljih_DohvacanjeDesetNajvecihKlijenata_DohvacenoDesetNajvecihKlijenata()
         {
             KlijentServices servisKlijenta = new KlijentServices();
             var desetNajboljih = servisKlijenta.DohvatiDesetNajboljih();
             Assert.IsTrue(desetNajboljih.Count == 10);
         }
+
+        //TESTOVI ZA RADNE NALOGE
+
+        [TestMethod]
+        public void DodajRadniNalog_DodanRadniNalog_RadniNalogSeDodajeUBazu()
+        {
+            RadniNalogService servis = new RadniNalogService();
+            KlijentServices servisKlijenta = new KlijentServices();
+            RadnikServices servisRadnika = new RadnikServices();
+            List<Materijal> materijal = new List<Materijal>();
+            List<Roba> roba = new List<Roba>();
+
+            var klijenti = servisKlijenta.DohvatiKlijente();
+            var klijent = klijenti.FirstOrDefault(k => k.Klijent_ID == 3);
+            var radnici = servisRadnika.DohvatiSveRadnike();
+            var radnik = radnici.FirstOrDefault(r => r.Radnik_ID == 2);
+
+            materijal.Add(new Materijal { Materijal_ID = 23, Naziv = "Željezo", CijenaMaterijala = 146, JedinicaMjere = "kg", Kolicina = 2, Opis = "", OpasnoPoZivot = false, QR_kod = "0Q69O3V24CQ6IE1PWXO3" });
+            roba.Add(new Roba { Roba_ID = 17, Naziv = "ROBA1", Kolicina = "3" });
+
+            var radniNalog = new RadniNalog
+            {
+                Kolicina = 15,
+                Opis = "Treba poniklati robu klijenta",
+                QR_kod = "NEK1QR123KOD12345678",
+                DatumStvaranja = DateTime.Now,
+                Status = "Napravljen",
+                Radnik_ID = 2,
+                Klijent_ID = 3,
+                Klijent = klijent,
+                Radnik = radnik,
+                Materijal = materijal,
+                Roba = roba
+            };
+
+            bool uspjesno = servis.DodajRadniNalog(radniNalog);
+            Assert.IsTrue(uspjesno == true);
+        }
+
+        [TestMethod]
+        public void ObrisiRadniNalog_ObrisanRadniNalog_RadniNalogJeIzbrisanIzBaze()
+        {
+            RadniNalogService servis = new RadniNalogService();
+
+            var radniNalozi = servis.DohvatiRadneNaloge();
+            var radniNalog = radniNalozi.FirstOrDefault(r => r.QR_kod == "NEK1QR123KOD12345678");
+
+            bool uspjesno = servis.ObrisiRadniNalog(radniNalog);
+            Assert.IsTrue(uspjesno == true);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MaterijalRobaException))]
+        public void DodajRadniNalog_DodavanjeRadnogNalogaBezRobe_BacanjeIznimke()
+        {
+            RadniNalogService servis = new RadniNalogService();
+            KlijentServices servisKlijenta = new KlijentServices();
+            RadnikServices servisRadnika = new RadnikServices();
+            List<Materijal> materijal = new List<Materijal>();
+            List<Roba> roba = new List<Roba>();
+
+            var klijenti = servisKlijenta.DohvatiKlijente();
+            var klijent = klijenti.FirstOrDefault(k => k.Klijent_ID == 3);
+            var radnici = servisRadnika.DohvatiSveRadnike();
+            var radnik = radnici.FirstOrDefault(r => r.Radnik_ID == 2);
+
+            materijal.Add(new Materijal { Materijal_ID = 23, Naziv = "Željezo", CijenaMaterijala = 146, JedinicaMjere = "kg", Kolicina = 2, Opis = "", OpasnoPoZivot = false, QR_kod = "0Q69O3V24CQ6IE1PWXO3" });
+
+            var radniNalog = new RadniNalog
+            {
+                Kolicina = 15,
+                Opis = "Treba poniklati robu klijenta",
+                QR_kod = "NEK1QR123KOD12345678",
+                DatumStvaranja = DateTime.Now,
+                Status = "Napravljen",
+                Radnik_ID = 2,
+                Klijent_ID = 3,
+                Klijent = klijent,
+                Radnik = radnik,
+                Materijal = materijal,
+                Roba = roba
+            };
+
+            servis.DodajRadniNalog(radniNalog);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(MaterijalRobaException))]
+        public void DodajRadniNalog_DodavanjeRadnogNalogaBezMaterijala_BacanjeIznimke()
+        {
+            RadniNalogService servis = new RadniNalogService();
+            KlijentServices servisKlijenta = new KlijentServices();
+            RadnikServices servisRadnika = new RadnikServices();
+            List<Materijal> materijal = new List<Materijal>();
+            List<Roba> roba = new List<Roba>();
+
+            var klijenti = servisKlijenta.DohvatiKlijente();
+            var klijent = klijenti.FirstOrDefault(k => k.Klijent_ID == 3);
+            var radnici = servisRadnika.DohvatiSveRadnike();
+            var radnik = radnici.FirstOrDefault(r => r.Radnik_ID == 2);
+
+            roba.Add(new Roba { Roba_ID = 17, Naziv = "ROBA1", Kolicina = "3" });
+
+            var radniNalog = new RadniNalog
+            {
+                Kolicina = 15,
+                Opis = "Treba poniklati robu klijenta",
+                QR_kod = "NEK1QR123KOD12345678",
+                DatumStvaranja = DateTime.Now,
+                Status = "Napravljen",
+                Radnik_ID = 2,
+                Klijent_ID = 3,
+                Klijent = klijent,
+                Radnik = radnik,
+                Materijal = materijal,
+                Roba = roba
+            };
+
+            servis.DodajRadniNalog(radniNalog);
+        }
+
+
+        [TestMethod]
+        public void RacunanjeUkupnog_IzdavanjeNovogRacuna_IspravnoRacunanjeIznosaStavki()
+        {
+            RacunanjeAPI racunanje = new RacunanjeAPI();
+            List<StavkaRacun> lista = new List<StavkaRacun>();
+            StavkaRacun stavka = new StavkaRacun()
+            {
+                UkupnaCijenaStavke = 300
+            };
+            lista.Add(stavka);
+            StavkaRacun stavka2 = new StavkaRacun()
+            {
+                UkupnaCijenaStavke = 300
+            };
+            lista.Add(stavka2);
+
+            double ukupno = racunanje.RacunanjeUkupnog(lista);
+
+            Assert.IsTrue(ukupno == 600);
+        }
+
+
     }
 }
