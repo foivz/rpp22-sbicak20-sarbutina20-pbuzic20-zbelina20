@@ -104,6 +104,8 @@ namespace ZMGDesktop
         {
             txtDatumIzdavanja.Text = racun.DatumIzdavanja.Value.ToShortDateString();
             txtVrijeme.Text = racun.DatumIzdavanja.Value.ToShortTimeString();
+
+            txtOpis.Text = racun.Opis;
         }
         private void InitPlacanje()
         {

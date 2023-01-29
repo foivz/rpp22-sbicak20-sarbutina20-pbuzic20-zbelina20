@@ -54,6 +54,7 @@
             this.dgvRacuni.Location = new System.Drawing.Point(168, 251);
             this.dgvRacuni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvRacuni.Name = "dgvRacuni";
+            this.dgvRacuni.ReadOnly = true;
             this.dgvRacuni.RowHeadersWidth = 51;
             this.dgvRacuni.Size = new System.Drawing.Size(1404, 341);
             this.dgvRacuni.TabIndex = 0;

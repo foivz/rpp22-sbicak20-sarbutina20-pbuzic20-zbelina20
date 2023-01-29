@@ -88,7 +88,9 @@
             this.txtFakturirao = new System.Windows.Forms.TextBox();
             this.labelFakturirao = new System.Windows.Forms.Label();
             this.btnPDFpregled = new System.Windows.Forms.Button();
-            this.btnNatrag = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtOpis = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavke)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -728,12 +730,32 @@
             this.btnNatrag.UseVisualStyleBackColor = false;
             this.btnNatrag.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtOpis
+            // 
+            this.txtOpis.Location = new System.Drawing.Point(51, 465);
+            this.txtOpis.Multiline = true;
+            this.txtOpis.Name = "txtOpis";
+            this.txtOpis.ReadOnly = true;
+            this.txtOpis.Size = new System.Drawing.Size(179, 68);
+            this.txtOpis.TabIndex = 57;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(49, 449);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(31, 13);
+            this.label28.TabIndex = 56;
+            this.label28.Text = "Opis:";
+            // 
             // FrmDetaljniPregledRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1773, 956);
-            this.Controls.Add(this.btnNatrag);
+            this.ClientSize = new System.Drawing.Size(1330, 777);
+            this.Controls.Add(this.txtOpis);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPDFpregled);
             this.Controls.Add(this.txtFakturirao);
             this.Controls.Add(this.labelFakturirao);
@@ -831,6 +853,8 @@
         private System.Windows.Forms.Label labelNaziv;
         private System.Windows.Forms.TextBox txtP_Naziv;
         private System.Windows.Forms.Button btnPDFpregled;
-        private System.Windows.Forms.Button btnNatrag;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtOpis;
+        private System.Windows.Forms.Label label28;
     }
 }

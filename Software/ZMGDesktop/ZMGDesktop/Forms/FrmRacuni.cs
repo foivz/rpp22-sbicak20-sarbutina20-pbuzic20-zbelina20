@@ -41,11 +41,6 @@ namespace ZMGDesktop
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIzdajNoviRacun_Click(object sender, EventArgs e)
         {
             FrmIzdajNoviRacun noviRacun = new FrmIzdajNoviRacun(poslodavac, radnik);
@@ -55,14 +50,14 @@ namespace ZMGDesktop
 
         private void ChildFormClosing(object sender, FormClosingEventArgs e)
         {
-            Refresh();
+            Osvjezi();
         }
 
         private void FrmRacuni_Load(object sender, EventArgs e)
         {
             poslodavac = poslodavacServis.GetPoslodavac();
             cmbKlijent.DataSource = klijentServis.DohvatiKlijente();
-            Refresh();
+            Osvjezi();
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
@@ -74,7 +69,7 @@ namespace ZMGDesktop
             selektirani = cmbKlijent.SelectedItem as Klijent;
         }
 
-        private void Refresh()
+        private void Osvjezi()
         {
             dgvRacuni.DataSource = racunServis.DohvatiSveRacune();
             dgvRacuni.Columns[13].Visible = false;
@@ -93,7 +88,7 @@ namespace ZMGDesktop
             rbtnSilazno.Checked = false;
             rbtnUzlazno.Checked = false;
 
-            Refresh();
+            Osvjezi();
         }
 
         int pretrazivanje = 0;
