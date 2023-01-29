@@ -93,7 +93,7 @@ namespace ZMGDesktop
 
         private void btnProba_Click(object sender, EventArgs e)
         {
-            string proba = "QEDA24L588AHRU2MFEK7";
+            string proba = "BQ1EVS6OR739W97PJF2E";
             SkenirajMaterijal(proba);
         }
 

@@ -34,8 +34,15 @@ namespace ZMGDesktop
 
         private void btnIzvjestajKlijenata_Click(object sender, EventArgs e)
         {
-            FrmIzvjestajKlijenata form = new FrmIzvjestajKlijenata(desetNajboljih);
-            form.ShowDialog();
+            if (desetNajboljih.Count >= 10)
+            {
+                FrmIzvjestajKlijenata form = new FrmIzvjestajKlijenata(desetNajboljih);
+                form.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nema dovoljno podataka za kreiranje izvještaja o deset najvećih klijenata");
+            }
         }
 
         private void FrmPopisIzvjestaja_Load(object sender, EventArgs e)
@@ -68,16 +75,16 @@ namespace ZMGDesktop
             }
             catch (Exception)
             {
-                MessageBox.Show("Nema dovoljno podataka");
+                MessageBox.Show("Nema dovoljno podataka za prijaz deset najvećih klijenata");
             }
           
         }
 
         private void provjeri(List<Klijent> desetNajboljih)
         {
-            if (desetNajboljih.Count() == 0)
+            if (desetNajboljih.Count() < 10)
             {
-                throw new Exception("Nema dovoljno podataka");
+                throw new Exception("Nema dovoljno podataka za prikaz deset najvećih klijenata");
             }
         }
 

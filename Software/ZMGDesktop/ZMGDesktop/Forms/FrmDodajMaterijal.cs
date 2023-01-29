@@ -18,6 +18,8 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ZMGDesktop.ValidacijaUnosa;
 using static EntitiesLayer.Entities.Enumeracije;
+using System.Windows.Markup;
+using System.Drawing;
 
 namespace ZMGDesktop
 {
@@ -65,6 +67,17 @@ namespace ZMGDesktop
 
                 string qr_kod = GenerirajRandomString();
 
+                /*using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
+                using (QRCodeData qrCodeData = qrGenerator.CreateQrCode(qr_kod, QRCodeGenerator.ECCLevel.Q))
+                using (QRCode qrCode = new QRCode(qrCodeData))
+                {
+                    Bitmap qrCodeImage = qrCode.GetGraphic(4);
+                    picQR.Image = qrCodeImage;
+                }*/
+
+
+
+
                 Materijal noviMaterijal = new Materijal
                 {
                     Naziv = naziv,
@@ -80,7 +93,7 @@ namespace ZMGDesktop
             }
         }
 
-        private string GenerirajQR(string naziv, int kolicina)
+        /*private string GenerirajQR(string naziv, int kolicina)
         {
             string qrCodeData = $"{naziv}";
 
@@ -91,7 +104,7 @@ namespace ZMGDesktop
 
             return qrCodeAsBase64;
 
-        }
+        }*/
 
         string GenerirajRandomString()
         {
@@ -99,7 +112,6 @@ namespace ZMGDesktop
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             return new string(Enumerable.Repeat(chars, 20)
               .Select(s => s[random.Next(s.Length)]).ToArray());
-
         }
 
 
