@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace ZMGDesktop
         public FrmPocetna()
         {
             InitializeComponent();
+            ucitajPomoc();
         }
 
         public FrmPocetna(Radnik provjereniRadnik)
@@ -24,6 +26,13 @@ namespace ZMGDesktop
             radnik = provjereniRadnik;
             this.FormClosing += new FormClosingEventHandler(MyForm_FormClosing);
             InitializeComponent();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void btnKlijenti_Click(object sender, EventArgs e)
@@ -58,12 +67,16 @@ namespace ZMGDesktop
         private void btnRacuni_Click(object sender, EventArgs e)
         {
             FrmRacuni racuni = new FrmRacuni(radnik);
-            racuni.ShowDialog();
+            racuni.Show();
         }
 
-        private void FrmPocetna_Load(object sender, EventArgs e)
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Klijenti\\Pocetna\\pocetna.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }

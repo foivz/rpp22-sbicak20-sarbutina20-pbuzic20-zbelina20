@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace ZMGDesktop
         public FrmDetaljniPregledRacun(Racun _racun)
         {
             InitializeComponent();
+            ucitajPomoc();
             racun = _racun;
             poslodavac = racun.Poslodavac;
             klijent= racun.Klijent;
@@ -35,19 +37,10 @@ namespace ZMGDesktop
             stavkaServis = new StavkaRacunService();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void ucitajPomoc()
         {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void FrmDetaljniPregledRacun_Load(object sender, EventArgs e)
@@ -59,7 +52,7 @@ namespace ZMGDesktop
             InitUkupno();
             InitPlacanje();
             InitDatum();
-            Refresh();
+            Osvjezi();
         }
 
         private void InitPoslodavac()
@@ -98,7 +91,7 @@ namespace ZMGDesktop
             stavkeList = stavkaServis.DohvatiStavkeRacuna(racun.Racun_ID);
         }
 
-        private void Refresh()
+        private void Osvjezi()
         {
             dgvStavke.DataSource = stavkeList;
             dgvStavke.Columns[0].Visible = false;
@@ -111,6 +104,8 @@ namespace ZMGDesktop
         {
             txtDatumIzdavanja.Text = racun.DatumIzdavanja.Value.ToShortDateString();
             txtVrijeme.Text = racun.DatumIzdavanja.Value.ToShortTimeString();
+
+            txtOpis.Text = racun.Opis;
         }
         private void InitPlacanje()
         {
@@ -118,15 +113,24 @@ namespace ZMGDesktop
             txtRokPlacanja.Text = racun.RokPlacanja;
             txtFakturirao.Text = racun.Fakturirao;
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btnPDFpregled_Click(object sender, EventArgs e)
         {
             GeneriranjePDF.SacuvajPDF(racun, stavkeList);
+            GeneriranjePDF.OtvoriPDF();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Racuni\\DetaljiRacuna\\detaljiRacuna.html");
+                System.Diagnostics.Process.Start(path);
+            }
+        }
+
+        private void btnNatrag_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

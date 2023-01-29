@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using Email;
 using EntitiesLayer.Entities;
 using QRCoder;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,8 +24,15 @@ namespace ZMGDesktop
         public FrmDetaljiRadnogNaloga(RadniNalog odabraniRadniNalog, Radnik radnik)
         {
             InitializeComponent();
+            ucitajPomoc();
             radniNalog = odabraniRadniNalog;
             Radnik = radnik;
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         List<Materijal> materijali = new List<Materijal>();
@@ -33,6 +42,7 @@ namespace ZMGDesktop
         RobaService robaServis = new RobaService();
 
         string QRKod = "";
+        string status = "";
 
         private void btnOdustani_Click(object sender, EventArgs e)
         {
@@ -42,22 +52,41 @@ namespace ZMGDesktop
         private void btnSpremi_Click(object sender, EventArgs e)
         {
             var klijent = cmbKlijent.SelectedItem as Klijent;
-            RadniNalog AzuriraniRadniNalog = new RadniNalog()
+
+            if (txtKolicina.Text == "" || status == "")
             {
-                RadniNalog_ID = radniNalog.RadniNalog_ID,
-                Kolicina = int.Parse(txtKolicina.Text),
-                Opis = txtOpis.Text,
-                DatumStvaranja = dtpDatumStvaranja.Value,
-                Status = cmbStatus.SelectedItem as string,
-                QR_kod = QRKod,
-                Radnik_ID = Radnik.Radnik_ID,
-                Klijent_ID = klijent.Klijent_ID,
-                Radnik = Radnik,
-                Klijent = klijent
-            };
-            //poslati email
-            servis.AzurirajRadniNalog(AzuriraniRadniNalog);
-            Close();
+                MessageBox.Show("Morate upisati količinu i status!");
+            }
+            else
+            {
+                RadniNalog AzuriraniRadniNalog = new RadniNalog()
+                {
+                    RadniNalog_ID = radniNalog.RadniNalog_ID,
+                    Kolicina = int.Parse(txtKolicina.Text),
+                    Opis = txtOpis.Text,
+                    DatumStvaranja = dtpDatumStvaranja.Value,
+                    Status = cmbStatus.SelectedItem as string,
+                    QR_kod = QRKod,
+                    Radnik_ID = Radnik.Radnik_ID,
+                    Klijent_ID = klijent.Klijent_ID,
+                    Radnik = Radnik,
+                    Klijent = klijent
+                };
+
+                servis.AzurirajRadniNalog(AzuriraniRadniNalog);
+
+                string emailBody = "Poštovani,<br/>radni nalog Vaše robe je u statusu: " + AzuriraniRadniNalog.Status + 
+                    "<br/><br/>Informacije o radnom nalogu:<br/>Količina(kg): " + AzuriraniRadniNalog.Kolicina + "<br/>Opis: " + AzuriraniRadniNalog.Opis +
+                    "<br/>Datum podnošenja: " + AzuriraniRadniNalog.DatumStvaranja + "<br/>Podnositelj zahtjeva: " + AzuriraniRadniNalog.Radnik;
+
+                if (status != AzuriraniRadniNalog.Status)
+                {
+                    EmailAPI.NapraviEmail("zastitametalnegalanterije@gmail.com", "zvonimir.belina1@gmail.com", "Obavijest o promjeni statusa", emailBody);
+                    EmailAPI.Posalji();
+                }
+
+                Close();
+            }
         }
 
         private void btnIzmijeni_Click(object sender, EventArgs e)
@@ -77,8 +106,9 @@ namespace ZMGDesktop
 
         private void FrmDetaljiRadnogNaloga_Load(object sender, EventArgs e)
         {
-            label1.Text += radniNalog.RadniNalog_ID.ToString();
+            labelRadniNalog.Text += radniNalog.RadniNalog_ID.ToString();
             txtRadnik.Text = Radnik.Ime + " " + Radnik.Prezime;
+            status = radniNalog.Status.ToString();
             
             txtKolicina.Enabled = false;
             txtOpis.Enabled = false;
@@ -133,22 +163,12 @@ namespace ZMGDesktop
             cmbKlijent.DataSource = klijenti;
         }
 
-        private void btnDodajRobuNaRadniNalog_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void UcitajRobuRadnogNaloga()
         {
             dgvRobaRadnogNaloga.Columns[3].Visible = false;
             dgvRobaRadnogNaloga.Columns[4].Visible = false;
             dgvRobaRadnogNaloga.Columns[5].Visible = false;
             dgvRobaRadnogNaloga.Columns[6].Visible = false;
-        }
-
-        private void btnObrisiRobuSRadnogNaloga_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnDodajNovuRobu_Click(object sender, EventArgs e)
@@ -189,11 +209,6 @@ namespace ZMGDesktop
             dgvKlijentovaRoba.Columns[6].Visible = false;
         }
 
-        private void btnDodajMaterijal_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void DodajMaterijalUTablicu()
         {
             dgvMaterijali.Columns[8].Visible = false;
@@ -225,6 +240,15 @@ namespace ZMGDesktop
         {
             odabraniKlijent = cmbKlijent.SelectedItem as Klijent;
             UcitajRobu();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\RadniNalozi\\DetaljiRadnogNaloga\\detaljiRadnogNaloga.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }

@@ -95,10 +95,10 @@ namespace BusinessLogicLayer.PDF
             gfx.DrawString($"Žiro račun: {racun.Poslodavac.IBAN}", font, XBrushes.Black, x, y);
             //telefone treba promijeniti
             y = 180;
-            x += 190;
+            x += 210;
             gfx.DrawString("Prima", font, XBrushes.Black, x, y);
             y += 3;
-            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x+160, y));
+            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x+140, y));
             y += 20;
             //klijent
             gfx.DrawString($"Naziv: {racun.Klijent.Naziv}", font, XBrushes.Black, x, y);
@@ -109,7 +109,7 @@ namespace BusinessLogicLayer.PDF
             y += ls;
             gfx.DrawString($"OIB: {racun.Klijent.OIB}", font, XBrushes.Black, x, y);
             y += ls;
-            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x + 160, y));
+            gfx.DrawLine(pen, new XPoint(x, y), new XPoint(x + 140, y));
             y += 40;
 
             // cetvrti dio -- racun i stavke
@@ -245,7 +245,7 @@ namespace BusinessLogicLayer.PDF
             y += ls;
             gfx.DrawString($"Valuta plaćanja je u EURIMA.", font, XBrushes.Black, x, y);
             y += ls;
-            gfx.DrawString($"Ovaj dokument je izdan u elektronsom obliku, te je valjan bez potpisa i pečata.", font, XBrushes.Black, x, y);
+            gfx.DrawString($"Ovaj dokument je izdan u elektronskom obliku, te je valjan bez potpisa i pečata.", font, XBrushes.Black, x, y);
             y += ls + ls + ls;
             x = 354;
             gfx.DrawString($"Fakturirao: {racun.Radnik.ToString()}", font, XBrushes.Black, x, y);
@@ -253,7 +253,14 @@ namespace BusinessLogicLayer.PDF
 
             nazivDatoteke = $"ZMG - RACUN BROJ {racun.Racun_ID}.pdf";
 
-            document.Save(nazivDatoteke);
+            try
+            {
+                document.Save(nazivDatoteke);
+            }
+            catch (System.IO.IOException)
+            {
+                MessageBox.Show("Proces za PDF je zauzet! Pričekajte.", "Prioritet", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
 
             //Load PDF File for viewing
         }

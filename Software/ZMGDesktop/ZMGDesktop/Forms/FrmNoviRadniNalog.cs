@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Iznimke;
 using EntitiesLayer.Entities;
 using QRCoder;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +24,14 @@ namespace ZMGDesktop
         public FrmNoviRadniNalog(Radnik radnik)
         {
             InitializeComponent();
+            ucitajPomoc();
             Radnik = radnik;
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         RadniNalogService servis = new RadniNalogService();
@@ -42,33 +51,40 @@ namespace ZMGDesktop
         {
             var status = cmbStatus.SelectedItem as string;
 
-            if (txtKolicina.Text == "" || status == "")
+            try
             {
-                MessageBox.Show("Morate upisati količinu i status!");
-            }
-            else
-            {
-                var kolicina = int.Parse(txtKolicina.Text);
-                var opis = txtOpis.Text;
-                var datumStvaranja = dtpDatumStvaranja.Value;
-
-                RadniNalog radniNalog = new RadniNalog()
+                if (txtKolicina.Text == "" || status == "")
                 {
-                    Kolicina = kolicina,
-                    Opis = opis,
-                    QR_kod = QRKod,
-                    DatumStvaranja = datumStvaranja,
-                    Status = status,
-                    Radnik_ID = Radnik.Radnik_ID,
-                    Klijent_ID = odabraniKlijent.Klijent_ID,
-                    Klijent = odabraniKlijent,
-                    Radnik = Radnik,
-                    Materijal = materijali,
-                    Roba = robaZaRadniNalog
-                };
+                    MessageBox.Show("Morate upisati količinu i status!");
+                }
+                else
+                {
+                    var kolicina = int.Parse(txtKolicina.Text);
+                    var opis = txtOpis.Text;
+                    var datumStvaranja = dtpDatumStvaranja.Value;
 
-                servis.DodajRadniNalog(radniNalog);
-                Close();
+                    RadniNalog radniNalog = new RadniNalog()
+                    {
+                        Kolicina = kolicina,
+                        Opis = opis,
+                        QR_kod = QRKod,
+                        DatumStvaranja = datumStvaranja,
+                        Status = status,
+                        Radnik_ID = Radnik.Radnik_ID,
+                        Klijent_ID = odabraniKlijent.Klijent_ID,
+                        Klijent = odabraniKlijent,
+                        Radnik = Radnik,
+                        Materijal = materijali,
+                        Roba = robaZaRadniNalog
+                    };
+
+                    servis.DodajRadniNalog(radniNalog);
+                    Close();
+                }
+            }
+            catch (MaterijalRobaException exc)
+            {
+                MessageBox.Show(exc.Poruka);
             }
         }
 
@@ -140,11 +156,6 @@ namespace ZMGDesktop
             pbQRKod.Image = qrCodeImage;
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void cmbKlijent_SelectedIndexChanged(object sender, EventArgs e)
         {
             odabraniKlijent = cmbKlijent.SelectedItem as Klijent;
@@ -194,6 +205,15 @@ namespace ZMGDesktop
             Roba selektiranaRoba = dgvRobaRadnogNaloga.CurrentRow.DataBoundItem as Roba;
             robaZaRadniNalog.Remove(selektiranaRoba);
             UcitajRobuRadnogNaloga();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\RadniNalozi\\DodajRadniNalog\\dodajRadniNalog.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }

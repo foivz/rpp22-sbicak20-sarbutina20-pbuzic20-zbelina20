@@ -139,12 +139,6 @@
     <Compile Include="Forms\FrmIzdajNoviRacun.Designer.cs">
       <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FrmPregledRacunaPDF.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmPregledRacunaPDF.Designer.cs">
-      <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FrmDodajMaterijal.Designer.cs">
       <DependentUpon>FrmDodajMaterijal.cs</DependentUpon>
     </Compile>
@@ -171,12 +165,6 @@
     </Compile>
     <Compile Include="Forms\FrmRacuni.Designer.cs">
       <DependentUpon>FrmRacuni.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.Designer.cs">
-      <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmDetaljiRadnogNaloga.cs">
       <SubType>Form</SubType>
@@ -280,12 +268,6 @@
     <EmbeddedResource Include="Forms\FrmIzdajNoviRacun.resx">
       <DependentUpon>FrmIzdajNoviRacun.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmPregledRacunaPDF.resx">
-      <DependentUpon>FrmPregledRacunaPDF.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmDetaljiIzvjestajaRadnihNaloga.resx">
-      <DependentUpon>FrmDetaljiIzvjestajaRadnihNaloga.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmDetaljiRadnogNaloga.resx">
       <DependentUpon>FrmDetaljiRadnogNaloga.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,8 +318,10 @@
       <DependentUpon>FrmDetaljniPregledRacun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reportKlijenti.rdlc" />
+    <EmbeddedResource Include="rptRadniNalozi.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EntitiesLayer.Entities.Klijent.datasource" />
+    <None Include="Properties\DataSources\EntitiesLayer.Entities.RadniNalog.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -371,6 +355,48 @@
       <Project>{969baf40-7473-43b9-b39d-c0371c085d3f}</Project>
       <Name>EntitiesLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\izvjestaji.css" />
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\izvjestaji.html" />
+    <Content Include="Pomoc\Izvjestaji\Izvjestaji\Izvjestaji.png" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.css" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.html" />
+    <Content Include="Pomoc\Izvjestaji\IzvjestajKlijenata\izvjestajKlijenata.png" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\DetaljiKlijenta\detaljiKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\dodajKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\DodajKlijenta\urediKlijenta.png" />
+    <Content Include="Pomoc\Klijenti\Pocetna\pocetna.css" />
+    <Content Include="Pomoc\Klijenti\Pocetna\pocetna.html" />
+    <Content Include="Pomoc\Klijenti\Pocetna\Pocetna.png" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\Pregled.css" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\Pregled.html" />
+    <Content Include="Pomoc\Klijenti\PregledKlijenta\PregledKlijenata.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta.css" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta.html" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta1.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta2.png" />
+    <Content Include="Pomoc\Klijenti\UveziKlijentaXML\uveziKlijenta3.png" />
+    <Content Include="Pomoc\Prijava\prijava.css" />
+    <Content Include="Pomoc\Prijava\prijava.html" />
+    <Content Include="Pomoc\Prijava\prijava.png" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.css" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.html" />
+    <Content Include="Pomoc\Skladiste\DodajMaterijal\dodajMaterijal.png" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.css" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.html" />
+    <Content Include="Pomoc\Skladiste\Skladiste\skladiste.png" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.css" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.html" />
+    <Content Include="Pomoc\Skladiste\ZaprimiMaterijal\zaprimiMaterijal.png" />
+    <Content Include="Resources\klijenti.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pomoc\RadniNalozi\DodajRadniNalog\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

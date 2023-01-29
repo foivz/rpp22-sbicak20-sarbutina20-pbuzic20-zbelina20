@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using ZMGDesktop.ValidacijaUnosa;
 using HidLibrary;
 using System.Threading;
+using System.IO;
 
 namespace ZMGDesktop
 {
@@ -29,6 +30,13 @@ namespace ZMGDesktop
         {
             InitializeComponent();
             InitializeScanner();
+            ucitajPomoc();
+        }
+
+        private void ucitajPomoc()
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void InitializeScanner()
@@ -109,6 +117,15 @@ namespace ZMGDesktop
             btnZaprimi.Visible = false;
             lblKolicina.Visible = false;
             provjereniQR = "";
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Skladiste\\ZaprimiMaterijal\\zaprimiMaterijal.html");
+                System.Diagnostics.Process.Start(path);
+            }
         }
     }
 }

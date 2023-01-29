@@ -29,8 +29,13 @@ namespace DataAccessLayer.Repositories
                                    select s).FirstOrDefaultAsync();
                 return query;
             }
+        }
 
-                
+        public IQueryable<Radnik> DohvatiSveRadnike()
+        {
+            var query = from r in Entities
+                        select r;
+            return query;
         }
 
         public override int Update(Radnik entity, bool saveChanges = true)

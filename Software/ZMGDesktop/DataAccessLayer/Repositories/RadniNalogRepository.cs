@@ -1,4 +1,5 @@
-﻿using EntitiesLayer.Entities;
+﻿using DataAccessLayer.Iznimke;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,11 +32,24 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        public IQueryable<RadniNalog> DohvatiRadneNalogePoStatusima()
+        {
+            var query = from r in Entities.Include("Klijent").Include("Radnik").Include("Materijal").Include("Roba")
+                        orderby r.Status
+                        select r;
+            return query;
+        }
+
         public override int Update(RadniNalog entity, bool saveChanges = true)
         {
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
             var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
             var radniNalog = Entities.SingleOrDefault(r => r.RadniNalog_ID == entity.RadniNalog_ID);
+
+            foreach (var materijal in entity.Materijal)
+            {
+                Context.Materijal.Attach(materijal);
+            }
 
             radniNalog.Radnik = radnik;
             radniNalog.Klijent = klijent;
@@ -59,8 +73,20 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(RadniNalog entity, bool saveChanges = true)
         {
+            ProvjeriMaterijalIRobu(entity);
+
             var klijent = Context.Klijent.SingleOrDefault(k => k.Klijent_ID == entity.Klijent_ID);
             var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
+
+            foreach (var materijal in entity.Materijal)
+            {
+                Context.Materijal.Attach(materijal);
+            }
+            
+            foreach (var roba in entity.Roba)
+            {
+                Context.Roba.Attach(roba);
+            } 
 
             var nalog = new RadniNalog
             {
@@ -84,6 +110,17 @@ namespace DataAccessLayer.Repositories
             else
             {
                 return 0;
+            }
+        }
+
+        private void ProvjeriMaterijalIRobu(RadniNalog entity)
+        {
+            var materijali = entity.Materijal;
+            var roba = entity.Roba;
+
+            if(materijali.Count == 0 || roba.Count == 0)
+            {
+                throw new MaterijalRobaException("Morate staviti materijal i robu u radni nalog!");
             }
         }
     }

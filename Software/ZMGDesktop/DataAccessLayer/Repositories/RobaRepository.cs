@@ -24,11 +24,13 @@ namespace DataAccessLayer.Repositories
 
         public override int Add(Roba entity, bool saveChanges = true)
         {
+            var klijent = Context.Klijent.SingleOrDefault(r => r.Klijent_ID == entity.Klijent_ID);
+
             Roba roba = new Roba
             {
                 Naziv = entity.Naziv,
                 Kolicina = entity.Kolicina,
-                Klijent_ID = entity.Klijent_ID
+                Klijent = klijent
             };
             
             Entities.Add(roba);
@@ -44,11 +46,12 @@ namespace DataAccessLayer.Repositories
 
         public override int Update(Roba entity, bool saveChanges = true)
         {
+            var klijent = Context.Klijent.SingleOrDefault(r => r.Klijent_ID == entity.Klijent_ID);
             var roba = Entities.SingleOrDefault(r => r.Roba_ID == entity.Roba_ID);
 
             roba.Naziv = entity.Naziv;
             roba.Kolicina = entity.Kolicina;
-            roba.Klijent_ID = entity.Klijent_ID;
+            roba.Klijent = klijent;
 
             if (saveChanges)
             {

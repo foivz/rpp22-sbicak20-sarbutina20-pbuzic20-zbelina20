@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,15 +28,17 @@ namespace ZMGDesktop
         public FrmRacuni(Radnik _radnik)
         {
             InitializeComponent();
+            ucitajPomoc();
             poslodavacServis = new PoslodavacServices();
             klijentServis= new KlijentServices();
             racunServis = new RacunService();
             radnik = _radnik;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ucitajPomoc()
         {
-
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
         private void btnIzdajNoviRacun_Click(object sender, EventArgs e)
@@ -47,14 +50,14 @@ namespace ZMGDesktop
 
         private void ChildFormClosing(object sender, FormClosingEventArgs e)
         {
-            Refresh();
+            Osvjezi();
         }
 
         private void FrmRacuni_Load(object sender, EventArgs e)
         {
             poslodavac = poslodavacServis.GetPoslodavac();
             cmbKlijent.DataSource = klijentServis.DohvatiKlijente();
-            Refresh();
+            Osvjezi();
         }
 
         private void btnNatrag_Click(object sender, EventArgs e)
@@ -66,7 +69,7 @@ namespace ZMGDesktop
             selektirani = cmbKlijent.SelectedItem as Klijent;
         }
 
-        private void Refresh()
+        private void Osvjezi()
         {
             dgvRacuni.DataSource = racunServis.DohvatiSveRacune();
             dgvRacuni.Columns[13].Visible = false;
@@ -85,7 +88,7 @@ namespace ZMGDesktop
             rbtnSilazno.Checked = false;
             rbtnUzlazno.Checked = false;
 
-            Refresh();
+            Osvjezi();
         }
 
         int pretrazivanje = 0;
@@ -130,6 +133,15 @@ namespace ZMGDesktop
                     FrmDetaljniPregledRacun pregledRacuna = new FrmDetaljniPregledRacun(selektiraniRacun);
                     pregledRacuna.ShowDialog();
                 }
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                string path = Path.Combine(Application.StartupPath, "..\\..\\Pomoc\\Racuni\\Racuni\\racuni.html");
+                System.Diagnostics.Process.Start(path);
             }
         }
     }
