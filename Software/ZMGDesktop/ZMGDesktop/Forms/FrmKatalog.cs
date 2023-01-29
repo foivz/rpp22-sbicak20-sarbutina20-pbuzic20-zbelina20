@@ -75,6 +75,7 @@ namespace ZMGDesktop
         {
             var usluge =  uslugaServis.DohvatiUsluge();
             dgvUsluge.DataSource = usluge;
+            dgvUsluge.Columns["StavkaRacun"].Visible = false;
         }
 
         private void PrikaziMaterijale()
