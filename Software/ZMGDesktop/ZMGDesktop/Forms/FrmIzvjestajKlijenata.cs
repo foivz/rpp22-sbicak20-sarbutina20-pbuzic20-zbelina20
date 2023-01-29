@@ -38,16 +38,24 @@ namespace ZMGDesktop
 
         private void kreirajIzvjestaj()
         {
-            provjeri(desetNajboljih);
-            klijentBindingSource.DataSource = desetNajboljih;
-            this.reportViewer1.RefreshReport();
+            try
+            {
+                provjeri(desetNajboljih);
+                klijentBindingSource.DataSource = desetNajboljih;
+                this.reportViewer1.RefreshReport();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nema dovoljno klijenta ili računa da bi kreirao izvještaj deseet najvećih klijenata.");
+            }
+           
         }
 
         private void provjeri(List<Klijent> desetNajboljih)
         {
             if(desetNajboljih.Count() == 0)
             {
-                throw new Exception("Nema nikakvih podataka");
+                throw new Exception("Nema dovoljno podataka");
             }
         }
 

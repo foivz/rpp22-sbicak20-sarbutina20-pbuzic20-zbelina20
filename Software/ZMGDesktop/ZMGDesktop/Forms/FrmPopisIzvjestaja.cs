@@ -56,20 +56,28 @@ namespace ZMGDesktop
 
         private void ucitajKlijente()
         {
-            desetNajboljih = servisKlijent.DohvatiDesetNajboljih();
-            provjeri(desetNajboljih);
-            dgvKlijenti.DataSource = desetNajboljih;
-            dgvKlijenti.Columns[8].Visible = false;
-            dgvKlijenti.Columns[9].Visible = false;
-            dgvKlijenti.Columns[10].Visible = false;
-            dgvKlijenti.Columns[11].Visible = false;
+            try
+            {
+                desetNajboljih = servisKlijent.DohvatiDesetNajboljih();
+                provjeri(desetNajboljih);
+                dgvKlijenti.DataSource = desetNajboljih;
+                dgvKlijenti.Columns[8].Visible = false;
+                dgvKlijenti.Columns[9].Visible = false;
+                dgvKlijenti.Columns[10].Visible = false;
+                dgvKlijenti.Columns[11].Visible = false;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nema dovoljno podataka");
+            }
+          
         }
 
         private void provjeri(List<Klijent> desetNajboljih)
         {
             if (desetNajboljih.Count() == 0)
             {
-                throw new Exception("Nema nikakvih podataka");
+                throw new Exception("Nema dovoljno podataka");
             }
         }
 
