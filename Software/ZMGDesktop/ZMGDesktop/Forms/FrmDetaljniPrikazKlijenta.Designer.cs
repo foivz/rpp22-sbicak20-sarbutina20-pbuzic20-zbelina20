@@ -45,7 +45,7 @@
             this.dgvRadniNalozi.Name = "dgvRadniNalozi";
             this.dgvRadniNalozi.RowHeadersWidth = 51;
             this.dgvRadniNalozi.RowTemplate.Height = 24;
-            this.dgvRadniNalozi.Size = new System.Drawing.Size(1286, 164);
+            this.dgvRadniNalozi.Size = new System.Drawing.Size(1004, 164);
             this.dgvRadniNalozi.TabIndex = 0;
             // 
             // labelRadniNalozi
@@ -75,7 +75,7 @@
             this.dgvRacuni.Name = "dgvRacuni";
             this.dgvRacuni.RowHeadersWidth = 51;
             this.dgvRacuni.RowTemplate.Height = 24;
-            this.dgvRacuni.Size = new System.Drawing.Size(1286, 164);
+            this.dgvRacuni.Size = new System.Drawing.Size(1004, 164);
             this.dgvRacuni.TabIndex = 2;
             // 
             // btnNatrag
@@ -83,7 +83,7 @@
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.Color.OldLace;
-            this.btnNatrag.Location = new System.Drawing.Point(1190, 500);
+            this.btnNatrag.Location = new System.Drawing.Point(899, 498);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(108, 35);
             this.btnNatrag.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             this.labelImePrezime.AutoSize = true;
             this.labelImePrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelImePrezime.Location = new System.Drawing.Point(583, 25);
+            this.labelImePrezime.Location = new System.Drawing.Point(413, 28);
             this.labelImePrezime.Name = "labelImePrezime";
             this.labelImePrezime.Size = new System.Drawing.Size(131, 25);
             this.labelImePrezime.TabIndex = 5;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 532);
+            this.ClientSize = new System.Drawing.Size(1028, 532);
             this.Controls.Add(this.labelImePrezime);
             this.Controls.Add(this.btnNatrag);
             this.Controls.Add(this.labelRacuni);
