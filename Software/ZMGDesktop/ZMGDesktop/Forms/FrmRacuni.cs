@@ -134,6 +134,10 @@ namespace ZMGDesktop
                     pregledRacuna.ShowDialog();
                 }
             }
+            else
+            {
+                MessageBox.Show("Niste označili niti jedan račun!", "Račun", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
