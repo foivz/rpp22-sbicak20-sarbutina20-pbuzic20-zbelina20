@@ -24,6 +24,15 @@ namespace DataAccessLayer.Repositories
                         select p; 
             return query;
         }
+        
+
+        public IQueryable<Usluga> DohvatiUsluguPoNazivu(string naziv)
+        {
+            var query = from p in Entities.Include("Materijal")
+                        where p.Naziv == naziv
+                        select p;
+            return query;
+        }
 
         public IQueryable<string> DohvatiUslugeDistinct()
         {

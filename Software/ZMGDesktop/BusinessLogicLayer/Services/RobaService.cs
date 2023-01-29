@@ -19,6 +19,28 @@ namespace BusinessLogicLayer.Services
             }
         }
 
+
+        // metode za rjesenje dupliciranja
+        public List<string> DohvatiRobuKlijentaDistinct(int id)
+        {
+            using (var repo = new RobaRepository())
+            {
+                var robe = repo.DohvatiRobuKlijentaDistinct(id).Distinct().ToList();
+                return robe;
+            }
+        }
+
+        public Roba DohvatiRobuPoNazivu(string selectedValue)
+        {
+            using (var repo = new RobaRepository())
+            {
+                var roba = repo.DohvatiRobuPoNazivu(selectedValue);
+                var vracenaRoba = roba.FirstOrDefault(u => u.Naziv == selectedValue);
+                return vracenaRoba;
+            }
+        }
+        //
+
         public bool Add(Roba roba)
         {
             bool uspjesno = false;

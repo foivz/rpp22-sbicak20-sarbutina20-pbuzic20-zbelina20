@@ -3,14 +3,14 @@
     "",
     "\\Software",
     "\\Software\\ZMGDesktop",
-    "\\Software\\ZMGDesktop\\BusinessLogicLayer",
-    "\\Software\\ZMGDesktop\\BusinessLogicLayer\\PDF",
+    "\\Software\\ZMGDesktop\\DataAccessLayer",
+    "\\Software\\ZMGDesktop\\DataAccessLayer\\Repositories",
     "\\Software\\ZMGDesktop\\Email",
     "\\Software\\ZMGDesktop\\EntitiesLayer",
     "\\Software\\ZMGDesktop\\EntitiesLayer\\Entities",
     "\\Software\\ZMGDesktop\\ZMGDesktop",
     "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms"
   ],
-  "SelectedNode": "\\Software\\ZMGDesktop\\BusinessLogicLayer\\PDF\\GeneriranjePDF.cs",
+  "SelectedNode": "\\Software\\ZMGDesktop\\ZMGDesktop\\Forms\\FrmRacuni.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -19,5 +19,25 @@ namespace BusinessLogicLayer.Services
                 return usluge;
             }
         }
+
+        // kod za popravak dupliciranja
+        public List<string> DohvatiUslugeDistinct()
+        {
+            using (var repo = new UslugaRepository())
+            {
+                var usluge = repo.DohvatiUslugeDistinct().Distinct().ToList();
+                return usluge;
+            }
+        }
+
+        public Usluga DohvatiUsluguPoNazivu(string selectedValue)
+        {
+            using (var repo = new UslugaRepository())
+            {
+                var usluga = repo.DohvatiUsluguPoNazivu(selectedValue);
+                var vracenaUsluga = usluga.FirstOrDefault(u => u.Naziv == selectedValue);
+                return vracenaUsluga;
+            }
+        }
     }
 }

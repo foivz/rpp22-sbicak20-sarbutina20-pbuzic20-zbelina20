@@ -22,6 +22,23 @@ namespace DataAccessLayer.Repositories
             return query;
         }
 
+        // metode za dohvacanje robe po nazivu (metode za rjesenje dupliciranja)
+        public IQueryable<Roba> DohvatiRobuPoNazivu(string naziv)
+        {
+            var query = from p in Entities
+                        where p.Naziv == naziv
+                        select p;
+            return query;
+        }
+
+        public IQueryable<string> DohvatiRobuKlijentaDistinct(int id)
+        {
+            var query = from p in Entities
+                        where p.Klijent_ID == id
+                        select p.Naziv;
+            return query;
+        }
+
         public override int Add(Roba entity, bool saveChanges = true)
         {
             var klijent = Context.Klijent.SingleOrDefault(r => r.Klijent_ID == entity.Klijent_ID);

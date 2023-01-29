@@ -49,8 +49,8 @@ namespace ZMGDesktop
 
         private void FrmDodajStavke_Load(object sender, EventArgs e)
         {
-            cmbUsluge.DataSource= uslugaServis.DohvatiUsluge();
-            cmbRoba.DataSource = robaServis.DohvatiRobuKlijenta(klijent.Klijent_ID);
+            cmbUsluge.DataSource = uslugaServis.DohvatiUslugeDistinct();
+            cmbRoba.DataSource = robaServis.DohvatiRobuKlijentaDistinct(klijent.Klijent_ID);
             txtJedinicaMjere.Text = "kg";
             Osvjezi();
         }
@@ -129,12 +129,14 @@ namespace ZMGDesktop
 
         private void cmbUsluge_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selektiranaUsluga = cmbUsluge.SelectedItem as Usluga;
+            string dohvacenaVrijednost = cmbUsluge.SelectedValue.ToString(); // kod za popravak dupliciranja
+            selektiranaUsluga = uslugaServis.DohvatiUsluguPoNazivu(dohvacenaVrijednost);
         }
 
         private void cmbRoba_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selektiranaRoba = cmbRoba.SelectedItem as Roba;
+            string dohvacenaVrijednost = cmbRoba.SelectedValue.ToString();
+            selektiranaRoba = robaServis.DohvatiRobuPoNazivu(dohvacenaVrijednost);
         }
     }
 }

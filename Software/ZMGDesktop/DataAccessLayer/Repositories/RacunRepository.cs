@@ -21,6 +21,41 @@ namespace DataAccessLayer.Repositories
             var poslodavac = Context.Poslodavac.SingleOrDefault(p => p.Poslodavac_ID == entity.Poslodavac_ID);
             var radnik = Context.Radnik.SingleOrDefault(r => r.Radnik_ID == entity.Radnik_ID);
 
+            bool[] provjera = new bool[2];
+            provjera[0] = false;
+            provjera[1] = false;
+
+            Usluga cincanje = null;
+            Usluga niklanje = null;
+
+            // provjera za attachanje za bazu podataka kako se ne bi duplicirla usluga i roba
+            foreach (var stavka in entity.StavkaRacun)
+            {
+                if (provjera[0] == false && stavka.Usluga.Naziv == "Cincanje")
+                {
+                    provjera[0] = true;
+                    cincanje = Context.Usluga.Attach(stavka.Usluga);
+                }
+
+                if (provjera[1] == false && stavka.Usluga.Naziv == "Niklanje")
+                {
+                    provjera[1] = true;
+                    niklanje = Context.Usluga.Attach(stavka.Usluga);
+                }
+
+                if (stavka.Usluga.Naziv == "Cincanje")
+                {
+                    stavka.Usluga = cincanje;
+                }
+
+                if (stavka.Usluga.Naziv == "Niklanje")
+                {
+                    stavka.Usluga = niklanje;
+                }
+
+                Context.Roba.Attach(stavka.Roba);
+            }
+
             var racun = new Racun
             {
                 Klijent = klijent,
