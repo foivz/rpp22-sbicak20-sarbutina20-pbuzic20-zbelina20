@@ -66,23 +66,23 @@ namespace DataAccessLayer.Repositories
             var telefon = Entities.SingleOrDefault(t => t.BrojTelefona == entity.BrojTelefona);
             if(naziv != null)
             {
-                throw new UserException("Postoji već klijent s ovim nazivom!");
+                throw new UserException("Postoji već klijent s ovim nazivom: " + naziv);
             }
             if(oib != null)
             {
-                throw new OIBException("Postoji već klijent s ovim OIB-om");
+                throw new OIBException("Postoji već klijent s ovim OIB-om: " + naziv);
             }
             if(IBAN != null)
             {
-                throw new IBANException("Ovaj IBAN već postoji");
+                throw new IBANException("Ovaj IBAN već postoji: " + naziv);
             }
             if(email != null)
             {
-                throw new EmailException("Ovaj email je već u upotrebi");
+                throw new EmailException("Ovaj email je već u upotrebi: " + naziv);
             }
             if(telefon != null)
             {
-                throw new TelefonException("Ovaj broj telefona se već koristi");
+                throw new TelefonException("Ovaj broj telefona se već koristi: " + naziv);
             }
         }
 
@@ -119,23 +119,23 @@ namespace DataAccessLayer.Repositories
                 var telefon = Entities.SingleOrDefault(t => t.BrojTelefona == entity.BrojTelefona);
                 if (naziv != null && naziv != klijent)
                 {
-                    throw new UserException("Postoji već klijent s ovim nazivom!");
+                    throw new UserException("Postoji već klijent s ovim nazivom: " + naziv);
                 }
                 if (oib != null && oib != klijent)
                 {
-                    throw new OIBException("Postoji već klijent s ovim OIB-om");
+                    throw new OIBException("Postoji već klijent s ovim OIB-om: " + naziv);
                 }
                 if (IBAN != null && IBAN != klijent)
                 {
-                    throw new IBANException("Ovaj IBAN već postoji");
+                    throw new IBANException("Ovaj IBAN već postoji: " + naziv);
                 }
                 if (email != null && email != klijent)
                 {
-                    throw new EmailException("Ovaj email je već u upotrebi");
+                    throw new EmailException("Ovaj email je već u upotrebi: " + naziv);
                 }
                 if (telefon != null && telefon != klijent)
                 {
-                    throw new TelefonException("Ovaj broj telefona se već koristi");
+                    throw new TelefonException("Ovaj broj telefona se već koristi: " + naziv);
                 }
         }
 

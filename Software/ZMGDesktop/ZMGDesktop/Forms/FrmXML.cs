@@ -83,7 +83,7 @@ namespace ZMGDesktop
                         };
                             
                     }
-                    dgvKlijentiXML.DataSource = klijentiList;
+                    dgvKlijentiXML.DataSource = servisKlijent.DohvatiKlijente();
                     dgvKlijentiXML.Columns[0].Visible = false;
                     dgvKlijentiXML.Columns[8].Visible = false;
                     dgvKlijentiXML.Columns[9].Visible = false;
@@ -98,22 +98,27 @@ namespace ZMGDesktop
             }
             catch (UserException ex)
             {
+                dgvKlijentiXML.DataSource = servisKlijent.DohvatiKlijente();
                 MessageBox.Show(ex.Poruka);
             }
             catch (TelefonException ex)
             {
+                dgvKlijentiXML.DataSource = servisKlijent.DohvatiKlijente();
                 MessageBox.Show(ex.Poruka);
             }
             catch (IBANException ex)
             {
+                dgvKlijentiXML.DataSource = servisKlijent.DohvatiKlijente();
                 MessageBox.Show(ex.Poruka);
             }
             catch (OIBException ex)
             {
+                dgvKlijentiXML.DataSource = servisKlijent.DohvatiKlijente();
                 MessageBox.Show(ex.Poruka);
             }
             catch (EmailException ex)
             {
+                dgvKlijentiXML.DataSource = servisKlijent.DohvatiKlijente();
                 MessageBox.Show(ex.Poruka);
             }
         }
