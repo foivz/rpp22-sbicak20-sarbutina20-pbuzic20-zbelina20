@@ -44,6 +44,7 @@ namespace ZMGDesktop
             btnZaprimi.Visible = false;
             lblKolicina.Visible = false;
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+
             foreach (FilterInfo filterInfo in filterInfoCollection)
             {
                 cboDevice.Items.Add(filterInfo.Name);
@@ -53,7 +54,7 @@ namespace ZMGDesktop
             captureDevice = new VideoCaptureDevice(filterInfoCollection[cboDevice.SelectedIndex].MonikerString);
             captureDevice.NewFrame += CaptureDevice_NewFrame;
 
-            var barcodeWriter = new BarcodeWriter();
+            /*var barcodeWriter = new BarcodeWriter();
             barcodeWriter.Format = BarcodeFormat.QR_CODE;
             var result = barcodeWriter.Write("T5JNVEU7YEJ7ORLKYO0U");
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
@@ -62,7 +63,7 @@ namespace ZMGDesktop
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 result.Save(stream, ImageFormat.Png);
-            }
+            }*/
         }
 
         private void btnKreni_Click(object sender, EventArgs e)
@@ -147,7 +148,7 @@ namespace ZMGDesktop
             }
             catch (Exception ex)
             {
-                this.Close();
+                MessageBox.Show(ex.Message);
             }
             
         }
