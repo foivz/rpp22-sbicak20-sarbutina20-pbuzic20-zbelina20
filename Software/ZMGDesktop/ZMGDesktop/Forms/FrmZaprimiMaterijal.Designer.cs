@@ -60,7 +60,7 @@
             this.btnNatrag.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNatrag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnNatrag.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNatrag.Location = new System.Drawing.Point(29, 288);
+            this.btnNatrag.Location = new System.Drawing.Point(12, 634);
             this.btnNatrag.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNatrag.Name = "btnNatrag";
             this.btnNatrag.Size = new System.Drawing.Size(136, 57);
@@ -72,7 +72,7 @@
             // btnProba
             // 
             this.btnProba.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnProba.Location = new System.Drawing.Point(29, 370);
+            this.btnProba.Location = new System.Drawing.Point(12, 547);
             this.btnProba.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProba.Name = "btnProba";
             this.btnProba.Size = new System.Drawing.Size(189, 57);
