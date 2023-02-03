@@ -11,6 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Media3D;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 
 namespace ZMGDesktop
 {
@@ -58,18 +61,31 @@ namespace ZMGDesktop
 
         private void btnPohrani_Click(object sender, EventArgs e)
         {
-            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            Document doc = new Document(PageSize.A4, 10, 10, 42, 35); 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF Documents (.pdf)|.pdf";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                saveDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
-                saveDialog.FilterIndex = 1;
-                saveDialog.RestoreDirectory = true;
-                if (saveDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string podaci = "Naziv materijala: " + txtNaziv.Text + Environment.NewLine + "Količina: " + txtKolicina.Text + " " + txtMjernaJedinica.Text + Environment.NewLine + "Datum: " + txtDatum.Text;
-                    File.WriteAllText(saveDialog.FileName, podaci);
+                PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
+                doc.Open();
+                Paragraph title = new Paragraph("Podaci o materijalu");
+                title.Alignment = Element.ALIGN_CENTER;
+                doc.Add(title);
+
+                Paragraph naziv = new Paragraph("Naziv: " + txtNaziv.Text);
+                doc.Add(naziv);
+
+                Paragraph kolicina = new Paragraph("Kolicina: " + txtKolicina.Text + " " + txtMjernaJedinica.Text);
+                doc.Add(kolicina);
+
+                Paragraph datum = new Paragraph("Datum: " + txtDatum.Text);
+                doc.Add(datum);
+
+                doc.Close();
+                MessageBox.Show("PDF dokument uspješno kreiran i spremljen.");
+
                 }
             }
-        }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -78,6 +94,11 @@ namespace ZMGDesktop
                 string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Skladiste\\Primka\\primka.html");
                 System.Diagnostics.Process.Start(path);
             }
+        }
+
+        private void txtNaziv_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
