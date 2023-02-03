@@ -1,4 +1,5 @@
-﻿using EntitiesLayer.Entities;
+﻿using DataAccessLayer.Iznimke;
+using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,7 +75,28 @@ namespace DataAccessLayer.Repositories
 
         }
 
-        
+        public override int Remove(Materijal entity, bool saveChanges = true)
+        {
+            Entities.Attach(entity);
+            if (entity.RadniNalog.Count == 0 && entity.Primka == null && entity.Usluga == null)
+            {
+                Entities.Remove(entity);
+                if (saveChanges)
+                {
+                    return SaveChanges();
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            else
+            {
+                throw new BrisanjeMaterijalaException("Zabranjeno brisanje materijala koji se nalazi u radnom nalogu ili primci.");
+            }
+        }
+
+
 
         public override int Update(Materijal entity, bool saveChanges = true)
         {

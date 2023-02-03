@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Iznimke\BrisanjeKlijentaException.cs" />
+    <Compile Include="Iznimke\BrisanjeMaterijalaException.cs" />
     <Compile Include="Iznimke\EmailException.cs" />
     <Compile Include="Iznimke\IBANException.cs" />
     <Compile Include="Iznimke\MaterijalRobaException.cs" />

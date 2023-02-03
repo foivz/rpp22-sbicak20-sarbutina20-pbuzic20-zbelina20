@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer.Services;
+using DataAccessLayer.Iznimke;
 using EntitiesLayer.Entities;
 using System;
 using System.Collections.Generic;
@@ -42,12 +43,16 @@ namespace ZMGDesktop
             var odabraniMaterijal = dgvMaterijali.CurrentRow.DataBoundItem as Materijal;
             if(odabraniMaterijal != null)
             {
-                bool uspjeh = matServis.obrisiMaterijal(odabraniMaterijal);
-
-                if (uspjeh == false)
+                try
                 {
-                    MessageBox.Show("Aplikacije nije uspjela obrisati materijal");
+                    matServis.obrisiMaterijal(odabraniMaterijal);
                 }
+                catch (BrisanjeMaterijalaException iznimka)
+                {
+                    MessageBox.Show(iznimka.Poruka, "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+               
                 
                 PrikaziMaterijale();
             }
