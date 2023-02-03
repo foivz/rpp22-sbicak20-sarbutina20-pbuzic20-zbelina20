@@ -16,21 +16,65 @@ using ZMGDesktop.ValidacijaUnosa;
 using HidLibrary;
 using System.Threading;
 using System.IO;
+using AForge.Video;
+using AForge.Video.DirectShow;
+using iTextSharp.text.pdf;
+using ZXing;
+using System.Drawing.Imaging;
 
 namespace ZMGDesktop
 {
     public partial class FrmZaprimiMaterijal : Form
     {
-        HidDevice skener;
         MaterijalServices matServis = new MaterijalServices();
         string provjereniQR;
-        private bool skeniranje = true;
+        FilterInfoCollection filterInfoCollection;
+        VideoCaptureDevice captureDevice = null;
+
 
         public FrmZaprimiMaterijal()
         {
             InitializeComponent();
-            InitializeScanner();
             ucitajPomoc();
+        }
+
+        private void FrmZaprimiMaterijal_Load(object sender, EventArgs e)
+        {
+            numKolicina.Visible = false;
+            btnZaprimi.Visible = false;
+            lblKolicina.Visible = false;
+            filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo filterInfo in filterInfoCollection)
+            {
+                cboDevice.Items.Add(filterInfo.Name);
+            }
+            cboDevice.SelectedIndex = 0;
+
+            captureDevice = new VideoCaptureDevice(filterInfoCollection[cboDevice.SelectedIndex].MonikerString);
+            captureDevice.NewFrame += CaptureDevice_NewFrame;
+
+            var barcodeWriter = new BarcodeWriter();
+            barcodeWriter.Format = BarcodeFormat.QR_CODE;
+            var result = barcodeWriter.Write("T5JNVEU7YEJ7ORLKYO0U");
+            string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            string filePath = Path.Combine(desktopPath, "qrcode.png");
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                result.Save(stream, ImageFormat.Png);
+            }
+        }
+
+        private void btnKreni_Click(object sender, EventArgs e)
+        {
+            
+            captureDevice.Start();
+            timer1.Start();
+        }
+
+        private void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            picQR.Image = (Bitmap)eventArgs.Frame.Clone();
         }
 
         private void ucitajPomoc()
@@ -39,33 +83,7 @@ namespace ZMGDesktop
             this.KeyDown += new KeyEventHandler(Form1_KeyDown);
         }
 
-        private void InitializeScanner()
-        {
-            skeniranje = true;
-
-            var devices = HidDevices.Enumerate();
-           
-            skener = devices.FirstOrDefault(d => d.Attributes.VendorId == 0x1234 && d.Attributes.ProductId == 0x5678);
-            
-            if (skener == null) return;
-
-            skener.OpenDevice();
-            
-            Task.Run(() => ReadDataFromScanner());
-        }
-
-        private void ReadDataFromScanner()
-        {
-            while (skeniranje)
-            {
-                var report = skener.ReadReport();
-                if (report != null)
-                {
-                    var podaci = Encoding.ASCII.GetString(report.Data);
-                    SkenirajMaterijal(podaci);
-                }
-            }
-        }
+        
 
 
         private void btnNatrag_Click(object sender, EventArgs e)
@@ -75,7 +93,6 @@ namespace ZMGDesktop
 
         public void SkenirajMaterijal(string skeniranQR)
         {
-            skeniranje = false;
 
 
             var uspjeh = matServis.ProvjeriQR(skeniranQR);
@@ -93,7 +110,7 @@ namespace ZMGDesktop
 
         private void btnProba_Click(object sender, EventArgs e)
         {
-            string proba = "BQ1EVS6OR739W97PJF2E";
+            string proba = "WNQDSCM90PALUKXBANUA";
             SkenirajMaterijal(proba);
         }
 
@@ -111,13 +128,7 @@ namespace ZMGDesktop
             
         }
 
-        private void FrmZaprimiMaterijal_Load(object sender, EventArgs e)
-        {
-            numKolicina.Visible = false;
-            btnZaprimi.Visible = false;
-            lblKolicina.Visible = false;
-            provjereniQR = "";
-        }
+        
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -125,6 +136,34 @@ namespace ZMGDesktop
             {
                 string path = Path.Combine(Application.StartupPath, "Pomoc\\Pomoc\\Skladiste\\ZaprimiMaterijal\\zaprimiMaterijal.html");
                 System.Diagnostics.Process.Start(path);
+            }
+        }
+
+        private void FrmZaprimiMaterijal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                if (captureDevice.IsRunning) captureDevice.Stop();
+            }
+            catch (Exception ex)
+            {
+                this.Close();
+            }
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if(picQR.Image!= null)
+            {
+                BarcodeReader barcode = new BarcodeReader();
+                Result result = barcode.Decode((Bitmap)picQR.Image);
+                if(result != null)
+                {
+                    SkenirajMaterijal(result.ToString());
+                    timer1.Stop();
+                    if (captureDevice.IsRunning) captureDevice.Stop();
+                }
             }
         }
     }
