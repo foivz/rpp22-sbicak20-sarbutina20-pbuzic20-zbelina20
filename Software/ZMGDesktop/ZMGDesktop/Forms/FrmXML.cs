@@ -121,6 +121,10 @@ namespace ZMGDesktop
                 dgvKlijentiXML.DataSource = servisKlijent.DohvatiKlijente();
                 MessageBox.Show(ex.Poruka);
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Neispravni format datoteke");
+            }
         }
 
         private bool provjeri(Klijent klijent)
