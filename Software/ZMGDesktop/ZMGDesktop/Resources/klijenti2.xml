@@ -6,22 +6,20 @@
 		<Adresa>Petrova Gora 23</Adresa>
 		<Mjesto>Petrova Gora</Mjesto>
 		<OIB>27521582612</OIB>
-		<BrojTeldsaefona>0921421295</BrojTelefona>
 		<Email>hadar@gmail.com</Email>
 		<IBAN>HR2715264621925728321</IBAN>
 	</klijent>
 	<klijent>
 		<Naziv>Hudić</Naziv>
 		<Adresa>Sesvete 20</Adresa>
-		<Mjedsasto>Sesvete</Mjesto>
+		<Mjesto>Sesvete</Mjesto>
 		<OIB>85721265201</OIB>
 		<BrojTelefona>0962142582</BrojTelefona>
 		<Email>hudic@gmail.com</Email>
 		<IBAN>HR2716425125252721572</IBAN>
 	</klijent>
 	<klijent>
-		<Nadsaziv>BAMT</Naziv>
-		<Adresa>Mače 20</Adresa>
+		<Naziv>BAMT</Naziv>
 		<Mjesto>Mače</Mjesto>
 		<OIB>82752125672</OIB>
 		<BrojTelefona>0992615721</BrojTelefona>
@@ -34,7 +32,7 @@
 		<Mjesto>Trnovec</Mjesto>
 		<OIB>27165281562</OIB>
 		<BrojTelefona>0972429104</BrojTelefona>
-		<Emsaail>boxmark@gmail.com</Email>
+		<Email>boxmark@gmail.com</Email>
 		<IBAN>HR9281527626492105286</IBAN>
 	</klijent>
 </klijenti>

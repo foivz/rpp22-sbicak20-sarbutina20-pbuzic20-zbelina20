@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZMGTests", "ZMGTests\ZMGTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email", "Email\Email.csproj", "{933F3363-D231-43AB-A2B2-8B8BB5F7583D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZMGDesktopSetup", "ZMGDesktopSetup\ZMGDesktopSetup.vdproj", "{DD66E348-B9A1-4BC8-B96D-178C80601788}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ZMGDesktopWizard", "ZMGDesktopWizard\ZMGDesktopWizard.vdproj", "{60EDD249-B277-4372-A7E7-B06B6C028637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,8 +47,8 @@ Global
 		{933F3363-D231-43AB-A2B2-8B8BB5F7583D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{933F3363-D231-43AB-A2B2-8B8BB5F7583D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{933F3363-D231-43AB-A2B2-8B8BB5F7583D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DD66E348-B9A1-4BC8-B96D-178C80601788}.Debug|Any CPU.ActiveCfg = Debug
-		{DD66E348-B9A1-4BC8-B96D-178C80601788}.Release|Any CPU.ActiveCfg = Release
+		{60EDD249-B277-4372-A7E7-B06B6C028637}.Debug|Any CPU.ActiveCfg = Debug
+		{60EDD249-B277-4372-A7E7-B06B6C028637}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
