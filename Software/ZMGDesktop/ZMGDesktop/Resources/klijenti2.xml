@@ -5,7 +5,8 @@
 		<Naziv>Hađar</Naziv>
 		<Adresa>Petrova Gora 23</Adresa>
 		<Mjesto>Petrova Gora</Mjesto>
-		<OIB>27521582612</OIB>
+		<OIB>27521582gh612</OIB>
+		<BrojTelefona>0975261242</BrojTelefona>
 		<Email>hadar@gmail.com</Email>
 		<IBAN>HR2715264621925728321</IBAN>
 	</klijent>
@@ -20,6 +21,7 @@
 	</klijent>
 	<klijent>
 		<Naziv>BAMT</Naziv>
+		<Adresa>Sesvete 31</Adresa>
 		<Mjesto>Mače</Mjesto>
 		<OIB>82752125672</OIB>
 		<BrojTelefona>0992615721</BrojTelefona>
